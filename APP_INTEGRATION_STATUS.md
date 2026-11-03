@@ -46,3 +46,4 @@ Every third-party app snippet includes defensive conditionals. For example, in `
 {%- endcase -%}
 ```
 If an app is not installed or uninstalled, the theme gracefully renders empty space without throwing Liquid errors or breaking page layout.
+

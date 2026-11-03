@@ -75,3 +75,4 @@ Because live Shopify store access requires merchant login and store owner creden
 1. In the Cart Drawer or on the `/cart` page, click **Checkout**.
 2. Confirm the browser navigates directly to your store's secure Shopify checkout URL (`https://your-store.myshopify.com/checkouts/...`).
 3. To test a completed order safely, enable **Shopify Bogus Gateway** in **Settings > Payments > Test mode**, complete a test purchase with card number `1`, and verify the thank-you page.
+

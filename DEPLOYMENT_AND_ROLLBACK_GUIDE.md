@@ -96,3 +96,4 @@ If the GitHub repository becomes inaccessible:
 1. Take the local verified package `aura-skincare-theme.zip`.
 2. In Shopify Admin, navigate to **Online Store > Themes > Add theme > Upload zip file**.
 3. Upload and publish the ZIP package immediately.
+

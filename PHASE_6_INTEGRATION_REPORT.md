@@ -80,3 +80,4 @@ Shopify's GitHub integration requires the 8 canonical OS 2.0 directories directl
 3. **AJAX Add-to-Cart:** Handled via `<product-form>` submitting `POST /cart/add.js` with loading state, error catching, and instant drawer opening.
 4. **Free Shipping Progress Engine:** Dynamic threshold set to `$75.00` in `settings_schema.json`. Real-time calculation shows remaining amount needed or "You've unlocked Free Shipping!".
 5. **Native Checkout Form:** Redirection to `/checkout` complies with Shopify security standards. No simulated payments or fake orders are ever used.
+

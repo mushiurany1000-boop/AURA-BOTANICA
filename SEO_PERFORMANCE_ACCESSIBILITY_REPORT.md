@@ -81,3 +81,4 @@ The theme embeds complete, schema.org compliant JSON-LD structured data:
 * **Escape Handlers:** Cart Drawer, Predictive Search modal, and Mobile Navigation menu close immediately upon pressing the `Escape` key, returning focus to the trigger button.
 * **ARIA Attributes:** Drawers use `aria-modal="true"`, `role="dialog"`, and `aria-hidden` attributes synchronized with state.
 * **Icon Labels:** Visual icons include `.visually-hidden` text spans or `aria-label` tags describing action intent (e.g., "Add to cart", "Open search", "Close dialog").
+
