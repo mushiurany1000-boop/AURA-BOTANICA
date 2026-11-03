@@ -45,6 +45,12 @@ class PredictiveSearch extends HTMLElement {
       }, 300).bind(this)
     );
     clear.addEventListener("click", this.onClearSearch.bind(this));
+    this.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        this.close(true);
+      }
+    });
     MinimogEvents.subscribe(MinimogTheme.pubSubEvents.closeSearchPopup, () => this.close(true));
   }
 

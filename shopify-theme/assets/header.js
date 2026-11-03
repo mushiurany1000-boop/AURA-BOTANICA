@@ -33,6 +33,16 @@ class MHeader extends HTMLElement {
     document.addEventListener("matchMobile", () => this.handleSticky());
     document.addEventListener("unmatchMobile", () => this.handleSticky());
     this.siteNav = new SiteNav(this);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        const menuDrawer = document.querySelector(".m-menu-drawer.m-menu-drawer--open, m-menu-drawer[open]");
+        if (menuDrawer && typeof menuDrawer.close === "function") {
+          menuDrawer.close();
+        }
+        const openMenus = document.querySelectorAll(".m-menu__item--open, .m-mega-menu--open");
+        openMenus.forEach(el => el.classList.remove("m-menu__item--open", "m-mega-menu--open"));
+      }
+    });
     window.__sfHeader = this;
     window.addEventListener("resize", () => {
       this.innerWidth = window.innerWidth;

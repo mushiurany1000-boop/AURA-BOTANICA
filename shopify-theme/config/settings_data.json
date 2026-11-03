@@ -457,7 +457,8 @@
     "social_line_link": "",
     "social_line_label": "",
     "cart_drawer_trust_badge": "",
-    "gm_api": ""
+    "gm_api": "",
+    "free_shipping_threshold": 75
   },
   "platform_customizations": {
     "custom_css": [
@@ -799,7 +800,8 @@
       "cookie_consent_decline": "Decline",
       "cookie_consent_learnmore": "Learn more",
       "cookie_consent_learnmore_link": "https://www.cookiesandyou.com/",
-      "instagram_token": "IGQVJXMTBwYTBabmJsdG9xZA0p2Q3RsLWhYc0RvSFI1cDZA6aG1jWEt5M3VpYVNWdV9tVmIweHF6UHBjNWxvVk1sUFQ4T0NJSHFuWksyVGVzTTB3RkozdGszeDJIbVU3MmVycTJzS1E5VGpZAX0dvVUE0RwZDZD"
+      "instagram_token": "IGQVJXMTBwYTBabmJsdG9xZA0p2Q3RsLWhYc0RvSFI1cDZA6aG1jWEt5M3VpYVNWdV9tVmIweHF6UHBjNWxvVk1sUFQ4T0NJSHFuWksyVGVzTTB3RkozdGszeDJIbVU3MmVycTJzS1E5VGpZAX0dvVUE0RwZDZD",
+      "free_shipping_threshold": 75
     }
   }
 }

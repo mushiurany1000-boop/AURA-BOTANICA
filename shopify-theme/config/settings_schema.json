@@ -2334,6 +2334,13 @@
         "content": "Cart drawer"
       },
       {
+        "type": "number",
+        "id": "free_shipping_threshold",
+        "label": "Free shipping goal threshold ($)",
+        "info": "Set to 0 to disable. Example: 75 for free shipping on orders over $75.",
+        "default": 75
+      },
+      {
         "type": "checkbox",
         "id": "enable_cart_drawer",
         "label": "Enable cart drawer",
