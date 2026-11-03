@@ -65,6 +65,7 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+    {%- comment -%} Aura Botanica Global Config & Theme Data {%- endcomment -%}
     {% render 'theme-data' %}
     {% render 'custom-code-head' %}
     {{ 'aura-custom.css' | asset_url | stylesheet_tag }}

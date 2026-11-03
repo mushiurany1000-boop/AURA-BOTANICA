@@ -52,3 +52,4 @@ templateFiles.forEach(file => {
 });
 
 console.log('Cart shipping bar patch complete.');
+

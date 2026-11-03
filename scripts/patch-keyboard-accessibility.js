@@ -43,3 +43,4 @@ const fs = require('fs');
 });
 
 console.log('Search and header keyboard accessibility patch complete.');
+

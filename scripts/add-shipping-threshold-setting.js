@@ -43,3 +43,4 @@ targetData.forEach(file => {
   fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf8');
   console.log(`Added free_shipping_threshold to ${file}`);
 });
+

@@ -59,3 +59,4 @@
 | **Local Preview Server** | Route dispatcher, mock API, HTML layouts (`dev-server.js`) | **PASS** | 10 routes active on `http://localhost:3000` |
 | **Shopify Admin Upload** | Theme ZIP import into live merchant store | **PENDING** | Awaiting merchant upload of `aura-skincare-theme.zip` |
 | **Live Store Cart & Checkout** | End-to-end payment gateway transaction on live store | **PENDING** | Blocked until merchant uploads ZIP and tests on Shopify |
+

@@ -25,3 +25,4 @@ dirs.forEach(dir => {
 });
 
 console.log('Tooltip settings fix complete.');
+
