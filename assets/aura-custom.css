@@ -27,3 +27,31 @@
   color: #E2B293 !important;
   text-decoration: underline !important;
 }
+
+/* Accessibility & Focus Indicators (WCAG AA Compliance) */
+:focus-visible {
+  outline: 2px solid var(--color-aura-copper, #B9784D) !important;
+  outline-offset: 3px !important;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-aura-copper, #B9784D) !important;
+  outline-offset: 2px !important;
+}
+
+/* Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
