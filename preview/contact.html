@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Our Alchemists — AURA BOTANICA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/theme.css?v=2.1.0">
+    <script src="/assets/theme.js?v=2.1.0" defer></script>
+    <style>
+      body {
+        margin: 0;
+        background-color: #FCFBF7;
+        color: #18231F;
+        font-family: 'Poppins', sans-serif;
+      }
+      .page-header {
+        text-align: center;
+        padding: 70px 24px 40px;
+        background-color: #F4EFE6;
+      }
+      .page-subtitle {
+        font-size: 12px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #B9784D;
+        font-weight: 600;
+        margin-bottom: 12px;
+        display: block;
+      }
+      .page-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 48px;
+        font-weight: 500;
+        margin: 0 0 16px;
+      }
+      .page-desc {
+        font-size: 15px;
+        color: #5C6B61;
+        max-width: 540px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+      .contact-wrap {
+        max-width: 680px;
+        margin: 60px auto 100px;
+        padding: 0 24px;
+      }
+      .form-group {
+        margin-bottom: 24px;
+      }
+      .form-label {
+        display: block;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #18231F;
+      }
+      .form-input, .form-textarea {
+        width: 100%;
+        padding: 14px 16px;
+        border: 1px solid #E5DFD3;
+        background: #FFFFFF;
+        border-radius: 4px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        box-sizing: border-box;
+      }
+      .form-input:focus, .form-textarea:focus {
+        outline: none;
+        border-color: #B9784D;
+      }
+      .btn-submit {
+        background-color: #18231F;
+        color: #FCFBF7;
+        padding: 16px 36px;
+        font-size: 13px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        font-weight: 600;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .btn-submit:hover {
+        background-color: #B9784D;
+      }
+    </style>
+  </head>
+  <body>
+    <header style="background: #18231F; padding: 20px 32px; display: flex; justify-content: space-between; align-items: center;">
+      <a href="/" style="font-family: 'Cinzel', serif; font-size: 20px; letter-spacing: 0.18em; color: #FCFBF7; text-decoration: none; font-weight: 600;">AURA BOTANICA</a>
+      <nav style="display: flex; gap: 24px;">
+        <a href="/" style="color: #FCFBF7; text-decoration: none; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;">Home</a>
+        <a href="/collections/all" style="color: #FCFBF7; text-decoration: none; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;">Formulations</a>
+        <a href="/cart" style="color: #FCFBF7; text-decoration: none; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;">Cart</a>
+      </nav>
+    </header>
+
+    <div class="page-header">
+      <span class="page-subtitle">Concierge & Inquiries</span>
+      <h1 class="page-title">Connect with Our Botanical Alchemists</h1>
+      <p class="page-desc">Have a question regarding formulation ingredients, customized ritual pairings, or order status? We are here to assist.</p>
+    </div>
+
+    <div class="contact-wrap">
+      <form onsubmit="event.preventDefault(); alert('Thank you. Our concierge team will reply within 24 hours.');">
+        <div class="form-group">
+          <label class="form-label" for="c-name">Full Name</label>
+          <input type="text" id="c-name" class="form-input" required placeholder="Elena Rostova">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="c-email">Email Address</label>
+          <input type="email" id="c-email" class="form-input" required placeholder="elena@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="c-topic">Inquiry Type</label>
+          <select id="c-topic" class="form-input">
+            <option>Formulation Consultation & Regimen Advice</option>
+            <option>Order Inquiries & Carbon-Neutral Shipping</option>
+            <option>Press & Editorial Inquiries</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="c-msg">Your Message</label>
+          <textarea id="c-msg" class="form-textarea" rows="5" required placeholder="Describe your skincare goals or inquiry..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Dispatch Message &rarr;</button>
+      </form>
+    </div>
+
+    <footer style="background: #18231F; color: #A3B2A7; padding: 32px; text-align: center; font-size: 12px; letter-spacing: 0.08em;">
+      &copy; 2026 AURA BOTANICA &bull; Pure Botanical Alchemy &bull; All Rights Reserved.
+    </footer>
+  </body>
+</html>
+

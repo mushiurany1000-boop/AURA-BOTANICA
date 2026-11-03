@@ -1,0 +1,27 @@
+{
+  "name": "aura-botanica-skincare-theme",
+  "version": "1.0.0",
+  "description": "Modern Luxury Skincare Shopify Online Store 2.0 Theme",
+  "main": "dev-server.js",
+  "scripts": {
+    "dev": "node dev-server.js",
+    "start": "node dev-server.js",
+    "package": "node package-theme.js",
+    "test": "node scripts/validate-theme.js && node scripts/test-phase6-responsive.js && node scripts/test-shopping-flows.js",
+    "shopify:dev": "shopify theme dev",
+    "shopify:push": "shopify theme push",
+    "shopify:pull": "shopify theme pull",
+    "shopify:check": "shopify theme check"
+  },
+  "keywords": [
+    "shopify",
+    "shopify-theme",
+    "skincare",
+    "beauty",
+    "cosmetics",
+    "online-store-2.0",
+    "liquid"
+  ],
+  "author": "Antigravity Creative",
+  "license": "MIT"
+}

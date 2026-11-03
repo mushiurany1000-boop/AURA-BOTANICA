@@ -1,0 +1,62 @@
+[
+  {
+    "id": "101",
+    "title": "Bio-Ferment Barrier Glow Serum",
+    "handle": "bio-ferment-barrier-glow-serum",
+    "type": "Active Serum",
+    "category": "serum",
+    "price": 68,
+    "compare_at_price": 82,
+    "available": true,
+    "sku": "AB-SER-001",
+    "inventory_quantity": 42,
+    "actives": "10% Niacinamide, Hyaluronic, Zinc PCA",
+    "description": "A concentrated biomimetic elixir formulated with clinical Niacinamide, 5 biomimetic Ceramides, and sustainably fermented Galactomyces to replenish weakened lipid barriers.",
+    "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "102",
+    "title": "Deep Lipid Moisture Cloud Cream",
+    "handle": "deep-lipid-moisture-cloud-cream",
+    "type": "Barrier Cream",
+    "category": "cream",
+    "price": 74,
+    "compare_at_price": 90,
+    "available": true,
+    "sku": "AB-CRM-002",
+    "inventory_quantity": 38,
+    "actives": "5 Ceramides, Plant Squalane, Peptides",
+    "description": "Rich botanical whipped velvet cream infused with skin-identical lipids to seal in multi-depth moisture and shield from environmental stressors.",
+    "image": "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "103",
+    "title": "Gentle Camellia Cleansing Balm",
+    "handle": "gentle-camellia-cleansing-balm",
+    "type": "Melt Cleanser",
+    "category": "cleanser",
+    "price": 46,
+    "compare_at_price": null,
+    "available": true,
+    "sku": "AB-CLN-003",
+    "inventory_quantity": 55,
+    "actives": "Camellia Seed, Oat Lipids, Blue Tansy",
+    "description": "Silk-to-milk balm that gently dissolves daily pollutants, SPF, and makeup without disrupting delicate acid mantles.",
+    "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "104",
+    "title": "Golden Bakuchiol Midnight Nectar",
+    "handle": "golden-bakuchiol-midnight-nectar",
+    "type": "Cellular Oil",
+    "category": "oil",
+    "price": 78,
+    "compare_at_price": 95,
+    "available": true,
+    "sku": "AB-OIL-004",
+    "inventory_quantity": 29,
+    "actives": "2% Bakuchiol, Rosehip Bio-Retinol",
+    "description": "Natural plant-based alternative to retinol that accelerates overnight cellular regeneration without photo-sensitivity or irritation.",
+    "image": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=600&q=80"
+  }
+]

@@ -1,0 +1,224 @@
+[
+  {
+    "id": "ord_1793617172265",
+    "order_number": "AB-6460",
+    "created_at": "2026-11-02T10:59:32.265Z",
+    "financial_status": "paid",
+    "fulfillment_status": "unfulfilled",
+    "total_price": "68.00",
+    "currency": "USD",
+    "customer": {
+      "name": "Cullen Rush",
+      "email": "fosij@mailinator.com"
+    },
+    "line_items": [
+      {
+        "title": "Bio-Ferment Barrier Glow Serum",
+        "quantity": 1,
+        "price": "68.00"
+      }
+    ]
+  },
+  {
+    "id": "ord_1793614677229",
+    "order_number": "AB-3329",
+    "created_at": "2026-11-02T10:17:57.229Z",
+    "financial_status": "paid",
+    "fulfillment_status": "unfulfilled",
+    "total_price": "216.00",
+    "currency": "USD",
+    "customer": {
+      "name": "Elena Rostova",
+      "email": "elena@botanicals.com"
+    },
+    "line_items": [
+      {
+        "title": "Bio-Ferment Barrier Glow Serum",
+        "quantity": 1,
+        "price": "68.00"
+      },
+      {
+        "title": "Deep Lipid Moisture Cloud Cream",
+        "quantity": 2,
+        "price": "74.00"
+      }
+    ]
+  },
+  {
+    "id": "AB-1092",
+    "order_number": 1092,
+    "created_at": "2026-11-02T09:15:00Z",
+    "financial_status": "paid",
+    "fulfillment_status": "unfulfilled",
+    "customer": {
+      "name": "Elena Rostova",
+      "email": "e****a@example.com",
+      "city": "San Francisco, CA"
+    },
+    "items": [
+      {
+        "id": "101",
+        "title": "Bio-Ferment Barrier Glow Serum",
+        "quantity": 1,
+        "price": 68,
+        "sku": "AB-SER-001"
+      },
+      {
+        "id": "102",
+        "title": "Deep Lipid Moisture Cloud Cream",
+        "quantity": 1,
+        "price": 74,
+        "sku": "AB-CRM-002"
+      }
+    ],
+    "subtotal": 142,
+    "shipping": 0,
+    "tax": 11.72,
+    "total": 153.72,
+    "currency": "USD"
+  },
+  {
+    "id": "AB-1091",
+    "order_number": 1091,
+    "created_at": "2026-11-01T16:42:00Z",
+    "financial_status": "paid",
+    "fulfillment_status": "fulfilled",
+    "customer": {
+      "name": "Sophia Chen",
+      "email": "s****n@example.com",
+      "city": "Seattle, WA"
+    },
+    "items": [
+      {
+        "id": "104",
+        "title": "Golden Bakuchiol Midnight Nectar",
+        "quantity": 1,
+        "price": 78,
+        "sku": "AB-OIL-004"
+      }
+    ],
+    "subtotal": 78,
+    "shipping": 0,
+    "tax": 6.44,
+    "total": 84.44,
+    "currency": "USD"
+  },
+  {
+    "id": "AB-1090",
+    "order_number": 1090,
+    "created_at": "2026-10-31T11:20:00Z",
+    "financial_status": "paid",
+    "fulfillment_status": "fulfilled",
+    "customer": {
+      "name": "Camille Laurent",
+      "email": "c****t@example.com",
+      "city": "New York, NY"
+    },
+    "items": [
+      {
+        "id": "103",
+        "title": "Gentle Camellia Cleansing Balm",
+        "quantity": 2,
+        "price": 46,
+        "sku": "AB-CLN-003"
+      },
+      {
+        "id": "101",
+        "title": "Bio-Ferment Barrier Glow Serum",
+        "quantity": 1,
+        "price": 68,
+        "sku": "AB-SER-001"
+      }
+    ],
+    "subtotal": 160,
+    "shipping": 0,
+    "tax": 14.2,
+    "total": 174.2,
+    "currency": "USD"
+  },
+  {
+    "id": "AB-1089",
+    "order_number": 1089,
+    "created_at": "2026-10-29T14:05:00Z",
+    "financial_status": "paid",
+    "fulfillment_status": "fulfilled",
+    "customer": {
+      "name": "Marcus Vance",
+      "email": "m****e@example.com",
+      "city": "Austin, TX"
+    },
+    "items": [
+      {
+        "id": "102",
+        "title": "Deep Lipid Moisture Cloud Cream",
+        "quantity": 1,
+        "price": 74,
+        "sku": "AB-CRM-002"
+      }
+    ],
+    "subtotal": 74,
+    "shipping": 8,
+    "tax": 6.11,
+    "total": 88.11,
+    "currency": "USD"
+  },
+  {
+    "id": "AB-1088",
+    "order_number": 1088,
+    "created_at": "2026-10-27T18:30:00Z",
+    "financial_status": "paid",
+    "fulfillment_status": "unfulfilled",
+    "customer": {
+      "name": "Aria Montgomery",
+      "email": "a****y@example.com",
+      "city": "Portland, OR"
+    },
+    "items": [
+      {
+        "id": "101",
+        "title": "Bio-Ferment Barrier Glow Serum",
+        "quantity": 2,
+        "price": 68,
+        "sku": "AB-SER-001"
+      },
+      {
+        "id": "104",
+        "title": "Golden Bakuchiol Midnight Nectar",
+        "quantity": 1,
+        "price": 78,
+        "sku": "AB-OIL-004"
+      }
+    ],
+    "subtotal": 214,
+    "shipping": 0,
+    "tax": 17.65,
+    "total": 231.65,
+    "currency": "USD"
+  },
+  {
+    "id": "AB-1087",
+    "order_number": 1087,
+    "created_at": "2026-10-25T12:10:00Z",
+    "financial_status": "paid",
+    "fulfillment_status": "fulfilled",
+    "customer": {
+      "name": "Julian Thorne",
+      "email": "j****e@example.com",
+      "city": "Chicago, IL"
+    },
+    "items": [
+      {
+        "id": "103",
+        "title": "Gentle Camellia Cleansing Balm",
+        "quantity": 1,
+        "price": 46,
+        "sku": "AB-CLN-003"
+      }
+    ],
+    "subtotal": 46,
+    "shipping": 8,
+    "tax": 4.14,
+    "total": 58.14,
+    "currency": "USD"
+  }
+]

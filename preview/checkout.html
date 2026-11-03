@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout — AURA BOTANICA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/theme.css?v=2.1.0">
+    <style>
+      body {
+        background-color: #FAF8F5;
+        color: #1C2421;
+        font-family: var(--font-body);
+      }
+      .checkout-banner {
+        background: #17211D;
+        color: #E2BFA3;
+        font-size: 11px;
+        padding: 8px 24px;
+        text-align: center;
+        letter-spacing: 0.05em;
+      }
+      .checkout-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        min-height: 100vh;
+      }
+      @media (min-width: 992px) {
+        .checkout-layout {
+          grid-template-columns: 1.15fr 0.85fr;
+        }
+      }
+      .checkout-main {
+        padding: 40px 24px 80px;
+        max-width: 650px;
+        margin-left: auto;
+        width: 100%;
+      }
+      .checkout-sidebar {
+        background: #F4EFEA;
+        border-left: 1px solid var(--color-border);
+        padding: 40px 24px 80px;
+        width: 100%;
+      }
+      .checkout-sidebar__inner {
+        max-width: 480px;
+        margin-right: auto;
+      }
+      .checkout-header {
+        margin-bottom: 32px;
+      }
+      .checkout-logo {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        letter-spacing: 0.18em;
+        text-decoration: none;
+        color: var(--color-text-primary);
+        font-weight: 600;
+        display: inline-block;
+      }
+      .breadcrumb {
+        font-size: 0.78rem;
+        color: var(--color-text-secondary);
+        margin-top: 10px;
+      }
+      .breadcrumb a {
+        color: var(--color-accent);
+        text-decoration: underline;
+      }
+      .checkout-section {
+        margin-bottom: 32px;
+      }
+      .checkout-section-title {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .form-full {
+        grid-column: 1 / -1;
+      }
+      .input-field {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        background: #FFFFFF;
+        font-family: inherit;
+        font-size: 0.88rem;
+        transition: border-color 0.2s;
+      }
+      .input-field:focus {
+        border-color: var(--color-accent);
+        outline: none;
+      }
+      .express-checkout-box {
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        padding: 18px;
+        background: #FFFFFF;
+        text-align: center;
+        margin-bottom: 24px;
+      }
+      .express-btns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 12px;
+      }
+      .express-btn {
+        padding: 10px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.82rem;
+        cursor: pointer;
+        border: 1px solid transparent;
+      }
+      .btn-shoppay { background: #5A31F4; color: #FFF; }
+      .btn-gpay { background: #000; color: #FFF; }
+      .btn-apple { background: #000; color: #FFF; }
+      .divider-line {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin: 24px 0;
+        color: var(--color-text-light);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .divider-line::before, .divider-line::after {
+        content: '';
+        flex: 1;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .divider-line::before { margin-right: 12px; }
+      .divider-line::after { margin-left: 12px; }
+      .summary-item-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .summary-thumb {
+        position: relative;
+        width: 64px;
+        height: 64px;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid var(--color-border);
+        background: #FFF;
+        flex-shrink: 0;
+      }
+      .summary-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .summary-qty-bubble {
+        position: absolute;
+        top: -6px;
+        right: -6px;
+        background: var(--color-accent);
+        color: #FFF;
+        font-size: 0.68rem;
+        font-weight: 700;
+        min-width: 18px;
+        height: 18px;
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .summary-item-info {
+        flex: 1;
+      }
+      .summary-item-title {
+        font-size: 0.88rem;
+        font-weight: 600;
+        line-height: 1.25;
+      }
+      .summary-item-variant {
+        font-size: 0.75rem;
+        color: var(--color-text-secondary);
+        margin-top: 2px;
+      }
+      .summary-item-price {
+        font-size: 0.9rem;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Simulation Notification Banner -->
+    <div class="checkout-banner">
+      🌿 <strong>SHOPIFY OS 2.0 CHECKOUT FLOW</strong> — In production, customers are securely routed to <code>https://{your-store}.myshopify.com/checkout</code>.
+    </div>
+
+    <div class="checkout-layout">
+      <!-- Main Checkout Column -->
+      <main class="checkout-main">
+        <header class="checkout-header">
+          <a href="/" class="checkout-logo">AURA BOTANICA</a>
+          <div class="breadcrumb">
+            <a href="/cart">Ritual Bag</a> &rsaquo; <strong>Information & Shipping</strong> &rsaquo; Payment
+          </div>
+        </header>
+
+        <div id="CheckoutFormSection">
+          <!-- Express Checkout -->
+          <div class="express-checkout-box">
+            <span style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-secondary);">Express Botanical Checkout</span>
+            <div class="express-btns">
+              <button type="button" class="express-btn btn-shoppay" onclick="window.fillDemoAddress()">Shop Pay</button>
+              <button type="button" class="express-btn btn-apple" onclick="window.fillDemoAddress()"> Pay</button>
+              <button type="button" class="express-btn btn-gpay" onclick="window.fillDemoAddress()">G Pay</button>
+            </div>
+          </div>
+
+          <div class="divider-line">Or continue with standard checkout</div>
+
+          <form id="CheckoutForm" onsubmit="window.handleCheckoutSubmit(event)">
+            <!-- Contact Information -->
+            <div class="checkout-section">
+              <h2 class="checkout-section-title">Contact Information</h2>
+              <div class="form-grid">
+                <div class="form-full">
+                  <input type="email" id="CustomerEmail" required class="input-field" placeholder="Email Address for Order Confirmation">
+                </div>
+                <div class="form-full">
+                  <input type="tel" id="CustomerPhone" class="input-field" placeholder="Mobile Phone (for delivery SMS updates)">
+                </div>
+              </div>
+            </div>
+
+            <!-- Shipping Address -->
+            <div class="checkout-section">
+              <h2 class="checkout-section-title">Shipping Address</h2>
+              <div class="form-grid">
+                <div>
+                  <input type="text" id="FirstName" required class="input-field" placeholder="First Name">
+                </div>
+                <div>
+                  <input type="text" id="LastName" required class="input-field" placeholder="Last Name">
+                </div>
+                <div class="form-full">
+                  <input type="text" id="Address1" required class="input-field" placeholder="Street Address, P.O. Box">
+                </div>
+                <div class="form-full">
+                  <input type="text" id="Address2" class="input-field" placeholder="Apartment, suite, unit (optional)">
+                </div>
+                <div>
+                  <input type="text" id="City" required class="input-field" placeholder="City">
+                </div>
+                <div>
+                  <input type="text" id="Zip" required class="input-field" placeholder="Postal / ZIP Code">
+                </div>
+              </div>
+            </div>
+
+            <!-- Shipping Method -->
+            <div class="checkout-section">
+              <h2 class="checkout-section-title">Shipping Method</h2>
+              <div style="border:1px solid var(--color-border);border-radius:8px;padding:16px;background:#FFF;display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <div style="font-weight:600;font-size:0.88rem;">Complimentary Carbon-Neutral Express Courier</div>
+                  <div style="font-size:0.75rem;color:var(--color-text-secondary);margin-top:2px;">Estimated Delivery: 2-3 Business Days</div>
+                </div>
+                <div style="font-weight:700;color:#2E7D32;font-size:0.88rem;">FREE</div>
+              </div>
+            </div>
+
+            <!-- Payment -->
+            <div class="checkout-section">
+              <h2 class="checkout-section-title">Payment Method</h2>
+              <div style="border:1px solid var(--color-border);border-radius:8px;padding:16px;background:#FFF;">
+                <div style="font-size:0.85rem;font-weight:600;margin-bottom:12px;">Credit Card (Encrypted via SSL)</div>
+                <div class="form-grid">
+                  <div class="form-full">
+                    <input type="text" id="CardNum" required class="input-field" placeholder="Card Number (e.g. 4242 •••• •••• 4242)" value="•••• •••• •••• 4242">
+                  </div>
+                  <div>
+                    <input type="text" id="CardExp" required class="input-field" placeholder="MM / YY" value="12/28">
+                  </div>
+                  <div>
+                    <input type="text" id="CardCvv" required class="input-field" placeholder="Security Code" value="321">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" id="CompleteOrderBtn" class="button button--primary button--full button--large" style="padding:18px;font-size:1.05rem;background:#18231F;color:#FAF8F5;">
+              Complete Ritual Order &rarr;
+            </button>
+          </form>
+        </div>
+
+        <!-- Success Screen (Hidden by default) -->
+        <div id="OrderSuccessSection" style="display:none;text-align:center;padding:40px 20px;">
+          <div style="font-size:3rem;margin-bottom:12px;">🌿</div>
+          <h2 style="font-family:var(--font-heading);font-size:2.4rem;color:#2E7D32;margin-bottom:8px;">Ritual Order Confirmed!</h2>
+          <p style="font-size:1rem;color:var(--color-text-secondary);margin-bottom:24px;" id="SuccessMsg">Thank you for your order.</p>
+          <div style="background:#FFF;border:1px solid var(--color-border);border-radius:12px;padding:24px;max-width:440px;margin:0 auto 30px;text-align:left;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:0.9rem;">
+              <span>Order Number:</span>
+              <strong id="SuccessOrderNum">AB-9421</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:0.9rem;">
+              <span>Estimated Delivery:</span>
+              <strong>Within 48-72 Hours</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:0.9rem;">
+              <span>Carbon Offset:</span>
+              <strong style="color:#2E7D32;">100% Neutralized</strong>
+            </div>
+          </div>
+          <a href="/" class="button button--primary button--large" style="padding:14px 32px;">Return to Storefront</a>
+        </div>
+      </main>
+
+      <!-- Sidebar Order Summary -->
+      <aside class="checkout-sidebar">
+        <div class="checkout-sidebar__inner">
+          <h3 style="font-family:var(--font-heading);font-size:1.4rem;margin-bottom:20px;">Order Summary</h3>
+          <div id="CheckoutItemsList">
+            <!-- Loaded dynamically from /cart.js -->
+          </div>
+
+          <div style="border-top:1px solid var(--color-border);padding-top:20px;margin-top:20px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:10px;font-size:0.9rem;">
+              <span style="color:var(--color-text-secondary);">Subtotal</span>
+              <span id="CheckoutSubtotal" style="font-weight:600;">$0.00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:10px;font-size:0.9rem;">
+              <span style="color:var(--color-text-secondary);">Shipping</span>
+              <span style="color:#2E7D32;font-weight:600;">Complimentary</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:10px;font-size:0.9rem;">
+              <span style="color:var(--color-text-secondary);">Estimated Taxes</span>
+              <span id="CheckoutTaxes" style="font-weight:600;">$0.00</span>
+            </div>
+            <div style="border-top:1px solid var(--color-border);padding-top:16px;margin-top:16px;display:flex;justify-content:space-between;font-size:1.25rem;font-weight:700;">
+              <span>Total Due</span>
+              <span id="CheckoutGrandTotal">$0.00</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script>
+      async function loadCheckoutData() {
+        let loaded = false;
+        try {
+          const res = await fetch('/cart.js');
+          if (res.ok) {
+            const cart = await res.json();
+            if (cart && cart.items && cart.items.length > 0) {
+              renderSummary(cart);
+              loaded = true;
+            }
+          }
+        } catch (e) {
+          console.error('Error loading cart for checkout:', e);
+        }
+
+        if (!loaded) {
+          try {
+            const stored = JSON.parse(localStorage.getItem('aura_cart'));
+            if (stored && Array.isArray(stored.items) && stored.items.length > 0) {
+              renderSummary({
+                total_price: stored.totalPrice,
+                items: stored.items
+              });
+              loaded = true;
+            }
+          } catch (err) {}
+        }
+
+        if (!loaded) {
+          renderSummary({
+            total_price: 6800,
+            items: [
+              {
+                id: 101,
+                title: 'Bio-Ferment Barrier Glow Serum',
+                price: 6800,
+                quantity: 1,
+                image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80',
+                options_with_values: [{ name: 'Size', value: '50ml Standard Ritual' }]
+              }
+            ]
+          });
+        }
+      }
+
+      function renderSummary(cart) {
+        const list = document.getElementById('CheckoutItemsList');
+        if (!list) return;
+
+        if (!cart.items || cart.items.length === 0) {
+          list.innerHTML = '<p style="color:var(--color-text-secondary);font-size:0.88rem;">Your ritual bag is empty.</p>';
+          document.getElementById('CheckoutSubtotal').textContent = '$0.00';
+          document.getElementById('CheckoutGrandTotal').textContent = '$0.00';
+          return;
+        }
+
+        list.innerHTML = cart.items.map(item => `
+          <div class="summary-item-row">
+            <div class="summary-thumb">
+              <img src="${(item.featured_image && item.featured_image.url) || item.image}" alt="${item.title}">
+              <span class="summary-qty-bubble">${item.quantity}</span>
+            </div>
+            <div class="summary-item-info">
+              <div class="summary-item-title">${item.title}</div>
+              <div class="summary-item-variant">${(item.options_with_values && item.options_with_values[0] && item.options_with_values[0].value) || 'Ritual Formulation'}</div>
+            </div>
+            <div class="summary-item-price">$${((item.price * item.quantity) / 100).toFixed(2)}</div>
+          </div>
+        `).join('');
+
+        const subtotal = (cart.total_price / 100).toFixed(2);
+        document.getElementById('CheckoutSubtotal').textContent = `$${subtotal}`;
+        document.getElementById('CheckoutGrandTotal').textContent = `$${subtotal}`;
+      }
+
+      window.fillDemoAddress = function() {
+        document.getElementById('CustomerEmail').value = 'elena.rostova@botanicals.com';
+        document.getElementById('CustomerPhone').value = '+1 (415) 890-3421';
+        document.getElementById('FirstName').value = 'Elena';
+        document.getElementById('LastName').value = 'Rostova';
+        document.getElementById('Address1').value = '742 Evergreen Terrace';
+        document.getElementById('City').value = 'San Francisco';
+        document.getElementById('Zip').value = '94102';
+      };
+
+      window.handleCheckoutSubmit = async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('CompleteOrderBtn');
+        btn.disabled = true;
+        btn.textContent = 'Processing Botanical Authorization...';
+
+        const name = `${document.getElementById('FirstName').value} ${document.getElementById('LastName').value}`;
+        const email = document.getElementById('CustomerEmail').value;
+
+        try {
+          const res = await fetch('/api/checkout/complete', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email })
+          });
+          const data = await res.json();
+          if (data.success) {
+            try {
+              localStorage.removeItem('aura_cart');
+            } catch (e) {}
+            document.getElementById('CheckoutFormSection').style.display = 'none';
+            document.getElementById('OrderSuccessSection').style.display = 'block';
+            document.getElementById('SuccessOrderNum').textContent = data.order.order_number;
+            document.getElementById('SuccessMsg').textContent = `Confirmation email sent to ${email}. Your fresh botanical batch is being packaged with organic botanical wool.`;
+            document.getElementById('CheckoutItemsList').innerHTML = '<p style="color:var(--color-text-secondary);font-size:0.88rem;">Order processed successfully.</p>';
+          }
+        } catch (err) {
+          alert('Error placing order: ' + err.message);
+          btn.disabled = false;
+          btn.textContent = 'Complete Ritual Order →';
+        }
+      };
+
+      document.addEventListener('DOMContentLoaded', loadCheckoutData);
+    </script>
+  </body>
+</html>
+

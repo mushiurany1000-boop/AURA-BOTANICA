@@ -1,0 +1,29 @@
+
+/* AURA BOTANICA — Luxury Botanical Skincare Custom Design Overrides */
+:root {
+  --color-aura-ivory: #FCFBF7;
+  --color-aura-forest: #18231F;
+  --color-aura-copper: #B9784D;
+  --color-aura-sand: #D9C9B8;
+  --font-heading-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.m-header__logo-text {
+  font-family: var(--font-heading-family), 'Cormorant Garamond', Georgia, serif !important;
+  letter-spacing: 0.18em !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  color: var(--color-aura-forest) !important;
+}
+
+.m-announcement-bar {
+  background-color: var(--color-aura-forest) !important;
+  color: var(--color-aura-ivory) !important;
+  font-size: 13px !important;
+  letter-spacing: 0.05em !important;
+}
+
+.m-announcement-bar a {
+  color: #E2B293 !important;
+  text-decoration: underline !important;
+}

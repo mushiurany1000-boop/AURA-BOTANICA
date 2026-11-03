@@ -1,0 +1,2222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AURA BOTANICA — Merchant Admin & Theme Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --color-bg: #F8F6F2;
+        --color-sidebar: #16201C;
+        --color-card: #FFFFFF;
+        --color-text: #1C2421;
+        --color-text-muted: #64736C;
+        --color-accent: #B87C52;
+        --color-accent-hover: #9E653E;
+        --color-sage: #4D6459;
+        --color-sage-light: #EBF1ED;
+        --color-border: #E8E2D8;
+        --color-success: #2E7D32;
+        --color-warning: #ED6C02;
+        --radius: 10px;
+        --font-serif: 'Cormorant Garamond', Georgia, serif;
+        --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: var(--font-sans);
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        display: flex;
+        min-height: 100vh;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        width: 280px;
+        background-color: var(--color-sidebar);
+        color: #E2DFD8;
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        z-index: 100;
+      }
+
+      .sidebar-brand {
+        padding: 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .brand-title {
+        font-family: var(--font-serif);
+        font-size: 1.6rem;
+        letter-spacing: 0.15em;
+        font-weight: 600;
+        color: #FFFFFF;
+      }
+
+      .brand-tag {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--color-accent);
+        font-weight: 700;
+        margin-top: 2px;
+      }
+
+      .sidebar-nav {
+        padding: 18px 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        flex-grow: 1;
+        overflow-y: auto;
+      }
+
+      .nav-group-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #718079;
+        padding: 10px 14px 4px;
+        font-weight: 700;
+      }
+
+      .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 11px 14px;
+        border-radius: 8px;
+        color: #A0ABA4;
+        text-decoration: none;
+        font-size: 0.86rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        width: 100%;
+        text-align: left;
+      }
+
+      .nav-link:hover, .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #FFFFFF;
+      }
+
+      .nav-link.active {
+        background-color: var(--color-accent);
+        color: #FFFFFF;
+      }
+
+      .nav-icon {
+        font-size: 1.15rem;
+        width: 24px;
+        text-align: center;
+      }
+
+      .nav-badge {
+        margin-left: auto;
+        font-size: 0.72rem;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 2px 7px;
+        border-radius: 9999px;
+        color: #fff;
+      }
+
+      .sidebar-footer {
+        padding: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .btn-storefront {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background-color: rgba(255, 255, 255, 0.08);
+        color: #FFFFFF;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        transition: all 0.2s;
+      }
+
+      .btn-storefront:hover {
+        background-color: rgba(255, 255, 255, 0.16);
+      }
+
+      .btn-download-side {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+        color: #FFFFFF;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .btn-logout {
+        color: #E57373;
+        background: none;
+        border: none;
+        padding: 6px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: underline;
+      }
+
+      /* Main Content Area */
+      .main-content {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 32px 40px;
+      }
+
+      .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .page-title {
+        font-family: var(--font-serif);
+        font-size: 2.1rem;
+        font-weight: 600;
+      }
+
+      .top-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .btn-dl-nav {
+        background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+        color: #FFFFFF;
+        padding: 9px 18px;
+        border-radius: 9999px;
+        font-weight: 600;
+        font-size: 0.84rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 14px rgba(46, 125, 50, 0.25);
+      }
+
+      /* Panel Cards */
+      .panel-card {
+        background-color: var(--color-card);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        padding: 28px;
+        margin-bottom: 24px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      }
+
+      .panel-title {
+        font-size: 1.35rem;
+        margin-bottom: 6px;
+        font-family: var(--font-serif);
+      }
+
+      .panel-desc {
+        font-size: 0.85rem;
+        color: var(--color-text-muted);
+        margin-bottom: 20px;
+      }
+
+      /* Tab Content Sections */
+      .tab-section { display: none; }
+      .tab-section.active { display: block; }
+
+      /* Metric KPI Grid */
+      .kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-bottom: 28px;
+      }
+
+      .kpi-card {
+        background: var(--color-card);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .kpi-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: var(--color-accent);
+      }
+
+      .kpi-label {
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--color-text-muted);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .kpi-value {
+        font-family: var(--font-serif);
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--color-text);
+        line-height: 1.1;
+      }
+
+      .kpi-subtext {
+        font-size: 0.78rem;
+        color: var(--color-sage);
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      /* Quick Actions Bar */
+      .quick-actions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .action-tile {
+        background: #FAF8F5;
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        padding: 16px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: all 0.2s;
+        text-align: left;
+      }
+
+      .action-tile:hover {
+        background: #FFFFFF;
+        border-color: var(--color-accent);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(184, 124, 82, 0.12);
+      }
+
+      .action-tile-icon {
+        font-size: 1.5rem;
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        background: #EAE3D8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .action-tile-title {
+        font-size: 0.86rem;
+        font-weight: 600;
+        color: var(--color-text);
+      }
+
+      .action-tile-desc {
+        font-size: 0.72rem;
+        color: var(--color-text-muted);
+      }
+
+      /* Tables */
+      .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      table.admin-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 0.86rem;
+      }
+
+      table.admin-table th {
+        background-color: #FAF8F5;
+        padding: 14px 16px;
+        font-weight: 600;
+        color: var(--color-text);
+        border-bottom: 2px solid var(--color-border);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      table.admin-table td {
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--color-border);
+        vertical-align: middle;
+      }
+
+      table.admin-table tbody tr:hover {
+        background-color: #FAF8F5;
+      }
+
+      /* Badges */
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 4px 10px;
+        border-radius: 9999px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .badge-success { background: #E8F5E9; color: #2E7D32; }
+      .badge-warning { background: #FFF3E0; color: #E65100; }
+      .badge-info { background: #E3F2FD; color: #1565C0; }
+      .badge-neutral { background: #ECEFF1; color: #455A64; }
+
+      /* Filter Bars */
+      .filter-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .search-box {
+        position: relative;
+        min-width: 280px;
+      }
+
+      .search-box input {
+        width: 100%;
+        padding: 9px 14px 9px 36px;
+        border-radius: 9999px;
+        border: 1px solid var(--color-border);
+        background: #FAF8F5;
+        font-size: 0.85rem;
+      }
+
+      .search-box-icon {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+      }
+
+      .filter-pills {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .filter-pill {
+        background: #FAF8F5;
+        border: 1px solid var(--color-border);
+        padding: 7px 14px;
+        border-radius: 9999px;
+        font-size: 0.78rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.15s;
+        color: var(--color-text-muted);
+      }
+
+      .filter-pill.active, .filter-pill:hover {
+        background: var(--color-sage);
+        border-color: var(--color-sage);
+        color: #FFFFFF;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 22px;
+        border-radius: 9999px;
+        font-size: 0.86rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s;
+        text-decoration: none;
+      }
+
+      .btn-accent {
+        background-color: var(--color-accent);
+        color: #FFFFFF;
+      }
+
+      .btn-accent:hover {
+        background-color: var(--color-accent-hover);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 14px rgba(184, 124, 82, 0.25);
+      }
+
+      .btn-sm {
+        padding: 6px 14px;
+        font-size: 0.78rem;
+        border-radius: 6px;
+      }
+
+      .btn-danger {
+        background-color: #FFEBEE;
+        color: #C62828;
+      }
+
+      .btn-danger:hover {
+        background-color: #FFCDD2;
+      }
+
+      .btn-secondary {
+        background: #ECEFF1;
+        color: #37474F;
+      }
+
+      .btn-secondary:hover {
+        background: #CFD8DC;
+      }
+
+      /* Modals */
+      .modal-backdrop {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0, 0, 0, 0.45);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        padding: 20px;
+      }
+
+      .modal-backdrop.open { display: flex; }
+
+      .modal-dialog {
+        background: #FFFFFF;
+        border-radius: var(--radius);
+        max-width: 600px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 32px;
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.2);
+        position: relative;
+      }
+
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .modal-title {
+        font-family: var(--font-serif);
+        font-size: 1.45rem;
+      }
+
+      .modal-close {
+        background: transparent;
+        border: none;
+        font-size: 1.3rem;
+        cursor: pointer;
+        color: var(--color-text-muted);
+      }
+
+      /* Form inputs */
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 14px;
+      }
+
+      label {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--color-text);
+      }
+
+      .label-desc {
+        font-size: 0.74rem;
+        color: var(--color-text-muted);
+        font-weight: 400;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px 14px;
+        font-family: inherit;
+        font-size: 0.88rem;
+        border: 1px solid #D8CFC3;
+        border-radius: 6px;
+        background-color: #FAF8F5;
+        outline: none;
+      }
+
+      input:focus, textarea:focus, select:focus {
+        border-color: var(--color-accent);
+        background-color: #FFFFFF;
+        box-shadow: 0 0 0 3px rgba(184, 124, 82, 0.12);
+      }
+
+      /* Unsaved changes banner */
+      .unsaved-bar {
+        position: fixed;
+        bottom: 24px;
+        left: 310px;
+        right: 40px;
+        background: #1C2421;
+        color: #FFFFFF;
+        padding: 14px 24px;
+        border-radius: 9999px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 500;
+      }
+
+      .unsaved-bar.visible {
+        display: flex;
+        animation: slideUp 0.3s ease;
+      }
+
+      @keyframes slideUp {
+        from { transform: translateY(40px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+
+      /* Toast notification */
+      .toast-msg {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background-color: #1C2421;
+        color: #FFFFFF;
+        padding: 14px 24px;
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        display: none;
+        z-index: 9999;
+        font-size: 0.88rem;
+      }
+
+      /* Color swatches */
+      .color-picker-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+
+      .color-field {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background-color: #FAF8F5;
+        border: 1px solid var(--color-border);
+        padding: 8px 12px;
+        border-radius: 8px;
+      }
+
+      input[type="color"] {
+        -webkit-appearance: none;
+        border: none;
+        width: 38px;
+        height: 38px;
+        border-radius: 6px;
+        cursor: pointer;
+        background: transparent;
+      }
+
+      .color-info { display: flex; flex-direction: column; }
+      .color-label { font-size: 0.78rem; font-weight: 600; }
+      .color-hex { font-size: 0.72rem; color: var(--color-text-muted); font-family: monospace; }
+
+      .form-section-title {
+        font-family: var(--font-serif);
+        font-size: 1.15rem;
+        font-weight: 600;
+        padding-bottom: 8px;
+        margin: 28px 0 16px;
+        border-bottom: 2px solid var(--color-border);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* Step List for Tutorial */
+      .tutorial-card {
+        background: linear-gradient(135deg, #FAF8F5 0%, #F1EAE2 100%);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        padding: 32px;
+        margin-top: 24px;
+      }
+
+      .step-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .step-item {
+        background: #FFFFFF;
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        padding: 20px;
+        position: relative;
+      }
+
+      .step-num {
+        width: 30px;
+        height: 30px;
+        background-color: var(--color-sage);
+        color: #FFFFFF;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+      }
+
+      .step-item h4 {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+      }
+
+      .step-item p {
+        font-size: 0.82rem;
+        color: var(--color-text-muted);
+        line-height: 1.5;
+      }
+
+      /* --- Admin Responsive & Mobile Enhancements (Phase 6) --- */
+      .admin-mobile-header {
+        display: none;
+      }
+
+      .admin-sidebar-backdrop {
+        display: none;
+      }
+
+      .sidebar-close-btn {
+        display: none;
+      }
+
+      table.admin-table {
+        min-width: 660px;
+      }
+
+      @media (max-width: 900px) {
+        body {
+          flex-direction: column;
+        }
+
+        .admin-mobile-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background-color: var(--color-sidebar);
+          color: #FFFFFF;
+          padding: 12px 18px;
+          position: sticky;
+          top: 0;
+          z-index: 200;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .admin-hamburger {
+          background: transparent;
+          border: none;
+          color: #FFFFFF;
+          font-size: 1.4rem;
+          cursor: pointer;
+          padding: 4px 8px;
+          border-radius: 4px;
+        }
+
+        .admin-mobile-store-link {
+          color: #FFFFFF;
+          font-size: 1.15rem;
+          text-decoration: none;
+          padding: 4px 8px;
+        }
+
+        .admin-sidebar-backdrop {
+          position: fixed;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: rgba(0, 0, 0, 0.55);
+          backdrop-filter: blur(2px);
+          z-index: 290;
+          display: none;
+        }
+
+        .admin-sidebar-backdrop.active {
+          display: block;
+        }
+
+        .sidebar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: 280px;
+          max-width: 85%;
+          z-index: 300;
+          transform: translateX(-100%);
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          box-shadow: 10px 0 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .sidebar.is-open {
+          transform: translateX(0);
+        }
+
+        .sidebar-brand {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .sidebar-close-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: transparent;
+          border: none;
+          color: #FFFFFF;
+          font-size: 1.4rem;
+          cursor: pointer;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+        }
+
+        .main-content {
+          padding: 20px 16px;
+          width: 100%;
+        }
+
+        .unsaved-bar {
+          left: 16px;
+          right: 16px;
+          bottom: 16px;
+          flex-direction: column;
+          gap: 10px;
+          border-radius: 12px;
+          align-items: stretch;
+          text-align: center;
+        }
+
+        .unsaved-bar > div:last-child {
+          display: flex;
+          justify-content: center;
+        }
+
+        .kpi-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .quick-actions-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .top-bar {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+
+        .page-title {
+          font-size: 1.7rem;
+        }
+
+        .top-actions {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .filter-toolbar {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .search-box {
+          width: 100%;
+          min-width: 0;
+        }
+
+        .modal-dialog {
+          padding: 20px 16px;
+        }
+      }
+
+      /* Tablet Breakpoint (541px to 900px) */
+      @media (min-width: 541px) and (max-width: 900px) {
+        .kpi-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .quick-actions-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Mobile Admin Top Bar (Visible on <= 900px) -->
+    <div class="admin-mobile-header">
+      <button type="button" class="admin-hamburger" onclick="toggleAdminSidebar()" aria-label="Open Navigation Menu">
+        <span>☰</span>
+      </button>
+      <div>
+        <span class="brand-title" style="font-size:1.25rem;">AURA BOTANICA</span>
+      </div>
+      <a href="/" target="_blank" class="admin-mobile-store-link" title="View Storefront">👁️</a>
+    </div>
+
+    <div class="admin-sidebar-backdrop" id="AdminSidebarBackdrop" onclick="closeAdminSidebar()"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="AdminSidebar">
+      <div class="sidebar-brand">
+        <div>
+          <div class="brand-title">AURA BOTANICA</div>
+          <div class="brand-tag">Theme Admin Portal</div>
+        </div>
+        <button type="button" class="sidebar-close-btn" onclick="closeAdminSidebar()" aria-label="Close Sidebar">&times;</button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-group-label">Core Management</div>
+        <button type="button" class="nav-link active" data-tab="tab-overview">
+          <span class="nav-icon">📊</span>
+          <span>Overview Dashboard</span>
+        </button>
+        <button type="button" class="nav-link" data-tab="tab-theme-all">
+          <span class="nav-icon">🎨</span>
+          <span>Live Theme Settings</span>
+        </button>
+        <button type="button" class="nav-link" data-tab="tab-products">
+          <span class="nav-icon">🌿</span>
+          <span>Skincare Products</span>
+          <span class="nav-badge" id="SideProductBadge">4</span>
+        </button>
+        <button type="button" class="nav-link" data-tab="tab-orders">
+          <span class="nav-icon">📋</span>
+          <span>Recent Orders</span>
+          <span class="nav-badge" id="SideOrderBadge">6</span>
+        </button>
+        <button type="button" class="nav-link" data-tab="tab-exporter">
+          <span class="nav-icon">📦</span>
+          <span>Shopify ZIP Exporter</span>
+        </button>
+
+        <div class="nav-group-label">Quick Customizer Jumps</div>
+        <button type="button" class="nav-link" onclick="jumpToFormSection('sec-branding')">
+          <span class="nav-icon">🏷️</span>
+          <span>Branding & Header</span>
+        </button>
+        <button type="button" class="nav-link" onclick="jumpToFormSection('sec-colors')">
+          <span class="nav-icon">🌈</span>
+          <span>Colors & Design</span>
+        </button>
+        <button type="button" class="nav-link" onclick="jumpToFormSection('sec-hero')">
+          <span class="nav-icon">✨</span>
+          <span>Hero Banner</span>
+        </button>
+        <button type="button" class="nav-link" onclick="jumpToFormSection('sec-routine')">
+          <span class="nav-icon">🌿</span>
+          <span>4-Step Skincare Ritual</span>
+        </button>
+        <button type="button" class="nav-link" onclick="jumpToFormSection('sec-ingredients')">
+          <span class="nav-icon">🧪</span>
+          <span>Clinical Ingredients</span>
+        </button>
+        <button type="button" class="nav-link" onclick="jumpToFormSection('sec-reviews')">
+          <span class="nav-icon">⭐</span>
+          <span>Customer Reviews</span>
+        </button>
+        <button type="button" class="nav-link" onclick="jumpToFormSection('sec-newsletter')">
+          <span class="nav-icon">💌</span>
+          <span>VIP Club & Cart</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/api/theme/download" class="btn-download-side">
+          <span>⬇️ Download Theme ZIP</span>
+        </a>
+        <a href="/" target="_blank" class="btn-storefront">
+          <span>👁️ View Live Storefront</span>
+        </a>
+        <button type="button" class="btn-logout" onclick="logoutAdmin()">Sign Out</button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <div class="top-bar">
+        <div>
+          <h1 class="page-title" id="PageHeading">Overview Dashboard</h1>
+          <p style="font-size:0.82rem;color:var(--color-text-muted);margin-top:2px;">
+            Aura Botanica Skincare Theme Architecture & Local Store Hub
+          </p>
+        </div>
+        <div class="top-actions">
+          <a href="/api/theme/download" class="btn-dl-nav">
+            <span>⬇️</span>
+            <span>Download Theme (.ZIP)</span>
+          </a>
+          <a href="/" target="_blank" class="btn" style="background:#fff;border:1px solid #DDD;padding:8px 16px;font-size:0.84rem;text-decoration:none;border-radius:9999px;">
+            👁️ Storefront View
+          </a>
+        </div>
+      </div>
+
+      <!-- TAB 1: OVERVIEW DASHBOARD -->
+      <section class="tab-section active" id="tab-overview">
+        <!-- Transparency & Scope Banner -->
+        <div class="scope-notice-banner" style="background:#FAF8F5;border:1px solid var(--color-border);border-left:4px solid var(--color-sage);border-radius:8px;padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--color-sage);font-weight:700;">Verified Reporting Source</div>
+            <div style="font-size:0.88rem;color:var(--color-text);font-weight:500;margin-top:2px;">
+              Data Source: <strong>Local Preview Store Database</strong> (<code style="background:#eee;padding:1px 5px;border-radius:4px;">data/orders.json</code>)
+            </div>
+            <div style="font-size:0.78rem;color:var(--color-text-muted);margin-top:2px;">
+              Reporting Period: <strong>Last 30 Days (Oct 1 – Nov 2, 2026)</strong> • Verified local simulation mode.
+            </div>
+          </div>
+          <div>
+            <span class="status-badge badge-success">🟢 Local Server Active</span>
+          </div>
+        </div>
+
+        <!-- KPI Metrics Grid -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <span class="kpi-label">Total Store Revenue</span>
+            <div class="kpi-value" id="kpiRevenue">$790.26</div>
+            <div class="kpi-subtext">
+              <span>📈</span>
+              <span id="kpiRevenueSub">Gross sales from verified orders</span>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Total Orders</span>
+            <div class="kpi-value" id="kpiOrders">6</div>
+            <div class="kpi-subtext">
+              <span id="kpiOrdersSub">2 awaiting fulfillment</span>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Average Order Value (AOV)</span>
+            <div class="kpi-value" id="kpiAOV">$131.71</div>
+            <div class="kpi-subtext">
+              <span>🌿</span>
+              <span>High basket skincare routine</span>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-label">Active Formulations</span>
+            <div class="kpi-value" id="kpiProducts">4</div>
+            <div class="kpi-subtext">
+              <span>✨</span>
+              <span>100% available in catalog</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Management Shortcuts -->
+        <div class="quick-actions-grid">
+          <div class="action-tile" onclick="openAddProductModal()">
+            <div class="action-tile-icon">➕</div>
+            <div>
+              <div class="action-tile-title">Add Formulation</div>
+              <div class="action-tile-desc">Create product in catalog</div>
+            </div>
+          </div>
+          <div class="action-tile" onclick="switchTab('tab-theme-all')">
+            <div class="action-tile-icon">🎨</div>
+            <div>
+              <div class="action-tile-title">Live Theme Settings</div>
+              <div class="action-tile-desc">Customize palette & sections</div>
+            </div>
+          </div>
+          <div class="action-tile" onclick="switchTab('tab-orders')">
+            <div class="action-tile-icon">📋</div>
+            <div>
+              <div class="action-tile-title">Fulfill Orders</div>
+              <div class="action-tile-desc">Inspect customer dispatches</div>
+            </div>
+          </div>
+          <div class="action-tile" onclick="switchTab('tab-exporter')">
+            <div class="action-tile-icon">📦</div>
+            <div>
+              <div class="action-tile-title">Export Shopify ZIP</div>
+              <div class="action-tile-desc">Pre-flight validation & bundle</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Orders Snapshot -->
+        <div class="panel-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+            <div>
+              <h2 class="panel-title" style="margin-bottom:2px;">Recent Store Orders</h2>
+              <p class="panel-desc" style="margin-bottom:0;">Latest purchases placed in Aura Botanica preview store.</p>
+            </div>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="switchTab('tab-orders')">
+              View All Orders &rarr;
+            </button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Order</th>
+                  <th>Date</th>
+                  <th>Customer</th>
+                  <th>Destination</th>
+                  <th>Total</th>
+                  <th>Payment</th>
+                  <th>Fulfillment</th>
+                </tr>
+              </thead>
+              <tbody id="OverviewOrdersBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: LIVE THEME SETTINGS & CONTENT CUSTOMIZER -->
+      <section class="tab-section" id="tab-theme-all">
+        <div class="scope-notice-banner" style="background:#FFF9E6;border:1px solid #FFE082;border-radius:8px;padding:16px 20px;margin-bottom:24px;display:flex;align-items:flex-start;gap:14px;">
+          <span style="font-size:1.5rem;line-height:1;">ℹ️</span>
+          <div style="font-size:0.85rem;line-height:1.5;color:#5D4037;">
+            <strong>Environment & Scope Transparency:</strong> You are configuring theme settings on your local development server. Saving updates <code>config/settings_data.json</code> and <code>shopify-theme/config/settings_data.json</code>, automatically rebaking your settings into <code>aura-skincare-theme.zip</code> for store deployment.
+            <br><span style="color:#8D6E63;font-size:0.78rem;">To update a remote live Shopify store, upload the freshly packaged ZIP file via Shopify Admin &rarr; Online Store &rarr; Themes &rarr; Add Theme &rarr; Upload zip file.</span>
+          </div>
+        </div>
+
+        <form id="FullThemeSettingsForm">
+          <div class="panel-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+              <div>
+                <h2 class="panel-title">Live Theme Settings & Content Customizer</h2>
+                <p class="panel-desc" style="margin-bottom: 0;">Customize typography, brand palette, section headings, and promotional settings.</p>
+              </div>
+              <div style="display: flex; gap: 10px;">
+                <button type="button" class="btn btn-secondary" id="ResetDefaultsBtn">🔄 Reset Defaults</button>
+                <button type="submit" class="btn btn-accent" id="SaveSettingsBtn">💾 Save All Changes</button>
+              </div>
+            </div>
+
+            <!-- SECTION 1: BRANDING & HEADER -->
+            <div id="sec-branding" class="form-section-title">
+              <span>🏷️</span> 1. Branding & Header Settings
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Brand / Logo Text</label>
+                <input type="text" id="logoText" value="AURA BOTANICA">
+                <span class="label-desc">Displays in the header and footer</span>
+              </div>
+              <div class="form-group">
+                <label>Brand Tagline</label>
+                <input type="text" id="brandTagline" value="Pure Botanical Alchemy">
+                <span class="label-desc">Small subtitle under brand name</span>
+              </div>
+              <div class="form-group" style="grid-column: 1 / -1;">
+                <label>Announcement Bar Message</label>
+                <input type="text" id="announcementText" value="Complimentary Botanical Cleanser Sample with all orders over $75 • Free Carbon-Neutral Shipping">
+              </div>
+            </div>
+
+            <!-- SECTION 2: COLOR PALETTE -->
+            <div id="sec-colors" class="form-section-title">
+              <span>🌈</span> 2. Luxury Skincare Color Palette
+            </div>
+            <div class="color-picker-grid">
+              <div class="color-field">
+                <input type="color" id="colorBgPrimary" value="#FAF8F5" onchange="document.getElementById('hexBgPrimary').textContent = this.value; markUnsaved();">
+                <div class="color-info">
+                  <span class="color-label">Primary Ivory Bg</span>
+                  <span class="color-hex" id="hexBgPrimary">#FAF8F5</span>
+                </div>
+              </div>
+              <div class="color-field">
+                <input type="color" id="colorBgSecondary" value="#F3EDE8" onchange="document.getElementById('hexBgSecondary').textContent = this.value; markUnsaved();">
+                <div class="color-info">
+                  <span class="color-label">Secondary Beige</span>
+                  <span class="color-hex" id="hexBgSecondary">#F3EDE8</span>
+                </div>
+              </div>
+              <div class="color-field">
+                <input type="color" id="colorAccent" value="#B8835A" onchange="document.getElementById('hexAccent').textContent = this.value; markUnsaved();">
+                <div class="color-info">
+                  <span class="color-label">Warm Copper Accent</span>
+                  <span class="color-hex" id="hexAccent">#B8835A</span>
+                </div>
+              </div>
+              <div class="color-field">
+                <input type="color" id="colorSage" value="#50655B" onchange="document.getElementById('hexSage').textContent = this.value; markUnsaved();">
+                <div class="color-info">
+                  <span class="color-label">Botanical Forest Sage</span>
+                  <span class="color-hex" id="hexSage">#50655B</span>
+                </div>
+              </div>
+              <div class="color-field">
+                <input type="color" id="colorText" value="#1C2421" onchange="document.getElementById('hexText').textContent = this.value; markUnsaved();">
+                <div class="color-info">
+                  <span class="color-label">Deep Charcoal Text</span>
+                  <span class="color-hex" id="hexText">#1C2421</span>
+                </div>
+              </div>
+              <div class="color-field">
+                <input type="color" id="colorBorder" value="#E8E2D8" onchange="document.getElementById('hexBorder').textContent = this.value; markUnsaved();">
+                <div class="color-info">
+                  <span class="color-label">Neutral Divider</span>
+                  <span class="color-hex" id="hexBorder">#E8E2D8</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Page Maximum Width (px)</label>
+                <input type="number" id="pageWidth" value="1300" onchange="markUnsaved()">
+              </div>
+              <div class="form-group">
+                <label>Button Border Radius (px)</label>
+                <input type="number" id="buttonRadius" value="9999" onchange="markUnsaved()">
+              </div>
+            </div>
+
+            <!-- SECTION 3: HERO BANNER -->
+            <div id="sec-hero" class="form-section-title">
+              <span>✨</span> 3. Editorial Skincare Hero Banner
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Eyebrow Badge Text</label>
+                <input type="text" id="heroBadge" value="CLINICAL BOTANICAL CELLULAR CARE" onchange="markUnsaved()">
+              </div>
+              <div class="form-group" style="grid-column: 1 / -1;">
+                <label>Main Headline</label>
+                <input type="text" id="heroHeading" value="Botanical Alchemy for Cellular Radiance" onchange="markUnsaved()">
+              </div>
+              <div class="form-group" style="grid-column: 1 / -1;">
+                <label>Supporting Subtitle</label>
+                <textarea id="heroSubheading" rows="2" onchange="markUnsaved()">Formulated with rare bio-fermented actives, cold-pressed seed lipids, and clinically proven adaptogens to heal weakened barriers and illuminate complexion.</textarea>
+              </div>
+              <div class="form-group">
+                <label>Primary Button Label</label>
+                <input type="text" id="heroBtn1" value="Explore the Collection" onchange="markUnsaved()">
+              </div>
+              <div class="form-group">
+                <label>Secondary Button Label</label>
+                <input type="text" id="heroBtn2" value="Our Clinical Proof" onchange="markUnsaved()">
+              </div>
+            </div>
+
+            <!-- SECTION 4: 4-STEP SKINCARE RITUAL -->
+            <div id="sec-routine" class="form-section-title">
+              <span>🌿</span> 4. 4-Step Skincare Ritual Section
+            </div>
+            <div class="form-grid">
+              <div class="form-group" style="grid-column: 1 / -1;">
+                <label>Ritual Section Heading</label>
+                <input type="text" id="routineHeading" value="The 4-Step Cellular Skin Ritual" onchange="markUnsaved()">
+              </div>
+            </div>
+
+            <!-- SECTION 5: CLINICAL INGREDIENTS -->
+            <div id="sec-ingredients" class="form-section-title">
+              <span>🧪</span> 5. Clinical Botanical Ingredients Spotlight
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Spotlight Heading</label>
+                <input type="text" id="ingHeading" value="Clinically Proven Botanical Actives" onchange="markUnsaved()">
+              </div>
+              <div class="form-group" style="grid-column: 1 / -1;">
+                <label>Spotlight Subheading</label>
+                <input type="text" id="ingSubheading" value="Every formulation is built upon concentrated bio-identical actives proven in independent dermatological clinical trials." onchange="markUnsaved()">
+              </div>
+            </div>
+
+            <!-- SECTION 6: CUSTOMER REVIEWS -->
+            <div id="sec-reviews" class="form-section-title">
+              <span>⭐</span> 6. Customer Reviews & Results
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Section Heading</label>
+                <input type="text" id="reviewsHeading" value="Real Skin. Real Transformations." onchange="markUnsaved()">
+              </div>
+              <div class="form-group" style="grid-column: 1 / -1;">
+                <label>Section Subheading</label>
+                <input type="text" id="reviewsSubheading" value="Hear from thousands who restored their moisture barrier and reclaimed their glow." onchange="markUnsaved()">
+              </div>
+            </div>
+
+            <!-- SECTION 7: VIP CLUB & CART -->
+            <div id="sec-newsletter" class="form-section-title">
+              <span>💌</span> 7. VIP Glow Club & Shopping Bag Logic
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Newsletter Heading</label>
+                <input type="text" id="nlHeading" value="Join the Aura Glow Club" onchange="markUnsaved()">
+              </div>
+              <div class="form-group">
+                <label>Welcome Discount Code</label>
+                <input type="text" id="discountCode" value="GLOW15" onchange="markUnsaved()">
+              </div>
+              <div class="form-group">
+                <label>Free Shipping Threshold ($)</label>
+                <input type="number" id="freeShipping" value="65" onchange="markUnsaved()">
+              </div>
+            </div>
+
+            <div style="margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--color-border); display: flex; justify-content: flex-end; gap: 12px;">
+              <button type="submit" class="btn btn-accent" style="padding: 14px 36px; font-size: 0.95rem;">
+                💾 Save All Theme Changes & Rebuild ZIP
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- TAB 3: SKINCARE PRODUCTS -->
+      <section class="tab-section" id="tab-products">
+        <div class="panel-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
+            <div>
+              <h2 class="panel-title">Skincare Formulations Catalog</h2>
+              <p class="panel-desc" style="margin-bottom:0;">
+                Manage luxury formulations, active ingredients, inventory levels, and prices stored in <code style="background:#eee;padding:1px 5px;border-radius:4px;">data/products.json</code>.
+              </p>
+            </div>
+            <button type="button" class="btn btn-accent" onclick="openAddProductModal()">
+              <span>➕ Add New Formulation</span>
+            </button>
+          </div>
+
+          <!-- Product Filters -->
+          <div class="filter-toolbar">
+            <div class="search-box">
+              <span class="search-box-icon">🔍</span>
+              <input type="text" id="ProductSearchInput" placeholder="Search by name, SKU, or actives..." oninput="filterProducts()">
+            </div>
+            <div class="filter-pills" id="ProductCategoryPills">
+              <button type="button" class="filter-pill active" data-cat="all" onclick="selectProductCategory('all')">All Formulations</button>
+              <button type="button" class="filter-pill" data-cat="serum" onclick="selectProductCategory('serum')">Serums</button>
+              <button type="button" class="filter-pill" data-cat="cream" onclick="selectProductCategory('cream')">Creams</button>
+              <button type="button" class="filter-pill" data-cat="cleanser" onclick="selectProductCategory('cleanser')">Cleansers</button>
+              <button type="button" class="filter-pill" data-cat="oil" onclick="selectProductCategory('oil')">Cellular Oils</button>
+            </div>
+          </div>
+
+          <!-- Product Table -->
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th style="width:70px;">Image</th>
+                  <th>Formulation & Actives</th>
+                  <th>Category</th>
+                  <th>SKU</th>
+                  <th>Price</th>
+                  <th>Inventory</th>
+                  <th>Status</th>
+                  <th style="text-align:right;">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="ProductsTableBody">
+                <!-- Dynamically loaded -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: RECENT ORDERS -->
+      <section class="tab-section" id="tab-orders">
+        <div class="panel-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
+            <div>
+              <h2 class="panel-title">Customer Orders & Fulfillment</h2>
+              <p class="panel-desc" style="margin-bottom:0;">
+                Track orders, fulfillment status, and items dispatch from <code style="background:#eee;padding:1px 5px;border-radius:4px;">data/orders.json</code>. Customer records are sanitized.
+              </p>
+            </div>
+          </div>
+
+          <!-- Order Filters -->
+          <div class="filter-toolbar">
+            <div class="search-box">
+              <span class="search-box-icon">🔍</span>
+              <input type="text" id="OrderSearchInput" placeholder="Search order # or customer name..." oninput="filterOrders()">
+            </div>
+            <div class="filter-pills" id="OrderStatusPills">
+              <button type="button" class="filter-pill active" data-status="all" onclick="selectOrderStatus('all')">All Orders</button>
+              <button type="button" class="filter-pill" data-status="unfulfilled" onclick="selectOrderStatus('unfulfilled')">Pending Dispatch (2)</button>
+              <button type="button" class="filter-pill" data-status="fulfilled" onclick="selectOrderStatus('fulfilled')">Fulfilled (4)</button>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Order #</th>
+                  <th>Date & Time</th>
+                  <th>Customer</th>
+                  <th>Shipping City</th>
+                  <th>Line Items</th>
+                  <th>Total</th>
+                  <th>Payment</th>
+                  <th>Fulfillment</th>
+                </tr>
+              </thead>
+              <tbody id="OrdersTableBody">
+                <!-- Dynamically loaded -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: SHOPIFY ZIP EXPORTER & COMPLIANCE -->
+      <section class="tab-section" id="tab-exporter">
+        <div class="panel-card" style="text-align: center; padding: 48px 32px; background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);">
+          <span style="display:inline-block;background:#E8F5E9;color:#2E7D32;padding:6px 16px;border-radius:9999px;font-size:0.78rem;font-weight:700;margin-bottom:16px;">
+            ✓ SHOPIFY ONLINE STORE 2.0 VERIFIED ARCHIVE
+          </span>
+          <h2 style="font-family: var(--font-serif); font-size: 2.4rem; margin-bottom: 12px;">Download Your Skincare Shopify Theme</h2>
+          <p style="color: var(--color-text-muted); max-width: 620px; margin: 0 auto 28px; font-size: 0.95rem; line-height: 1.6;">
+            This ZIP file contains all required Shopify Liquid templates, sections, snippets, schema settings, and luxury skincare assets. You can upload it to <strong>ANY Shopify store</strong> in seconds.
+          </p>
+
+          <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 24px;">
+            <a href="/api/theme/download" class="btn btn-accent" style="padding:16px 36px;font-size:1.05rem;background:linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);">
+              <span>⬇️ Download <code>aura-skincare-theme.zip</code></span>
+            </a>
+            <button type="button" class="btn btn-secondary" onclick="runValidationCheck()" id="RunValidationBtn">
+              <span>🔍 Run Pre-Export Validation Check</span>
+            </button>
+          </div>
+
+          <p style="font-size: 0.8rem; color: #66756F;">
+            Filename: <strong>aura-skincare-theme.zip</strong> • Standard Shopify OS 2.0 Architecture
+          </p>
+        </div>
+
+        <!-- Validation Results Card -->
+        <div id="ValidationCard" class="panel-card" style="display:none;background:#FAF8F5;border:1px solid #C8E6C9;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+            <span style="font-size:1.6rem;">✅</span>
+            <div>
+              <h3 style="font-family:var(--font-serif);font-size:1.25rem;color:#1B5E20;" id="ValTitle">Pre-Export Verification: 100% Passed</h3>
+              <p style="font-size:0.82rem;color:var(--color-text-muted);" id="ValSubtitle">All Shopify OS 2.0 required directories, JSON templates, and section schemas verified.</p>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));gap:12px;text-align:center;" id="ValStatsGrid">
+            <!-- Populated via API -->
+          </div>
+        </div>
+
+        <!-- Step-by-Step Tutorial -->
+        <div class="tutorial-card">
+          <h3 style="font-family: var(--font-serif); font-size: 1.4rem;">How to Use this Theme on ANY Shopify Store:</h3>
+          <div class="step-list">
+            <div class="step-item">
+              <div class="step-num">1</div>
+              <h4>Download the ZIP</h4>
+              <p>Click the green download button above to save <code>aura-skincare-theme.zip</code> to your computer.</p>
+            </div>
+
+            <div class="step-item">
+              <div class="step-num">2</div>
+              <h4>Open Shopify Admin</h4>
+              <p>Log in to your store at <code>admin.shopify.com</code> and navigate to <strong>Online Store > Themes</strong>.</p>
+            </div>
+
+            <div class="step-item">
+              <div class="step-num">3</div>
+              <h4>Upload the Theme</h4>
+              <p>In the "Theme library" area, click <strong>Add theme</strong> &rarr; <strong>Upload zip file</strong> and select this file.</p>
+            </div>
+
+            <div class="step-item">
+              <div class="step-num">4</div>
+              <h4>Publish or Customize</h4>
+              <p>Click <strong>Customize</strong> to edit with Shopify's visual drag-and-drop editor, or hit <strong>Publish</strong> to launch!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating Unsaved Changes Bar -->
+    <div class="unsaved-bar" id="UnsavedBar">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span style="font-size:1.2rem;">⚠️</span>
+        <span style="font-size:0.88rem;">You have unsaved theme customizations.</span>
+      </div>
+      <div style="display:flex;gap:10px;">
+        <button type="button" class="btn btn-secondary btn-sm" onclick="discardChanges()">Discard</button>
+        <button type="button" class="btn btn-accent btn-sm" onclick="document.getElementById('FullThemeSettingsForm').requestSubmit()">Save Changes</button>
+      </div>
+    </div>
+
+    <!-- Add / Edit Product Modal -->
+    <div class="modal-backdrop" id="ProductModal">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3 class="modal-title" id="ProductModalTitle">Add Skincare Formulation</h3>
+          <button type="button" class="modal-close" onclick="closeProductModal()">&times;</button>
+        </div>
+        <form id="ProductForm" onsubmit="handleProductSubmit(event)">
+          <input type="hidden" id="modalProductId">
+          <div class="form-group">
+            <label>Formulation Title *</label>
+            <input type="text" id="modalProductTitle" placeholder="e.g. Bio-Ferment Barrier Glow Serum" required>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Category *</label>
+              <select id="modalProductCategory">
+                <option value="serum">Active Serum</option>
+                <option value="cream">Barrier Cream</option>
+                <option value="cleanser">Melt Cleanser</option>
+                <option value="oil">Cellular Oil</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>SKU</label>
+              <input type="text" id="modalProductSKU" placeholder="e.g. AB-SER-005">
+            </div>
+            <div class="form-group">
+              <label>Price ($) *</label>
+              <input type="number" id="modalProductPrice" step="0.01" placeholder="68.00" required>
+            </div>
+            <div class="form-group">
+              <label>Compare At Price ($)</label>
+              <input type="number" id="modalProductComparePrice" step="0.01" placeholder="85.00">
+            </div>
+            <div class="form-group">
+              <label>Inventory Quantity</label>
+              <input type="number" id="modalProductInventory" value="35">
+            </div>
+            <div class="form-group">
+              <label>Availability</label>
+              <select id="modalProductAvailable">
+                <option value="true">In Stock</option>
+                <option value="false">Out of Stock</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Active Ingredients / Clinical Highlights</label>
+            <input type="text" id="modalProductActives" placeholder="e.g. 10% Niacinamide, 5 Ceramides, Zinc PCA">
+          </div>
+          <div class="form-group">
+            <label>Product Image URL</label>
+            <input type="text" id="modalProductImage" placeholder="https://images.unsplash.com/...">
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea id="modalProductDesc" rows="3" placeholder="Formulation sensory texture and clinical barrier benefits..."></textarea>
+          </div>
+          <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:20px;">
+            <button type="button" class="btn btn-secondary" onclick="closeProductModal()">Cancel</button>
+            <button type="submit" class="btn btn-accent" id="modalSubmitBtn">Save Formulation</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="toast-msg" id="ToastMsg">Changes saved!</div>
+
+    <script>
+      // Auth Guard
+      const token = localStorage.getItem('aura_admin_token');
+      if (!token) {
+        window.location.href = '/admin/login';
+      }
+
+      function getAuthHeaders() {
+        return {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + (token || '')
+        };
+      }
+
+      function logoutAdmin() {
+        localStorage.removeItem('aura_admin_token');
+        window.location.href = '/admin/login';
+      }
+
+      function showToast(msg) {
+        const toast = document.getElementById('ToastMsg');
+        toast.textContent = msg;
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 3500);
+      }
+
+      // Unsaved Changes Indicator
+      let isDirty = false;
+      function markUnsaved() {
+        isDirty = true;
+        document.getElementById('UnsavedBar').classList.add('visible');
+      }
+
+      function discardChanges() {
+        isDirty = false;
+        document.getElementById('UnsavedBar').classList.remove('visible');
+        loadInitialSettings();
+        showToast('Changes discarded.');
+      }
+
+      // Mobile Sidebar Controls
+      function toggleAdminSidebar() {
+        const sidebar = document.getElementById('AdminSidebar');
+        const backdrop = document.getElementById('AdminSidebarBackdrop');
+        const isOpen = sidebar.classList.contains('is-open');
+        if (isOpen) {
+          closeAdminSidebar();
+        } else {
+          sidebar.classList.add('is-open');
+          backdrop.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      function closeAdminSidebar() {
+        const sidebar = document.getElementById('AdminSidebar');
+        const backdrop = document.getElementById('AdminSidebarBackdrop');
+        if (sidebar) sidebar.classList.remove('is-open');
+        if (backdrop) backdrop.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // Tab Switching
+      function switchTab(tabId) {
+        closeAdminSidebar();
+        document.querySelectorAll('.tab-section').forEach(tab => tab.classList.remove('active'));
+        document.querySelectorAll('.nav-link[data-tab]').forEach(link => link.classList.remove('active'));
+
+        const target = document.getElementById(tabId);
+        if (target) target.classList.add('active');
+
+        const activeLink = document.querySelector(`.nav-link[data-tab="${tabId}"]`);
+        if (activeLink) activeLink.classList.add('active');
+
+        const headings = {
+          'tab-overview': 'Overview Dashboard',
+          'tab-theme-all': 'Live Theme Settings & Content Customizer',
+          'tab-products': 'Skincare Formulations Catalog',
+          'tab-orders': 'Customer Orders & Fulfillment',
+          'tab-exporter': 'Shopify Theme ZIP & Download'
+        };
+        document.getElementById('PageHeading').textContent = headings[tabId] || 'Admin Center';
+
+        if (tabId === 'tab-overview') loadOverviewMetrics();
+        if (tabId === 'tab-products') loadProducts();
+        if (tabId === 'tab-orders') loadOrders();
+      }
+
+      function jumpToFormSection(secId) {
+        switchTab('tab-theme-all');
+        setTimeout(() => {
+          const el = document.getElementById(secId);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+
+      document.querySelectorAll('.nav-link[data-tab]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tab = btn.getAttribute('data-tab');
+          if (tab) switchTab(tab);
+        });
+      });
+
+      // 1. Overview Metrics
+      async function loadOverviewMetrics() {
+        try {
+          const res = await fetch('/api/overview');
+          const data = await res.json();
+          if (data.success && data.metrics) {
+            const m = data.metrics;
+            document.getElementById('kpiRevenue').textContent = '$' + m.total_revenue.toLocaleString('en-US', { minimumFractionDigits: 2 });
+            document.getElementById('kpiOrders').textContent = m.total_orders;
+            document.getElementById('kpiOrdersSub').textContent = `${m.unfulfilled_orders} awaiting fulfillment`;
+            document.getElementById('kpiAOV').textContent = '$' + m.average_order_value.toLocaleString('en-US', { minimumFractionDigits: 2 });
+            document.getElementById('kpiProducts').textContent = m.active_products;
+
+            document.getElementById('SideOrderBadge').textContent = m.total_orders;
+            document.getElementById('SideProductBadge').textContent = m.active_products;
+
+            const tbody = document.getElementById('OverviewOrdersBody');
+            tbody.innerHTML = '';
+            (data.recent_orders || []).forEach(o => {
+              const tr = document.createElement('tr');
+              const d = new Date(o.created_at);
+              const dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+              const fulfillBadge = o.fulfillment_status === 'fulfilled'
+                ? '<span class="status-badge badge-success">Fulfilled</span>'
+                : '<span class="status-badge badge-warning">Unfulfilled</span>';
+
+              tr.innerHTML = `
+                <td><strong>#${o.order_number}</strong></td>
+                <td>${dateStr}</td>
+                <td>${o.customer_name}</td>
+                <td>${o.customer_city || '—'}</td>
+                <td>$${Number(o.total).toFixed(2)}</td>
+                <td><span class="status-badge badge-success">Paid</span></td>
+                <td>${fulfillBadge}</td>
+              `;
+              tbody.appendChild(tr);
+            });
+          }
+        } catch (e) {
+          console.error('Error loading overview:', e);
+        }
+      }
+
+      // 2. Skincare Products Management
+      let allProducts = [];
+      let activeCategory = 'all';
+
+      async function loadProducts() {
+        try {
+          const res = await fetch('/api/products');
+          const data = await res.json();
+          if (data.success) {
+            allProducts = data.products || [];
+            document.getElementById('SideProductBadge').textContent = allProducts.length;
+            renderProducts();
+          }
+        } catch (e) {
+          console.error('Error loading products:', e);
+        }
+      }
+
+      function selectProductCategory(cat) {
+        activeCategory = cat;
+        document.querySelectorAll('#ProductCategoryPills .filter-pill').forEach(p => {
+          p.classList.toggle('active', p.getAttribute('data-cat') === cat);
+        });
+        renderProducts();
+      }
+
+      function resetProductFilters() {
+        document.getElementById('ProductSearchInput').value = '';
+        selectProductCategory('all');
+      }
+
+      function filterProducts() {
+        renderProducts();
+      }
+
+      function renderProducts() {
+        const query = (document.getElementById('ProductSearchInput').value || '').toLowerCase().trim();
+        const tbody = document.getElementById('ProductsTableBody');
+        tbody.innerHTML = '';
+
+        let filtered = allProducts;
+        if (activeCategory !== 'all') {
+          filtered = filtered.filter(p => p.category === activeCategory);
+        }
+        if (query) {
+          filtered = filtered.filter(p =>
+            (p.title && p.title.toLowerCase().includes(query)) ||
+            (p.sku && p.sku.toLowerCase().includes(query)) ||
+            (p.actives && p.actives.toLowerCase().includes(query))
+          );
+        }
+
+        if (filtered.length === 0) {
+          tbody.innerHTML = `
+            <tr>
+              <td colspan="8" style="text-align:center;padding:48px 16px;color:var(--color-text-muted);">
+                <div style="font-size:2.2rem;margin-bottom:10px;">🌿</div>
+                <div style="font-size:1.05rem;font-weight:600;color:var(--color-text);margin-bottom:4px;">No Formulations Found</div>
+                <p style="font-size:0.84rem;margin-bottom:16px;">No products match the selected category or search filter.</p>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="resetProductFilters()">Reset All Filters</button>
+              </td>
+            </tr>
+          `;
+          return;
+        }
+
+        filtered.forEach(p => {
+          const tr = document.createElement('tr');
+          const statusBadge = p.available
+            ? '<span class="status-badge badge-success">In Stock</span>'
+            : '<span class="status-badge badge-neutral">Out of Stock</span>';
+
+          const comparePrice = p.compare_at_price ? `<span style="text-decoration:line-through;color:#888;font-size:0.75rem;margin-left:4px;">$${Number(p.compare_at_price).toFixed(2)}</span>` : '';
+
+          tr.innerHTML = `
+            <td>
+              <img src="${p.image}" alt="${p.title}" style="width:48px;height:48px;object-fit:cover;border-radius:6px;border:1px solid #E8E2D8;">
+            </td>
+            <td>
+              <div style="font-weight:600;color:var(--color-text);">${p.title}</div>
+              <div style="font-size:0.75rem;color:var(--color-sage);">${p.actives || 'Botanical extracts'}</div>
+            </td>
+            <td><span style="text-transform:capitalize;">${p.category || 'Skincare'}</span></td>
+            <td><code style="background:#eee;padding:2px 6px;border-radius:4px;font-size:0.75rem;">${p.sku || '—'}</code></td>
+            <td><strong>$${Number(p.price).toFixed(2)}</strong>${comparePrice}</td>
+            <td>${p.inventory_quantity || 0} units</td>
+            <td>${statusBadge}</td>
+            <td style="text-align:right;">
+              <button type="button" class="btn btn-secondary btn-sm" onclick="openEditProductModal('${p.id}')">Edit</button>
+              <button type="button" class="btn btn-danger btn-sm" onclick="deleteProduct('${p.id}')">Delete</button>
+            </td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      function openAddProductModal() {
+        document.getElementById('ProductModalTitle').textContent = 'Add Skincare Formulation';
+        document.getElementById('modalProductId').value = '';
+        document.getElementById('modalProductTitle').value = '';
+        document.getElementById('modalProductCategory').value = 'serum';
+        document.getElementById('modalProductSKU').value = 'AB-' + Math.floor(100 + Math.random() * 900);
+        document.getElementById('modalProductPrice').value = '';
+        document.getElementById('modalProductComparePrice').value = '';
+        document.getElementById('modalProductInventory').value = '35';
+        document.getElementById('modalProductAvailable').value = 'true';
+        document.getElementById('modalProductActives').value = '';
+        document.getElementById('modalProductImage').value = 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80';
+        document.getElementById('modalProductDesc').value = '';
+        document.getElementById('ProductModal').classList.add('open');
+      }
+
+      function openEditProductModal(id) {
+        const p = allProducts.find(item => item.id === id);
+        if (!p) return;
+        document.getElementById('ProductModalTitle').textContent = 'Edit Formulation';
+        document.getElementById('modalProductId').value = p.id;
+        document.getElementById('modalProductTitle').value = p.title || '';
+        document.getElementById('modalProductCategory').value = p.category || 'serum';
+        document.getElementById('modalProductSKU').value = p.sku || '';
+        document.getElementById('modalProductPrice').value = p.price || '';
+        document.getElementById('modalProductComparePrice').value = p.compare_at_price || '';
+        document.getElementById('modalProductInventory').value = p.inventory_quantity || 0;
+        document.getElementById('modalProductAvailable').value = p.available !== false ? 'true' : 'false';
+        document.getElementById('modalProductActives').value = p.actives || '';
+        document.getElementById('modalProductImage').value = p.image || '';
+        document.getElementById('modalProductDesc').value = p.description || '';
+        document.getElementById('ProductModal').classList.add('open');
+      }
+
+      function closeProductModal() {
+        document.getElementById('ProductModal').classList.remove('open');
+      }
+
+      async function handleProductSubmit(e) {
+        e.preventDefault();
+        const id = document.getElementById('modalProductId').value;
+        const payload = {
+          title: document.getElementById('modalProductTitle').value.trim(),
+          category: document.getElementById('modalProductCategory').value,
+          sku: document.getElementById('modalProductSKU').value.trim(),
+          price: parseFloat(document.getElementById('modalProductPrice').value),
+          compare_at_price: document.getElementById('modalProductComparePrice').value ? parseFloat(document.getElementById('modalProductComparePrice').value) : null,
+          inventory_quantity: parseInt(document.getElementById('modalProductInventory').value, 10) || 0,
+          available: document.getElementById('modalProductAvailable').value === 'true',
+          actives: document.getElementById('modalProductActives').value.trim(),
+          image: document.getElementById('modalProductImage').value.trim(),
+          description: document.getElementById('modalProductDesc').value.trim()
+        };
+
+        const isEdit = Boolean(id);
+        const url = isEdit ? `/api/products/${id}` : '/api/products';
+        const method = isEdit ? 'PUT' : 'POST';
+
+        try {
+          const res = await fetch(url, {
+            method,
+            headers: getAuthHeaders(),
+            body: JSON.stringify(payload)
+          });
+          const data = await res.json();
+          if (data.success) {
+            closeProductModal();
+            showToast(isEdit ? '✅ Formulation updated!' : '✅ New formulation created!');
+            await loadProducts();
+            await loadOverviewMetrics();
+          } else {
+            alert(data.message || 'Error saving product');
+          }
+        } catch (err) {
+          alert('Failed to connect to server.');
+        }
+      }
+
+      async function deleteProduct(id) {
+        if (!confirm('Are you sure you want to remove this formulation from the catalog?')) return;
+        try {
+          const res = await fetch(`/api/products/${id}`, {
+            method: 'DELETE',
+            headers: getAuthHeaders()
+          });
+          const data = await res.json();
+          if (data.success) {
+            showToast('🗑️ Formulation deleted.');
+            await loadProducts();
+            await loadOverviewMetrics();
+          }
+        } catch (e) {
+          alert('Delete failed.');
+        }
+      }
+
+      // 3. Orders Management
+      let allOrders = [];
+      let activeOrderStatus = 'all';
+
+      async function loadOrders() {
+        try {
+          const res = await fetch('/api/orders');
+          const data = await res.json();
+          if (data.success) {
+            allOrders = data.orders || [];
+            document.getElementById('SideOrderBadge').textContent = allOrders.length;
+            renderOrders();
+          }
+        } catch (e) {
+          console.error('Error loading orders:', e);
+        }
+      }
+
+      function selectOrderStatus(status) {
+        activeOrderStatus = status;
+        document.querySelectorAll('#OrderStatusPills .filter-pill').forEach(p => {
+          p.classList.toggle('active', p.getAttribute('data-status') === status);
+        });
+        renderOrders();
+      }
+
+      function filterOrders() {
+        renderOrders();
+      }
+
+      function renderOrders() {
+        const query = (document.getElementById('OrderSearchInput').value || '').toLowerCase().trim();
+        const tbody = document.getElementById('OrdersTableBody');
+        tbody.innerHTML = '';
+
+        let filtered = allOrders;
+        if (activeOrderStatus !== 'all') {
+          filtered = filtered.filter(o => o.fulfillment_status === activeOrderStatus);
+        }
+        if (query) {
+          filtered = filtered.filter(o =>
+            String(o.order_number).includes(query) ||
+            (o.customer && o.customer.name && o.customer.name.toLowerCase().includes(query))
+          );
+        }
+
+        if (filtered.length === 0) {
+          tbody.innerHTML = `
+            <tr>
+              <td colspan="8" style="text-align:center;padding:48px 16px;color:var(--color-text-muted);">
+                <div style="font-size:2.2rem;margin-bottom:10px;">📋</div>
+                <div style="font-size:1.05rem;font-weight:600;color:var(--color-text);margin-bottom:4px;">No Orders Match This Filter</div>
+                <p style="font-size:0.84rem;margin-bottom:16px;">There are no customer orders matching the specified filter criteria.</p>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="selectOrderStatus('all')">View All Orders</button>
+              </td>
+            </tr>
+          `;
+          return;
+        }
+
+        filtered.forEach(o => {
+          const tr = document.createElement('tr');
+          const d = new Date(o.created_at);
+          const dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+          const itemsSummary = (o.items || []).map(i => `${i.quantity}x ${i.title}`).join('<br>');
+          const fulfillBadge = o.fulfillment_status === 'fulfilled'
+            ? '<span class="status-badge badge-success">Fulfilled</span>'
+            : '<span class="status-badge badge-warning">Unfulfilled</span>';
+
+          tr.innerHTML = `
+            <td><strong>#${o.order_number}</strong></td>
+            <td>${dateStr}</td>
+            <td>
+              <div style="font-weight:600;">${o.customer ? o.customer.name : 'Customer'}</div>
+              <div style="font-size:0.75rem;color:var(--color-text-muted);">${o.customer ? o.customer.email : ''}</div>
+            </td>
+            <td>${o.customer ? o.customer.city : '—'}</td>
+            <td style="font-size:0.8rem;line-height:1.4;">${itemsSummary}</td>
+            <td><strong>$${Number(o.total).toFixed(2)}</strong></td>
+            <td><span class="status-badge badge-success">Paid</span></td>
+            <td>${fulfillBadge}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      // 4. Pre-Export Theme Validation Check
+      async function runValidationCheck() {
+        const btn = document.getElementById('RunValidationBtn');
+        btn.textContent = '⏳ Running Pre-Flight Checks...';
+        btn.disabled = true;
+
+        try {
+          const res = await fetch('/api/theme/validate', { method: 'POST' });
+          const data = await res.json();
+          btn.innerHTML = '<span>🔍 Run Pre-Export Validation Check</span>';
+          btn.disabled = false;
+
+          const card = document.getElementById('ValidationCard');
+          card.style.display = 'block';
+
+          if (data.success) {
+            document.getElementById('ValTitle').textContent = `✓ Shopify OS 2.0 Compliance: ${data.checks_passed} Checks Passed`;
+            document.getElementById('ValSubtitle').textContent = data.message;
+            const grid = document.getElementById('ValStatsGrid');
+            const m = data.manifest || {};
+            grid.innerHTML = `
+              <div style="background:#fff;padding:12px;border-radius:6px;border:1px solid #C8E6C9;">
+                <div style="font-size:1.4rem;font-weight:700;color:#2E7D32;">${m.templates || 8}</div>
+                <div style="font-size:0.72rem;text-transform:uppercase;color:#555;">JSON Templates</div>
+              </div>
+              <div style="background:#fff;padding:12px;border-radius:6px;border:1px solid #C8E6C9;">
+                <div style="font-size:1.4rem;font-weight:700;color:#2E7D32;">${m.sections || 18}</div>
+                <div style="font-size:0.72rem;text-transform:uppercase;color:#555;">Liquid Sections</div>
+              </div>
+              <div style="background:#fff;padding:12px;border-radius:6px;border:1px solid #C8E6C9;">
+                <div style="font-size:1.4rem;font-weight:700;color:#2E7D32;">${m.snippets || 9}</div>
+                <div style="font-size:0.72rem;text-transform:uppercase;color:#555;">Snippets</div>
+              </div>
+              <div style="background:#fff;padding:12px;border-radius:6px;border:1px solid #C8E6C9;">
+                <div style="font-size:1.4rem;font-weight:700;color:#2E7D32;">${m.assets || 4}</div>
+                <div style="font-size:0.72rem;text-transform:uppercase;color:#555;">Theme Assets</div>
+              </div>
+            `;
+            showToast('✅ Pre-export verification completed successfully!');
+          }
+        } catch (e) {
+          btn.innerHTML = '<span>🔍 Run Pre-Export Validation Check</span>';
+          btn.disabled = false;
+          alert('Validation check failed to complete.');
+        }
+      }
+
+      // 5. Load Initial Theme Settings
+      async function loadInitialSettings() {
+        try {
+          const res = await fetch('/api/settings');
+          const data = await res.json();
+          if (data.success) {
+            const s = data.settings || {};
+            const sec = data.sections || {};
+
+            if (s.announcement_text) document.getElementById('announcementText').value = s.announcement_text;
+            if (s.sections && s.sections.header && s.sections.header.settings) {
+              if (s.sections.header.settings.logo_text) document.getElementById('logoText').value = s.sections.header.settings.logo_text;
+              if (s.sections.header.settings.tagline) document.getElementById('brandTagline').value = s.sections.header.settings.tagline;
+            }
+            if (s.free_shipping_threshold) document.getElementById('freeShipping').value = s.free_shipping_threshold;
+            if (s.color_bg_primary) {
+              document.getElementById('colorBgPrimary').value = s.color_bg_primary;
+              document.getElementById('hexBgPrimary').textContent = s.color_bg_primary;
+            }
+            if (s.color_bg_secondary) {
+              document.getElementById('colorBgSecondary').value = s.color_bg_secondary;
+              document.getElementById('hexBgSecondary').textContent = s.color_bg_secondary;
+            }
+            if (s.color_accent) {
+              document.getElementById('colorAccent').value = s.color_accent;
+              document.getElementById('hexAccent').textContent = s.color_accent;
+            }
+            if (s.color_sage) {
+              document.getElementById('colorSage').value = s.color_sage;
+              document.getElementById('hexSage').textContent = s.color_sage;
+            }
+            if (s.color_text_primary) {
+              document.getElementById('colorText').value = s.color_text_primary;
+              document.getElementById('hexText').textContent = s.color_text_primary;
+            }
+            if (s.color_border) {
+              document.getElementById('colorBorder').value = s.color_border;
+              document.getElementById('hexBorder').textContent = s.color_border;
+            }
+            if (s.page_width) document.getElementById('pageWidth').value = s.page_width;
+            if (s.button_border_radius !== undefined) document.getElementById('buttonRadius').value = s.button_border_radius;
+
+            if (sec.hero_banner && sec.hero_banner.settings) {
+              const h = sec.hero_banner.settings;
+              if (h.badge_text) document.getElementById('heroBadge').value = h.badge_text;
+              if (h.heading) document.getElementById('heroHeading').value = h.heading;
+              if (h.subheading) document.getElementById('heroSubheading').value = h.subheading;
+              if (h.button_label_1) document.getElementById('heroBtn1').value = h.button_label_1;
+              if (h.button_label_2) document.getElementById('heroBtn2').value = h.button_label_2;
+            }
+          }
+        } catch (e) {
+          console.warn('Could not fetch server settings:', e);
+        }
+      }
+
+      // Form submission for settings
+      document.getElementById('FullThemeSettingsForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const saveBtn = document.getElementById('SaveSettingsBtn');
+        saveBtn.textContent = '💾 Saving...';
+        saveBtn.disabled = true;
+
+        const payload = {
+          logo_text: document.getElementById('logoText').value,
+          tagline: document.getElementById('brandTagline').value,
+          announcement_text: document.getElementById('announcementText').value,
+          free_shipping_threshold: parseFloat(document.getElementById('freeShipping').value) || 65,
+          color_bg_primary: document.getElementById('colorBgPrimary').value,
+          color_bg_secondary: document.getElementById('colorBgSecondary').value,
+          color_accent: document.getElementById('colorAccent').value,
+          color_sage: document.getElementById('colorSage').value,
+          color_text_primary: document.getElementById('colorText').value,
+          color_border: document.getElementById('colorBorder').value,
+          page_width: parseInt(document.getElementById('pageWidth').value, 10) || 1300,
+          button_border_radius: parseInt(document.getElementById('buttonRadius').value, 10) || 9999,
+          hero: {
+            badge_text: document.getElementById('heroBadge').value,
+            heading: document.getElementById('heroHeading').value,
+            subheading: document.getElementById('heroSubheading').value,
+            button_label_1: document.getElementById('heroBtn1').value,
+            button_label_2: document.getElementById('heroBtn2').value
+          },
+          routine: {
+            heading: document.getElementById('routineHeading').value
+          },
+          ingredients: {
+            heading: document.getElementById('ingHeading').value,
+            subheading: document.getElementById('ingSubheading').value
+          },
+          reviews: {
+            heading: document.getElementById('reviewsHeading').value,
+            subheading: document.getElementById('reviewsSubheading').value
+          },
+          newsletter: {
+            heading: document.getElementById('nlHeading').value
+          }
+        };
+
+        try {
+          const res = await fetch('/api/settings', {
+            method: 'POST',
+            headers: getAuthHeaders(),
+            body: JSON.stringify(payload)
+          });
+          const data = await res.json();
+          saveBtn.textContent = '💾 Save All Changes';
+          saveBtn.disabled = false;
+          isDirty = false;
+          document.getElementById('UnsavedBar').classList.remove('visible');
+          showToast('✅ All settings saved! Theme ZIP auto-updated!');
+        } catch(err) {
+          saveBtn.textContent = '💾 Save All Changes';
+          saveBtn.disabled = false;
+          showToast('⚠️ Error saving settings to server.');
+        }
+      });
+
+      // Reset Defaults
+      const resetBtn = document.getElementById('ResetDefaultsBtn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', async function() {
+          if (!confirm('Are you sure you want to reset all theme settings and colors to factory defaults?')) return;
+          try {
+            const res = await fetch('/api/settings/reset', {
+              method: 'POST',
+              headers: getAuthHeaders()
+            });
+            const data = await res.json();
+            if (data.success) {
+              await loadInitialSettings();
+              isDirty = false;
+              document.getElementById('UnsavedBar').classList.remove('visible');
+              showToast('🔄 Settings reset to factory defaults! ZIP refreshed!');
+            }
+          } catch (e) {
+            showToast('⚠️ Reset request failed.');
+          }
+        });
+      }
+
+      // Initial page setup
+      loadOverviewMetrics();
+      loadInitialSettings();
+    </script>
+  </body>
+</html>

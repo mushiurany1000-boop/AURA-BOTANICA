@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>All Skincare Formulations — AURA BOTANICA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/theme.css?v=2.1.0">
+    <script src="/assets/theme.js?v=2.1.0" defer></script>
+  </head>
+
+  <body class="template-collection aura-skincare">
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar" role="region" aria-label="Announcement">
+      <div class="announcement-bar__content page-width">
+        <span class="announcement-bar__text">
+          Complimentary Botanical Cleanser Sample with all orders over $75 • Free Carbon-Neutral Shipping
+        </span>
+        <a href="#collection-grid" class="announcement-bar__link">Shop All Rituals &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header" id="SiteHeader">
+      <div class="site-header__wrapper page-width">
+        <div class="site-header__mobile-toggle">
+          <button type="button" class="icon-button" id="MobileMenuToggle" aria-label="Open Navigation Menu">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="site-header__logo">
+          <a href="/" class="site-header__logo-link">
+            <span class="site-header__logo-text">AURA BOTANICA</span>
+            <span class="site-header__logo-tagline">Pure Botanical Alchemy</span>
+          </a>
+        </div>
+
+        <nav class="site-header__nav" role="navigation" aria-label="Main Navigation">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/collections/all" class="nav-link active">All Formulations</a></li>
+            <li class="nav-item"><a href="/#rituals" class="nav-link">The Rituals</a></li>
+            <li class="nav-item"><a href="/#ingredients" class="nav-link">Clean Actives</a></li>
+            <li class="nav-item"><a href="/#clinical-proof" class="nav-link">Clinical Results</a></li>
+          </ul>
+        </nav>
+
+        <div class="site-header__actions">
+          <div class="site-header__currency-badge" title="Carbon-Neutral Global Shipping">
+            <span>USD $</span>
+          </div>
+
+          <button type="button" class="icon-button site-header__search-btn" id="SearchToggle" aria-label="Search Formulations">
+            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          <button type="button" class="icon-button site-header__cart-btn" id="CartToggle" aria-label="Open Shopping Bag">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-count-badge" id="HeaderCartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="MainContent" class="content-for-layout">
+      <!-- Collection Hero Header -->
+      <section class="collection-hero text-center">
+        <div class="page-width">
+          <span class="section-badge">The Complete Apothecary</span>
+          <h1 class="collection-title">All Formulations</h1>
+          <p class="collection-desc">
+            Clean, biocompatible skincare developed to restore your skin's acid mantle and nourish cellular resilience. Dermatologist approved.
+          </p>
+
+          <!-- Filter Pills -->
+          <div class="product-filter-tabs" id="ProductFilterTabs" style="margin-top: 24px;">
+            <button type="button" class="tab-button is-active" data-filter="all">All Formulations (4)</button>
+            <button type="button" class="tab-button" data-filter="serum">Active Serums</button>
+            <button type="button" class="tab-button" data-filter="cream">Barrier Creams</button>
+            <button type="button" class="tab-button" data-filter="cleanser">Gentle Cleansers</button>
+            <button type="button" class="tab-button" data-filter="oil">Cellular Oils</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products Grid -->
+      <section class="collection-content page-width" id="collection-grid">
+        <div class="products-grid" id="FeaturedProductsGrid">
+          <!-- Product 1 -->
+          <div class="product-card" data-category="serum" data-product-id="101">
+            <div class="product-card__media-wrapper">
+              <span class="product-card__badge product-card__badge--bestseller">Best Seller</span>
+              <a href="/product" class="product-card__image-link">
+                <img
+                  src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80"
+                  alt="Bio-Ferment Barrier Glow Serum in amber dropper bottle"
+                  class="product-card__image product-card__image--primary"
+                  loading="lazy"
+                  width="600"
+                  height="750"
+                >
+              </a>
+              <div class="product-card__quick-add">
+                <button
+                  type="button"
+                  class="button button--quick-add"
+                  data-action="quick-add"
+                  data-id="101"
+                  data-title="Bio-Ferment Barrier Glow Serum"
+                  data-price="$68.00"
+                  data-image="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80"
+                >
+                  + Quick Add • $68.00
+                </button>
+              </div>
+            </div>
+            <div class="product-card__content">
+              <div class="product-card__meta">
+                <span class="product-card__category">Active Serum</span>
+                <div class="product-card__rating">
+                  <span class="rating-stars">★★★★★</span>
+                  <span class="rating-count">(4.9)</span>
+                </div>
+              </div>
+              <h3 class="product-card__title"><a href="/product">Bio-Ferment Barrier Glow Serum</a></h3>
+              <div class="product-card__benefit">10% Niacinamide • 2% Hyaluronic • Zinc PCA</div>
+              <div class="product-card__price-wrapper">
+                <span class="price-item price-item--regular">$68.00</span>
+                <span class="product-card__volume">50 ml / 1.7 fl. oz</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card" data-category="cream" data-product-id="102">
+            <div class="product-card__media-wrapper">
+              <span class="product-card__badge product-card__badge--award">Vogue Beauty Award</span>
+              <a href="/product" class="product-card__image-link">
+                <img
+                  src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=80"
+                  alt="Deep Lipid Moisture Cloud Cream luxury jar"
+                  class="product-card__image product-card__image--primary"
+                  loading="lazy"
+                  width="600"
+                  height="750"
+                >
+              </a>
+              <div class="product-card__quick-add">
+                <button
+                  type="button"
+                  class="button button--quick-add"
+                  data-action="quick-add"
+                  data-id="102"
+                  data-title="Deep Lipid Moisture Cloud Cream"
+                  data-price="$74.00"
+                  data-image="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=80"
+                >
+                  + Quick Add • $74.00
+                </button>
+              </div>
+            </div>
+            <div class="product-card__content">
+              <div class="product-card__meta">
+                <span class="product-card__category">Barrier Velvet Cream</span>
+                <div class="product-card__rating">
+                  <span class="rating-stars">★★★★★</span>
+                  <span class="rating-count">(5.0)</span>
+                </div>
+              </div>
+              <h3 class="product-card__title"><a href="/product">Deep Lipid Moisture Cloud Cream</a></h3>
+              <div class="product-card__benefit">5 Bio-Identical Ceramides • Plant Squalane</div>
+              <div class="product-card__price-wrapper">
+                <span class="price-item price-item--regular">$74.00</span>
+                <span class="product-card__volume">60 ml / 2.0 fl. oz</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card" data-category="cleanser" data-product-id="103">
+            <div class="product-card__media-wrapper">
+              <a href="/product" class="product-card__image-link">
+                <img
+                  src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80"
+                  alt="Gentle Camellia Cleansing Balm jar with bamboo spatula"
+                  class="product-card__image product-card__image--primary"
+                  loading="lazy"
+                  width="600"
+                  height="750"
+                >
+              </a>
+              <div class="product-card__quick-add">
+                <button
+                  type="button"
+                  class="button button--quick-add"
+                  data-action="quick-add"
+                  data-id="103"
+                  data-title="Gentle Camellia Cleansing Balm"
+                  data-price="$46.00"
+                  data-image="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80"
+                >
+                  + Quick Add • $46.00
+                </button>
+              </div>
+            </div>
+            <div class="product-card__content">
+              <div class="product-card__meta">
+                <span class="product-card__category">Melt-Away Cleanser</span>
+                <div class="product-card__rating">
+                  <span class="rating-stars">★★★★★</span>
+                  <span class="rating-count">(4.8)</span>
+                </div>
+              </div>
+              <h3 class="product-card__title"><a href="/product">Gentle Camellia Cleansing Balm</a></h3>
+              <div class="product-card__benefit">Cold-Pressed Camellia • Oat Lipids • Blue Tansy</div>
+              <div class="product-card__price-wrapper">
+                <span class="price-item price-item--regular">$46.00</span>
+                <span class="product-card__volume">100 ml / 3.4 fl. oz</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card" data-category="oil" data-product-id="104">
+            <div class="product-card__media-wrapper">
+              <span class="product-card__badge product-card__badge--sale">Save $14</span>
+              <a href="/product" class="product-card__image-link">
+                <img
+                  src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=600&q=80"
+                  alt="Golden Bakuchiol Midnight Nectar night oil"
+                  class="product-card__image product-card__image--primary"
+                  loading="lazy"
+                  width="600"
+                  height="750"
+                >
+              </a>
+              <div class="product-card__quick-add">
+                <button
+                  type="button"
+                  class="button button--quick-add"
+                  data-action="quick-add"
+                  data-id="104"
+                  data-title="Golden Bakuchiol Midnight Nectar"
+                  data-price="$78.00"
+                  data-image="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=600&q=80"
+                >
+                  + Quick Add • $78.00
+                </button>
+              </div>
+            </div>
+            <div class="product-card__content">
+              <div class="product-card__meta">
+                <span class="product-card__category">Cellular Night Oil</span>
+                <div class="product-card__rating">
+                  <span class="rating-stars">★★★★★</span>
+                  <span class="rating-count">(4.9)</span>
+                </div>
+              </div>
+              <h3 class="product-card__title"><a href="/product">Golden Bakuchiol Midnight Nectar</a></h3>
+              <div class="product-card__benefit">2% Natural Bakuchiol • Rosehip Bio-Retinol</div>
+              <div class="product-card__price-wrapper">
+                <span class="price-item price-item--regular">$78.00</span>
+                <s class="price-item price-item--compare">$92.00</s>
+                <span class="product-card__volume">30 ml / 1.0 fl. oz</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="site-footer__container page-width">
+        <div class="footer-col footer-col--brand">
+          <h3 class="footer-brand-title">AURA BOTANICA</h3>
+          <p class="footer-brand-tagline">Pure Botanical Alchemy • Clean Cellular Skincare</p>
+          <p class="footer-brand-text">
+            Formulated to restore the skin's natural lipid barrier without aggressive chemical stripping.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Formulations</h4>
+          <ul class="footer-links">
+            <li><a href="/collections/all">All Skincare</a></li>
+            <li><a href="/#rituals">Complete Ritual Sets</a></li>
+            <li><a href="/#ingredients">Ingredient Glossary</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Ethics & Science</h4>
+          <ul class="footer-links">
+            <li><a href="/#clinical-proof">Clinical Trial Results</a></li>
+            <li><a href="/#philosophy">Recyclable Miron Glass</a></li>
+            <li><a href="/#philosophy">Carbon-Neutral Shipping</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Client Care</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:care@aurabotanica.com">care@aurabotanica.com</a></li>
+            <li><a href="/#reviews">Client Transformations</a></li>
+            <li><a href="/admin">Administrator Portal</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom page-width">
+        <p>&copy; 2026 Aura Botanica Laboratories, Inc. All rights reserved.</p>
+        <div class="footer-bottom-right">
+          <span class="payment-badge">Apple Pay</span>
+          <span class="payment-badge">Google Pay</span>
+          <span class="payment-badge">Visa</span>
+          <span class="payment-badge">Shop Pay</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="CartDrawer" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="cart-drawer__header">
+        <div class="cart-drawer__header-left">
+          <h2 class="cart-drawer__title">Your Botanical Bag</h2>
+          <span class="cart-drawer__count-badge" id="CartDrawerCount">0</span>
+        </div>
+        <button type="button" class="cart-drawer__close" data-action="close-cart" aria-label="Close cart">✕</button>
+      </div>
+
+      <div class="cart-drawer__shipping-bar">
+        <div class="shipping-bar__message" id="ShippingBarMessage">
+          Spend <strong>$65.00</strong> to unlock <strong>Complimentary Shipping & Samples</strong>
+        </div>
+        <div class="shipping-bar__progress-track">
+          <div class="shipping-bar__progress-fill" id="ShippingProgressFill" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="cart-drawer__body" id="CartDrawerItems">
+        <div class="cart-drawer__empty" id="CartDrawerEmpty">
+          <div class="empty-icon">🌿</div>
+          <p class="empty-title">Your ritual bag is empty</p>
+          <a href="/collections/all" class="button button--primary" data-action="close-cart">Explore Formulations</a>
+        </div>
+        <div class="cart-drawer__items-list" id="CartItemsList"></div>
+      </div>
+
+      <div class="cart-drawer__footer" id="CartDrawerFooter" style="display: none;">
+        <div class="cart-drawer__subtotal-row">
+          <span>Subtotal</span>
+          <span id="CartSubtotal">$0.00</span>
+        </div>
+        <form action="/cart" method="post" id="CartDrawerCheckoutForm">
+          <button type="submit" name="checkout" class="button button--primary button--full" id="CartCheckoutButton">
+            Proceed to Checkout • <span id="CheckoutTotal">$0.00</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Live Search Overlay Modal -->
+    <div class="search-modal" id="SearchModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Search Catalog">
+      <div class="search-modal__container">
+        <div class="search-modal__header">
+          <div class="search-input-wrapper">
+            <svg class="search-modal-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="SearchInput" class="search-modal-input" placeholder="Search formulations by name, active, or concern..." autocomplete="off">
+          </div>
+          <button type="button" class="search-modal-close" id="SearchModalClose" aria-label="Close Search">✕</button>
+        </div>
+        <div class="search-modal__results" id="SearchResults">
+          <div class="search-modal__empty-state">
+            <span class="search-hint-title">Popular Skincare Inquiries:</span>
+            <div class="search-pills">
+              <button type="button" class="search-pill" onclick="triggerSearchKeyword('Serum')">Bio-Ferment Serum</button>
+              <button type="button" class="search-pill" onclick="triggerSearchKeyword('Cream')">Cloud Cream</button>
+              <button type="button" class="search-pill" onclick="triggerSearchKeyword('Balm')">Camellia Balm</button>
+              <button type="button" class="search-pill" onclick="triggerSearchKeyword('Niacinamide')">Niacinamide</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay-backdrop" id="OverlayBackdrop" data-action="close-all"></div>
+  </body>
+</html>
+

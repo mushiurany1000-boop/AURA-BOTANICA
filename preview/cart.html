@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Ritual Bag — AURA BOTANICA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/theme.css?v=2.1.0">
+    <script src="/assets/theme.js?v=2.1.0" defer></script>
+    <style>
+      .theme-preview-bar {
+        background: #17211D;
+        color: #FAF8F5;
+        font-size: 11px;
+        padding: 6px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        letter-spacing: 0.06em;
+      }
+      .theme-preview-bar a {
+        color: #E2BFA3;
+        text-decoration: underline;
+        margin-left: 12px;
+        font-weight: 600;
+      }
+      .theme-preview-tag {
+        background: rgba(184, 124, 82, 0.3);
+        color: #E2BFA3;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 10px;
+        margin-right: 8px;
+      }
+      .cart-page-wrap {
+        padding: 60px 0 100px;
+        min-height: 60vh;
+      }
+      .cart-page-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .cart-page-title {
+        font-family: var(--font-heading);
+        font-size: 2.6rem;
+        margin-top: 8px;
+        color: var(--color-text-primary);
+      }
+      .cart-table-wrapper {
+        background: #FFFFFF;
+        border-radius: 12px;
+        border: 1px solid var(--color-border);
+        overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body class="template-cart aura-skincare">
+    <!-- Local Developer Status Bar -->
+    <div class="theme-preview-bar">
+      <div>
+        <span class="theme-preview-tag">SHOPIFY OS 2.0</span>
+        <span>AURA BOTANICA — Cart & Ritual Bag</span>
+      </div>
+      <div>
+        <span>Explore:</span>
+        <a href="/">Home</a>
+        <a href="/collections/all">All Formulations</a>
+        <a href="/product">Product Detail</a>
+        <a href="/cart" style="font-weight:700;color:#FFF;">Ritual Bag</a>
+        <a href="/admin" target="_blank" style="background:#B87C52;color:#fff;padding:2px 8px;border-radius:4px;text-decoration:none;">🔒 Admin Portal</a>
+      </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" role="region" aria-label="Announcement">
+      <div class="announcement-bar__content page-width">
+        <span class="announcement-bar__text">
+          Complimentary Botanical Cleanser Sample with all orders over $75 • Free Carbon-Neutral Shipping
+        </span>
+        <a href="/collections/all" class="announcement-bar__link">Claim Ritual &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Site Header -->
+    <header class="site-header" id="SiteHeader">
+      <div class="site-header__wrapper page-width">
+        <div class="site-header__mobile-toggle">
+          <button type="button" class="icon-button" id="MobileMenuToggle" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="MobileNav">
+            <svg class="icon icon-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="site-header__logo">
+          <a href="/" class="site-header__logo-link">
+            <span class="site-header__logo-text">AURA BOTANICA</span>
+            <span class="site-header__logo-tagline">Pure Botanical Alchemy</span>
+          </a>
+        </div>
+
+        <nav class="site-header__nav" role="navigation" aria-label="Desktop Navigation">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="/" class="nav-link">&larr; Return to Boutique</a></li>
+            <li class="nav-item"><a href="/collections/all" class="nav-link">Formulations</a></li>
+            <li class="nav-item"><a href="/#rituals" class="nav-link">The Rituals</a></li>
+            <li class="nav-item"><a href="/#ingredients" class="nav-link">Clean Actives</a></li>
+            <li class="nav-item"><a href="/#clinical-proof" class="nav-link">Clinical Results</a></li>
+            <li class="nav-item"><a href="/#reviews" class="nav-link">Client Stories</a></li>
+          </ul>
+        </nav>
+
+        <div class="site-header__actions">
+          <div class="site-header__currency-badge" title="Carbon-Neutral Global Shipping">
+            <span>USD $</span>
+          </div>
+
+          <button type="button" class="icon-button site-header__search-btn" id="SearchToggle" aria-label="Search Formulations">
+            <svg class="icon icon-search" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          <button type="button" class="icon-button site-header__cart-btn" id="CartToggle" aria-label="Open Shopping Bag">
+            <svg class="icon icon-cart" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-count-badge" id="HeaderCartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Cart Content -->
+    <main id="MainContent" class="cart-page-wrap">
+      <div class="page-width">
+        <div class="cart-page-header">
+          <span class="section-eyebrow">Your Botanical Ritual</span>
+          <h1 class="cart-page-title">Selected Skincare Formulations</h1>
+          <p class="cart-page-count" id="MainCartCountMessage">Review your barrier care items before secure checkout.</p>
+        </div>
+
+        <form action="/cart" method="post" id="MainCartPageForm" class="cart-form-layout">
+          <div class="cart-items-column">
+            <!-- Free Shipping Progress -->
+            <div class="cart-page__shipping-bar" style="background:#FFFFFF;padding:18px 24px;border-radius:12px;border:1px solid var(--color-border);margin-bottom:24px;">
+              <div class="shipping-bar__message" id="CartPageShippingMsg">
+                🌿 Spend <strong>$65.00</strong> to unlock <strong>Complimentary Express Delivery & Samples</strong>
+              </div>
+              <div class="shipping-bar__progress-track" style="height:6px;background:var(--color-bg-secondary);border-radius:3px;margin-top:10px;overflow:hidden;">
+                <div class="shipping-bar__progress-fill" id="CartPageShippingFill" style="height:100%;background:linear-gradient(90deg, #4D6459, #B87C52);width:0%;"></div>
+              </div>
+            </div>
+
+            <div class="cart-table-wrapper">
+              <table class="cart-table" style="width:100%;border-collapse:collapse;">
+                <thead>
+                  <tr style="border-bottom:1px solid var(--color-border);background:var(--color-bg-primary);text-align:left;">
+                    <th scope="col" style="padding:16px 20px;font-size:0.84rem;font-weight:600;color:var(--color-text-secondary);">Product</th>
+                    <th scope="col" style="padding:16px 20px;font-size:0.84rem;font-weight:600;color:var(--color-text-secondary);">Price</th>
+                    <th scope="col" style="padding:16px 20px;font-size:0.84rem;font-weight:600;color:var(--color-text-secondary);text-align:center;">Quantity</th>
+                    <th scope="col" style="padding:16px 20px;font-size:0.84rem;font-weight:600;color:var(--color-text-secondary);text-align:right;">Total</th>
+                  </tr>
+                </thead>
+                <tbody id="CartPageItemsBody">
+                  <!-- Rendered dynamically from /cart.js -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Order Instructions -->
+            <div class="cart-note-wrapper" style="margin-top:24px;background:#FFFFFF;padding:20px 24px;border-radius:12px;border:1px solid var(--color-border);">
+              <label for="CartPageNote" class="cart-note-label" style="font-weight:600;font-size:0.88rem;display:block;margin-bottom:8px;">
+                Special Order Instructions & Gift Note:
+              </label>
+              <textarea
+                id="CartPageNote"
+                name="note"
+                rows="3"
+                class="cart-note-textarea"
+                style="width:100%;padding:12px;border:1px solid var(--color-border);border-radius:8px;font-family:inherit;font-size:0.88rem;resize:vertical;"
+                placeholder="Include a personalized handwritten card note or special courier delivery instructions..."
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Order Summary Column -->
+          <div class="cart-summary-column">
+            <div class="cart-summary-card" style="background:#FFFFFF;padding:28px;border-radius:12px;border:1px solid var(--color-border);position:sticky;top:110px;">
+              <h3 style="font-family:var(--font-heading);font-size:1.6rem;margin-bottom:20px;">Summary of Order</h3>
+
+              <div style="display:flex;justify-content:space-between;margin-bottom:12px;font-size:0.92rem;">
+                <span style="color:var(--color-text-secondary);">Subtotal</span>
+                <span style="font-weight:600;" id="CartPageSubtotal">$0.00</span>
+              </div>
+
+              <div style="display:flex;justify-content:space-between;margin-bottom:12px;font-size:0.92rem;">
+                <span style="color:var(--color-text-secondary);">Carbon-Neutral Shipping</span>
+                <span style="color:#2E7D32;font-weight:600;" id="CartPageShippingCost">Complimentary</span>
+              </div>
+
+              <div style="border-top:1px solid var(--color-border);padding-top:16px;margin-top:16px;display:flex;justify-content:space-between;font-size:1.15rem;font-weight:700;">
+                <span>Estimated Total</span>
+                <span id="CartPageTotal">$0.00</span>
+              </div>
+
+              <p style="font-size:0.78rem;color:var(--color-text-light);margin:14px 0 24px;line-height:1.5;">
+                Taxes, botanical samples, and customs fees calculated during secure checkout.
+              </p>
+
+              <button type="submit" name="checkout" class="button button--primary button--full button--large" id="MainCartCheckoutBtn" style="padding:16px;font-size:1rem;">
+                Proceed to Checkout &rarr;
+              </button>
+
+              <div style="margin-top:20px;text-align:center;">
+                <a href="/collections/all" style="font-size:0.84rem;color:var(--color-accent);text-decoration:underline;">Continue Exploring Formulations</a>
+              </div>
+
+              <div style="margin-top:28px;padding-top:20px;border-top:1px solid var(--color-border);font-size:0.78rem;color:var(--color-text-secondary);display:flex;flex-direction:column;gap:8px;">
+                <div>🌿 <strong>30-Day Glow Guarantee:</strong> Visible hydration or full refund.</div>
+                <div>🔒 <strong>Bank-Grade 256-Bit SSL:</strong> Safe and protected payments.</div>
+                <div>📦 <strong>Plastic-Free Packaging:</strong> 100% recyclable glass and stone.</div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo" style="background:#18231F;color:#FAF8F5;padding:60px 0 30px;margin-top:60px;">
+      <div class="page-width text-center">
+        <p style="font-family:var(--font-heading);font-size:1.5rem;letter-spacing:0.18em;margin-bottom:8px;">AURA BOTANICA</p>
+        <p style="font-size:0.82rem;color:#8B9892;">Pure Botanical Alchemy • Clean Dermatological Science</p>
+        <p style="font-size:0.75rem;color:#56645E;margin-top:24px;">&copy; 2026 Aura Botanica. Shopify OS 2.0 Theme Architecture.</p>
+      </div>
+    </footer>
+
+    <!-- Overlay Backdrop -->
+    <div class="modal-backdrop" id="OverlayBackdrop"></div>
+
+    <!-- Live Cart Drawer -->
+    <div class="cart-drawer" id="CartDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="CartDrawerTitle">
+      <div class="cart-drawer__header">
+        <div class="cart-drawer__header-left">
+          <h2 id="CartDrawerTitle" class="cart-drawer__title">Your Botanical Bag</h2>
+          <span class="cart-drawer__count-badge" id="CartDrawerCount">0</span>
+        </div>
+        <button type="button" class="cart-drawer__close" data-action="close-cart" aria-label="Close Shopping Bag">✕</button>
+      </div>
+      <div class="cart-drawer__shipping-bar">
+        <div class="shipping-bar__message" id="ShippingBarMessage">
+          Spend <strong>$65.00</strong> to unlock <strong>Complimentary Shipping & Samples</strong>
+        </div>
+        <div class="shipping-bar__progress-track">
+          <div class="shipping-bar__progress-fill" id="ShippingProgressFill" style="width: 0%"></div>
+        </div>
+      </div>
+      <div class="cart-drawer__body" id="CartDrawerItems">
+        <div class="cart-drawer__empty" id="CartDrawerEmpty">
+          <div class="empty-icon">🌿</div>
+          <p class="empty-title">Your ritual bag is empty</p>
+          <p class="empty-subtitle">Discover our clean, biocompatible formulas to begin your barrier transformation.</p>
+          <a href="/collections/all" class="button button--primary" data-action="close-cart">
+            Explore Formulations
+          </a>
+        </div>
+        <div class="cart-drawer__items-list" id="CartItemsList"></div>
+      </div>
+      <div class="cart-drawer__footer" id="CartDrawerFooter" style="display: none;">
+        <div class="cart-drawer__subtotal-row">
+          <span>Subtotal</span>
+          <span id="CartSubtotal">$0.00</span>
+        </div>
+        <p class="cart-drawer__disclaimer">Taxes and carbon-neutral shipping calculated at checkout.</p>
+        <form action="/cart" method="post" id="CartDrawerCheckoutForm">
+          <button type="submit" name="checkout" class="button button--primary button--full" id="CartCheckoutButton">
+            Proceed to Checkout • <span id="CheckoutTotal">$0.00</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Live Search Overlay Modal -->
+    <div class="search-modal" id="SearchModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Search Formulations">
+      <div class="search-modal__container">
+        <div class="search-modal__header">
+          <div class="search-input-wrapper">
+            <svg class="search-modal-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="SearchInput" class="search-modal-input" placeholder="Search formulations by name, active, or skin concern..." autocomplete="off">
+          </div>
+          <button type="button" class="search-modal-close" id="SearchModalClose" aria-label="Close Search">✕</button>
+        </div>
+        <div class="search-modal__results" id="SearchResults"></div>
+      </div>
+    </div>
+  </body>
+</html>
+

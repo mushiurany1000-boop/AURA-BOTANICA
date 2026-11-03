@@ -1,0 +1,67 @@
+{%- liquid
+  assign section_id = 'm-ritual-steps-' | append: section.id
+-%}
+<div id="{{ section_id }}" class="m-section m-ritual-steps py-16" style="background-color: {{ section.settings.bg_color }};">
+  <div class="{{ section.settings.container }}">
+    <div class="text-center mb-12">
+      {%- if section.settings.subheading != blank -%}
+        <span class="text-xs uppercase tracking-widest text-[#B9784D] block mb-2 font-medium">{{ section.settings.subheading }}</span>
+      {%- endif -%}
+      <h2 class="text-3xl md:text-4xl font-serif text-[#18231F]">{{ section.settings.heading }}</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-{{ section.blocks.size }} gap-8 relative">
+      {%- for block in section.blocks -%}
+        <div class="m-ritual-step p-6 bg-[#FCFBF7] rounded-xl border border-[#E5DFD3] relative" {{ block.shopify_attributes }}>
+          <span class="w-10 h-10 rounded-full bg-[#18231F] text-[#FCFBF7] font-serif text-lg font-bold flex items-center justify-center mb-4">0{{ forloop.index }}</span>
+          <h3 class="text-xl font-serif text-[#18231F] mb-2">{{ block.settings.title }}</h3>
+          <p class="text-sm text-[#5C6B61] leading-relaxed mb-4">{{ block.settings.instructions }}</p>
+          {%- if block.settings.product_tip != blank -%}
+            <span class="text-xs text-[#B9784D] font-medium block border-t border-[#E5DFD3] pt-3">Recommended: {{ block.settings.product_tip }}</span>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ritual Steps",
+  "settings": [
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Daily Application Guide" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The 3-Step Botanical Ritual" },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container",
+      "options": [
+        { "value": "container-fluid", "label": "Full width" },
+        { "value": "container", "label": "Container box" }
+      ],
+      "default": "container"
+    },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#F4EFE6" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Ritual Step",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Step Name", "default": "Clarify & Melt" },
+        { "type": "text", "id": "instructions", "label": "Instructions", "default": "Warm a hazelnut-sized portion between dry palms. Massage onto dry skin in circular rhythms to melt SPF and impurities." },
+        { "type": "text", "id": "product_tip", "label": "Product Pairing", "default": "Gentle Camellia Cleansing Balm" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ritual Steps",
+      "blocks": [
+        { "type": "step", "settings": { "title": "Step 1: Clarify", "instructions": "Dissolve impurities with botanical oils.", "product_tip": "Camellia Balm" } },
+        { "type": "step", "settings": { "title": "Step 2: Infuse", "instructions": "Press bio-ferment serum into damp skin for cellular absorption.", "product_tip": "Barrier Serum" } },
+        { "type": "step", "settings": { "title": "Step 3: Seal", "instructions": "Lock in hydration with lipid-rich cloud cream.", "product_tip": "Cloud Cream" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

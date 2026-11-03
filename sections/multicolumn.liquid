@@ -1,0 +1,91 @@
+{%- liquid
+  assign section_id = 'm-multicolumn-' | append: section.id
+-%}
+<div id="{{ section_id }}" class="m-section m-multicolumn py-16" style="background-color: {{ section.settings.bg_color }};">
+  <div class="{{ section.settings.container }}">
+    {%- if section.settings.heading != blank -%}
+      <div class="text-center mb-12">
+        {%- if section.settings.subheading != blank -%}
+          <span class="text-xs uppercase tracking-widest text-[#B9784D] font-medium block mb-2">{{ section.settings.subheading }}</span>
+        {%- endif -%}
+        <h2 class="text-3xl md:text-4xl font-serif text-[#18231F]">{{ section.settings.heading }}</h2>
+      </div>
+    {%- endif -%}
+    <div class="grid grid-cols-1 md:grid-cols-{{ section.settings.columns_desktop }} gap-8">
+      {%- for block in section.blocks -%}
+        <div class="m-multicolumn__item p-6 rounded-lg text-{{ block.settings.align }}" style="background: {{ block.settings.card_bg }};" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            <div class="mb-4 aspect-square overflow-hidden rounded">
+              {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'w-full h-full object-cover' }}
+            </div>
+          {%- endif -%}
+          {%- if block.settings.title != blank -%}
+            <h3 class="text-xl font-serif text-[#18231F] mb-2">{{ block.settings.title }}</h3>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <div class="text-sm text-[#5C6B61] leading-relaxed mb-4">{{ block.settings.text }}</div>
+          {%- endif -%}
+          {%- if block.settings.link_label != blank -%}
+            <a href="{{ block.settings.link }}" class="text-xs uppercase tracking-wider font-semibold text-[#B9784D] hover:underline">{{ block.settings.link_label }} &rarr;</a>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Multicolumn",
+  "settings": [
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Our Pillars" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Clinical Precision, Pure Botanicals" },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container",
+      "options": [
+        { "value": "container-fluid", "label": "Full width" },
+        { "value": "container", "label": "Container box" }
+      ],
+      "default": "container"
+    },
+    { "type": "range", "id": "columns_desktop", "label": "Columns on desktop", "min": 2, "max": 4, "step": 1, "default": 3 },
+    { "type": "color", "id": "bg_color", "label": "Section background", "default": "#FCFBF7" }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column Item",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Bio-Ferment Actives" },
+        { "type": "richtext", "id": "text", "label": "Description", "default": "<p>Micro-filtered fermentations enhance nutrient bioavailability and reinforce lipid barriers.</p>" },
+        { "type": "text", "id": "link_label", "label": "Link label", "default": "Learn more" },
+        { "type": "url", "id": "link", "label": "Link URL" },
+        { "type": "color", "id": "card_bg", "label": "Card background", "default": "#F4EFE6" },
+        {
+          "type": "select",
+          "id": "align",
+          "label": "Text alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" }
+          ],
+          "default": "left"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Multicolumn",
+      "blocks": [
+        { "type": "column" },
+        { "type": "column" },
+        { "type": "column" }
+      ]
+    }
+  ]
+}
+{% endschema %}

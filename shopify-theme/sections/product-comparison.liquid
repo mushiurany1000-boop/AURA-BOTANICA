@@ -1,0 +1,99 @@
+{%- liquid
+  assign section_id = 'm-product-comparison-' | append: section.id
+-%}
+<div id="{{ section_id }}" class="m-section m-product-comparison py-16" style="background-color: {{ section.settings.bg_color }};">
+  <div class="{{ section.settings.container }}">
+    <div class="text-center mb-12">
+      {%- if section.settings.subheading != blank -%}
+        <span class="text-xs uppercase tracking-widest text-[#B9784D] block mb-2 font-medium">{{ section.settings.subheading }}</span>
+      {%- endif -%}
+      <h2 class="text-3xl md:text-4xl font-serif text-[#18231F]">{{ section.settings.heading }}</h2>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border-collapse border border-[#E5DFD3] bg-white rounded-lg overflow-hidden shadow-sm">
+        <thead>
+          <tr class="bg-[#F4EFE6] text-[#18231F] font-serif text-lg border-b border-[#E5DFD3]">
+            <th class="p-4 md:p-6 w-1/4">Key Metrics</th>
+            {%- for block in section.blocks -%}
+              <th class="p-4 md:p-6 text-center" {{ block.shopify_attributes }}>
+                <span class="block font-bold">{{ block.settings.product_name }}</span>
+                <span class="text-xs text-[#B9784D] font-mono">{{ block.settings.product_price }}</span>
+              </th>
+            {%- endfor -%}
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-[#E5DFD3] text-sm text-[#18231F]">
+          <tr>
+            <td class="p-4 font-semibold text-[#5C6B61]">Primary Active</td>
+            {%- for block in section.blocks -%}
+              <td class="p-4 text-center">{{ block.settings.active_ingredient }}</td>
+            {%- endfor -%}
+          </tr>
+          <tr>
+            <td class="p-4 font-semibold text-[#5C6B61]">Skin Concern</td>
+            {%- for block in section.blocks -%}
+              <td class="p-4 text-center">{{ block.settings.skin_concern }}</td>
+            {%- endfor -%}
+          </tr>
+          <tr>
+            <td class="p-4 font-semibold text-[#5C6B61]">Texture Profile</td>
+            {%- for block in section.blocks -%}
+              <td class="p-4 text-center">{{ block.settings.texture }}</td>
+            {%- endfor -%}
+          </tr>
+          <tr>
+            <td class="p-4 font-semibold text-[#5C6B61]">Clinical Result</td>
+            {%- for block in section.blocks -%}
+              <td class="p-4 text-center text-[#2D5A3E] font-medium">{{ block.settings.clinical_result }}</td>
+            {%- endfor -%}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Comparison",
+  "settings": [
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Formulation Comparison" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Find Your Optimal Skincare Pairing" },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container",
+      "options": [
+        { "value": "container-fluid", "label": "Full width" },
+        { "value": "container", "label": "Container box" }
+      ],
+      "default": "container"
+    },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#FCFBF7" }
+  ],
+  "blocks": [
+    {
+      "type": "product_spec",
+      "name": "Product Column",
+      "settings": [
+        { "type": "text", "id": "product_name", "label": "Formulation Name", "default": "Bio-Ferment Serum" },
+        { "type": "text", "id": "product_price", "label": "Price", "default": "$68.00" },
+        { "type": "text", "id": "active_ingredient", "label": "Primary Active", "default": "5% Niacinamide + Ceramide NP" },
+        { "type": "text", "id": "skin_concern", "label": "Target Concern", "default": "Barrier Repair & Hydration" },
+        { "type": "text", "id": "texture", "label": "Texture", "default": "Silk Weightless Essence" },
+        { "type": "text", "id": "clinical_result", "label": "Clinical Metric", "default": "+94% Barrier Hydration at 48h" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Comparison",
+      "blocks": [
+        { "type": "product_spec", "settings": { "product_name": "Bio-Ferment Glow Serum", "product_price": "$68.00", "active_ingredient": "Micro-Ferments & Niacinamide" } },
+        { "type": "product_spec", "settings": { "product_name": "Deep Lipid Cloud Cream", "product_price": "$74.00", "active_ingredient": "Triple Ceramide Complex" } },
+        { "type": "product_spec", "settings": { "product_name": "Golden Bakuchiol Nectar", "product_price": "$78.00", "active_ingredient": "2% Cold-Pressed Bakuchiol" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

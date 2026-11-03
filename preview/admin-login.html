@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AURA BOTANICA — Admin Portal Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --color-bg: #FAF8F5;
+        --color-card: #FFFFFF;
+        --color-text: #1C2421;
+        --color-text-muted: #62706A;
+        --color-accent: #B87C52;
+        --color-accent-hover: #9E653E;
+        --color-sage: #4D6459;
+        --color-border: #E6DFC;
+        --radius: 12px;
+        --font-serif: 'Cormorant Garamond', Georgia, serif;
+        --font-sans: 'Plus Jakarta Sans', sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: var(--font-sans);
+        background: linear-gradient(135deg, #FAF8F5 0%, #F3EDE6 100%);
+        color: var(--color-text);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+
+      .login-container {
+        width: 100%;
+        max-width: 440px;
+        background: var(--color-card);
+        border: 1px solid #EAE2D8;
+        border-radius: var(--radius);
+        box-shadow: 0 16px 40px rgba(28, 36, 33, 0.08);
+        padding: 44px 36px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .login-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--color-sage) 0%, var(--color-accent) 100%);
+      }
+
+      .brand-header {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      .brand-logo {
+        font-family: var(--font-serif);
+        font-size: 1.85rem;
+        letter-spacing: 0.18em;
+        font-weight: 600;
+        color: var(--color-text);
+        margin-bottom: 4px;
+      }
+
+      .brand-subtitle {
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        font-weight: 600;
+      }
+
+      .login-title {
+        font-family: var(--font-serif);
+        font-size: 1.4rem;
+        margin-top: 16px;
+        color: var(--color-text);
+      }
+
+      .login-desc {
+        font-size: 0.85rem;
+        color: var(--color-text-muted);
+        margin-top: 4px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: var(--color-text);
+        letter-spacing: 0.02em;
+      }
+
+      .input-wrapper {
+        position: relative;
+      }
+
+      input[type="email"],
+      input[type="password"],
+      input[type="text"] {
+        width: 100%;
+        padding: 13px 16px;
+        font-size: 0.9rem;
+        font-family: inherit;
+        border: 1px solid #DDD5C9;
+        border-radius: 8px;
+        background-color: #FAF8F5;
+        outline: none;
+        transition: all 0.25s ease;
+      }
+
+      input:focus {
+        border-color: var(--color-accent);
+        background-color: #FFFFFF;
+        box-shadow: 0 0 0 3px rgba(184, 124, 82, 0.15);
+      }
+
+      .form-options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        margin-bottom: 24px;
+        color: var(--color-text-muted);
+      }
+
+      .remember-me {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+      }
+
+      .forgot-link {
+        color: var(--color-accent);
+        text-decoration: none;
+      }
+
+      .forgot-link:hover {
+        text-decoration: underline;
+      }
+
+      .btn-submit {
+        width: 100%;
+        padding: 14px;
+        background-color: var(--color-text);
+        color: #FFFFFF;
+        border: none;
+        border-radius: 9999px;
+        font-size: 0.92rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .btn-submit:hover {
+        background-color: var(--color-accent);
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(184, 124, 82, 0.25);
+      }
+
+      .demo-hint-box {
+        margin-top: 24px;
+        background-color: #F4EFEB;
+        border: 1px dashed #D9CFC4;
+        border-radius: 8px;
+        padding: 12px 14px;
+        font-size: 0.78rem;
+        color: var(--color-text-muted);
+      }
+
+      .demo-hint-box strong {
+        color: var(--color-text);
+      }
+
+      .demo-fill-btn {
+        background: none;
+        border: none;
+        color: var(--color-accent);
+        font-weight: 700;
+        text-decoration: underline;
+        cursor: pointer;
+        padding: 0;
+        margin-left: 4px;
+      }
+
+      .alert-error {
+        background-color: #FDF2F2;
+        color: #9B1C1C;
+        border: 1px solid #F8B4B4;
+        padding: 10px 14px;
+        border-radius: 8px;
+        font-size: 0.82rem;
+        margin-bottom: 20px;
+        display: none;
+      }
+
+      .back-to-store {
+        text-align: center;
+        margin-top: 24px;
+        font-size: 0.82rem;
+      }
+
+      .back-to-store a {
+        color: var(--color-text-muted);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .back-to-store a:hover {
+        color: var(--color-text);
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 16px;
+        }
+        .login-container {
+          padding: 32px 20px;
+        }
+        .brand-logo {
+          font-size: 1.55rem;
+        }
+        .login-title {
+          font-size: 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="brand-header">
+        <div class="brand-logo">AURA BOTANICA</div>
+        <div class="brand-subtitle">Theme Administrator Portal</div>
+        <h2 class="login-title">Sign in to Store Manager</h2>
+        <p class="login-desc">Manage theme settings, products, rituals, and orders</p>
+      </div>
+
+      <div class="alert-error" id="ErrorMessage">
+        Invalid email or password. Please try again.
+      </div>
+
+      <form id="LoginForm">
+        <div class="form-group">
+          <label for="email">Admin Email</label>
+          <div class="input-wrapper">
+            <input type="email" id="email" name="email" value="admin@aurabotanica.com" required placeholder="admin@aurabotanica.com">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="password" name="password" value="admin123" required placeholder="••••••••">
+          </div>
+        </div>
+
+        <div class="form-options">
+          <label class="remember-me">
+            <input type="checkbox" id="remember" checked>
+            <span>Keep me signed in</span>
+          </label>
+          <a href="javascript:alert('Password reset link sent to registered admin email.')" class="forgot-link">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn-submit" id="LoginBtn">
+          <span>Enter Dashboard</span>
+          <span>&rarr;</span>
+        </button>
+      </form>
+
+      <div class="demo-hint-box">
+        <strong>Default Credentials:</strong><br>
+        Email: <code>admin@aurabotanica.com</code> | Pass: <code>admin123</code>
+        <br>
+        <button type="button" class="demo-fill-btn" onclick="fillDemo()">Auto-fill Credentials</button>
+      </div>
+
+      <div class="back-to-store">
+        <a href="/">
+          <span>&larr;</span>
+          <span>Return to Live Storefront</span>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      function fillDemo() {
+        document.getElementById('email').value = 'admin@aurabotanica.com';
+        document.getElementById('password').value = 'admin123';
+      }
+
+      document.getElementById('LoginForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const errorBox = document.getElementById('ErrorMessage');
+        const loginBtn = document.getElementById('LoginBtn');
+
+        errorBox.style.display = 'none';
+        loginBtn.innerHTML = 'Verifying credentials...';
+        loginBtn.disabled = true;
+
+        try {
+          const res = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+          });
+          const data = await res.json();
+
+          if (res.ok && data.success) {
+            localStorage.setItem('aura_admin_token', data.token);
+            window.location.href = '/admin';
+          } else {
+            errorBox.textContent = data.message || 'Invalid email or password.';
+            errorBox.style.display = 'block';
+            loginBtn.innerHTML = '<span>Enter Dashboard</span> <span>&rarr;</span>';
+            loginBtn.disabled = false;
+          }
+        } catch (err) {
+          // Client-side fallback if offline
+          if (email === 'admin@aurabotanica.com' && password === 'admin123') {
+            localStorage.setItem('aura_admin_token', 'demo-token-' + Date.now());
+            window.location.href = '/admin';
+          } else {
+            errorBox.textContent = 'Invalid credentials. Use admin@aurabotanica.com / admin123';
+            errorBox.style.display = 'block';
+            loginBtn.innerHTML = '<span>Enter Dashboard</span> <span>&rarr;</span>';
+            loginBtn.disabled = false;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+

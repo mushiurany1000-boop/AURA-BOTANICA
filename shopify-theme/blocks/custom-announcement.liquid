@@ -1,0 +1,20 @@
+{%- if block.settings.text != blank -%}
+  <div class="custom-announcement-block" {{ block.shopify_attributes }}>
+    <span>{{ block.settings.text }}</span>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Custom Announcement",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Announcement Text",
+      "default": "Complimentary Shipping & Samples on all orders over $65"
+    }
+  ]
+}
+{% endschema %}
