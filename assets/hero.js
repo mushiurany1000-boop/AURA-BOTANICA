@@ -48,3 +48,4 @@ if (!customElements.get('m-hero')) {
 
   customElements.define('m-hero', MHero);
 }
+

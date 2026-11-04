@@ -22,3 +22,4 @@ templates.forEach(file => {
     console.log(`[LOREM IPSUM] in ${file}`);
   }
 });
+

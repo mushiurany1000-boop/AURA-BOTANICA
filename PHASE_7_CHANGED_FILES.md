@@ -1,8 +1,8 @@
-# PHASE 7 — AURA BOTANICA: CHANGED & CREATED FILES INVENTORY
+# PHASE 7 & 7.1 — AURA BOTANICA: CHANGED & CREATED FILES INVENTORY
 
 **Theme:** Aura Botanica — Modern Luxury Skincare  
 **Date:** November 4, 2026  
-**Phase:** Phase 7 Liquid Repair & Feature Completion  
+**Phase:** Phase 7 & 7.1 Liquid Repair, Save Conflict Resolution & Independent Verification  
 
 ---
 
@@ -14,7 +14,7 @@
 | `shopify-theme/assets/hero.js` | Mirror Asset | Synchronized copy of `hero.js` in theme mirror directory. |
 | `assets/custom.css` | Stylesheet | Clean merchant stylesheet eliminating 404 console errors in `style-tags.liquid`. |
 | `shopify-theme/assets/custom.css` | Mirror Asset | Synchronized copy of `custom.css` in theme mirror directory. |
-| `sections/image-gallery.liquid` | Modular Section | Complete luxury image gallery grid supporting 2 to 5 columns on desktop, 1 to 2 columns on mobile, aspect ratio controls, and presets. |
+| `sections/image-gallery.liquid` | Modular Section | Complete luxury image gallery grid supporting 2 to 5 columns on desktop, 1 to 2 columns on mobile, resilient CSS grid styles, aspect ratio controls, and presets. Resolved save conflict. |
 | `shopify-theme/sections/image-gallery.liquid` | Mirror Section | Synchronized copy of `image-gallery.liquid`. |
 | `sections/faq.liquid` | Modular Section | Standalone FAQ section with accessible HTML5 `<details><summary>` accordions, question/answer blocks, and presets. |
 | `shopify-theme/sections/faq.liquid` | Mirror Section | Synchronized copy of `faq.liquid`. |
@@ -31,6 +31,10 @@
 
 | File Path | Description of Modification |
 | :--- | :--- |
+| `sections/image-gallery.liquid` | Upgraded markup with scoped inline CSS grid styles for bulletproof responsive rendering; resolved editor save conflict. |
+| `shopify-theme/sections/image-gallery.liquid` | Synchronized fix in `shopify-theme/`. |
+| `templates/404.json` | Stripped auto-generated `/* ... */` comment block injected by Shopify's editor, restoring standard JSON compliance while preserving merchant customization. |
+| `shopify-theme/templates/404.json` | Synchronized fix in `shopify-theme/`. |
 | `layout/password.liquid` | Corrected script reference typo from `vendor.min.js` to the existing production `vendor.js`. |
 | `shopify-theme/layout/password.liquid` | Synchronized fix in `shopify-theme/`. |
 | `snippets/theme-data.liquid` | Corrected parallax asset handler URL from `simple-parallax.js` to the native `parallax.js`. |

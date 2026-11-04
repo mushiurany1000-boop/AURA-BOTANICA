@@ -1,7 +1,7 @@
-# PHASE 7 — AURA BOTANICA: FUNCTIONALITY TEST REPORT
+# PHASE 7 & 7.1 — AURA BOTANICA: FUNCTIONALITY TEST REPORT
 
 **Date:** November 4, 2026  
-**Execution Context:** Local Codebase & Automated AST/Liquid Verification Suite  
+**Execution Context:** Local Codebase & Automated AST/Liquid Verification Suite (Phase 7.1 Independent Audit)  
 **Theme:** Aura Botanica (Shopify OS 2.0)  
 **Package:** `aura-skincare-theme.zip` (1.01 MB / 493 files)  
 
@@ -12,11 +12,12 @@
 | Feature / Domain | Verification Scope | Status | Notes |
 | :--- | :--- | :--- | :--- |
 | **Theme Structure & OS 2.0** | 8 canonical theme directories, `layout/theme.liquid`, `content_for_header`, `content_for_layout` | **PASS** | Validated via `scripts/validate-theme.js` (177/177 checks) |
-| **JSON Templates (40 files)** | Valid JSON syntax, all referenced section types exist on disk | **PASS** | Validated via `scripts/validate-theme.js` (40/40 templates) |
+| **JSON Templates (40 files)** | Valid JSON syntax, all referenced section types exist on disk | **PASS** | Validated via `scripts/validate-theme.js` (40/40 templates; comment block in `404.json` stripped) |
 | **Section Schemas (98 files)** | Valid `{% schema %}` JSON, unique IDs, correct setting types | **PASS** | Validated via `scripts/validate-theme.js` (98/98 schemas) |
 | **Section Groups** | `header-group.json` & `footer-group.json` structural validity | **PASS** | Both groups resolve to real section files with valid settings |
 | **Asset References (155 assets)** | All `\| asset_url` calls resolve to physical files in `assets/` | **PASS** | 0 missing asset calls (verified via `scripts/check-all-assets.js`) |
 | **Snippet References (94 snippets)** | All `{% render %}` calls resolve to physical files in `snippets/` | **PASS** | 0 missing snippet calls (verified via `scripts/check-all-snippets.js`) |
+| **Image Gallery Section** | Resilient CSS grid inline styling, 2-5 columns desktop, aspect ratios, block presets | **PASS** | Save conflict resolved, verified in `sections/image-gallery.liquid` |
 | **Product & Variant Switching** | Dynamic variant picker, master `name="id"` binding, price and SKU update | **PASS** | Liquid logic & JS custom elements verified via `test-variant-and-product-flow.js` |
 | **Product Form & Availability** | Sold out variant disabled state, instant enabled state for available items | **PASS** | Repaired in `snippets/product-form.liquid` |
 | **Cart Drawer & AJAX ATC** | Slide-out cart drawer, `/cart/add.js` fetch, real-time item counter | **PASS** | Verified via `test-shopping-flows.js` |
@@ -36,7 +37,7 @@
 * **Directories:** 8 / 8 verified.
 * **Layout:** `theme.liquid` header/footer section groups verified.
 * **Sections:** 98 section schemas parsed and validated.
-* **Templates:** 40 JSON templates parsed with valid section resolution.
+* **Templates:** 40 JSON templates parsed with valid section resolution (including user-customized `404.json`).
 * **Result:** **177 PASSED, 0 FAILED**.
 
 ### Suite 2: Deep Theme Editor Test (`node scripts/test-theme-editor-deep.js`)
@@ -55,6 +56,6 @@
 
 ### Suite 5: ZIP Archive Verification (`node scripts/verify-zip-archive.js`)
 * **Archive Path:** `c:\Users\Mushiur Rahman Any\Desktop\New folder\aura-skincare-theme.zip`
-* **Size:** 1.01 MB (1,054,705 bytes)
+* **Size:** 1.01 MB (1,056,117 bytes)
 * **Entries:** 493 entries.
 * **Result:** **20 / 20 CHECKS PASSED**.

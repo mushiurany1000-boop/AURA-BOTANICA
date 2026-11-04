@@ -44,3 +44,4 @@ if (missingAssets.size > 0) {
   console.log('Missing assets:');
   missingAssets.forEach(m => console.log(' ', m));
 }
+

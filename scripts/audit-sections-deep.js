@@ -42,3 +42,4 @@ requiredSections.forEach(name => {
     console.log(`[EXISTS] ${name}.liquid (${lines} lines)`);
   }
 });
+

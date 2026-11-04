@@ -63,3 +63,4 @@ To guarantee that merchant storefronts never display `Liquid error: Could not fi
 * **`snippets/product-form.liquid`**:
   * Corrected master variant `<input name="id">` logic. Previously, the input had an unconditional `disabled` attribute in Liquid, relying on JavaScript hydration to enable it.
   * Updated to: `{% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}`. This ensures instant form readiness for available products while correctly respecting sold-out inventory.
+
