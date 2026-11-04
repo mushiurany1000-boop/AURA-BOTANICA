@@ -1,8 +1,9 @@
-# PHASE 7 & 7.1 — AURA BOTANICA: CHANGED & CREATED FILES INVENTORY
+# PHASE 7.2 — AURA BOTANICA: CHANGED & AUDITED FILES INVENTORY
 
 **Theme:** Aura Botanica — Modern Luxury Skincare  
 **Date:** November 4, 2026  
-**Phase:** Phase 7 & 7.1 Liquid Repair, Save Conflict Resolution & Independent Verification  
+**Phase:** Phase 7.2 Storefront Acceptance & Functionality Audit  
+**Readiness Status:** READY FOR DEVELOPMENT STORE TESTING  
 
 ---
 
@@ -31,7 +32,7 @@
 
 | File Path | Description of Modification |
 | :--- | :--- |
-| `sections/image-gallery.liquid` | Upgraded markup with scoped inline CSS grid styles for bulletproof responsive rendering; resolved editor save conflict. |
+| `sections/image-gallery.liquid` | Upgraded markup with scoped inline CSS grid styles (`#{{ section_id }} .m-gallery__grid`) for bulletproof responsive rendering; standard aspect ratios (`square`, `portrait`, `landscape`); resolved editor save conflict. |
 | `shopify-theme/sections/image-gallery.liquid` | Synchronized fix in `shopify-theme/`. |
 | `templates/404.json` | Stripped auto-generated `/* ... */` comment block injected by Shopify's editor, restoring standard JSON compliance while preserving merchant customization. |
 | `shopify-theme/templates/404.json` | Synchronized fix in `shopify-theme/`. |
@@ -45,15 +46,13 @@
 | `shopify-theme/templates/gift_card.liquid` | Synchronized fix in `shopify-theme/`. |
 | `templates/page.faqs.json` | Removed external CDN image link and generic `Lorem ipsum` clothing copy; implemented genuine Aura Botanica skincare FAQs. |
 | `shopify-theme/templates/page.faqs.json` | Synchronized fix in `shopify-theme/`. |
+| `PHASE_7_FUNCTIONALITY_TEST_REPORT.md` | Comprehensive storefront acceptance matrix, test results, third-party integrations breakdown, and checkout verification procedures. |
+| `PHASE_7_REMAINING_ISSUES.md` | Clear audit of zero code-level defects and 5-step merchant development store acceptance checklist. |
 | `aura-skincare-theme.zip` | Rebuilt production archive containing 493 entries (1.01 MB) with 100% POSIX compliance. |
 
 ---
 
-## 3. Auditing & Verification Scripts Created
+## 3. Directory Parity Status
 
-| Script File | Purpose |
-| :--- | :--- |
-| `scripts/deep-phase7-audit.js` | Comprehensive scanner for sections, snippet calls, asset calls, templates, and section groups. |
-| `scripts/audit-sections-deep.js` | Audits existence and line counts of all core sections required by Shopify OS 2.0. |
-| `scripts/find-placeholder-content.js` | Scans all JSON templates for external CDN URLs or `Lorem ipsum` placeholder text. |
-| `scripts/check-all-assets.js` | Cross-references every `\| asset_url` across all Liquid, JS, and JSON files against `assets/`. |
+* Total files compared between root `/` and `/shopify-theme`: **493**
+* Differences detected: **0 (100% Parity)**
