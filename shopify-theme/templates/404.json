@@ -226,7 +226,7 @@
       "settings": {
         "container": "container",
         "color_scheme": "",
-        "featured_product": "beggy-pant",
+        "featured_product": "",
         "enable_variant_group_images": false,
         "column_gap": 100,
         "column_gap_mobile": 30,

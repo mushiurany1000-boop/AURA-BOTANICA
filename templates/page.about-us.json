@@ -2,8 +2,7 @@
   "sections": {
     "main": {
       "type": "page-about-us",
-      "settings": {
-      }
+      "settings": {}
     },
     "custom-content": {
       "type": "custom-content",
@@ -21,9 +20,9 @@
         "f5e88f1f-ff68-4d03-b686-0cb9fe62fab1": {
           "type": "text",
           "settings": {
-            "title": "<h4 class=\"about__block-heading\">It pains me physically to see woman victimized,<br> rendered pathetic by fashion.<\/h4>\n<p class=\"about__block-subheading\">Awkwardness gives me great comfort. I’ve never been cool, but I’ve felt cool. I’ve been in the<br> cool place, but I wasn’t really cool – I was trying to pass for hip or cool.<\/p>",
+            "title": "<h4 class=\"about__block-heading\">Rooted in Botanical Alchemy.<br> Proven by Modern Dermatological Science.</h4>\n<p class=\"about__block-subheading\">Formulating conscious, biocompatible skincare that nurtures the lipid barrier and respects the skin microbiome.</p>",
             "subheading": "",
-            "text": "<p>A girl should be two things: classy and fabulous. I am convinced that there can be luxury in simplicity. I wanted to dress the woman who lives and works, not the woman in a painting. It’s hard to balance everything. It’s always challenging. My relationships with producers or photographers – these are relationships that took years. I can’t get sucked into that celebrity thing, because I think it’s just crass. My aim is to make the poor look rich and the rich look poor. Vanity is the healthiest thing in life. I believe that my clothes can give people a better image of themselves – that it can increase their feelings of confidence and happiness. You can hide so much behind theatrics, and I don’t need to do that any more. I don’t really know how to do casual clothes.<\/p>",
+            "text": "<p>Aura Botanica was founded on the conviction that true luxury lies in uncompromised purity and botanical potency. Our restorative elixirs combine cold-pressed botanicals with micro-fermented bio-actives to deliver transformative clinical results without irritating sensitive complexions. Every formula is sustainably harvested, cruelty-free, and formulated without synthetic fragrance, parabens, or mineral oils.</p>",
             "width": "100%",
             "alignment": "center",
             "align_text": "center",
@@ -50,7 +49,7 @@
         "9a3a8077-de29-4141-9162-b9484d4a85f8": {
           "type": "html",
           "settings": {
-            "code": "<div class=\"sf__about-custom-list\">\n  <h3>We are proudly<br> Australian.<\/h3>\n  <ul>\n    <li>\n      <span><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0561\/2742\/2636\/files\/icon1.svg?v=1627616411\"><\/span>\n      <div class=\"rte\">\n          <h4>Soft Fabric<\/h4>\n          <p class=\"text-color-subtext\">Get complimentary ground shipping on every<br> order.Don’t love it? Send it back, on us.<\/p>\n      <\/div>\n    <\/li>\n    <li>\n      <span><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0561\/2742\/2636\/files\/icon2_daf1b6c2-ef2e-416c-ae6a-a7ddd145b6c5.svg?v=1627616411\"><\/span>\n      <div class=\"rte\">\n          <h4>Lightweight<\/h4>\n          <p class=\"text-color-subtext\">Join Minimog Rewards to earn gift cards<br>\nand enjoy exclusive member benefits.<\/p>\n      <\/div>\n    <\/li>\n    <li>\n      <span><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0561\/2742\/2636\/files\/icon3.svg?v=1627616411\"><\/span>\n      <div class=\"rte\">\n          <h4>All Day Comfort<\/h4>\n          <p class=\"text-color-subtext\">We believe getting dressed should be the<br> easiest part of your day.<\/p>\n      <\/div>\n    <\/li>\n  <\/ul>\n<\/div>",
+            "code": "<div class=\"sf__about-custom-list\">\n  <h3>Our Botanical<br> Commitments.</h3>\n  <ul>\n    <li>\n      <span><svg class=\"m-svg-icon\" width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12A10 10 0 0 1 12 2z\"/><path d=\"M12 6v6l4 2\"/></svg></span>\n      <div class=\"rte\">\n          <h4>Bio-Ferment Actives</h4>\n          <p class=\"text-color-subtext\">Nutrient bioavailability maximized through slow, sustainable fermentation.</p>\n      </div>\n    </li>\n    <li>\n      <span><svg class=\"m-svg-icon\" width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\"/></svg></span>\n      <div class=\"rte\">\n          <h4>Lipid Barrier Protection</h4>\n          <p class=\"text-color-subtext\">Ceramides, squalane, and omegas that replenish what daily exposure depletes.</p>\n      </div>\n    </li>\n    <li>\n      <span><svg class=\"m-svg-icon\" width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg></span>\n      <div class=\"rte\">\n          <h4>100% Conscious Crafting</h4>\n          <p class=\"text-color-subtext\">Sustainable violet glass packaging, Leaping Bunny certified cruelty-free, and carbon-neutral shipping.</p>\n      </div>\n    </li>\n  </ul>\n</div>",
             "width": "50%",
             "block_custom_class": "sf__about-custom-html",
             "animations": "inherit"
@@ -59,9 +58,9 @@
         "28e3ce35-e364-43f3-ba87-18b633233063": {
           "type": "text",
           "settings": {
-            "title": "<h4 class=\"about__block-heading\">The world needs to move fast to make a meaningful<br> difference in the fight against climate change.<\/h4>",
+            "title": "<h4 class=\"about__block-heading\">Sustainable formulation without compromise.<br> For skin resilience and global biodiversity.</h4>",
             "subheading": "",
-            "text": "<p>A girl should be two things: classy and fabulous. I am convinced that there can be luxury in simplicity. I wanted to dress the woman who lives and works, not the woman in a painting. It’s hard to balance everything. It’s always challenging. My relationships with producers or photographers – these are relationships that took years. I can’t get sucked into that celebrity thing, because I think it’s just crass. My aim is to make the poor look rich and the rich look poor. Vanity is the healthiest thing in life. I believe that my clothes can give people a better image of themselves – that it can increase their feelings of confidence and happiness. You can hide so much behind theatrics, and I don’t need to do that any more. I don’t really know how to do casual clothes.<\/p>",
+            "text": "<p>We work directly with ethical agricultural cooperatives across Japan, Madagascar, and Provence to source organic camellia seed oil, wild-crafted bakuchiol, and organic botanicals. Every batch is formulated in micro-lots to maintain unyielding active stability and sensory elegance.</p>",
             "width": "100%",
             "alignment": "center",
             "align_text": "center",
@@ -105,7 +104,7 @@
             "text_color": "black",
             "link": "",
             "title": "Edward Lindgren",
-            "subtitle": "<span class=\"text-color-subtext\">CHIEF OPERATING OFFICER<\/span>",
+            "subtitle": "<span class=\"text-color-subtext\">CHIEF OPERATING OFFICER</span>",
             "description": "",
             "button_label": "",
             "button_style": "m-button--primary",
@@ -127,7 +126,7 @@
             "text_color": "black",
             "link": "",
             "title": "Chineze Afamefuna",
-            "subtitle": "<span class=\"text-color-subtext\">MARKETING<\/span>",
+            "subtitle": "<span class=\"text-color-subtext\">MARKETING</span>",
             "description": "",
             "button_label": "",
             "button_style": "m-button--primary",
@@ -149,7 +148,7 @@
             "text_color": "black",
             "link": "",
             "title": "Nado Husa",
-            "subtitle": "<span class=\"text-color-subtext\">CO-FOUNDER<\/span>",
+            "subtitle": "<span class=\"text-color-subtext\">CO-FOUNDER</span>",
             "description": "",
             "button_label": "",
             "button_style": "m-button--primary",

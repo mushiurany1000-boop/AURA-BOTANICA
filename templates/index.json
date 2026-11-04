@@ -315,45 +315,36 @@
           "type": "shop-this-look",
           "settings": {
             "color_scheme": "",
-            "title_text": "Beautifully Functional. Purposefully Designed.",
+            "title_text": "Botanical Alchemy. Clinically Proven.",
             "title_size": "m:text-base",
             "text_alignment": "center",
             "title_link": "",
             "button_label": "Shop this look",
-            "product_list": [
-              "flared-trousers",
-              "short-sleeve-t-shirt"
-            ]
+            "product_list": []
           }
         },
         "shop_this_look_AVdw3f": {
           "type": "shop-this-look",
           "settings": {
             "color_scheme": "",
-            "title_text": "Beautifully Functional. Purposefully Designed.",
+            "title_text": "Daily Restorative Rituals for Radiance.",
             "title_size": "m:text-base",
             "text_alignment": "center",
             "title_link": "",
             "button_label": "Shop this look",
-            "product_list": [
-              "bardot-sweater-1",
-              "flared-grey"
-            ]
+            "product_list": []
           }
         },
         "shop_this_look_EcLGgQ": {
           "type": "shop-this-look",
           "settings": {
             "color_scheme": "",
-            "title_text": "The t-shirt is designed with a crewneck collar.",
+            "title_text": "Pure Active Phyto-Nutrients for Barrier Health.",
             "title_size": "m:text-base",
             "text_alignment": "center",
             "title_link": "",
             "button_label": "Shop this look",
-            "product_list": [
-              "the-cotton-tan",
-              "faded-effect-jean"
-            ]
+            "product_list": []
           }
         }
       },
@@ -980,7 +971,7 @@
           "type": "testimonial",
           "settings": {
             "title": "Love it so much",
-            "description": "<p>Was I in Hawaii?! No. Did I feel like I was in Hawaii?! No, because it’s snowing outside. But, would I wear this in Hawaii ❤️</p>",
+            "description": "<p>The Bio-Ferment Barrier Serum completely restored my skin barrier within two weeks. My complexion has never felt this deeply nourished and luminous.</p>",
             "footer": "<p>Jared S.</p>",
             "image_text": "",
             "image_link": ""
@@ -990,7 +981,7 @@
           "type": "testimonial",
           "settings": {
             "title": "Love it so much",
-            "description": "<p>Always getting compliments from family, friends, and strangers. 🤗 🙌</p>",
+            "description": "<p>Aura Botanica has transformed my evening ritual. The Bakuchiol Midnight Nectar gives all the benefits of retinol without a hint of irritation or redness.</p>",
             "footer": "<p>Alyssa A.</p>",
             "image_text": "",
             "image_link": ""
@@ -1000,7 +991,7 @@
           "type": "testimonial",
           "settings": {
             "title": "Love it so much",
-            "description": "<p>Hands down one of the best shirts I’ve ever owned.  Fits great, feels amazing, seems to stay cool and is somewhat water resistant. </p>",
+            "description": "<p>The Camellia Cleansing Balm melts away waterproof SPF effortlessly without stripping essential lipids. Absolute luxury in a glass jar.</p>",
             "footer": "<p>Ben B.</p>",
             "image_text": "",
             "image_link": ""
@@ -1010,7 +1001,7 @@
           "type": "testimonial",
           "settings": {
             "title": "Love it so much",
-            "description": "<p>Was I in Hawaii?! No. Did I feel like I was in Hawaii?! No, because it’s snowing outside. But, would I wear this in Hawaii ❤️</p>",
+            "description": "<p>After trying countless luxury brands, Aura Botanica is the only formulation that healed my dry, reactive skin. Truly clinical alchemy in every drop.</p>",
             "footer": "<p>Dean D. US</p>",
             "image_text": "",
             "image_link": ""
@@ -1020,7 +1011,7 @@
           "type": "testimonial",
           "settings": {
             "title": "Love it so much",
-            "description": "<p>Always getting compliments from family, friends, and strangers. 🤗 🙌</p>",
+            "description": "<p>My skin texture is remarkably softer and more radiant. The botanical aromatics make my morning skincare routine feel like a high-end spa retreat.</p>",
             "footer": "<p>John D.</p>",
             "image_text": "",
             "image_link": ""
@@ -1030,7 +1021,7 @@
           "type": "testimonial",
           "settings": {
             "title": "Love it so much",
-            "description": "<p>Hands down one of the best shirts I’ve ever owned.  Fits great, feels amazing, seems to stay cool and is somewhat water resistant. </p>",
+            "description": "<p>Clean, thoughtful ingredients with real results. The Deep Lipid Moisture Cream keeps my skin plump and protected all day long.</p>",
             "footer": "<p>Dean J.</p>",
             "image_text": "",
             "image_link": ""
