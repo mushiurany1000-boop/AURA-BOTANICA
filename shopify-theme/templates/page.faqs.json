@@ -13,10 +13,10 @@
     "custom_content_tAfTRN": {
       "type": "custom-content",
       "settings": {
-        "heading": "FAQs",
+        "heading": "Frequently Asked Questions",
         "heading_size": "h2",
-        "subheading": "",
-        "description": "",
+        "subheading": "Aura Botanica Client Care",
+        "description": "Everything you need to know about our organic formulations, sustainable packaging, and order fulfillment.",
         "header_alignment": "center",
         "container": "container-fluid",
         "color_scheme": "",
@@ -37,46 +37,46 @@
         "custom-content": {
           "type": "content",
           "settings": {
-            "content": "<div class=\"mb-10\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0561\/2742\/2636\/files\/faqs.jpg?v=1620784288\"><\/div>\n<h3 class=\"font-medium text-xl mb-4\">Awkwardness gives me great comfort. I’ve never been cool, but I’ve felt cool. I’ve been in the cool place, but I wasn’t really cool – I was trying to pass for hip or cool.<\/h3>\n<p>A girl should be two things: classy and fabulous. I am convinced that there can be luxury in simplicity. I wanted to dress the woman who lives and works, not the woman in a painting. It’s hard to balance everything. It’s always challenging. My relationships with producers or photographers – these are relationships that took years. I can’t get sucked into that celebrity thing, because I think it’s just crass. My aim is to make the poor look rich.<\/p>"
+            "content": "<h3 class=\"font-medium text-xl mb-4\">Pure Botanical Alchemy & Holistic Skin Health</h3><p>We formulate our skincare with ethically harvested botanicals, cold-pressed seed oils, and bioactive ferments. Below you will find answers to frequently asked questions regarding our formulations, sustainable packaging, and shipping policies.</p>"
           }
         },
         "accordion-1": {
           "type": "accordion",
           "settings": {
-            "title": "What shipping methods are availbale?",
-            "content": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.<br\/><br\/>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.<\/p>",
+            "title": "What skin types are Aura Botanica formulations designed for?",
+            "content": "<p>Our biocompatible formulations are designed for all skin types, including sensitive, sensitized, and barrier-compromised skin. Each product is formulated without artificial fragrances, harsh sulfates, parabens, or synthetic dyes, focusing on soothing nourishment and skin-barrier restoration.</p>",
             "open": true
           }
         },
         "accordion-2": {
           "type": "accordion",
           "settings": {
-            "title": "How long will it take to get my package?",
-            "content": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.<\/p>",
+            "title": "How long will it take to receive my order?",
+            "content": "<p>Standard domestic shipping typically delivers within 3 to 5 business days. Express shipping options (1 to 2 business days) are available at checkout. All orders include end-to-end tracking so you can follow your delivery in real time.</p>",
             "open": false
           }
         },
         "accordion-3": {
           "type": "accordion",
           "settings": {
-            "title": "Do you ship internationally?",
-            "content": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.<\/p>",
+            "title": "Do you offer complimentary shipping?",
+            "content": "<p>Yes! We offer complimentary standard shipping on all domestic orders over $75.00. Your free shipping progress is automatically calculated in your cart drawer as you add formulations.</p>",
             "open": false
           }
         },
         "accordion-4": {
           "type": "accordion",
           "settings": {
-            "title": "What payment methods are accepted?",
-            "content": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.<\/p>",
+            "title": "Are your ingredients vegan and cruelty-free?",
+            "content": "<p>100% yes. Aura Botanica is certified cruelty-free. We never test on animals, nor do we source from suppliers that do. All formulations are vegan and blended using sustainably harvested botanical extracts.</p>",
             "open": false
           }
         },
         "accordion-5": {
           "type": "accordion",
           "settings": {
-            "title": "Is buying on-line safe?",
-            "content": "<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.<\/p>",
+            "title": "What is your return and satisfaction guarantee?",
+            "content": "<p>We want you to love your skincare ritual. We offer a 30-day satisfaction guarantee on all formulations. If a product does not suit your skin, simply reach out to our concierge team at support@aurabotanica.com for an exchange or full refund.</p>",
             "open": false
           }
         }

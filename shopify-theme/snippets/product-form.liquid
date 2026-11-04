@@ -53,7 +53,7 @@
         name="id"
         value="{{ variant_id }}"
         data-selected-variant="{{ selected_variant_id }}"
-        disabled
+        {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
       >
       <div class="m-product-form--wrapper m:display-flex m:flex-wrap m:items-end">
         {% if show_quantity_selector == true %}

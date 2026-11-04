@@ -33,9 +33,8 @@
     {% render 'critical-css' %}
     {% render 'custom-code-head' %}
 
-    {{ 'grid.css' | asset_url | stylesheet_tag }}
-    {{ 'base.css' | asset_url | stylesheet_tag }}
-    {{ 'modules.css' | asset_url | stylesheet_tag }}
+    {{ 'main.css' | asset_url | stylesheet_tag }}
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
     
     {% render 'style-tags' %}
 

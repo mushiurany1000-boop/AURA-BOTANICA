@@ -1,11 +1,258 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-  "name": "404-template",
   "sections": {
     "main": {
-      "type": "404-template"
+      "type": "404-template",
+      "settings": {
+        "bg_color": "#f5f1ed",
+        "t1_color": "#000000",
+        "t2_color": "#000000"
+      }
+    },
+    "multicolumn_WQg9Cr": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_EDABFF": {
+          "type": "column",
+          "settings": {
+            "title": "Bio-Ferment Actives",
+            "text": "<p>Micro-filtered fermentations enhance nutrient bioavailability and reinforce lipid barriers.</p>",
+            "link_label": "Learn more",
+            "link": "",
+            "card_bg": "#f4efe6",
+            "align": "center"
+          }
+        },
+        "column_37heir": {
+          "type": "column",
+          "settings": {
+            "title": "Bio-Ferment Actives",
+            "text": "<p>Micro-filtered fermentations enhance nutrient bioavailability and reinforce lipid barriers.</p>",
+            "link_label": "Learn more",
+            "link": "",
+            "card_bg": "#f4efe6",
+            "align": "center"
+          }
+        },
+        "column_WcxDXX": {
+          "type": "column",
+          "settings": {
+            "title": "Bio-Ferment Actives",
+            "text": "<p>Micro-filtered fermentations enhance nutrient bioavailability and reinforce lipid barriers.</p>",
+            "link_label": "Learn more",
+            "link": "",
+            "card_bg": "#f4efe6",
+            "align": "center"
+          }
+        },
+        "column_VDeckC": {
+          "type": "column",
+          "settings": {
+            "title": "Bio-Ferment Actives",
+            "text": "<p>Micro-filtered fermentations enhance nutrient bioavailability and reinforce lipid barriers.</p>",
+            "link_label": "Learn more",
+            "link": "",
+            "card_bg": "#f4efe6",
+            "align": "center"
+          }
+        }
+      },
+      "block_order": [
+        "column_EDABFF",
+        "column_37heir",
+        "column_WcxDXX",
+        "column_VDeckC"
+      ],
+      "name": "Multicolumn",
+      "settings": {
+        "subheading": "Our Pillars",
+        "heading": "Clinical Precision, Pure Botanicals",
+        "container": "container",
+        "columns_desktop": 4,
+        "bg_color": "#fcfbf7"
+      }
+    },
+    "collection_tabs_MrUpBp": {
+      "type": "collection-tabs",
+      "blocks": {
+        "collection_8VtCjU": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "heading": "",
+            "heading_size": "h4",
+            "text": ""
+          }
+        },
+        "collection_RHp4N9": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "heading": "",
+            "heading_size": "h4",
+            "text": ""
+          }
+        },
+        "collection_C9hM3R": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "heading": "",
+            "heading_size": "h4",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_8VtCjU",
+        "collection_RHp4N9",
+        "collection_C9hM3R"
+      ],
+      "name": "Collection tabs",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "header_alignment": "center",
+        "heading": "Collection tabs",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "image_position": "left",
+        "image_ratio": "1/1",
+        "prefix_header": "ordinal_number",
+        "trigger_behavior": "hover",
+        "autoplay": false,
+        "autoplay_duration": 5,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "recent_viewed_products_DXLbpr": {
+      "type": "recent-viewed-products",
+      "name": "Recently viewed products",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "heading": "Recently Viewed Products",
+        "heading_size": "h3",
+        "text_align": "left",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": 30,
+        "pcard_layout": "",
+        "pcard_image_ratio": "",
+        "show_vendor": false,
+        "hide_title": false,
+        "enable_slider": true,
+        "show_pagination": false,
+        "show_navigation": false,
+        "mobile_disable_slider": false,
+        "use_scroll_mobile": true,
+        "item_gap_mobile": 16,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "promotion_banner_gNfEqk": {
+      "type": "promotion-banner",
+      "blocks": {
+        "promotion_aMe6mf": {
+          "type": "promotion",
+          "settings": {
+            "subheading": "20% Off",
+            "heading": "SALE",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_aMe6mf"
+      ],
+      "name": "Promotion banner",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "Talk about your brand",
+        "heading_size": "h2",
+        "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post.<br/>&nbsp;Add details on availability, style, or even provide a review.</p>",
+        "content_alignment": "left",
+        "banner_url": "",
+        "button_label": "Shop Collection",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "new_featured_product_Lk9UQU": {
+      "type": "new-featured-product",
+      "blocks": {
+        "title_NzzYjj": {
+          "type": "title",
+          "settings": {}
+        },
+        "price_6kNLd6": {
+          "type": "price",
+          "settings": {
+            "show_saving": false,
+            "sale_badge_type": "percentage"
+          }
+        },
+        "variant_picker_BbcNbf": {
+          "type": "variant_picker",
+          "settings": {}
+        },
+        "buy_buttons_3QBmUU": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_atc_button": true,
+            "show_dynamic_checkout": true
+          }
+        }
+      },
+      "block_order": [
+        "title_NzzYjj",
+        "price_6kNLd6",
+        "variant_picker_BbcNbf",
+        "buy_buttons_3QBmUU"
+      ],
+      "name": "Featured product",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "featured_product": "beggy-pant",
+        "enable_variant_group_images": false,
+        "column_gap": 100,
+        "column_gap_mobile": 30,
+        "image_placement": "left",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": "",
+        "animations": "inherit"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "multicolumn_WQg9Cr",
+    "collection_tabs_MrUpBp",
+    "recent_viewed_products_DXLbpr",
+    "promotion_banner_gNfEqk",
+    "new_featured_product_Lk9UQU"
   ]
 }
