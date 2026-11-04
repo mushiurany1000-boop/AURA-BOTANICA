@@ -44,3 +44,4 @@
 * Missing in root: **0**
 * Missing in shopify-theme: **0**
 * Content differences: **0 (100% Bit-for-Bit Parity)**
+

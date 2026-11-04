@@ -91,3 +91,4 @@
 * **Remediation Applied:**
   * Synchronized exact byte buffers between `sections/image-gallery.liquid` and `shopify-theme/sections/image-gallery.liquid`.
 * **Verification:** `node scripts/diff-all-theme-files.js` now reports **0 differences (100% bit-for-bit parity)**.
+

@@ -136,3 +136,4 @@ To graduate from **READY FOR DEVELOPMENT STORE TESTING** to **READY FOR PRODUCTI
 3. Open the unpublished theme preview and add any item to the cart.
 4. Click **Checkout**, and complete payment using card number `1`, expiry date `12/30`, and CVV `111`.
 5. Confirm the Order Confirmation page displays and check that the order appears in **Shopify Admin > Orders**.
+

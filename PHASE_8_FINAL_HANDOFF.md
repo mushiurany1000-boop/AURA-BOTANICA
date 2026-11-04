@@ -87,3 +87,4 @@ Please follow this step-by-step checklist to test the theme in your development 
 Aura Botanica has achieved **100% verification across all code-level and offline simulation checks**. The theme is clean, elegant, compliant with Shopify Online Store 2.0 standards, and completely free of syntax errors or demo apparel copy.
 
 Once you have verified the preview on your development store and run the Bogus Gateway test order, the theme will be fully cleared for **PRODUCTION LAUNCH**.
+
