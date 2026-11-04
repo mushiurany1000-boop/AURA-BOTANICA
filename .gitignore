@@ -11,4 +11,5 @@ npm-debug.log*
 
 # Scratch & temporary test directories
 scratch/
+_backup_v1/
 
