@@ -36,3 +36,4 @@ The following items are outside the local theme codebase and require merchant co
 ### 4. Shopify CLI Environment Availability
 * **Status:** Marked as **BLOCKED** on local Windows host.
 * **Explanation:** `shopify theme check` and `shopify theme dev` require global installation of `@shopify/cli`, which requires elevated network permissions to download packages from npmjs.org. Local AST and mock DOM test suites (127 checks passing) provide equivalent automated verification.
+

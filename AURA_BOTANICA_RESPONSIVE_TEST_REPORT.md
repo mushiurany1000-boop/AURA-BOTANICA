@@ -56,3 +56,4 @@ Zero horizontal scrolling, clipping, or overlapping text was detected across all
 ## 4. Accessibility & Touch Target Compliance
 * All interactive touch targets (buttons, cart icons, quantity selectors, modal close buttons) measure a minimum of **44x44px** (most >= 48x48px), exceeding WCAG 2.1 Success Criterion 2.5.5 (Target Size).
 * Focus indicators (`:focus-visible`) utilize `2px solid var(--color-aura-copper)` with clean offsets across all viewport sizes.
+

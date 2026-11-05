@@ -144,3 +144,4 @@ In **Theme Settings > Cart**:
 * **Cart Notes**: Toggle customer order instructions.
 * **Gift Wrapping**: Configurable addon product and pricing.
 * **In-Cart Recommendations**: Select collection for "Complete Your Ritual" upsells.
+

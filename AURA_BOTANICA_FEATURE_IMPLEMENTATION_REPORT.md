@@ -66,3 +66,4 @@ All newly created files and modifications were mirrored bit-for-bit to `shopify-
 - All 8 new sections in `sections/*.liquid` ➔ `shopify-theme/sections/*.liquid`
 
 Parity status: **0 Differences** verified across all 504 files via `scripts/diff-all-theme-files.js`.
+

@@ -128,3 +128,4 @@
   // Shopify Theme Editor lifecycle re-init
   document.addEventListener('shopify:section:load', initBackInStock);
 })();
+
