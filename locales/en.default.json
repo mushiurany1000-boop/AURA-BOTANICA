@@ -62,7 +62,9 @@
       "no_results_html": "Please try a different search term or go back to the <a href=\"/\">homepage</a>.",
       "suggestions": "Suggestions",
       "page_article": "Pages & articles",
-      "products": "Products"
+      "products": "Products",
+      "submit": "Search formulations",
+      "clear": "Clear search query"
     },
     "newsletter_form": {
       "confirmation": "Thanks for subscribing"

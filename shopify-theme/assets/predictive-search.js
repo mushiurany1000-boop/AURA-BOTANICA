@@ -49,6 +49,9 @@ class PredictiveSearch extends HTMLElement {
       if (event.key === "Escape") {
         event.preventDefault();
         this.close(true);
+        MinimogEvents.emit(MinimogTheme.pubSubEvents.closeSearchPopup);
+        const searchTrigger = document.querySelector("[data-open-search-popup]");
+        if (searchTrigger) searchTrigger.focus();
       }
     });
     MinimogEvents.subscribe(MinimogTheme.pubSubEvents.closeSearchPopup, () => this.close(true));
