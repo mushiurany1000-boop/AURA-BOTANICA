@@ -35,3 +35,4 @@ Status classifications used:
 
 ## 3. Remote Shopify Environment Notes
 - **Remote `shopify theme dev` / `shopify theme check`**: **BLOCKED** — Running remote Shopify CLI commands requires live cloud authentication and an active development store connection. The theme is verified locally with 100% test pass rates and packaged as `aura-skincare-theme.zip` ready for Shopify Admin upload.
+

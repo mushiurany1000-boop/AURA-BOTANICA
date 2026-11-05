@@ -3,22 +3,27 @@
    ========================================================================== */
 
 :root {
-  --color-bg-primary: #FAF8F5;
-  --color-bg-secondary: #F3ECE6;
+  /* Luxury Botanical Color System (Phase 9.1) */
+  --color-bg-primary: #F8F5EF;
+  --color-bg-secondary: #F0ECE1;
   --color-bg-card: #FFFFFF;
-  --color-text-primary: #1C2421;
-  --color-text-secondary: #56645E;
-  --color-text-light: #8B9892;
-  --color-accent: #B87C52;
-  --color-accent-hover: #9E653E;
-  --color-sage: #4D6459;
-  --color-sage-light: #E9EFEA;
-  --color-border: #E8E1D7;
-  --color-border-dark: #CFC5B8;
-  --color-gold: #D4AF37;
+  --color-text-primary: #292D28;
+  --color-text-secondary: #5B6E64;
+  --color-text-light: #7A897F;
+  --color-botanical-dark: #244638;
+  --color-accent: #315B45;
+  --color-accent-hover: #244638;
+  --color-sage: #A7B49B;
+  --color-sage-light: #EBF0E6;
+  --color-border: #E3DDD1;
+  --color-border-dark: #D4CCC0;
+  --color-gold: #B89A62;
   
-  --font-heading: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Luxury Typography System (Phase 9.1: Playfair Display 700 & Montserrat) */
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   --spacing-unit: 8px;
   --container-max-width: 1280px;
@@ -134,27 +139,59 @@ h1, h2, h3, h4, h5 {
   transition: var(--transition-smooth);
 }
 
-.button--primary {
-  background-color: var(--color-text-primary);
-  color: #FFFFFF;
+.button--primary,
+.btn--primary,
+.m-button--primary {
+  background-color: var(--color-accent, #315B45) !important;
+  color: #F8F5EF !important;
+  font-family: var(--font-body-family, 'Montserrat', sans-serif) !important;
+  font-weight: 600 !important;
+  border: 1px solid var(--color-accent, #315B45) !important;
+  border-radius: var(--radius-sm, 4px) !important;
+  padding: 14px 28px !important;
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  letter-spacing: 0.03em !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.button--primary:hover {
-  background-color: var(--color-accent);
-  color: #FFFFFF;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(184, 124, 82, 0.25);
+.button--primary:hover,
+.btn--primary:hover,
+.m-button--primary:hover {
+  background-color: var(--color-botanical-dark, #244638) !important;
+  border-color: var(--color-botanical-dark, #244638) !important;
+  color: #F8F5EF !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 16px rgba(36, 70, 56, 0.18) !important;
 }
 
-.button--secondary {
-  background-color: transparent;
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-border-dark);
+.button--secondary,
+.btn--secondary,
+.m-button--secondary {
+  background-color: transparent !important;
+  color: var(--color-accent, #315B45) !important;
+  font-family: var(--font-body-family, 'Montserrat', sans-serif) !important;
+  font-weight: 600 !important;
+  border: 1.5px solid var(--color-accent, #315B45) !important;
+  border-radius: var(--radius-sm, 4px) !important;
+  padding: 13px 28px !important;
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  letter-spacing: 0.03em !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.button--secondary:hover {
-  background-color: var(--color-bg-secondary);
-  border-color: var(--color-text-primary);
+.button--secondary:hover,
+.btn--secondary:hover,
+.m-button--secondary:hover {
+  background-color: var(--color-accent, #315B45) !important;
+  color: #F8F5EF !important;
+  border-color: var(--color-accent, #315B45) !important;
+  transform: translateY(-1px) !important;
 }
 
 .button--large {
@@ -2362,8 +2399,20 @@ h1, h2, h3, h4, h5 {
    ========================================================================== */
 
 :focus-visible {
-  outline: 2px solid #B9784D;
-  outline-offset: 2px;
+  outline: 2px solid #B89A62 !important;
+  outline-offset: 2px !important;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.button:focus-visible,
+.btn:focus-visible,
+.m-button:focus-visible {
+  outline: 2px solid #B89A62 !important;
+  outline-offset: 2px !important;
 }
 
 .m-product-card__media,

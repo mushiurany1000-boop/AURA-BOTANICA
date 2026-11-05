@@ -49,3 +49,4 @@ Rather than abrupt breakpoint jumps, typography scales continuously between 320p
   }
   ```
 - No rogue 100vw widths causing horizontal scrollbars on Windows or mobile Safari.
+

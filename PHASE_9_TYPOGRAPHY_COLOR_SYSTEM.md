@@ -78,3 +78,4 @@ Configured in `config/settings_schema.json` and rendered in `snippets/style-tags
   - `--color-highlight-accent`
   - `--color-border`
 - In `assets/aura-base.css`, design tokens dynamically consume these variables with robust fallbacks, ensuring instant live preview when adjusted in the Shopify Theme Editor.
+

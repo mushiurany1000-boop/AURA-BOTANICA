@@ -97,3 +97,4 @@ All homepage, product, and collection sections support native Shopify Section se
      - `botanical_ingredients`: Collapsible phyto-nutrient cards
      - `ritual_steps`: Morning/evening application regimen
      - `skin_suitability`: Skin type suitability checklist
+

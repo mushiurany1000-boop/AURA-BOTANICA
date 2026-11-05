@@ -38,3 +38,4 @@ While all code-level aspect ratios (`4:5`), image containers, and layout rules a
      `Shopify Admin → Online Store → Themes → Add Theme → Upload zip file`.
 2. **Shopify CLI Remote Dev Server**:
    - Running `shopify theme dev` requires an active Shopify Partner store login with the appropriate theme access tokens.
+

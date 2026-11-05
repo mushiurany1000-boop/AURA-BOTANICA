@@ -6,7 +6,43 @@ All architectural changes, refactors, migrations, and file deprecations for the 
 
 ---
 
-## [Phase 9 — Luxury Visual Refinement & Advanced Theme Customization] — Completed (November 5, 2026)
+## [Phase 9.1 — Mandatory Visual Transformation & Root-Cause Remediation] — Completed (November 5, 2026)
+
+Corrective implementation addressing root causes of previous storefront rendering discrepancies across Git branches, local preview environments, and CSS cascade specificity:
+
+### 1. Root Cause Investigations & Resolution
+* **GitHub Integration / Branch Sync:** Discovered Shopify GitHub integration tracked `main`, whereas development was on `v2-upgrade`. Resolved by syncing and pushing all changes to both `v2-upgrade` and `main` (`origin/main`), and providing direct upload archive `aura-skincare-theme.zip`.
+* **Local Preview Disconnect:** Discovered `preview/*.html` hardcoded Cormorant Garamond/Poppins and omitted `aura-base.css`. Patched all 10 `preview/*.html` files to load Google Fonts Playfair Display & Montserrat, `theme.css`, and `aura-base.css`.
+* **Direct Webfont Delivery:** Enhanced `snippets/preload.liquid` with preconnect links to Google Fonts (`fonts.googleapis.com` / `fonts.gstatic.com`) and direct stylesheet embed for Playfair Display (600, 700, 800) and Montserrat (400, 500, 600, 700) with `display=swap`.
+* **CSS Specificity Overrides:** Added high-specificity `!important` font family overrides in `assets/aura-base.css` to guarantee Playfair Display 700 renders on all heading tags (`h1-h6`, `.sf-hero__title`, `.m-product-card__title`) and Montserrat on body elements across legacy Minimog components.
+
+### 2. Botanical Color System Implementation
+* **`assets/theme.css` & `assets/aura-base.css`:** Implemented complete luxury botanical palette:
+  * Warm Ivory: `#F8F5EF` (`rgb(248, 245, 239)`)
+  * Natural Cream: `#F0ECE1` (`rgb(240, 236, 225)`)
+  * Deep Botanical Green: `#244638` (`rgb(36, 70, 56)`)
+  * Forest Green: `#315B45` (`rgb(49, 91, 69)`)
+  * Muted Sage: `#A7B49B` (`rgb(167, 180, 155)`)
+  * Soft Champagne Gold: `#B89A62` (`rgb(184, 154, 98)`)
+  * Rich Charcoal: `#292D28` (`rgb(41, 45, 40)`)
+  * Warm Stone: `#E3DDD1` (`rgb(227, 221, 209)`)
+* **Color Contrast Compliance:** Verified contrast ratios: Rich Charcoal on Warm Ivory = 12.86:1 (AAA), Deep Botanical Green on Warm Ivory = 9.61:1 (AAA), Forest Green on Warm Ivory = 7.11:1 (AAA).
+* **Button System:** Styled `.button--primary` with Forest Green `#315B45`, hover transition to Deep Botanical Green `#244638`, 44px min-height, and 2px Champagne Gold `#B89A62` keyboard focus ring.
+
+### 3. Synchronized Distribution & Reports
+* Verified directory parity: Root `/` and `shopify-theme/` bit-for-bit identical (0 byte diffs).
+* Packaged `aura-skincare-theme.zip` (1.09 MB, 504 entries, 20/20 PASS).
+* Authored 8 Phase 9.1 Markdown Reports:
+  - `PHASE_9_1_ROOT_CAUSE_AUDIT.md`
+  - `PHASE_9_1_VISUAL_IMPLEMENTATION_REPORT.md`
+  - `PHASE_9_1_FONT_COLOR_VERIFICATION.md`
+  - `PHASE_9_1_THEME_EDITOR_REPORT.md`
+  - `PHASE_9_1_RESPONSIVE_TEST_REPORT.md`
+  - `PHASE_9_1_FEATURE_TEST_REPORT.md`
+  - `PHASE_9_1_CHANGED_FILES.md`
+  - `PHASE_9_1_REMAINING_ISSUES.md`
+
+---
 
 Upgrade of Aura Botanica's visual authenticity, typography, color system, and Shopify Theme Editor customization, benchmarked against luxury storefronts (Gumdrop inspiration):
 

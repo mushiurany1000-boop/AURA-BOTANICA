@@ -246,3 +246,4 @@ fs.writeFileSync(gridMixPath, gridMixContent, 'utf8');
 console.log('Saved templates/product.grid-mix-columns.json');
 
 console.log('>>> Phase 9 settings and templates successfully patched!');
+

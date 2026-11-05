@@ -45,3 +45,4 @@ folders.forEach(folder => {
 });
 
 console.log('>>> Theme directories synchronized successfully.');
+

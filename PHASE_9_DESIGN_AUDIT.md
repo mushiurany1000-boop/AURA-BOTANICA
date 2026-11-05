@@ -48,3 +48,4 @@ During the audit of typography, CSS variables, section schemas, and JSON templat
 - **Button System**: Styled `.m-button--primary` and `.m-button--secondary` with Montserrat 600, 44px minimum touch targets, smooth transitions, and high-contrast `:focus-visible` outline rings.
 - **Product Card Aspect Ratio**: Standardized on 4:5 portrait aspect ratio (`pcard_image_ratio: '4/5'`), enforcing `object-fit: cover` to eliminate uneven heights and distorted packaging.
 - **Copy Polish**: Replaced all apparel and generic placeholders with authentic clinical botanical skincare copy.
+

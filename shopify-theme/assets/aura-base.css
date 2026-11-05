@@ -6,30 +6,32 @@
 
 :root {
   /* ========================================================================
-     1. COLOR DESIGN TOKENS (Phase 9 Botanical System)
+     1. COLOR DESIGN TOKENS (Phase 9.1 Botanical System)
      ======================================================================== */
-  --color-aura-ivory: rgb(var(--color-background, 252, 251, 247));
-  --color-aura-bg-subtle: rgb(var(--color-background-secondary, 248, 246, 240));
-  --color-aura-forest: rgb(var(--color-heading, 24, 35, 31));
-  --color-aura-text: rgb(var(--color-foreground, 24, 35, 31));
+  --color-aura-ivory: rgb(var(--color-background, 248, 245, 239));
+  --color-aura-bg-subtle: rgb(var(--color-background-secondary, 240, 236, 225));
+  --color-aura-forest: rgb(var(--color-heading, 36, 70, 56));
+  --color-aura-text: rgb(var(--color-foreground, 41, 45, 40));
   --color-aura-muted: rgb(var(--color-foreground-secondary, 91, 110, 100));
-  --color-aura-primary-accent: rgb(var(--color-primary-accent, 35, 56, 49));
-  --color-aura-sage: rgb(var(--color-secondary-accent, 91, 110, 100));
-  --color-aura-copper: rgb(var(--color-highlight-accent, 185, 120, 77));
-  --color-aura-gold: #C5A059;
-  --color-aura-border: rgb(var(--color-border, 229, 223, 211));
-  --color-aura-border-dark: #CFC5B8;
+  --color-aura-primary-accent: rgb(var(--color-primary-accent, 49, 91, 69));
+  --color-aura-sage: rgb(var(--color-secondary-accent, 167, 180, 155));
+  --color-aura-copper: rgb(var(--color-highlight-accent, 184, 154, 98));
+  --color-aura-gold: #B89A62;
+  --color-aura-border: rgb(var(--color-border, 227, 221, 209));
+  --color-aura-border-dark: #D4CCC0;
   --color-aura-clay: #D9C9B8;
-  --color-aura-btn-bg: rgb(var(--color-button, 35, 56, 49));
-  --color-aura-btn-text: rgb(var(--color-button-text, 252, 251, 247));
-  --color-aura-btn-hover: rgb(var(--color-button-hover, 24, 35, 31));
-  --color-aura-btn-text-hover: rgb(var(--color-button-text-hover, 252, 251, 247));
+  --color-aura-btn-bg: rgb(var(--color-button, 49, 91, 69));
+  --color-aura-btn-text: rgb(var(--color-button-text, 248, 245, 239));
+  --color-aura-btn-hover: rgb(var(--color-button-hover, 36, 70, 56));
+  --color-aura-btn-text-hover: rgb(var(--color-button-text-hover, 248, 245, 239));
 
   /* ========================================================================
-     2. TYPOGRAPHY TOKENS (Phase 9 Luxury System)
+     2. TYPOGRAPHY TOKENS (Phase 9.1 Luxury System)
      ======================================================================== */
-  --font-heading-family: var(--font-stack-header, 'Playfair Display', Georgia, serif);
-  --font-body-family: var(--font-stack-body, 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  --font-heading-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-weight-body: 400;
   --font-weight-nav: 500;
   --font-weight-btn: 600;
@@ -102,79 +104,118 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
 .m-hero__title,
 .m-section__title,
-.m-section-header__title {
-  font-family: var(--font-heading-family);
-  font-weight: var(--font-weight-heading);
+.m-section-header__title,
+.hero__title,
+.product__title,
+.collection__title,
+.section__title,
+.footer__title,
+.sf__slide-title,
+.m-tab-header,
+.m-collection-tab__title,
+.collapsible__button-text,
+.m-product-card__name,
+.product-card__title,
+.product-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 700 !important;
   color: var(--color-aura-forest);
   letter-spacing: -0.015em;
   line-height: 1.25;
 }
 
+body,
+p,
+span,
+input,
+textarea,
+select,
+label,
+.hero__subtitle,
+.section__subheading,
+.product__description,
+.m-product-card__price,
+.m-price {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
 .m-menu__item,
 .m-navigation,
 .m-nav-link,
-.m-header__menu-item {
-  font-family: var(--font-body-family);
-  font-weight: var(--font-weight-nav);
+.m-header__menu-item,
+.site-navigation a,
+.menu-item {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-weight: 500 !important;
   letter-spacing: 0.02em;
 }
 
 /* ==========================================================================
-   BUTTON & INTERACTION SYSTEM (Task 5: Montserrat 600, Accessible Focus)
+   BUTTON & INTERACTION SYSTEM (Rule 6: Forest Green #315B45, Champagne Gold Focus #B89A62)
    ========================================================================== */
 .m-button,
 .sf__btn,
-button.m-add-to-cart {
-  font-family: var(--font-body-family);
-  font-weight: var(--font-weight-btn, 600);
-  border-radius: var(--btn-border-radius, 4px);
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 28px;
-  letter-spacing: 0.03em;
+button.m-add-to-cart,
+.button,
+.btn {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+  border-radius: var(--btn-border-radius, 4px) !important;
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 14px 28px !important;
+  letter-spacing: 0.03em !important;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .m-button--primary,
 .sf__btn-primary,
-button.m-add-to-cart {
-  background-color: var(--color-aura-btn-bg, #233831);
-  color: var(--color-aura-btn-text, #FCFBF7);
-  border: 1px solid var(--color-aura-btn-bg, #233831);
+button.m-add-to-cart,
+.button--primary,
+.btn--primary {
+  background-color: #315B45 !important;
+  color: #F8F5EF !important;
+  border: 1px solid #315B45 !important;
 }
 
 @media (hover: hover) {
   .m-button--primary:hover,
   .sf__btn-primary:hover,
-  button.m-add-to-cart:hover {
-    background-color: var(--color-aura-btn-hover, #18231F);
-    color: var(--color-aura-btn-text-hover, #FCFBF7);
-    border-color: var(--color-aura-btn-hover, #18231F);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(24, 35, 31, 0.12);
+  button.m-add-to-cart:hover,
+  .button--primary:hover,
+  .btn--primary:hover {
+    background-color: #244638 !important;
+    border-color: #244638 !important;
+    color: #F8F5EF !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 16px rgba(36, 70, 56, 0.2) !important;
   }
 }
 
 .m-button--secondary,
 .sf__btn-secondary,
-.m-button--outline {
-  background-color: transparent;
-  color: var(--color-aura-primary-accent, #233831);
-  border: 1.5px solid var(--color-aura-primary-accent, #233831);
+.m-button--outline,
+.button--secondary,
+.btn--secondary {
+  background-color: transparent !important;
+  color: #315B45 !important;
+  border: 1.5px solid #315B45 !important;
 }
 
 @media (hover: hover) {
   .m-button--secondary:hover,
   .sf__btn-secondary:hover,
-  .m-button--outline:hover {
-    background-color: var(--color-aura-primary-accent, #233831);
-    color: var(--color-aura-ivory, #FCFBF7);
-    border-color: var(--color-aura-primary-accent, #233831);
-    transform: translateY(-1px);
+  .m-button--outline:hover,
+  .button--secondary:hover,
+  .btn--secondary:hover {
+    background-color: #315B45 !important;
+    color: #F8F5EF !important;
+    border-color: #315B45 !important;
+    transform: translateY(-1px) !important;
   }
 }
 
@@ -192,7 +233,7 @@ button.m-add-to-cart:disabled,
    4. ACCESSIBILITY & KEYBOARD FOCUS (WCAG 2.2 AA COMPLIANT)
    ========================================================================== */
 :focus-visible {
-  outline: 2px solid var(--color-aura-copper, #B9784D) !important;
+  outline: 2px solid #B89A62 !important;
   outline-offset: 3px !important;
 }
 
@@ -201,8 +242,10 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
-.m-button:focus-visible {
-  outline: 2px solid var(--color-aura-copper, #B9784D) !important;
+.m-button:focus-visible,
+.button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid #B89A62 !important;
   outline-offset: 2px !important;
 }
 

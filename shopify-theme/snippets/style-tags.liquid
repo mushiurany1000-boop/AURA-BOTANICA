@@ -53,9 +53,9 @@
       {% assign pri_accent = scheme.settings.primary_accent | default: scheme.settings.button %}
       {% assign sec_accent = scheme.settings.secondary_accent | default: scheme.settings.subtext %}
       {% assign hi_accent = scheme.settings.highlight_accent | default: scheme.settings.price_sale %}
-      --color-primary-accent: {{ pri_accent.red | default: 35 }},{{ pri_accent.green | default: 56 }},{{ pri_accent.blue | default: 49 }};
-      --color-secondary-accent: {{ sec_accent.red | default: 91 }},{{ sec_accent.green | default: 110 }},{{ sec_accent.blue | default: 100 }};
-      --color-highlight-accent: {{ hi_accent.red | default: 185 }},{{ hi_accent.green | default: 120 }},{{ hi_accent.blue | default: 77 }};
+      --color-primary-accent: {{ pri_accent.red | default: 49 }},{{ pri_accent.green | default: 91 }},{{ pri_accent.blue | default: 69 }};
+      --color-secondary-accent: {{ sec_accent.red | default: 167 }},{{ sec_accent.green | default: 180 }},{{ sec_accent.blue | default: 155 }};
+      --color-highlight-accent: {{ hi_accent.red | default: 184 }},{{ hi_accent.green | default: 154 }},{{ hi_accent.blue | default: 98 }};
    	}
    {% endfor %}
    {{ scheme_classes | remove_last: ', ' }} {

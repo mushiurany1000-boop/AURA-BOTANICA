@@ -57,3 +57,4 @@ This document catalogs every file created, modified, or synchronized during Phas
 - `scripts/sync-root-to-theme.js`: Automated two-directory synchronization utility ensuring byte parity.
 - `scripts/test-phase9-design.js`: 47-point automated verification suite for typography, colors, buttons, contrast, and parity.
 - `aura-skincare-theme.zip`: Repackaged 1.09 MB clean Shopify theme distribution archive.
+
