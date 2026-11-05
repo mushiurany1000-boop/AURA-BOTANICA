@@ -296,3 +296,4 @@ function patchLocale(baseDir) {
 });
 
 console.log('Phase 2 Step 1 (Announcement Bar) patched successfully.');
+

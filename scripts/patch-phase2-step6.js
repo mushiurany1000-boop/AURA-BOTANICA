@@ -230,3 +230,4 @@ function patchAgeVerifierCss(baseDir) {
 });
 
 console.log('Phase 2 Step 6 (Cookie, Age Verifier, Page Transition & Scroll-Top) patched successfully.');
+

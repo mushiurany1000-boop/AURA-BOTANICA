@@ -6,7 +6,7 @@
 {% comment %}theme-check-enable UnusedAssign{% endcomment %}
 
 <div class="m-header__menu{% if custom_classes != blank %} {{ custom_classes }}{% endif %}">
-  <ul class="m-menu">
+  <ul class="m-menu" data-anim="stagger-children" data-anim-stagger="0.05">
     {% for link in linklists[section.settings[menu_id]].links %}
       {% liquid
         assign li_class = 'm-menu__item'

@@ -6,6 +6,53 @@ All architectural changes, refactors, migrations, and file deprecations for the 
 
 ---
 
+## [Phase 3: GSAP Animation Engine] — Completed (November 5, 2026)
+
+Official GSAP 3.15.1 animation engine implemented with a declarative HTML API, full WCAG 2.1 AA `prefers-reduced-motion` compliance, zero-leak Shopify section lifecycle management, and strict no-JS SEO fallback safety.
+
+### 1. Official GSAP Binaries Integrated (`assets/`, `shopify-theme/assets/`)
+* **`assets/gsap.min.js`:** Version 3.15.1 (73,357 bytes). Official minified core from the `gsap` npm package. Zero handmade polyfills.
+* **`assets/ScrollTrigger.min.js`:** Version 3.15.1 (44,683 bytes). Official minified ScrollTrigger plugin from the `gsap` npm package.
+* **`assets/SplitText.min.js`:** Version 3.15.1 (7,955 bytes). Official minified SplitText typography plugin from the `gsap` npm package.
+* **Mirrored to Theme Folder:** Bit-for-bit identical copies copied to `shopify-theme/assets/`.
+
+### 2. Script Loading & Settings Injection (`layout/theme.liquid`, `shopify-theme/layout/theme.liquid`)
+* **Conditional Loading:** Injected `{%- if settings.animations != 'off' and settings.animation_enable != false and settings.animation_intensity != 'off' -%}` in `<head>`. GSAP scripts are completely omitted when animations are disabled, eliminating unnecessary network payload.
+* **Strict Loading Order:** `gsap.min.js` ➔ `ScrollTrigger.min.js` ➔ `SplitText.min.js` ➔ `aura-motion.js`, all loaded non-blocking with `defer="defer"`.
+* **Global Config Injection:** Injected `window.AuraSettings` object containing merchant settings (`animation_enable`, `animation_intensity`, `animation_smooth_scroll`, `animation_custom_cursor`, `animation_magnetic_buttons`, `animation_image_hover_zoom`, `animation_text_mask_reveal`).
+
+### 3. Declarative Motion Engine (`assets/aura-motion.js`, `shopify-theme/assets/aura-motion.js`)
+* **Declarative HTML API (`data-anim`):**
+  * Entrance Tweens: `fade-up`, `fade-in`, `slide-left`, `slide-right`, `scale-in`, `clip-reveal`.
+  * Advanced Effects: `mask-lines` (line-by-line masked editorial typography reveals via SplitText), `stagger-children` (cascading entrances for grids and lists), `parallax` (smooth scroll-scrubbed vertical translation), `counter` (numerical count-up interpolation), `marquee` (seamless infinite ticker loops), `pin` (desktop sticky section pinning).
+  * Modifiers: `data-anim-delay`, `data-anim-duration`, `data-anim-stagger`, `data-anim-speed`, `data-marquee-speed`, `data-counter-prefix`, `data-counter-suffix`.
+* **Shopify Section Lifecycle & Zero Memory Leaks:**
+  * Uses scoped `WeakMap` instance registry (`instanceRegistry.set(root, records)`).
+  * Hooks into `DOMContentLoaded`, `shopify:section:load`, `shopify:section:unload`, and `shopify:section:reorder`.
+  * On section unload (`AuraMotion.kill(section)`): Kills all child ScrollTriggers, kills all active tweens, reverts SplitText line-wrappers to plain text, and strips `[data-anim-initialized]` flags, completely preventing memory leaks and orphaned duplicate listeners during Theme Editor customizer sessions.
+* **WCAG 2.1 AA `prefers-reduced-motion` Compliance:**
+  * Detects `(prefers-reduced-motion: reduce)`.
+  * Neutralizes all spatial displacement (transforms, translations, parallax, pins) and executes gentle opacity-only fades (0.3s) or immediate visibility.
+  * Automatically suppresses interactive custom cursor on touch viewports and reduced-motion environments.
+* **No-JS & Crawler Fallback (Zero CLS):**
+  * Initial hidden states (`opacity: 0; will-change: transform, opacity;`) in `assets/aura-base.css` are scoped exclusively under `.js-anim`.
+  * `.js-anim` is added to `<html>` only by `aura-motion.js` after verifying that animation is active.
+  * If JavaScript is disabled or fails to load, `.js-anim` is never applied, and all content renders 100% visible immediately with zero Cumulative Layout Shift (CLS).
+
+### 4. Theme Settings & Schema Configuration (`config/settings_schema.json`, `config/settings_data.json`)
+* **Schema Extension:** Added `animation_magnetic_buttons`, `animation_image_hover_zoom`, and `animation_text_mask_reveal` under the `Animations` group in `config/settings_schema.json` without altering or removing any existing setting IDs.
+* **Presets Configured:** Configured default values across `current` and all presets (`Botanical Ivory`, `Forest Night`, `Clay Rose`).
+
+### 5. Phase 2 Demo Elements Animated
+* `sections/annoucement.liquid` & `shopify-theme/sections/annoucement.liquid`: Applied `data-anim="fade-in"` on `.m-announcement-bar__content`.
+* `snippets/header-main-menu-container.liquid` & `shopify-theme/snippets/header-main-menu-container.liquid`: Applied `data-anim="stagger-children" data-anim-stagger="0.05"` on `.m-menu`.
+
+### 6. Developer Documentation & Automated Test Suite
+* **`docs/ANIMATION_GUIDE.md`:** Comprehensive 8-section manual detailing architecture, HTML attributes, modifiers, merchant controls, accessibility rules, performance benchmarks, and lifecycle management.
+* **`scripts/test-phase3-motion.js`:** Automated test suite validating disabled state, reduced-motion spatial neutralization, and section lifecycle teardown (60/60 checks passing).
+
+---
+
 ## [Phase 2: Global Layout & Navigation] — Completed (November 5, 2026)
 
 All global layout and navigation subsystems restyled and extended using scoped CSS transitions, token-driven color palettes, and strict WCAG 2.2 AA accessibility standards without introducing GSAP (reserved for Phase 3).

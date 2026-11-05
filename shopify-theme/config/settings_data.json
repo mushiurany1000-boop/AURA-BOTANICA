@@ -462,7 +462,10 @@
     "animation_enable": true,
     "animation_intensity": "subtle",
     "animation_smooth_scroll": true,
-    "animation_custom_cursor": false
+    "animation_custom_cursor": false,
+    "animation_magnetic_buttons": false,
+    "animation_image_hover_zoom": true,
+    "animation_text_mask_reveal": true
   },
   "platform_customizations": {
     "custom_css": [
@@ -935,7 +938,10 @@
       "animation_enable": true,
       "animation_intensity": "subtle",
       "animation_smooth_scroll": true,
-      "animation_custom_cursor": false
+      "animation_custom_cursor": false,
+      "animation_magnetic_buttons": false,
+      "animation_image_hover_zoom": true,
+      "animation_text_mask_reveal": true
     },
     "Botanical Ivory": {
       "container_width": 1280,
@@ -1403,7 +1409,10 @@
       "animation_custom_cursor": false,
       "color_body_bg": "#FCFBF7",
       "color_body_text": "#18231F",
-      "color_primary": "#18231F"
+      "color_primary": "#18231F",
+      "animation_magnetic_buttons": false,
+      "animation_image_hover_zoom": true,
+      "animation_text_mask_reveal": true
     },
     "Forest Night": {
       "container_width": 1280,
@@ -1871,7 +1880,10 @@
       "animation_custom_cursor": false,
       "color_body_bg": "#121A17",
       "color_body_text": "#EDE8DF",
-      "color_primary": "#B9784D"
+      "color_primary": "#B9784D",
+      "animation_magnetic_buttons": false,
+      "animation_image_hover_zoom": true,
+      "animation_text_mask_reveal": true
     },
     "Clay Rose": {
       "container_width": 1280,
@@ -2339,7 +2351,10 @@
       "animation_custom_cursor": false,
       "color_body_bg": "#FBF6F2",
       "color_body_text": "#2B1D19",
-      "color_primary": "#9E5E47"
+      "color_primary": "#9E5E47",
+      "animation_magnetic_buttons": false,
+      "animation_image_hover_zoom": true,
+      "animation_text_mask_reveal": true
     }
   }
 }

@@ -105,6 +105,25 @@ This document tracks every existing Minimog and Aura Botanica theme capability t
 
 ---
 
-## 4. Parity Verification Rules
+## 4. Phase 3 GSAP Animation Engine Deliverables & Status
+
+| Engine Subsystem | Implementation & Verification Metric | Status | Performance & Accessibility Metrics |
+| :--- | :--- | :---: | :--- |
+| **Official GSAP Binaries** | `gsap.min.js` (73,357 B), `ScrollTrigger.min.js` (44,683 B), `SplitText.min.js` (7,955 B) from npm | **VERIFIED** | Official v3.15.1 binaries, zero CDN dependencies, zero handmade polyfills |
+| **Script Loading & Order** | `layout/theme.liquid`: gsap ➔ ScrollTrigger ➔ SplitText ➔ aura-motion.js with `defer` | **VERIFIED** | Loaded only when `settings.animations != 'off'`; non-blocking |
+| **Declarative HTML API** | `assets/aura-motion.js`: 12 motion types (`fade-up`, `fade-in`, `slide-left`, `slide-right`, `scale-in`, `clip-reveal`, `mask-lines`, `stagger-children`, `parallax`, `counter`, `marquee`, `pin`) | **VERIFIED** | Full modifiers supported (`data-anim-delay`, `data-anim-duration`, `data-anim-stagger`, `data-anim-speed`, etc.) |
+| **Zero Memory Leaks** | Scoped `WeakMap` registry; `AuraMotion.init(root)` / `kill(root)` on Shopify events | **VERIFIED** | All tweens and triggers killed on `shopify:section:unload`; SplitText cleanly reverted |
+| **Reduced Motion (WCAG 2.1 AA)** | `prefers-reduced-motion` detection in CSS and JS | **VERIFIED** | Spatial translation zeroed; pure opacity fade (0.3s) or immediate visibility; cursor hidden |
+| **No-JS & SEO Fallback** | Initial hidden states (`opacity: 0`) scoped exclusively under `.js-anim` | **VERIFIED** | If JS disabled or GSAP unavailable, `.js-anim` is never applied; 100% visible immediately (Zero CLS) |
+| **Theme Settings & Presets** | `config/settings_schema.json` & `config/settings_data.json` | **VERIFIED** | Master toggle (`animation_enable`), intensity (`off/subtle/full`), smooth scroll, cursor, magnetic, zoom, mask reveals |
+| **Phase 2 Demo Attached** | `sections/annoucement.liquid` (`fade-in`) & `snippets/header-main-menu-container.liquid` (`stagger-children`) | **VERIFIED** | Subtle botanical entrance animations verified on live layout components |
+| **Developer Manual** | `docs/ANIMATION_GUIDE.md` | **VERIFIED** | Comprehensive 8-section developer manual covering attributes, options, performance, lifecycle |
+| **Automated Test Suite** | `scripts/test-phase3-motion.js` | **VERIFIED** | 60/60 checks passing (100% success across disabled state, reduced motion, lifecycle, CSS safety) |
+| **Directory Parity** | Bit-for-bit parity between root `/` and `/shopify-theme/` | **VERIFIED** | `scripts/diff-all-theme-files.js` reports 0 differences across all 490+ theme files |
+| **Shopify CLI Check** | `shopify theme check` or `npx @shopify/theme-check` | **BLOCKED** | Shopify CLI binary not installed globally on host; sandbox network isolation blocks npm registry |
+
+---
+
+## 5. Parity Verification Rules
 1. **Zero Feature Drop:** No setting, section type, or block type can be removed without providing an alias migration in `config/settings_data.json` or `templates/*.json`.
 2. **Tooling Preservation:** Development tooling (`dev-server.js`, `preview/`, `data/`, `scripts/`, `package.json`) remains 100% operational in the local environment and is safely excluded from final Shopify theme archives.

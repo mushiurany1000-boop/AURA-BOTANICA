@@ -859,6 +859,24 @@
         "max": 1,
         "unit": "(s)",
         "step": 0.1
+      },
+      {
+        "type": "checkbox",
+        "id": "animation_magnetic_buttons",
+        "label": "Enable magnetic button hover pull",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "animation_image_hover_zoom",
+        "label": "Enable image hover zoom transition",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "animation_text_mask_reveal",
+        "label": "Enable editorial text line-mask reveals",
+        "default": true
       }
     ]
   },

@@ -50,3 +50,4 @@ const shopifyThemeDir = path.join(rootDir, 'shopify-theme');
     console.log(`[PASS] Injected max-width: 767px query in ${msbPath}`);
   }
 });
+

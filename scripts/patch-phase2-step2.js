@@ -315,3 +315,4 @@ function patchMegaMenuJs(baseDir) {
 });
 
 console.log('Phase 2 Step 2 (Header, Mega Menu & Mobile Navigation) patched successfully.');
+

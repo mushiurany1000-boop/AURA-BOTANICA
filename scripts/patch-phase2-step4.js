@@ -245,3 +245,4 @@ function patchCartDrawerJs(baseDir) {
 });
 
 console.log('Phase 2 Step 4 (Cart Drawer) patched successfully.');
+

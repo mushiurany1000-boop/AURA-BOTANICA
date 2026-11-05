@@ -45,7 +45,7 @@
                     <a href="{{ block.settings.message_link }}" class="m-announcement-bar__link"></a>
                   {% endif %}
                   {% if block.settings.message != blank %}
-                    <div class="m-announcement-bar__content">{{ block.settings.message }}</div>
+                    <div class="m-announcement-bar__content" data-anim="fade-in">{{ block.settings.message }}</div>
                   {% endif %}
                 </div>
               {% endfor %}
