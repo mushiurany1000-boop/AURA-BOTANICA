@@ -17,7 +17,7 @@
 %}
 <m-cart-drawer id="MinimogCartDrawer" class="m-cart-drawer{% if cart == empty %} m-cart--empty{% endif %}">
   <div class="m-cart-drawer__inner m:h-full m-gradient m-color-{{ settings.drawer_popup_color_scheme }}">
-    <button class="m-cart-drawer__close" aria-label="Close">
+    <button type="button" class="m-cart-drawer__close" aria-label="{{ 'general.accessibility.close' | t }}">
       <svg
         class="m-svg-icon--large"
         fill="currentColor"
@@ -39,25 +39,28 @@
         {%- if settings.free_shipping_threshold > 0 -%}
           {%- assign threshold_in_cents = settings.free_shipping_threshold | times: 100 -%}
           {%- assign current_subtotal = cart.total_price -%}
-          <div class="m-cart-free-shipping-goal" style="padding: 10px 14px; margin: 10px 0; border-radius: 6px; {% if current_subtotal >= threshold_in_cents %}background: rgba(185, 120, 77, 0.1); border: 1px solid #B9784D;{% else %}background: #F4EFE6; border: 1px solid #E5DFD3;{% endif %}">
+          <div class="m-cart-free-shipping-goal{% if current_subtotal >= threshold_in_cents %} is-unlocked{% endif %}">
             {%- if current_subtotal >= threshold_in_cents -%}
-              <p class="m:text-xs m:font-medium m:text-center" style="color: #B9784D; margin: 0;">
-                ✨ You have unlocked <strong>Free Carbon-Neutral Shipping</strong>!
+              <p class="m-cart-free-shipping__text m:text-xs m:font-medium m:text-center">
+                <span class="m-cart-free-shipping__icon">✦</span> {{ 'cart.general.free_shipping_unlocked' | t }}
               </p>
-              <div class="m:w-full m:h-1.5 m:rounded-full m:mt-2" style="background: #E5DFD3; overflow: hidden;">
-                <div style="width: 100%; height: 100%; background: #B9784D; transition: width 0.3s ease;"></div>
+              <div class="m-cart-free-shipping__bar m:w-full m:rounded-full m:mt-2">
+                <div class="m-cart-free-shipping__progress is-full"></div>
               </div>
             {%- else -%}
               {%- assign remaining_cents = threshold_in_cents | minus: current_subtotal -%}
               {%- assign progress_percent = current_subtotal | times: 100 | divided_by: threshold_in_cents -%}
-              <p class="m:text-xs m:text-center" style="color: #18231F; margin: 0;">
-                Add <strong>{{ remaining_cents | money }}</strong> more to unlock <strong>Free Shipping</strong>
+              {%- capture remaining_money -%}{{ remaining_cents | money }}{%- endcapture -%}
+              <p class="m-cart-free-shipping__text m:text-xs m:text-center">
+                {{ 'cart.general.free_shipping_remaining_html' | t: remaining: remaining_money }}
               </p>
-              <div class="m:w-full m:h-1.5 m:rounded-full m:mt-2" style="background: #E5DFD3; overflow: hidden;">
-                <div style="width: {{ progress_percent }}%; height: 100%; background: #18231F; transition: width 0.3s ease;"></div>
+              <div class="m-cart-free-shipping__bar m:w-full m:rounded-full m:mt-2">
+                <div class="m-cart-free-shipping__progress" style="--shipping-progress: {{ progress_percent }}%;"></div>
               </div>
             {%- endif -%}
           </div>
+        {%- endif -%}
+      </div>
         {%- endif -%}
 
       </div>

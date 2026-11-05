@@ -32,6 +32,15 @@ class MCartDrawer extends HTMLElement {
   open(triggeredBy) {
     if (triggeredBy) this.setActiveElement(triggeredBy);
     this.classList.add("m-cart-drawer--active");
+    this.escHandler = (e) => {
+      if (e.key === "Escape") {
+        this.close();
+      }
+    };
+    document.addEventListener("keydown", this.escHandler);
+    setTimeout(() => {
+      if (this.cartDrawerCloseIcon) this.cartDrawerCloseIcon.focus();
+    }, 150);
     requestAnimationFrame(() => {
       this.style.setProperty("--m-bg-opacity", "0.5");
       this.cartDrawerInner.style.setProperty("--translate-x", "0");
@@ -46,6 +55,12 @@ class MCartDrawer extends HTMLElement {
     setTimeout(() => {
       this.classList.remove("m-cart-drawer--active");
       document.documentElement.classList.remove("prevent-scroll");
+      if (this.escHandler) {
+        document.removeEventListener("keydown", this.escHandler);
+      }
+      if (this.activeElement) {
+        this.activeElement.focus();
+      }
     }, 300);
   }
 

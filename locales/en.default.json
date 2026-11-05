@@ -177,7 +177,9 @@
       "delivery_title": "Delivery",
       "delivery_time": "Delivery time",
       "delivery_label": "Pick a delivery date:",
-      "delivery_error": "Please choose the current or future time."
+      "delivery_error": "Please choose the current or future time.",
+      "free_shipping_unlocked": "Complimentary Carbon-Neutral Shipping unlocked!",
+      "free_shipping_remaining_html": "Add <strong>{{ remaining }}</strong> more to unlock <strong>Complimentary Shipping</strong>"
     },
     "label": {
       "product": "Product",
