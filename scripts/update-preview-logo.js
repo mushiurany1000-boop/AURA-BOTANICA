@@ -18,3 +18,4 @@ for (const file of files) {
   fs.writeFileSync(filePath, content);
 }
 console.log('✓ Successfully enhanced preview HTML files with KAYRA Beauty stacked logo wordmark');
+

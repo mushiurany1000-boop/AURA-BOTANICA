@@ -229,3 +229,4 @@ if (!auraCss.includes('kayra-brand-logo')) {
 }
 
 console.log('>>> Rebranding to KAYRA Beauty completed successfully!');
+

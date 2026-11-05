@@ -75,6 +75,27 @@ Global rebrand from "Aura Botanica" to "KAYRA Beauty" matching the exact typogra
 
 ---
 
+## [Brand Identity Update — Rebranded to KAYRA Beauty] — Completed (November 5, 2026)
+
+Global rebrand from "Aura Botanica" to "KAYRA Beauty" matching the exact typography and stacked wordmark from the user reference image (`KAYRA` in high-contrast serif + `BEAUTY` in tracked sans):
+
+### 1. Logo & Brand Assets
+* **`assets/kayra-logo.png` & `assets/kayra-logo.svg`:** Copied reference logo image and authored scalable SVG vector logo matching exact reference dimensions (205×82).
+* **`snippets/header-logo.liquid` & `sections/header.liquid`:** Implemented stacked brand logo rendering:
+  - Top wordmark: `KAYRA` in Cormorant Garamond serif with generous letter-spacing.
+  - Subtitle: `BEAUTY` in Jost / sans-serif with 0.35em wide letter-tracking.
+* **`assets/aura-base.css`:** Added `.kayra-brand-logo`, `.kayra-brand-logo__wordmark`, and `.kayra-brand-logo__subtitle` styling.
+
+### 2. Store Configuration & Content
+* **`sections/header-group.json`:** Set `"logo_text": "KAYRA BEAUTY"`.
+* **`sections/footer-group.json`:** Set copyright to `"© 2026 KAYRA Beauty • Refined Skincare Alchemy"`.
+* **`config/settings_data.json` & `config/settings_schema.json`:** Updated brand title, logo alt, and schema branding to KAYRA Beauty.
+* **`templates/*.json` & `sections/*.liquid`:** Updated brand story, client care FAQ, formulation titles, and clinical standards copy to KAYRA Beauty.
+* **`preview/*.html`:** Updated all 10 local preview pages with stacked KAYRA Beauty logo and page titles.
+* **`package.json` & `dev-server.js`:** Updated package name and description to `kayra-beauty-skincare-theme`.
+
+---
+
 ## [Phase 12 Step A — Design System (Reference Palette + Type)] — Completed (November 5, 2026)
 
 Implementation of reference-driven design system tokens, dual color schemes, typography engine, button geometry, card styling, and section whitespace:

@@ -946,3 +946,48 @@ button.m-add-to-cart,
   background-color: #FCE8E7;
   color: #873223 !important;
 }
+
+
+/* ==========================================================================
+   PHASE 12 STEP A — TEMPLATE-SCOPED TYPOGRAPHY ENGINE
+   ========================================================================== */
+
+/* Homepage Headings: Cormorant Garamond Serif */
+body.template-index h1,
+body.template-index h2,
+body.template-index h3,
+body.template-index .font-serif,
+body.template-index .m-editorial-split__heading {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+body.template-index .aura-eyebrow {
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+}
+
+/* Product Page Scoping: Poppins Modern Clean Geometry (Reference 2) */
+body.template-product .main-product h1,
+body.template-product .product__title,
+body.template-product .product-title,
+body.template-product .m-product-title,
+body.template-product .product-info__title,
+body.template-product .product-price,
+body.template-product .product__price,
+body.template-product .m-price,
+body.template-product .m-price__sale,
+body.template-product .m-price__regular,
+body.template-product .product-form button,
+body.template-product .product-form__submit,
+body.template-product .m-add-to-cart,
+body.template-product .aura-stock-pill,
+body.template-product .aura-volume-pill,
+body.template-product .m-product-option--pill {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
