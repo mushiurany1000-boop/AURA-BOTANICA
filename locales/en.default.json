@@ -20,7 +20,8 @@
       "wishlist": "Wishlist",
       "account": "Account",
       "cart": "Shopping bag",
-      "close_menu": "Close navigation menu"
+      "close_menu": "Close navigation menu",
+      "scroll_to_top": "Scroll to top of page"
     },
     "meta": {
       "tags": "Tagged \"{{ tags }}\"",

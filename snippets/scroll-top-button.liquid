@@ -18,6 +18,27 @@
     .m-button--scroll-top.is-show {
       opacity: 1;
     }
+    .m-button--scroll-top {
+      transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.2s ease;
+      background-color: var(--color-aura-forest, #18231F);
+      color: var(--color-aura-ivory, #FCFBF7);
+      box-shadow: 0 4px 16px rgba(24, 35, 31, 0.15);
+    }
+    .m-button--scroll-top:hover {
+      background-color: var(--color-aura-copper, #B9784D);
+      transform: translateY(-2px);
+    }
+    .m-button--scroll-top:focus-visible {
+      outline: 2px solid var(--color-aura-copper, #B9784D);
+      outline-offset: 3px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .m-button--scroll-top {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+      }
+    }
 
     .m-scroll-top-target {
       width: 0;
@@ -42,7 +63,7 @@
 <button
   id="scroll-to-top-button"
   class="m-button m-button--primary m-button--scroll-top"
-  aria-label="Scroll to Top"
+  aria-label="{{ 'general.accessibility.scroll_to_top' | t }}"
 >
   <svg class="m-svg-icon m-svg-icon--medium" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M4.465 263.536l7.07 7.071c4.686 4.686 12.284 4.686 16.971 0L207 92.113V468c0 6.627 5.373 12 12 12h10c6.627 0 12-5.373 12-12V92.113l178.494 178.493c4.686 4.686 12.284 4.686 16.971 0l7.07-7.071c4.686-4.686 4.686-12.284 0-16.97l-211.05-211.05c-4.686-4.686-12.284-4.686-16.971 0L4.465 246.566c-4.687 4.686-4.687 12.284 0 16.97z"/></svg>
 </button>

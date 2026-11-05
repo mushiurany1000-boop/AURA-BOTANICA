@@ -1,1 +1,78 @@
 .m-cookie-banner{box-shadow:0 5px 15px 0 rgba(0,0,0,.15);box-sizing:border-box;display:flex;flex-wrap:nowrap;font-size:16px;line-height:1.5em;overflow:hidden;position:fixed;z-index:9999;bottom:1rem;display:none}.m-cookie-banner__message{display:block;margin-bottom:1em}@media(min-width: 768px){.m-cookie-banner__message{font-size:1.125rem;line-height:1.75rem}}.m-cookie-banner--bottom .m-cookie-banner__message{flex:1 1 auto;margin-right:1rem;margin-bottom:0;max-width:100%}@media(max-width: 767px){.m-cookie-banner--bottom .m-cookie-banner__message{margin-bottom:15px}}.m-cookie-banner__learn-more{display:inline-block;opacity:.8;padding:.2em;text-decoration:underline}.m-cookie-banner__learn-more:hover{opacity:1}.m-cookie-banner--black{color:#fff;background-color:#000}.m-cookie-banner--white{color:#000;background-color:#fff}.m-cookie-banner--bottom{left:0;bottom:0;right:0;padding:1em 1.8em}@media(max-width: 767px){.m-cookie-banner--bottom{flex-direction:column;padding:1.5rem 1rem}}.m-cookie-banner--bottom-left{flex-direction:column;left:1rem;border-radius:.25rem;max-width:26rem;padding:2rem}.m-cookie-banner--bottom-right{right:1rem;border-radius:.25rem;max-width:26rem;padding:2rem;flex-direction:column}.m-cookie-banner--bottom-left .cookie-action--accept,.m-cookie-banner--bottom-right .cookie-action--accept{flex:1}.m-cookie-banner--bottom-left .cookie-action--decline,.m-cookie-banner--bottom-right .cookie-action--decline{flex:0 0 auto;margin-right:1.5rem;padding-left:0;padding-right:0}@media(max-width: 767px){.m-cookie-banner--bottom-left,.m-cookie-banner--bottom-right{left:1rem;right:1rem;padding:1.5rem 1rem}}.m-cookie-banner__buttons{display:flex;align-items:center}.m-cookie-banner__buttons>button{border-style:solid;border-width:2px;display:block;font-size:.9em;font-weight:700;padding:.4em .8em;text-align:center;white-space:nowrap;color:#000;border-color:rgba(0,0,0,0);background-color:#fff}.m-cookie-banner__buttons>button+button{margin-left:.5em}.m-cookie-banner__buttons .cookie-action--accept{border-radius:.25rem}.m-cookie-banner__buttons .cookie-action--decline:hover{text-decoration:underline}.m-cookie-banner--black .m-cookie-banner__buttons .cookie-action--decline{background-color:rgba(0,0,0,0);color:#fff}.m-cookie-banner--white .m-cookie-banner__buttons .cookie-action--accept{background-color:#000;color:#fff}@media(max-width: 767px){.m-cookie-banner--bottom .m-cookie-banner__buttons{justify-content:flex-end}}
+
+/* ==========================================================================
+   AURA BOTANICA — LUXURY COOKIE BANNER ENHANCEMENTS (Phase 2)
+   ========================================================================== */
+.m-cookie-banner {
+  background-color: rgba(24, 35, 31, 0.96);
+  color: var(--color-aura-ivory, #FCFBF7);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(232, 225, 215, 0.15);
+  box-shadow: 0 -8px 24px rgba(24, 35, 31, 0.12);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.m-cookie-banner__message {
+  font-family: var(--font-body-family, inherit);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgba(252, 251, 247, 0.9);
+}
+
+.m-cookie-banner__learn-more {
+  color: #E2B293;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-action--accept {
+  background-color: var(--color-aura-copper, #B9784D);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--aura-radius-xs, 4px);
+  padding: 8px 18px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.cookie-action--accept:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.cookie-action--accept:focus-visible,
+.cookie-action--decline:focus-visible {
+  outline: 2px solid var(--color-aura-copper, #B9784D);
+  outline-offset: 2px;
+}
+
+.cookie-action--decline {
+  background: transparent;
+  color: rgba(252, 251, 247, 0.8);
+  border: 1px solid rgba(252, 251, 247, 0.3);
+  border-radius: var(--aura-radius-xs, 4px);
+  padding: 8px 16px;
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.cookie-action--decline:hover {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .m-cookie-banner,
+  .cookie-action--accept,
+  .cookie-action--decline {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
