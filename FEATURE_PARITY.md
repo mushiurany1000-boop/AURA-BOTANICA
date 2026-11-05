@@ -72,3 +72,4 @@ This document tracks every existing Minimog and Aura Botanica theme capability t
 ## 2. Parity Verification Rules
 1. **Zero Feature Drop:** No setting, section type, or block type can be removed without providing an alias migration in `config/settings_data.json` or `templates/*.json`.
 2. **Tooling Preservation:** Development tooling (`dev-server.js`, `preview/`, `data/`, `scripts/`, `package.json`) remains 100% operational in the local environment and is safely excluded from final Shopify theme archives.
+

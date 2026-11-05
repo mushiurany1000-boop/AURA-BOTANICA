@@ -34,3 +34,4 @@ The following actions are scheduled for Phase 1 and will only be executed after 
 | `templates/collection.filter-by-tags.json` | Contains clothing sizes (`XS,S,M,L,XL`), demo apparel brands (`Minimog,Retrolie...`), and fashion tags (`Dress,Shirts,Denim...`). | Replace with skincare sizes (`30ml, 50ml, 100ml`), brand collections, and skin concerns (`Barrier Repair, Hydration, Radiance`). | Queued |
 | `templates/page.find-a-store.json` | Contains demo clothing stores in San Francisco with generic return policies. | Replace with Aura Botanica flagship ateliers (San Francisco, Tokyo, Paris). | Queued |
 | Duplicate Sections (`announcement-bar.liquid`, `featured-product.liquid`, `slideshow.liquid`, `promotional-banner.liquid`, `spacer-divider.liquid`) | Redundant clones that duplicate authoritative sections. | Move deprecated files to `_deprecated/` outside theme folder. Maintain section aliases in schemas so existing merchant data continues working. | Queued |
+

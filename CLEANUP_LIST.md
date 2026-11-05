@@ -58,3 +58,4 @@ Out of 98 section files in `sections/`, 51 are actively utilized in templates, w
 The following sections are currently unreferenced in templates:
 - Modular sections ready for integration in Phase 4a/4b: `before-after.liquid`, `editorial-split.liquid`, `ingredient-spotlight.liquid`, `ritual-steps.liquid`, `marquee.liquid`.
 - Standalone stubs to be reviewed or aliased in Phase 1: `country-options.liquid`, `custom-liquid.liquid`, `maps.liquid`, `product-bundles.liquid`.
+
