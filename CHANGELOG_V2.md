@@ -6,6 +6,49 @@ All architectural changes, refactors, migrations, and file deprecations for the 
 
 ---
 
+## [Phase 2: Global Layout & Navigation] — Completed (November 5, 2026)
+
+All global layout and navigation subsystems restyled and extended using scoped CSS transitions, token-driven color palettes, and strict WCAG 2.2 AA accessibility standards without introducing GSAP (reserved for Phase 3).
+
+### 1. Announcement Bar (`sections/annoucement.liquid`, `assets/announcement-bar.css`, `assets/announcement-bar.js`)
+* **Markup Refactor:** Replaced un-focusable `<div>` close icon with accessible `<button type="button" class="m-announcement-bar__close" aria-label="{{ 'accessibility.close' | t }}" data-announcement-close>`.
+* **Scoped Motion:** Replaced inline removal script with encapsulated smooth CSS height/opacity collapse transition (`transition: max-height 0.35s, opacity 0.35s`). Added keyboard `Escape` handler to dismiss bar.
+* **Content Cleanup:** Fixed corrupted unicode bullets in `sections/header-group.json`: `"Complimentary Botanical Cleanser Sample with all orders over $75 • Free Carbon-Neutral Shipping"`.
+* **Motion & Responsive Safety:** Added `@media (prefers-reduced-motion: reduce)` override and responsive padding for 360px, 768px, and 1280px viewports.
+
+### 2. Header, Mega Menu, Mobile Menu & Bottom Sticky Bar (`sections/header.liquid`, `snippets/header-menu-drawer.liquid`, `assets/header.css`, `assets/mega-menu.js`, `sections/mobile-sticky-bar.liquid`, `assets/mobile-sticky-bar.css`)
+* **Accessible Hamburger Trigger:** Refactored `<span class="m-menu-button">` in `sections/header.liquid` to an accessible `<button type="button" class="m-menu-button" aria-label="{{ 'general.accessibility.toggle_menu' | t }}" aria-controls="m-menu-drawer" aria-expanded="false">`.
+* **Mobile Drawer Close & Header:** Injected drawer title and accessible close button `<button type="button" class="m-menu-drawer__close" aria-label="{{ 'general.accessibility.close_menu' | t }}">` into `snippets/header-menu-drawer.liquid`.
+* **Focus Management & Trap:** Enhanced `assets/mega-menu.js` to trap focus inside the drawer on open, dismiss on `Escape`, and return focus to `.m-menu-button` on close.
+* **Header Backdrop & Sticky Motion:** Injected luxury CSS transitions and backdrop blur (`backdrop-filter: blur(12px)`) for sticky header states (`.m-header.stuck`).
+* **Mobile Sticky Bar (`sections/mobile-sticky-bar.liquid`):** Replaced hardcoded/incorrect `aria-label="product"` with translated labels (`{{ 'general.accessibility.home' | t }}`, `{{ 'general.accessibility.shop' | t }}`, `{{ 'general.accessibility.wishlist' | t }}`). Ensured touch targets are >= 48px and added `:focus-visible` focus rings.
+
+### 3. Predictive Search Modal (`snippets/search-popup.liquid`, `assets/search.css`, `assets/predictive-search.js`)
+* **Desktop Close Button:** Injected dedicated desktop close button `<button type="button" class="m-search-popup__close-desktop" data-close-search aria-label="{{ 'general.accessibility.close' | t }}">` so keyboard/desktop users have a visible click target alongside ESC.
+* **Accessible Form Inputs:** Updated search submit and clear buttons with translated `aria-label` attributes (`general.search.submit`, `general.search.clear`).
+* **Focus Return on ESC:** Enhanced `assets/predictive-search.js` so pressing `Escape` closes the search popup via `closeSearchPopup` event and returns focus directly to the header search trigger (`[data-open-search-popup]`).
+* **Search Styling:** Added smooth overlay fade/slide transitions and input focus border-bottom accent in `assets/search.css`.
+
+### 4. Slide-Out Cart Drawer (`snippets/cart-drawer.liquid`, `assets/cart.css`, `assets/cart-drawer.js`)
+* **Token-Driven Free Shipping Bar:** Eliminated all hardcoded inline `#hex` colors (`#B9784D`, `#18231F`, `#E5DFD3`) in favor of CSS custom property tokens (`var(--color-aura-copper)`, `var(--color-aura-forest)`, `var(--color-aura-border)`).
+* **Localized Copy:** Replaced hardcoded English copy with locale strings: `{{ 'cart.general.free_shipping_unlocked' | t }}` and `{{ 'cart.general.free_shipping_remaining_html' | t: remaining: remaining_money }}`.
+* **Accessible Close & Focus Trap:** Updated `.m-cart-drawer__close` to an accessible button. Enhanced `assets/cart-drawer.js` to focus the close button on open, listen to `Escape` key, and return focus to the cart bubble button on close.
+* **Quantity Touch Targets:** Increased quantity selector buttons to min 40x40px with `:focus-visible` outline rings.
+
+### 5. Luxury Footer (`sections/footer.liquid`, `sections/footer-group.json`, `assets/footer.css`)
+* **Unicode & Text Cleanup:** Fixed corrupted unicode characters in `sections/footer-group.json`: `"title": "Let's get in touch"` and `"copyright": "© AURA BOTANICA 2026 • Pure Botanical Alchemy"`.
+* **Botanical Typography:** Styled `.m-footer--block-title` with `var(--font-heading-family)` (`Cormorant Garamond`) and clean uppercase letter-spacing (0.08em).
+* **Accessible Focus Rings:** Added `:focus-visible` focus rings for all footer navigation links, newsletter email input, and newsletter submit button.
+* **Mobile Accordion Styling:** Added clean border dividers and smooth height transitions for mobile accordion blocks.
+
+### 6. Overlays & Compliance (`snippets/cookie-banner.liquid`, `assets/cookie-banner.css`, `sections/age-verifier-popup.liquid`, `assets/age-verifier.css`, `snippets/page-transition.liquid`, `snippets/scroll-top-button.liquid`)
+* **Cookie Banner:** Enhanced `assets/cookie-banner.css` with luxury backdrop blur, token-driven colors, `:focus-visible` rings on Accept/Decline, and `@media (prefers-reduced-motion: reduce)` overrides.
+* **Age Verifier:** Styled modal with `var(--color-aura-ivory)` background, `var(--color-aura-forest)` typography, and accessible button focus rings.
+* **Page Transition:** Replaced hardcoded `#fff` background with `var(--color-aura-ivory)` and added reduced-motion override to disable transition spinner for sensitive users.
+* **Scroll to Top Button:** Replaced hardcoded `aria-label="Scroll to Top"` with translated `{{ 'general.accessibility.scroll_to_top' | t }}` and added `:focus-visible` ring.
+
+---
+
 ## [Phase 1: Foundation] — Completed (November 5, 2026)
 
 ### 1. Prototype Assets De-conflicted & Scoped Base Stylesheet

@@ -52,6 +52,17 @@ class Megamenu {
     this.domNodes.backDrop.addEventListener("click", (e) => {
       this.closeMenu();
     });
+    const closeBtn = document.querySelector(".m-menu-drawer__close");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        this.closeMenu();
+      });
+    }
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && this.open) {
+        this.closeMenu();
+      }
+    });
     this.initMobileMegaMenu();
     this.initDesktopMegaMenu();
 

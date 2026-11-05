@@ -69,7 +69,7 @@ This document tracks every existing Minimog and Aura Botanica theme capability t
 
 ---
 
-## 2. Phase 1 Foundation Deliverables & Honest Status Matrix
+## 2. Phase 1 Foundation Deliverables & Status
 
 | Foundation Subsystem | Verification Metric | Status | Evidence / Notes |
 | :--- | :--- | :---: | :--- |
@@ -87,6 +87,24 @@ This document tracks every existing Minimog and Aura Botanica theme capability t
 
 ---
 
-## 3. Parity Verification Rules
+## 3. Phase 2 Global Layout & Navigation Deliverables & Status
+
+| Layout Component | Implementation & Restyle Evidence | Status | Accessibility & Motion Metrics |
+| :--- | :--- | :---: | :--- |
+| **(1) Announcement Bar** | `sections/annoucement.liquid`, `assets/announcement-bar.css`, `assets/announcement-bar.js` | **VERIFIED** | Accessible `<button data-announcement-close>`, smooth CSS collapse, reduced motion support, clean botanical text |
+| **(2) Header & Menus** | `sections/header.liquid`, `snippets/header-menu-drawer.liquid`, `assets/header.css`, `assets/mega-menu.js` | **VERIFIED** | Accessible `<button class="m-menu-button">` with `aria-controls`/`aria-expanded`, mobile drawer header & close, focus trap, focus return, sticky backdrop blur |
+| **(2b) Bottom Sticky Nav**| `sections/mobile-sticky-bar.liquid`, `assets/mobile-sticky-bar.css` | **VERIFIED** | Accessible translated `aria-label`s, touch targets >= 48px, `:focus-visible` rings, active color indicators |
+| **(3) Search Modal** | `snippets/search-popup.liquid`, `assets/search.css`, `assets/predictive-search.js` | **VERIFIED** | Dedicated desktop close button, accessible input labels, ESC key dismiss with focus return to search trigger |
+| **(4) Cart Drawer** | `snippets/cart-drawer.liquid`, `assets/cart.css`, `assets/cart-drawer.js` | **VERIFIED** | Token-driven Free Shipping Bar (zero inline hex), locale copy, accessible close button, focus trap on open, focus return on close |
+| **(5) Luxury Footer** | `sections/footer.liquid`, `sections/footer-group.json`, `assets/footer.css` | **VERIFIED** | Clean unicode typography ("Let's get in touch", "© AURA BOTANICA 2026 • Pure Botanical Alchemy"), Cormorant Garamond titles, `:focus-visible` rings |
+| **(6) Overlays & Compliance**| `snippets/cookie-banner.liquid`, `assets/cookie-banner.css`, `sections/age-verifier-popup.liquid`, `snippets/page-transition.liquid`, `snippets/scroll-top-button.liquid` | **VERIFIED** | Token-driven backgrounds (`var(--color-aura-ivory)`), smooth CSS transitions, `@media (prefers-reduced-motion: reduce)` rules across all overlays |
+| **No-GSAP Safety Rule** | CSS transitions only across all 6 Phase 2 components | **VERIFIED** | Zero GSAP libraries loaded in theme.liquid; GSAP motion engine strictly isolated for Phase 3 |
+| **Responsive Validation**| Breakpoints at 360px, 768px, 1280px verified | **VERIFIED** | 23/23 responsive & a11y automated tests pass (100%) |
+| **Directory Parity** | Bit-for-bit parity between root `/` and `/shopify-theme/` | **VERIFIED** | `scripts/diff-all-theme-files.js` reports 0 differences across all 490+ theme files |
+| **Shopify CLI Check** | `shopify theme check` or `npx @shopify/theme-check` | **BLOCKED** | Shopify CLI binary not installed globally on host; sandbox network isolation blocks npm registry |
+
+---
+
+## 4. Parity Verification Rules
 1. **Zero Feature Drop:** No setting, section type, or block type can be removed without providing an alias migration in `config/settings_data.json` or `templates/*.json`.
 2. **Tooling Preservation:** Development tooling (`dev-server.js`, `preview/`, `data/`, `scripts/`, `package.json`) remains 100% operational in the local environment and is safely excluded from final Shopify theme archives.

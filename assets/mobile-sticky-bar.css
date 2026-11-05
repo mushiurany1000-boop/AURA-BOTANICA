@@ -40,3 +40,14 @@
     transform: none !important;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .m-mobile-sticky-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+  }
+}
