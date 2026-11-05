@@ -11,6 +11,14 @@
 <div id="m-menu-drawer" class="m-menu-drawer">
   <div class="m-menu-drawer__backdrop"></div>
   <div class="m-menu-drawer__wrapper">
+    <div class="m-menu-drawer__header m:flex m:items-center m:justify-between">
+      <span class="m-menu-drawer__title">{{ 'general.accessibility.menu' | t }}</span>
+      <button type="button" class="m-menu-drawer__close" aria-label="{{ 'general.accessibility.close_menu' | t }}">
+        <svg class="m-svg-icon--medium" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
     <div class="m-menu-drawer__content">
       <ul class="m-menu-drawer__navigation m-menu-mobile">
         {% for link in linklists[menu].links %}

@@ -97,11 +97,11 @@
       data-screen="m-header__mobile"
       data-transparent="{{ transparent_on_top }}"
     >
-      <span class="m-menu-button m:flex m:flex-1 m:w-3/12">
+      <button type="button" class="m-menu-button m:flex m:flex-1 m:w-3/12" aria-label="{{ 'general.accessibility.toggle_menu' | t }}" aria-controls="m-menu-drawer" aria-expanded="false">
         <div class="m-hamburger-box">
           <div class="m-hamburger-box__inner"></div>
         </div>
-      </span>
+      </button>
       {% comment %} Header-logo-mobile {% endcomment %}
       {% liquid
         assign class = 'm-logo m-logo--mobile m:justify-center ' | append: 'm:w-6/12'

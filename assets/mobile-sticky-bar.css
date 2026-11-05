@@ -1,1 +1,42 @@
 .m-mobile-sticky-bar{box-shadow:0px 0px 10px rgba(var(--color-foreground), 0.12);position:fixed;left:0;bottom:0;width:100%;z-index:25;will-change:transform;transform:none;transition:transform var(--m-duration-default, 0.25s) ease;background-color:rgb(var(--color-background))}.m-mobile-sticky-bar--item{display:flex;flex:1 0 auto;padding:18px 20px;align-items:center;justify-content:center;border-right:1px solid rgb(var(--color-border));position:relative}.m-mobile-sticky-bar--item .m-cart-icon-bubble,.m-mobile-sticky-bar--item .m-tooltip{padding:0}.m-mobile-sticky-bar--item .m-cart-count-bubble{display:flex;right:-18px;top:-7px}.m-mobile-sticky-bar--item .m-cart-count-bubble .cart-empty{display:none}.m-mobile-sticky-bar--item .m-wishlist-icon-bubble{right:-15px;top:-7px;font-weight:500}.m-mobile-sticky-bar--item:last-child{border-right:0}.m-mobile-sticky-bar--item a::before,.m-mobile-sticky-bar--item .m-mobile-sticky-bar--search::before{content:"";position:absolute;top:0;left:0;bottom:0;right:0}.m-mobile-sticky-bar--wishlist{position:relative}.m-mobile-sticky-bar.scroll-up{transform:translate3d(0, 104%, 0)}
+
+/* ==========================================================================
+   AURA BOTANICA — MOBILE BOTTOM STICKY NAV ENHANCEMENTS (Phase 2)
+   ========================================================================== */
+.m-mobile-sticky-bar {
+  background-color: rgba(var(--color-background), 0.95);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgb(var(--color-border));
+  box-shadow: 0 -4px 16px rgba(24, 35, 31, 0.04);
+  min-height: 56px;
+  padding: 0 12px;
+}
+
+.m-mobile-sticky-bar--item a,
+.m-mobile-sticky-bar--item button {
+  min-width: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(var(--color-foreground));
+  border-radius: 4px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.m-mobile-sticky-bar--item a:active {
+  transform: scale(0.92);
+}
+
+.m-mobile-sticky-bar--item a:focus-visible {
+  outline: 2px solid var(--color-aura-copper, #B9784D);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .m-mobile-sticky-bar--item a,
+  .m-mobile-sticky-bar--item button {
+    transition: none !important;
+    transform: none !important;
+  }
+}

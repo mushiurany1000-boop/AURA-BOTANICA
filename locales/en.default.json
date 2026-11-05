@@ -12,7 +12,15 @@
         "new_window": "Opens in a new window."
       },
       "close_header": "Close header",
-      "close": "Close"
+      "close": "Close",
+      "toggle_menu": "Toggle navigation menu",
+      "menu": "Menu",
+      "home": "Home",
+      "shop": "Shop formulations",
+      "wishlist": "Wishlist",
+      "account": "Account",
+      "cart": "Shopping bag",
+      "close_menu": "Close navigation menu"
     },
     "meta": {
       "tags": "Tagged \"{{ tags }}\"",

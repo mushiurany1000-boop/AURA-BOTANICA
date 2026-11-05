@@ -8,6 +8,7 @@ class Megamenu {
       headerMobile: ".m-header__mobile",
       menuDrawer: "#m-menu-drawer",
       menuDrawerContent: ".m-menu-drawer__content",
+      menuDrawerClose: ".m-menu-drawer__close",
       menu: ".m-menu-mobile",
       menuItems: [".m-menu-mobile__item"],
       megaMenuMobile: [".m-megamenu-mobile"],
@@ -20,6 +21,11 @@ class Megamenu {
 
     this.sliders = {};
     this.open = false;
+      const triggerBtn = document.querySelector(".m-menu-button");
+      if (triggerBtn) {
+        triggerBtn.setAttribute("aria-expanded", "false");
+        triggerBtn.focus();
+      }
     this.container = container;
     this.transitionDuration = 0;
     this.domNodes = queryDomNodes(this.selectors);
@@ -168,6 +174,14 @@ class Megamenu {
     this.domNodes.menuDrawer.classList.add("open");
     this.domNodes.headerMobile.classList.add("header-drawer-open");
     this.open = true;
+      const triggerBtn = document.querySelector(".m-menu-button");
+      if (triggerBtn) {
+        triggerBtn.setAttribute("aria-expanded", "true");
+      }
+      setTimeout(() => {
+        const closeBtn = document.querySelector(".m-menu-drawer__close");
+        if (closeBtn) closeBtn.focus();
+      }, 100);
   }
 
   closeMenu() {
