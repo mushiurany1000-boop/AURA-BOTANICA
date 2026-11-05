@@ -1,29 +1,33 @@
 {%- comment -%}
-  KAYRA Beauty v2.0 — Luxury Subscribe & Save Banner Section
-  Full-width subscription and refill replenishment banner with unboxing media and flexible delivery CTA.
+  Aura Botanica v2.0 — Luxury Subscribe & Save Banner Section
+  Phase 12 Exact Replica of Reference Design:
+  - Wide Container Banner in Warm Terracotta Tint (#CDAA9A / #C6A18F)
+  - Left: Unboxing Delivery Box with Wrapped Bottles
+  - Right: NEVER RUN LOW / "Subscribe & stay effortlessly consistent" / "Flexible delivery. Pause or cancel anytime." / LEARN MORE Button
 {%- endcomment -%}
 
 {%- liquid
   assign section_id = 'm-subscribe-banner-' | append: section.id
-  assign color_scheme = section.settings.color_scheme | default: 'scheme-clay-rose'
   assign container = section.settings.container | default: 'container'
+  assign banner_bg = section.settings.bg_color | default: '#C6A18F'
 -%}
 
 <section
   id="{{ section_id }}"
-  class="m-section m-subscribe-banner m-color-{{ color_scheme }} py-12 md:py-16 relative overflow-hidden"
-  style="--section-padding-top: {{ section.settings.padding_top | default: 48 }}px; --section-padding-bottom: {{ section.settings.padding_bottom | default: 48 }}px;"
+  class="m-section m-subscribe-banner py-6 md:py-8 lg:py-10 relative overflow-hidden"
+  style="--section-padding-top: {{ section.settings.padding_top | default: 24 }}px; --section-padding-bottom: {{ section.settings.padding_bottom | default: 24 }}px;"
   data-section-id="{{ section.id }}"
   data-section-type="subscribe-save-banner"
 >
-  <div class="{{ container }} px-4 sm:px-6">
+  <div class="{{ container }} max-w-[1240px] mx-auto px-4 sm:px-6">
     <div
-      class="aura-card-luxury p-6 sm:p-10 lg:p-14 flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 relative overflow-hidden"
+      class="aura-subscribe-card rounded-none p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 relative overflow-hidden"
+      style="background-color: {{ banner_bg }};"
       data-anim="fade-up"
     >
       
       <!-- Left Media Area: Unboxing Package -->
-      <div class="w-full lg:w-5/12 aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] relative rounded overflow-hidden group">
+      <div class="w-full md:w-5/12 aspect-[16/10] sm:aspect-[16/9] md:aspect-[4/3] relative rounded-none overflow-hidden group flex items-center justify-center">
         {%- if section.settings.image != blank -%}
           {{ section.settings.image | image_url: width: 1000 | image_tag: 
             loading: 'lazy', 
@@ -32,56 +36,60 @@
             data-anim-speed: '0.05'
           }}
         {%- else -%}
-          <div class="w-full h-full bg-color-background flex flex-col items-center justify-center p-6 text-center border border-color-border">
-            <svg class="w-12 h-12 text-color-primary-accent opacity-50 mb-3" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-            </svg>
-            <span class="font-serif text-lg text-color-heading mb-1">Sustainable Apothecary Unboxing</span>
-            <span class="text-xs text-color-foreground-secondary">100% Recyclable Glass & Cold-Chain Shipping</span>
-          </div>
+          <!-- Fallback SVG: Luxury Unboxing Packaging Box with Wrapped Bottles & Dried Floral -->
+          <svg class="w-full h-full object-contain transition-transform duration-700 ease-out group-hover:scale-105" viewBox="0 0 320 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Apothecary Subscription Unboxing">
+            <defs>
+              <linearGradient id="box-outer" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#DAC7BC"/>
+                <stop offset="100%" stop-color="#BD9E8E"/>
+              </linearGradient>
+              <linearGradient id="tissue-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F2DCD3"/>
+                <stop offset="100%" stop-color="#E2C2B5"/>
+              </linearGradient>
+            </defs>
+            <!-- Cardboard unboxing container -->
+            <path d="M40 70 L280 60 L260 185 L60 195 Z" fill="url(#box-outer)"/>
+            <!-- Open Box Flaps -->
+            <path d="M40 70 L10 110 L60 195 Z" fill="#AE8F7F" opacity="0.8"/>
+            <path d="M280 60 L310 100 L260 185 Z" fill="#B89A8A" opacity="0.9"/>
+            <path d="M40 70 L280 60 L240 40 L60 48 Z" fill="#C5AA9B"/>
+            <!-- Blush Tissue Paper Fold -->
+            <path d="M70 95 C90 70 230 65 245 90 C250 130 235 160 80 165 Z" fill="url(#tissue-pink)"/>
+            <!-- Wrapped Bottles inside tissue -->
+            <rect x="95" y="105" width="28" height="55" rx="3" fill="#FFFFFF" transform="rotate(-15 95 105)"/>
+            <rect x="135" y="98" width="26" height="52" rx="3" fill="#FFFFFF" transform="rotate(5 135 98)"/>
+            <rect x="175" y="105" width="30" height="34" rx="4" fill="#FFFFFF" transform="rotate(12 175 105)"/>
+            <!-- Minimalist branded box wordmark -->
+            <text x="160" y="185" font-family="'Cormorant Garamond', Georgia, serif" font-size="9" font-weight="600" letter-spacing="3" fill="#6B4538" text-anchor="middle">AURA BOTANICA</text>
+          </svg>
         {%- endif -%}
       </div>
 
       <!-- Right Content Area -->
-      <div class="w-full lg:w-7/12 flex flex-col items-start text-left lg:pl-6">
+      <div class="w-full md:w-7/12 flex flex-col items-start text-left md:pl-4 lg:pl-8">
         {%- if section.settings.eyebrow != blank -%}
-          <span class="aura-eyebrow text-color-primary mb-2">
+          <span class="aura-eyebrow text-[#5E1E16] mb-2 sm:mb-3 text-[11px] uppercase tracking-[0.20em] font-semibold">
             {{ section.settings.eyebrow }}
           </span>
         {%- endif -%}
 
         {%- if section.settings.heading != blank -%}
-          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-color-heading mb-4 leading-tight">
+          <h2 class="text-2xl sm:text-3xl md:text-[34px] lg:text-[38px] font-serif text-[#5E1E16] mb-3 leading-[1.12] font-medium tracking-tight">
             {{ section.settings.heading }}
           </h2>
         {%- endif -%}
 
         {%- if section.settings.text != blank -%}
-          <p class="text-sm sm:text-base text-color-foreground opacity-90 leading-relaxed mb-6 max-w-lg">
+          <p class="text-xs sm:text-sm text-[#4A2E25] opacity-90 leading-relaxed mb-6 max-w-md font-normal">
             {{ section.settings.text }}
           </p>
         {%- endif -%}
 
-        <!-- Features Row -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8 w-full max-w-lg text-xs sm:text-sm text-color-heading font-medium">
-          <div class="flex items-center gap-2">
-            <span class="text-color-primary font-bold">&check;</span>
-            <span>Save 15% on Every Order</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="text-color-primary font-bold">&check;</span>
-            <span>Pause or Cancel Anytime</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="text-color-primary font-bold">&check;</span>
-            <span>Complimentary Shipping</span>
-          </div>
-        </div>
-
         {%- if section.settings.button_label != blank -%}
           <a
             href="{{ section.settings.button_link | default: routes.all_products_collection_url }}"
-            class="m-button m-button--primary px-8 py-3 text-xs uppercase tracking-widest font-semibold"
+            class="m-editorial-split__btn-primary !min-w-[170px] !h-[44px] !px-7 !text-xs"
           >
             {{ section.settings.button_label }}
           </a>
@@ -97,30 +105,25 @@
   "name": "Subscribe & save banner",
   "settings": [
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "scheme-clay-rose"
-    },
-    {
       "type": "select",
       "id": "container",
       "label": "Container layout",
       "options": [
-        { "value": "container-fluid", "label": "Full width" },
-        { "value": "container", "label": "Boxed container" }
+        { "value": "container", "label": "Boxed container (Recommended)" },
+        { "value": "container-fluid", "label": "Full width" }
       ],
       "default": "container"
     },
     {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Unboxing / Replenishment photo"
+      "type": "color",
+      "id": "bg_color",
+      "label": "Banner background color",
+      "default": "#C6A18F"
     },
     {
       "type": "text",
       "id": "eyebrow",
-      "label": "Eyebrow text",
+      "label": "Eyebrow",
       "default": "NEVER RUN LOW"
     },
     {
@@ -132,8 +135,8 @@
     {
       "type": "textarea",
       "id": "text",
-      "label": "Subtext description",
-      "default": "Flexible delivery schedules. Guaranteed freshly compounded formulations. Pause, skip, or cancel anytime with one click."
+      "label": "Description",
+      "default": "Flexible delivery. Pause or cancel anytime."
     },
     {
       "type": "text",
@@ -147,24 +150,29 @@
       "label": "Button link"
     },
     {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Unboxing packaging photo"
+    },
+    {
       "type": "range",
       "id": "padding_top",
       "label": "Top padding",
       "min": 0,
-      "max": 100,
+      "max": 80,
       "step": 4,
       "unit": "px",
-      "default": 48
+      "default": 24
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "label": "Bottom padding",
       "min": 0,
-      "max": 100,
+      "max": 80,
       "step": 4,
       "unit": "px",
-      "default": 48
+      "default": 24
     }
   ],
   "presets": [
@@ -174,4 +182,3 @@
   ]
 }
 {% endschema %}
-

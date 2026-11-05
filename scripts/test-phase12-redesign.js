@@ -59,12 +59,12 @@ try {
     'hero_split',
     'benefits_strip',
     'shop_by_category',
-    'best_sellers',
     'bento_row_1',
     'bento_row_2',
     'subscribe_save',
-    'testimonials',
     'faq',
+    'best_sellers',
+    'testimonials',
     'newsletter',
     'instagram'
   ];

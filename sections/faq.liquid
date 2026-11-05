@@ -1,57 +1,49 @@
 {%- comment -%}
-  KAYRA Beauty v2.0 — Luxury Two-Column FAQ Section
-  Two-column accordion with GSAP height animation, accessible triggers, and FAQPage structured data.
+  Aura Botanica v2.0 — Luxury Two-Column FAQ Section
+  Phase 12 Exact Replica of Reference Design:
+  - Header: FREQUENTLY ASKED (left) / View all FAQs → (right)
+  - 2-Column Desktop Grid with 1px Outlined Rows (Height ~46px, '+' Toggle)
+  - Default 4 Questions from Reference Mockup
 {%- endcomment -%}
 
 {%- liquid
   assign section_id = 'm-faq-' | append: section.id
-  assign color_scheme = section.settings.color_scheme | default: 'default'
   assign container = section.settings.container | default: 'container'
 -%}
 
 <section
   id="{{ section_id }}"
-  class="m-section m-faq m-color-{{ color_scheme }} py-12 md:py-20 relative overflow-hidden"
-  style="--section-padding-top: {{ section.settings.padding_top | default: 48 }}px; --section-padding-bottom: {{ section.settings.padding_bottom | default: 48 }}px; background-color: {{ section.settings.bg_color | default: 'transparent' }};"
+  class="m-section m-faq py-8 md:py-12 lg:py-14 relative overflow-hidden"
+  style="--section-padding-top: {{ section.settings.padding_top | default: 32 }}px; --section-padding-bottom: {{ section.settings.padding_bottom | default: 48 }}px;"
   data-section-id="{{ section.id }}"
   data-section-type="faq"
 >
-  <div class="{{ container }} px-4 sm:px-6">
+  <div class="{{ container }} max-w-[1240px] mx-auto px-4 sm:px-6">
     
-    <!-- Header Row -->
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 md:mb-12 gap-4" data-anim="fade-up">
+    <!-- Header Row (Matching Reference 1: Left Eyebrow / Right Link) -->
+    <div class="flex flex-row items-center justify-between mb-6 pb-2 border-b border-[#E9D5CC]/40" data-anim="fade-up">
       <div>
-        {%- if section.settings.subheading != blank -%}
-          <span class="aura-eyebrow text-color-primary">
-            {{ section.settings.subheading }}
-          </span>
-        {%- endif -%}
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-serif text-color-heading tracking-tight">
-          {{ section.settings.heading | default: 'Frequently Asked Questions' }}
+        <h2 class="aura-eyebrow text-[#5E1E16] text-xs sm:text-sm font-semibold tracking-[0.20em] uppercase">
+          {{ section.settings.subheading | default: 'FREQUENTLY ASKED' }}
         </h2>
-        {%- if section.settings.description != blank -%}
-          <p class="text-sm text-color-foreground-secondary mt-2 max-w-xl leading-relaxed">
-            {{ section.settings.description }}
-          </p>
-        {%- endif -%}
       </div>
 
       {%- if section.settings.show_view_all -%}
         <a
           href="{{ section.settings.view_all_link | default: '/pages/faqs' }}"
-          class="inline-flex items-center gap-1.5 text-xs sm:text-sm uppercase tracking-wider font-semibold text-color-primary hover:text-color-heading transition-colors group flex-shrink-0"
+          class="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.14em] font-semibold text-[#5E1E16] hover:text-[#8B3224] transition-colors group"
         >
           {{ section.settings.view_all_label | default: 'View all FAQs' }}
-          <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          <span class="transition-transform duration-300 group-hover:translate-x-1 font-sans">&rarr;</span>
         </a>
       {%- endif -%}
     </div>
 
-    <!-- 2-Column Accordion Grid on Desktop, Single Column on Mobile -->
+    <!-- 2-Column Accordion Grid (2x2 on Desktop, Single Column on Mobile) -->
     <div
-      class="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-2 items-start"
+      class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4 items-start"
       data-anim="stagger-children"
-      data-anim-stagger="0.06"
+      data-anim-stagger="0.05"
     >
       {%- for block in section.blocks -%}
         {%- liquid
@@ -59,22 +51,22 @@
           assign panel_id = 'faq-panel-' | append: section.id | append: '-' | append: forloop.index
         -%}
         <div
-          class="aura-faq-accordion-item border-b border-color-border py-1"
+          class="aura-faq-row border border-[#E9D5CC] bg-[#FDFBF9] rounded-none px-4 sm:px-5 py-2.5 transition-colors duration-200 hover:border-[#8B3224]/50"
           data-anim-child
           {{ block.shopify_attributes }}
         >
           <button
             type="button"
-            class="aura-faq-accordion-header group flex items-center justify-between w-full py-4 text-left cursor-pointer focus:outline-none"
+            class="aura-faq-accordion-header group flex items-center justify-between w-full py-1 text-left cursor-pointer focus:outline-none"
             aria-expanded="{% if block.settings.open %}true{% else %}false{% endif %}"
             aria-controls="{{ panel_id }}"
             id="{{ item_id }}"
             onclick="toggleAuraFaq(this)"
           >
-            <span class="text-base sm:text-lg font-serif text-color-heading group-hover:text-color-primary transition-colors pr-4">
+            <span class="text-xs sm:text-[13px] font-sans text-[#3B1E18] font-normal pr-3 leading-snug group-hover:text-[#8B3224] transition-colors">
               {{ block.settings.question }}
             </span>
-            <span class="w-6 h-6 flex items-center justify-center text-color-primary font-light text-xl leading-none flex-shrink-0 transition-transform duration-300 aura-faq-icon">
+            <span class="w-5 h-5 flex items-center justify-center text-[#6A625F] group-hover:text-[#8B3224] font-light text-base leading-none flex-shrink-0 transition-transform duration-200 aura-faq-icon">
               {% if block.settings.open %}&minus;{% else %}&plus;{% endif %}
             </span>
           </button>
@@ -83,7 +75,7 @@
             id="{{ panel_id }}"
             role="region"
             aria-labelledby="{{ item_id }}"
-            class="aura-faq-accordion-body text-xs sm:text-sm text-color-foreground opacity-90 leading-relaxed pb-4 {% unless block.settings.open %}hidden{% endunless %}"
+            class="aura-faq-accordion-body text-xs text-[#6A625F] leading-relaxed pt-2 pb-1 {% unless block.settings.open %}hidden{% endunless %}"
           >
             {{ block.settings.answer }}
           </div>
@@ -102,8 +94,6 @@
     const panel = document.getElementById(panelId);
     const icon = button.querySelector('.aura-faq-icon');
 
-    if (!panel) return;
-
     if (isExpanded) {
       button.setAttribute('aria-expanded', 'false');
       panel.classList.add('hidden');
@@ -112,69 +102,25 @@
       button.setAttribute('aria-expanded', 'true');
       panel.classList.remove('hidden');
       if (icon) icon.innerHTML = '&minus;';
-
-      if (window.gsap) {
-        window.gsap.fromTo(panel, 
-          { opacity: 0, height: 0 }, 
-          { opacity: 1, height: 'auto', duration: 0.35, ease: 'power2.out' }
-        );
-      }
     }
   }
-</script>
-
-<!-- FAQ Structured Data (Schema.org/FAQPage) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {%- for block in section.blocks -%}
-      {
-        "@type": "Question",
-        "name": {{ block.settings.question | json }},
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": {{ block.settings.answer | strip_html | json }}
-        }
-      }{%- unless forloop.last -%},{%- endunless -%}
-    {%- endfor -%}
-  ]
-}
 </script>
 
 {% schema %}
 {
   "name": "FAQ",
+  "max_blocks": 12,
   "settings": [
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "default"
-    },
     {
       "type": "text",
       "id": "subheading",
-      "label": "Subheading",
+      "label": "Section eyebrow",
       "default": "FREQUENTLY ASKED"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Formulation Inquiries"
-    },
-    {
-      "type": "textarea",
-      "id": "description",
-      "label": "Description",
-      "default": "Clear answers regarding our clean clinical extraction standards and biocompatible ingredients."
     },
     {
       "type": "checkbox",
       "id": "show_view_all",
-      "label": "Show 'View all FAQs' link",
+      "label": "Show 'View all' link",
       "default": true
     },
     {
@@ -193,33 +139,27 @@
       "id": "container",
       "label": "Container layout",
       "options": [
-        { "value": "container-fluid", "label": "Full width" },
-        { "value": "container", "label": "Boxed container" }
+        { "value": "container", "label": "Boxed container (Recommended)" },
+        { "value": "container-fluid", "label": "Full width" }
       ],
       "default": "container"
-    },
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Legacy background color fallback",
-      "default": "transparent"
     },
     {
       "type": "range",
       "id": "padding_top",
       "label": "Top padding",
       "min": 0,
-      "max": 100,
+      "max": 80,
       "step": 4,
       "unit": "px",
-      "default": 48
+      "default": 32
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "label": "Bottom padding",
       "min": 0,
-      "max": 100,
+      "max": 80,
       "step": 4,
       "unit": "px",
       "default": 48
@@ -228,7 +168,7 @@
   "blocks": [
     {
       "type": "item",
-      "name": "FAQ item",
+      "name": "Question",
       "settings": [
         {
           "type": "text",
@@ -240,12 +180,12 @@
           "type": "richtext",
           "id": "answer",
           "label": "Answer",
-          "default": "<p>Yes. Every KAYRA Beauty formulation is biocompatible, hypoallergenic, and formulated without synthetic fragrance or aggressive surfactants.</p>"
+          "default": "<p>Yes. Every formulation is dermatologist tested, hypoallergenic, and crafted without fragrance or synthetic irritants for sensitive barrier support.</p>"
         },
         {
           "type": "checkbox",
           "id": "open",
-          "label": "Default open",
+          "label": "Open by default",
           "default": false
         }
       ]
@@ -259,32 +199,28 @@
           "type": "item",
           "settings": {
             "question": "Are your products suitable for sensitive skin?",
-            "answer": "<p>Yes. Every formulation is crafted with bio-calming actives designed to soothe reactive barriers.</p>",
-            "open": true
+            "answer": "<p>Yes. Every formulation is dermatologist tested, hypoallergenic, and crafted without fragrance or synthetic irritants for sensitive barrier support.</p>"
           }
         },
         {
           "type": "item",
           "settings": {
             "question": "How do I build a routine?",
-            "answer": "<p>Start with our 3-step fundamental ritual: Cleanser, Barrier Elixir, and Lipid Cream.</p>",
-            "open": false
+            "answer": "<p>Start with a gentle cleanser, apply your target active serum to damp skin, lock in hydration with moisturizer, and finish with SPF each morning.</p>"
           }
         },
         {
           "type": "item",
           "settings": {
             "question": "What makes your ingredients clean?",
-            "answer": "<p>We source only wild-harvested botanicals cold-pressed to preserve cellular bio-potency.</p>",
-            "open": false
+            "answer": "<p>We adhere to strict biocompatibility standards, wild-harvesting sustainably and avoiding parabens, sulfates, silicones, and artificial dyes.</p>"
           }
         },
         {
           "type": "item",
           "settings": {
             "question": "Where do you ship?",
-            "answer": "<p>We offer carbon-neutral domestic and international shipping with temperature-controlled packaging.</p>",
-            "open": false
+            "answer": "<p>We offer carbon-neutral shipping worldwide. Orders over $75 include complimentary delivery and deluxe botanical travel samples.</p>"
           }
         }
       ]
