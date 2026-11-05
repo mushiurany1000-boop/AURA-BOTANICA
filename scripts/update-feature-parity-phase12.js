@@ -24,3 +24,4 @@ if (!content.includes('Phase 12 Luxury Editorial Hero Split')) {
 } else {
   console.log('Phase 12 already in FEATURE_PARITY.md');
 }
+

@@ -6,6 +6,51 @@
 
 :root {
   /* ========================================================================
+     PHASE 12 DESIGN SYSTEM TOKENS — TERRACOTTA ATELIER (DEFAULT) & FOREST & GOLD
+     ======================================================================== */
+  --color-aura-cream-bg: #FDF5F2;
+  --color-aura-blush-card: #F6E8E2;
+  --color-aura-deep-brown: #3B1E18;
+  --color-aura-rust-band: #7E3023;
+  --color-aura-button: #843C2D;
+  --color-aura-button-hover: #6A2A1F;
+  --color-aura-rust-card: #93422F;
+  --color-aura-copper: #B87350;
+  --color-aura-line: #E9D5CC;
+  --color-aura-text-on-rust: #FCE8E7;
+
+  /* Forest & Gold Tokens */
+  --color-aura-forest-primary: #1E4123;
+  --color-aura-forest-button: #667F6A;
+  --color-aura-forest-btn-hover: #1E4123;
+  --color-aura-gold-accent: #DEBC8C;
+  --color-aura-star-gold: #E2C25D;
+  --color-aura-white-bg: #FFFFFF;
+  --color-aura-gray-band: #F5F5F5;
+  --color-aura-stock-badge-bg: #D9EEDF;
+
+  /* Fluid Headings (h1 ~ 48–88px desktop, 34–44px mobile; tight leading) */
+  --font-fluid-h1: clamp(2.125rem, 4.5vw + 0.5rem, 5.5rem);
+  --font-fluid-h2: clamp(1.75rem, 2.8vw + 0.5rem, 2.75rem);
+  --font-fluid-h3: clamp(1.25rem, 1.5vw + 0.5rem, 1.875rem);
+  --font-fluid-eyebrow: clamp(0.6875rem, 0.2vw + 0.625rem, 0.75rem);
+  --font-fluid-body: clamp(0.9375rem, 0.2vw + 0.875rem, 1rem);
+
+  /* Rectangular Button & Flat Card Tokens */
+  --btn-border-radius: 0px;
+  --btn-padding: 16px 32px;
+  --btn-letter-spacing: 0.14em;
+  --btn-text-transform: uppercase;
+  --card-border-radius: 0px;
+  --card-box-shadow: none;
+
+  /* Section Spacing Tokens */
+  --spacing-sections-desktop: 112px;
+  --spacing-sections-laptop: 96px;
+  --spacing-sections-tablet: 72px;
+  --spacing-sections-mobile: 64px;
+
+  /* ========================================================================
      1. COLOR DESIGN TOKENS (Phase 9.1 Botanical System)
      ======================================================================== */
   --color-aura-ivory: rgb(var(--color-background, 248, 245, 239));
@@ -28,10 +73,10 @@
   /* ========================================================================
      2. TYPOGRAPHY TOKENS (Phase 9.1 Luxury System)
      ======================================================================== */
-  --font-heading-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-body-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-weight-body: 400;
   --font-weight-nav: 500;
   --font-weight-btn: 600;
@@ -117,7 +162,7 @@ h1, h2, h3, h4, h5, h6,
 .m-product-card__name,
 .product-card__title,
 .product-title {
-  font-family: 'Playfair Display', Georgia, serif !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
   font-weight: 700 !important;
   color: var(--color-aura-forest);
   letter-spacing: -0.015em;
@@ -145,7 +190,7 @@ label,
 .m-header__menu-item,
 .site-navigation a,
 .menu-item {
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif !important;
   font-weight: 500 !important;
   letter-spacing: 0.02em;
 }
@@ -158,7 +203,7 @@ label,
 button.m-add-to-cart,
 .button,
 .btn {
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif !important;
   font-weight: 600 !important;
   border-radius: var(--btn-border-radius, 4px) !important;
   min-height: 44px !important;
@@ -177,9 +222,9 @@ button.m-add-to-cart,
 button.m-add-to-cart,
 .button--primary,
 .btn--primary {
-  background-color: #315B45 !important;
-  color: #F8F5EF !important;
-  border: 1px solid #315B45 !important;
+  background-color: var(--color-aura-button, #843C2D) !important;
+  color: var(--color-aura-text-on-rust, #FCE8E7) !important;
+  border: 1px solid var(--color-aura-button, #843C2D) !important;
 }
 
 @media (hover: hover) {
@@ -188,9 +233,9 @@ button.m-add-to-cart,
   button.m-add-to-cart:hover,
   .button--primary:hover,
   .btn--primary:hover {
-    background-color: #244638 !important;
-    border-color: #244638 !important;
-    color: #F8F5EF !important;
+    background-color: var(--color-aura-button-hover, #6A2A1F) !important;
+    border-color: var(--color-aura-button-hover, #6A2A1F) !important;
+    color: var(--color-aura-text-on-rust, #FCE8E7) !important;
     transform: translateY(-1px) !important;
     box-shadow: 0 6px 16px rgba(36, 70, 56, 0.2) !important;
   }
@@ -212,8 +257,8 @@ button.m-add-to-cart,
   .m-button--outline:hover,
   .button--secondary:hover,
   .btn--secondary:hover {
-    background-color: #315B45 !important;
-    color: #F8F5EF !important;
+    background-color: var(--color-aura-button, #843C2D) !important;
+    color: var(--color-aura-text-on-rust, #FCE8E7) !important;
     border-color: #315B45 !important;
     transform: translateY(-1px) !important;
   }
@@ -443,16 +488,21 @@ textarea:focus-visible,
    ========================================================================== */
 
 /* Eyebrows & Editorial Typography */
+
 .aura-eyebrow,
-.eyebrow-smallcaps {
-  font-family: var(--font-body-family, 'Montserrat', sans-serif) !important;
-  font-size: 0.725rem !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.16em !important;
+.eyebrow-smallcaps,
+.m-eyebrow,
+.section__eyebrow {
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: clamp(0.6875rem, 0.2vw + 0.625rem, 0.75rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.2em !important;
   text-transform: uppercase !important;
   display: block;
   margin-bottom: 0.75rem;
+  line-height: 1.2 !important;
 }
+
 
 /* Subtle 1px dividers and clean surfaces */
 .aura-border-thin {
@@ -469,10 +519,10 @@ textarea:focus-visible,
 
 /* Luxury 0-4px card system */
 .aura-card-luxury {
-  border-radius: 4px;
+  border-radius: var(--card-border-radius, 0px);
   background-color: rgb(var(--color-background-secondary, var(--color-background)));
   border: 1px solid rgba(var(--color-border), 0.4);
-  box-shadow: 0 4px 16px -2px rgba(41, 45, 40, 0.03);
+  box-shadow: none;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
 }
 
@@ -519,7 +569,7 @@ textarea:focus-visible,
   justify-content: space-between;
   text-align: center;
   padding: 2rem 1.5rem 1.5rem;
-  border-radius: 4px;
+  border-radius: var(--card-border-radius, 0px);
   background-color: rgb(var(--color-background-secondary, 240, 236, 225));
   border: 1px solid rgba(var(--color-border, 227, 221, 209), 0.5);
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
@@ -542,7 +592,7 @@ textarea:focus-visible,
 
 /* Bento Row 1 & 2 Cards */
 .aura-bento-hero {
-  border-radius: 4px;
+  border-radius: var(--card-border-radius, 0px);
   overflow: hidden;
   position: relative;
 }
@@ -619,7 +669,7 @@ textarea:focus-visible,
   justify-content: center;
   min-height: 44px;
   padding: 0 1.25rem;
-  border-radius: 4px;
+  border-radius: var(--card-border-radius, 0px);
   border: 1px solid rgba(var(--color-border), 0.7);
   font-size: 0.875rem;
   font-weight: 500;
@@ -633,4 +683,106 @@ textarea:focus-visible,
   background-color: rgb(var(--color-button, 49, 91, 69));
   color: rgb(var(--color-button-text, 248, 245, 239));
   border-color: rgb(var(--color-button, 49, 91, 69));
+}
+
+
+/* ==========================================================================
+   PHASE 12 STEP A REFINEMENTS — BUTTONS, CARDS, WHITESPACE
+   ========================================================================== */
+.m-button,
+.sf__btn,
+button.m-add-to-cart,
+.button,
+.btn,
+.aura-btn-primary,
+.aura-button {
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 500 !important;
+  border-radius: var(--btn-border-radius, 0px) !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  padding: 16px 32px !important;
+  min-height: 48px !important;
+  box-shadow: none !important;
+  line-height: 1 !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.m-button--primary,
+.sf__btn-primary,
+button.m-add-to-cart,
+.button--primary,
+.btn--primary,
+.aura-btn-solid {
+  background-color: var(--color-aura-button, #843C2D) !important;
+  color: var(--color-aura-text-on-rust, #FCE8E7) !important;
+  border: 1px solid var(--color-aura-button, #843C2D) !important;
+}
+
+@media (hover: hover) {
+  .m-button--primary:hover,
+  .sf__btn-primary:hover,
+  button.m-add-to-cart:hover,
+  .button--primary:hover,
+  .btn--primary:hover,
+  .aura-btn-solid:hover {
+    background-color: var(--color-aura-button-hover, #6A2A1F) !important;
+    border-color: var(--color-aura-button-hover, #6A2A1F) !important;
+    color: var(--color-aura-text-on-rust, #FCE8E7) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: none !important;
+  }
+}
+
+.aura-btn-outline {
+  background-color: transparent !important;
+  color: var(--color-aura-text-on-rust, #FCE8E7) !important;
+  border: 1px solid var(--color-aura-text-on-rust, #FCE8E7) !important;
+}
+
+@media (hover: hover) {
+  .aura-btn-outline:hover {
+    background-color: rgba(252, 232, 231, 0.12) !important;
+    color: #FFFFFF !important;
+  }
+}
+
+/* Step A Cards: No shadows, flat blush backgrounds, 1px lines */
+.aura-card-luxury,
+.aura-category-card,
+.aura-bento-card {
+  border-radius: var(--card-border-radius, 0px) !important;
+  box-shadow: none !important;
+  background-color: var(--color-aura-blush-card, #F6E8E2) !important;
+  border: 1px solid var(--color-aura-line, #E9D5CC) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease !important;
+}
+
+@media (hover: hover) {
+  .aura-card-luxury--hover:hover,
+  .aura-category-card:hover {
+    transform: translateY(-2px) !important;
+    border-color: var(--color-aura-copper, #B87350) !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Step A Whitespace Tokens (96-140px desktop / 56-72px mobile) */
+.aura-section-spacing {
+  padding-top: var(--spacing-sections-desktop, 112px);
+  padding-bottom: var(--spacing-sections-desktop, 112px);
+}
+
+@media (max-width: 1024px) {
+  .aura-section-spacing {
+    padding-top: var(--spacing-sections-tablet, 72px);
+    padding-bottom: var(--spacing-sections-tablet, 72px);
+  }
+}
+
+@media (max-width: 767px) {
+  .aura-section-spacing {
+    padding-top: var(--spacing-sections-mobile, 64px);
+    padding-bottom: var(--spacing-sections-mobile, 64px);
+  }
 }

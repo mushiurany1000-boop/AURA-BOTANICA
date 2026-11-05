@@ -162,3 +162,4 @@ console.log(`PHASE 12 SUMMARY: ${passed} PASSED, ${failed} FAILED`);
 console.log('================================================================\n');
 
 process.exit(failed > 0 ? 1 : 0);
+

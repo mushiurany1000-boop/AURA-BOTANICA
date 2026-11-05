@@ -40,3 +40,4 @@ To connect a block to a metafield dynamic source in the Shopify Theme Editor:
 6. Click **Save**.
 
 If a product does not have data for a specific metafield, the theme gracefully hides that tab or section without leaving empty blocks or layout shift.
+

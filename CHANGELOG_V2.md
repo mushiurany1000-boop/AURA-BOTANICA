@@ -6,6 +6,45 @@ All architectural changes, refactors, migrations, and file deprecations for the 
 
 ---
 
+## [Phase 12 Step A — Design System (Reference Palette + Type)] — Completed (November 5, 2026)
+
+Implementation of reference-driven design system tokens, dual color schemes, typography engine, button geometry, card styling, and section whitespace:
+
+### 1. Dual Color Scheme Presets (`config/settings_data.json`)
+* **"Terracotta Atelier" (DEFAULT Scheme):**
+  - Page Background Cream: `#FDF5F2`
+  - Soft Blush Card Background: `#F6E8E2`
+  - Deep Brown Text: `#3B1E18`
+  - Rust Band / Primary Accent: `#7E3023`
+  - Primary Button: `#843C2D` (Hover: `#6A2A1F`)
+  - Rich Rust Card: `#93422F`
+  - Copper Accent: `#B87350`
+  - 1px Line / Border: `#E9D5CC`
+  - Text-on-Rust: `#FCE8E7`
+* **"Forest & Gold" Preset:**
+  - Top Bar / Primary: `#1E4123`
+  - Button: `#667F6A` (Hover: `#1E4123`)
+  - Gold Accent / Buy Now: `#DEBC8C`
+  - Rating Stars: `#E2C25D`
+  - Page Background: `#FFFFFF`
+  - Secondary Band: `#F5F5F5`
+  - In-Stock Badge Background: `#D9EEDF`
+  - Primary Dark Text: `#222222`
+
+### 2. High-Contrast Typography Engine
+* **Headings:** Cormorant Garamond (Georgia fallback), light/medium weights (400/500/600), tight leading (`line-height: 1.05`), fluid clamp sizes (`h1`: `clamp(2.125rem, 4.5vw + 0.5rem, 5.5rem)` i.e. 34–88px).
+* **Eyebrows & Labels:** Jost (sans-serif), small uppercase, letter-spacing `0.20em`, ~11–12px (`clamp(0.6875rem, 0.2vw + 0.625rem, 0.75rem)`).
+* **Body / UI:** Jost (400/500), body 15–16px (`clamp(0.9375rem, 0.2vw + 0.875rem, 1rem)`), line-height 1.5.
+* **Webfont Delivery:** `snippets/preload.liquid` updated with Google Fonts preconnect and preload for Cormorant Garamond and Jost with `font-display: swap`.
+
+### 3. Component Geometry & Whitespace Tokens
+* **Buttons:** Rectangular (radius `0px`, configurable 0–2px), uppercase tracking `0.14em`, padding `16px 32px`, min-height `48px`, zero box-shadow.
+* **Cards:** Flat blush backgrounds (`#F6E8E2`), 1px borders (`#E9D5CC`), zero border-radius (`0px`), zero shadows.
+* **Whitespace Tokens:** Desktop section spacing `112px` (range 96–140px), mobile section spacing `64px` (range 56–72px).
+* **Theme Editor Settings Exposed:** Colors (`color_scheme_group`), fonts (pickers), button radius (`btn_border_radius`), section spacing (`spacing_sections` / `spacing_sections_mobile`), container width (`container_width`), animation intensity (`animation_enable` / `animation_intensity`).
+
+---
+
 ## [Phase 12 — Luxury Homepage + Single Product Page Redesign] — Completed (November 5, 2026)
 
 Execution of Phase 12 luxury storefront redesign benchmarked against the attached reference mockups (Mockup 1: "Mira Vale" editorial homepage; Mockup 2: Single Product Page layout), delivering refined aesthetics, conversion-focused interactions, and authentic botanical skincare storytelling:
