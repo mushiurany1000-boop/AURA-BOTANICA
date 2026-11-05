@@ -1,0 +1,298 @@
+const fs = require('fs');
+const path = require('path');
+
+const rootDir = path.resolve(__dirname, '..');
+const shopifyThemeDir = path.join(rootDir, 'shopify-theme');
+
+const announcementCss = `/**
+ * AURA BOTANICA — LUXURY BOTANICAL ANNOUNCEMENT BAR
+ * Phase 2: Global Layout & Navigation
+ * Scoped CSS transitions, responsive typography & accessible focus rings
+ */
+.m-announcement-bar {
+  position: relative;
+  border-bottom: var(--border-width, 0) solid rgb(var(--color-border));
+  z-index: 71;
+  max-height: 80px;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.m-announcement-bar.is-closing {
+  opacity: 0;
+  max-height: 0 !important;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.m-announcement-bar__container {
+  position: relative;
+}
+
+.m-announcement-bar__wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.m-announcement-bar__content {
+  font-family: var(--font-body-family, inherit);
+  font-size: clamp(0.7rem, 0.2vw + 0.65rem, 0.8125rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 48px;
+  min-height: 40px;
+  line-height: 1.4;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.m-announcement-bar__content a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.m-announcement-bar__content a:hover {
+  opacity: 0.8;
+}
+
+.m-announcement-bar__close {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  padding: 8px;
+  cursor: pointer;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  color: inherit;
+  border-radius: var(--aura-radius-xs, 4px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.m-announcement-bar__close:hover {
+  opacity: 0.75;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.m-announcement-bar__close:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.m-announcement-bar__item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.m-announcement-bar__link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.m-announcement-bar__container .m-slider-controls__button {
+  border: none;
+  background-color: transparent;
+  height: 100%;
+  margin: 0;
+}
+
+.m-announcement-bar__container .m-slider-controls__button:focus,
+.m-announcement-bar__container .m-slider-controls__button:active,
+.m-announcement-bar__container .m-slider-controls__button:hover {
+  box-shadow: none;
+  color: rgb(var(--color-foreground));
+}
+
+.m-announcement-bar__container .m-slider-controls__button-prev {
+  left: 16px;
+}
+
+.m-announcement-bar__container .m-slider-controls__button-next {
+  right: 48px;
+}
+
+@media screen and (max-width: 767px) {
+  .m-announcement-bar__container .m-slider-controls {
+    display: none;
+  }
+  .m-announcement-bar__content {
+    padding: 8px 40px 8px 16px;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+  }
+  .m-announcement-bar__close {
+    right: 8px;
+    padding: 6px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .m-announcement-bar__content {
+    padding: 6px 32px 6px 10px;
+    font-size: 0.65rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .m-announcement-bar,
+  .m-announcement-bar.is-closing,
+  .m-announcement-bar__content,
+  .m-announcement-bar__close {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+`;
+
+const announcementJs = `/**
+ * AURA BOTANICA — LUXURY BOTANICAL ANNOUNCEMENT BAR COMPONENT
+ * Phase 2: Global Layout & Navigation
+ */
+if (!customElements.get("m-announcement-bar")) {
+  class MAnnouncementBar extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      const enableSlider = this.dataset.enableSlider === "true";
+      if (enableSlider) {
+        this.initSlider();
+      }
+      this.initCloseHandler();
+    }
+
+    initSlider() {
+      const autoplay = this.dataset.enableAutoplay === "true";
+      const autoplaySpeed = this.dataset.autoplaySpeed || "3";
+      const slideContainer = this.querySelector(".swiper-container");
+      if (slideContainer && window.MinimogLibs && window.MinimogLibs.Swiper) {
+        this.slider = new MinimogLibs.Swiper(slideContainer, {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          autoplay: autoplay
+            ? {
+                delay: parseInt(autoplaySpeed, 10) * 1000,
+                disableOnInteraction: false,
+              }
+            : false,
+          loop: true,
+          navigation: {
+            nextEl: this.querySelector(".swiper-button-next"),
+            prevEl: this.querySelector(".swiper-button-prev"),
+          },
+        });
+      }
+    }
+
+    initCloseHandler() {
+      const section = this.closest(".m-announcement-bar");
+      if (!section) return;
+      const closeBtn = section.querySelector("[data-announcement-close]");
+      if (!closeBtn) return;
+
+      const handleClose = () => {
+        section.classList.add("is-closing");
+        setTimeout(() => {
+          section.style.display = "none";
+          document.documentElement.style.setProperty("--m-announcement-height", "0px");
+        }, 350);
+      };
+
+      closeBtn.addEventListener("click", handleClose);
+      section.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          handleClose();
+        }
+      });
+    }
+  }
+
+  customElements.define("m-announcement-bar", MAnnouncementBar);
+}
+`;
+
+function patchAnnouncementLiquid(baseDir) {
+  const filePath = path.join(baseDir, 'sections', 'annoucement.liquid');
+  let content = fs.readFileSync(filePath, 'utf8');
+
+  // Replace close button with accessible button
+  const oldCloseRegex = /<div class="m-announcement-bar__close m:flex m:items-center">[\s\S]*?<\/script>\s*{% endif %}/;
+  const newClose = `<button
+          type="button"
+          class="m-announcement-bar__close m:flex m:items-center"
+          aria-label="{{ 'accessibility.close' | t }}"
+          data-announcement-close
+        >
+          <svg
+            class="m-svg-icon--medium"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      {% endif %}`;
+
+  if (oldCloseRegex.test(content)) {
+    content = content.replace(oldCloseRegex, newClose);
+    fs.writeFileSync(filePath, content, 'utf8');
+    console.log(`[PASS] Patched annoucement.liquid close button in ${baseDir}`);
+  }
+}
+
+function patchHeaderGroup(baseDir) {
+  const filePath = path.join(baseDir, 'sections', 'header-group.json');
+  let json = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+
+  if (json.sections && json.sections.annoucement && json.sections.annoucement.blocks) {
+    const blocks = json.sections.annoucement.blocks;
+    if (blocks.item_dGj4GU && blocks.item_dGj4GU.settings) {
+      blocks.item_dGj4GU.settings.message = "Complimentary Botanical Cleanser Sample with all orders over $75 • Free Carbon-Neutral Shipping";
+    }
+    if (blocks.item_6Ycmkw && blocks.item_6Ycmkw.settings) {
+      blocks.item_6Ycmkw.settings.message = "Complimentary Ritual Samples with Every Order • Carbon-Neutral Delivery";
+    }
+    fs.writeFileSync(filePath, JSON.stringify(json, null, 2) + '\n', 'utf8');
+    console.log(`[PASS] Cleaned announcement messages in ${filePath}`);
+  }
+}
+
+function patchLocale(baseDir) {
+  const filePath = path.join(baseDir, 'locales', 'en.default.json');
+  let json = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  if (json.accessibility) {
+    json.accessibility.close_announcement = "Close announcement bar";
+    fs.writeFileSync(filePath, JSON.stringify(json, null, 2) + '\n', 'utf8');
+    console.log(`[PASS] Added accessibility.close_announcement in ${filePath}`);
+  }
+}
+
+[rootDir, shopifyThemeDir].forEach(dir => {
+  fs.writeFileSync(path.join(dir, 'assets', 'announcement-bar.css'), announcementCss, 'utf8');
+  fs.writeFileSync(path.join(dir, 'assets', 'announcement-bar.js'), announcementJs, 'utf8');
+  patchAnnouncementLiquid(dir);
+  patchHeaderGroup(dir);
+  patchLocale(dir);
+});
+
+console.log('Phase 2 Step 1 (Announcement Bar) patched successfully.');

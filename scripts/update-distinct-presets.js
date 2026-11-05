@@ -112,3 +112,4 @@ function updatePresetsWithDistinctColors(baseDir) {
 });
 
 console.log('Finished updating presets across root and shopify-theme.');
+

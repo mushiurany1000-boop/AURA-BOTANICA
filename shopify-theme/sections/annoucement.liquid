@@ -57,23 +57,24 @@
         </div>
       </m-announcement-bar>
       {% if section.settings.show_close %}
-        <div class="m-announcement-bar__close m:flex m:items-center">
+        <button
+          type="button"
+          class="m-announcement-bar__close m:flex m:items-center"
+          aria-label="{{ 'accessibility.close' | t }}"
+          data-announcement-close
+        >
           <svg
             class="m-svg-icon--medium"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
           >
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
-        </div>
-        <script>
-          document.querySelector('.m-announcement-bar__close').addEventListener('click', function () {
-            document.querySelector('.m-announcement-bar').remove();
-            document.documentElement.style.setProperty('--m-announcement-height', '0px');
-          });
-        </script>
+        </button>
       {% endif %}
     </section>
   {% endif %}

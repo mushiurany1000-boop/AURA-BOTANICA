@@ -196,3 +196,4 @@ function refineSettingsData(baseDir) {
 });
 
 console.log('All Phase 1 refinements executed successfully across root and shopify-theme.');
+

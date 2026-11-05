@@ -1,1 +1,153 @@
-.m-announcement-bar{position:relative;border-bottom:var(--border-width, 0) solid rgb(var(--color-border));z-index:71}.m-announcement-bar__container{position:relative}@media screen and (max-width: 639px){.m-announcement-bar__container .m-slider-controls{display:none}}@media screen and (max-width: 767px){.m-announcement-bar__container .m-slider-controls{margin-top:0;max-width:none}.m-announcement-bar__container .m-slider-controls__button{position:absolute;transform:translateY(-50%)}}.m-announcement-bar__container .m-slider-controls__button{border:none;background-color:rgba(0,0,0,0);height:100%;margin:0}.m-announcement-bar__container .m-slider-controls__button:focus,.m-announcement-bar__container .m-slider-controls__button:active,.m-announcement-bar__container .m-slider-controls__button:hover{box-shadow:none;color:rgb(var(--color-forceground))}.m-announcement-bar__container .m-slider-controls__button-prev{left:40px}.m-announcement-bar__container .m-slider-controls__button-next{right:40px}.m-announcement-bar__content{font-size:calc(var(--font-base-size, 16)*1px);display:flex;align-items:center;justify-content:center;padding:10px 16px;line-height:20px;max-height:40px;text-align:center}@media screen and (max-width: 639px){.m-announcement-bar__content{overflow:hidden;display:block;max-height:initial;margin-right:0}}.m-announcement-bar__close{position:absolute;top:0;right:0;bottom:0;padding:10px;cursor:pointer;z-index:1}.m-announcement-bar__item{position:relative;width:100%;height:100%}.m-announcement-bar__link{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%}
+/**
+ * AURA BOTANICA — LUXURY BOTANICAL ANNOUNCEMENT BAR
+ * Phase 2: Global Layout & Navigation
+ * Scoped CSS transitions, responsive typography & accessible focus rings
+ */
+.m-announcement-bar {
+  position: relative;
+  border-bottom: var(--border-width, 0) solid rgb(var(--color-border));
+  z-index: 71;
+  max-height: 80px;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.m-announcement-bar.is-closing {
+  opacity: 0;
+  max-height: 0 !important;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.m-announcement-bar__container {
+  position: relative;
+}
+
+.m-announcement-bar__wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.m-announcement-bar__content {
+  font-family: var(--font-body-family, inherit);
+  font-size: clamp(0.7rem, 0.2vw + 0.65rem, 0.8125rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 48px;
+  min-height: 40px;
+  line-height: 1.4;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.m-announcement-bar__content a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.m-announcement-bar__content a:hover {
+  opacity: 0.8;
+}
+
+.m-announcement-bar__close {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  padding: 8px;
+  cursor: pointer;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  color: inherit;
+  border-radius: var(--aura-radius-xs, 4px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.m-announcement-bar__close:hover {
+  opacity: 0.75;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.m-announcement-bar__close:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.m-announcement-bar__item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.m-announcement-bar__link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.m-announcement-bar__container .m-slider-controls__button {
+  border: none;
+  background-color: transparent;
+  height: 100%;
+  margin: 0;
+}
+
+.m-announcement-bar__container .m-slider-controls__button:focus,
+.m-announcement-bar__container .m-slider-controls__button:active,
+.m-announcement-bar__container .m-slider-controls__button:hover {
+  box-shadow: none;
+  color: rgb(var(--color-foreground));
+}
+
+.m-announcement-bar__container .m-slider-controls__button-prev {
+  left: 16px;
+}
+
+.m-announcement-bar__container .m-slider-controls__button-next {
+  right: 48px;
+}
+
+@media screen and (max-width: 767px) {
+  .m-announcement-bar__container .m-slider-controls {
+    display: none;
+  }
+  .m-announcement-bar__content {
+    padding: 8px 40px 8px 16px;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+  }
+  .m-announcement-bar__close {
+    right: 8px;
+    padding: 6px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .m-announcement-bar__content {
+    padding: 6px 32px 6px 10px;
+    font-size: 0.65rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .m-announcement-bar,
+  .m-announcement-bar.is-closing,
+  .m-announcement-bar__content,
+  .m-announcement-bar__close {
+    transition: none !important;
+    animation: none !important;
+  }
+}
