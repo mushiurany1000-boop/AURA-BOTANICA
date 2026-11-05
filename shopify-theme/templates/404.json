@@ -236,6 +236,254 @@
         "custom_class": "",
         "animations": "inherit"
       }
+    },
+    "image_banner_YwUAkj": {
+      "type": "image-banner",
+      "name": "Image Banner",
+      "settings": {
+        "banner_height": 550,
+        "overlay_opacity": 35,
+        "container": "container",
+        "subheading": "Botanical Science",
+        "heading": "The Architecture of Radiance",
+        "text": "<p>Harnessing clinical phyto-actives and regenerative lipid complexes for transformative cellular balance.</p>",
+        "button_label": "Shop Formulations",
+        "button_link": "",
+        "alignment": "center"
+      }
+    },
+    "slideshow_FEtMKp": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_jbABxq": {
+          "type": "slide",
+          "settings": {
+            "subheading": "Pure Botanical Alchemy",
+            "heading": "Bio-Ferment Barrier Restoration",
+            "button_label": "Explore Ritual",
+            "button_link": "",
+            "text_alignment": "center"
+          }
+        },
+        "slide_9HFLzY": {
+          "type": "slide",
+          "settings": {
+            "subheading": "Pure Botanical Alchemy",
+            "heading": "Bio-Ferment Barrier Restoration",
+            "button_label": "Explore Ritual",
+            "button_link": "",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_jbABxq",
+        "slide_9HFLzY"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "container": "container-fluid",
+        "bg_color": "#18231F",
+        "autoplay": true,
+        "speed": 5
+      }
+    },
+    "multicolumn_RRkMBh": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_9XPhRq": {
+          "type": "column",
+          "settings": {
+            "title": "Bio-Ferment Actives",
+            "text": "<p>Micro-filtered fermentations enhance nutrient bioavailability and reinforce lipid barriers.</p>",
+            "link_label": "Learn more",
+            "link": "",
+            "card_bg": "#F4EFE6",
+            "align": "left"
+          }
+        },
+        "column_tFjHWQ": {
+          "type": "column",
+          "settings": {
+            "title": "Bio-Ferment Actives",
+            "text": "<p>Micro-filtered fermentations enhance nutrient bioavailability and reinforce lipid barriers.</p>",
+            "link_label": "Learn more",
+            "link": "",
+            "card_bg": "#F4EFE6",
+            "align": "left"
+          }
+        },
+        "column_wCPXtN": {
+          "type": "column",
+          "settings": {
+            "title": "Bio-Ferment Actives",
+            "text": "<p>Micro-filtered fermentations enhance nutrient bioavailability and reinforce lipid barriers.</p>",
+            "link_label": "Learn more",
+            "link": "",
+            "card_bg": "#F4EFE6",
+            "align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "column_9XPhRq",
+        "column_tFjHWQ",
+        "column_wCPXtN"
+      ],
+      "name": "Multicolumn",
+      "settings": {
+        "subheading": "Our Pillars",
+        "heading": "Clinical Precision, Pure Botanicals",
+        "container": "container",
+        "columns_desktop": 3,
+        "bg_color": "#FCFBF7"
+      }
+    },
+    "before_after_A6nz6y": {
+      "type": "before-after",
+      "name": "Before and After",
+      "settings": {
+        "subheading": "Clinical Trial Efficacy",
+        "heading": "Proven Barrier Restoration",
+        "description": "Independent 28-day double-blind clinical study with 42 participants.",
+        "container": "container",
+        "bg_color": "#FCFBF7"
+      }
+    },
+    "image_comparison_JzhcN6": {
+      "type": "image-comparison",
+      "blocks": {
+        "image_UiiRfW": {
+          "type": "image",
+          "settings": {
+            "heading": "Before"
+          }
+        },
+        "image_efTUME": {
+          "type": "image",
+          "settings": {
+            "heading": "After"
+          }
+        }
+      },
+      "block_order": [
+        "image_UiiRfW",
+        "image_efTUME"
+      ],
+      "name": "Before/after image slider",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "Before/after image slider",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "layout": "horizontal",
+        "image_height": "adapt",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "cascading_product_jU3QtR": {
+      "type": "cascading-product",
+      "name": "Cascading product",
+      "settings": {
+        "color_scheme": "",
+        "container": "container-fluid",
+        "collection": "",
+        "product_to_show": 6,
+        "heading": "Shop by collections",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "overlay_heading": true,
+        "spacing": "medium",
+        "variance": "medium",
+        "sequence": 1,
+        "column_gap": 165,
+        "cascade_enable_parallax": true,
+        "cascade_parallax_intensity": 50,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "faq_Ya7nq3": {
+      "type": "faq",
+      "blocks": {
+        "item_ejqWrB": {
+          "type": "item",
+          "settings": {
+            "question": "What skin types are Aura Botanica formulations designed for?",
+            "answer": "<p>Our biocompatible formulations are designed for all skin types, including sensitive, reactive, and barrier-compromised skin. Each formula is free of synthetic fragrances, parabens, and aggressive sulfates.</p>",
+            "open": true
+          }
+        },
+        "item_BCQ3h9": {
+          "type": "item",
+          "settings": {
+            "question": "Do you offer complimentary shipping?",
+            "answer": "<p>Yes! We offer complimentary carbon-neutral shipping on all domestic orders over $75.00.</p>",
+            "open": false
+          }
+        },
+        "item_kqRBPk": {
+          "type": "item",
+          "settings": {
+            "question": "Are your ingredients certified cruelty-free and vegan?",
+            "answer": "<p>Every Aura Botanica formulation is 100% cruelty-free, leaping-bunny compliant, and blended with ethically wildcrafted botanicals.</p>",
+            "open": false
+          }
+        }
+      },
+      "block_order": [
+        "item_ejqWrB",
+        "item_BCQ3h9",
+        "item_kqRBPk"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "subheading": "Got Questions?",
+        "heading": "Frequently Asked Questions",
+        "description": "Find clear answers about our wild-harvested botanicals, clean clinical formulations, and ethical shipping.",
+        "container": "container",
+        "bg_color": "#FCFBF7"
+      }
+    },
+    "blog_posts_yPULzK": {
+      "type": "blog-posts",
+      "name": "Blog posts",
+      "settings": {
+        "heading": "Blog posts",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "color_scheme": "",
+        "blog": "",
+        "limit": 4,
+        "column": 4,
+        "column_gap": 30,
+        "mobile_gap": 10,
+        "article_image_aspect_ratio": "16/9",
+        "article_align_content": "text-left",
+        "article_show_tags": true,
+        "article_show_date": true,
+        "article_show_excerpt": true,
+        "article_show_button": true,
+        "show_button_on_header": false,
+        "button_link": "",
+        "button_text": "View More",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "use_scroll_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": "",
+        "animations": "inherit"
+      }
     }
   },
   "order": [
@@ -244,6 +492,14 @@
     "collection_tabs_MrUpBp",
     "recent_viewed_products_DXLbpr",
     "promotion_banner_gNfEqk",
-    "new_featured_product_Lk9UQU"
+    "new_featured_product_Lk9UQU",
+    "image_banner_YwUAkj",
+    "slideshow_FEtMKp",
+    "multicolumn_RRkMBh",
+    "before_after_A6nz6y",
+    "image_comparison_JzhcN6",
+    "cascading_product_jU3QtR",
+    "faq_Ya7nq3",
+    "blog_posts_yPULzK"
   ]
 }
