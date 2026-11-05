@@ -8,8 +8,8 @@
         "7b0bf4c6-3873-4222-b8d6-ce009e710078": {
           "type": "newsletter",
           "settings": {
-            "title": "Let’s get in touch",
-            "description": "Sign up for our newsletter and receive 10% off your first order",
+            "title": "Let's get in touch",
+            "description": "Sign up for our newsletter and receive 10% off your first ritual order",
             "email_placeholder": "Enter your email",
             "show_icon_input": false,
             "button_label": "Subscribe now",
