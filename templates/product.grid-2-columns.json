@@ -15,13 +15,11 @@
       "blocks": {
         "badge_ChqgGj": {
           "type": "badge",
-          "settings": {
-          }
+          "settings": {}
         },
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
@@ -35,9 +33,9 @@
           "settings": {
             "show_indicator_bar": true,
             "normal_text": "",
-            "low_text": "<p>- Hurry! Limited stock left.<\/p>",
+            "low_text": "<p>- Hurry! Limited stock left.</p>",
             "outofstock_text": "",
-            "backordered_text": "<p>Backordered<\/p>"
+            "backordered_text": "<p>Backordered</p>"
           }
         },
         "variant_picker": {
@@ -71,13 +69,13 @@
             "deliver_days": "7",
             "date_format": "%b %d",
             "show_shipping_text": true,
-            "shipping_text": "<p><strong>Free Shipping & Returns: <\/strong>On all orders over $75<\/p>"
+            "shipping_text": "<p><strong>Free Shipping & Returns: </strong>On all orders over $75</p>"
           }
         },
         "trust_badge_NyBMd4": {
           "type": "trust_badge",
           "settings": {
-            "trust_badges_text": "<p>Guarantee safe & secure checkout<\/p>",
+            "trust_badges_text": "<p>Guarantee safe & secure checkout</p>",
             "trust_badges_image_width": "60%",
             "position": "below"
           }
@@ -126,7 +124,7 @@
           "type": "tab",
           "settings": {
             "header": "Shipping & Return",
-            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.<\/p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.<\/p>",
+            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.</p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.</p>",
             "content_page": ""
           }
         }
@@ -153,7 +151,7 @@
       "custom_css": [
         ".container-full {padding: 0;}",
         "@media (min-width: 768px) {.m-content-box {padding-left: 15px; }}",
-        "@media (min-width: 1280px) {.m-content-box {--offset-margin: calc((100vw - var(--fluid-container-width)) \/ 2); padding-left: max(var(--fluid-container-offset), var(--offset-margin)); padding-right: 50px; }}",
+        "@media (min-width: 1280px) {.m-content-box {--offset-margin: calc((100vw - var(--fluid-container-width)) / 2); padding-left: max(var(--fluid-container-offset), var(--offset-margin)); padding-right: 50px; }}",
         "@media (min-width: 1536px) {.m-content-box {padding-right: 145px; }}",
         "@media (max-width: 1191px) {br {display: none; }}",
         "@media (max-width: 767px) {.m-content-box {padding: 0 15px 30px; }}"
@@ -177,7 +175,7 @@
         "second_image_offset_top": 10,
         "title": "We are proudly Australian",
         "sub_title": "Our Products",
-        "text": "<p>This piece features a cord collar, button-front closure, and two front pockets<br\/> in durable organic cotton canvas.\u2028\u2028<br\/><\/p><p>Did You Know? Organic cotton uses crop rotation, cover crops, and organic<br\/> fertilizers instead of toxic chemical fertilizers or pesticides—which means<br\/> cleaner water, lower water usage, lower pesticide use, healthier soil, and a <br\/>safer working environment for cotton farmers, compared to conventional.<\/p>",
+        "text": "<p>This piece features a cord collar, button-front closure, and two front pockets<br/> in durable organic cotton canvas.  <br/></p><p>Did You Know? Organic cotton uses crop rotation, cover crops, and organic<br/> fertilizers instead of toxic chemical fertilizers or pesticides—which means<br/> cleaner water, lower water usage, lower pesticide use, healthier soil, and a <br/>safer working environment for cotton farmers, compared to conventional.</p>",
         "text_size": "medium",
         "content_alignment": "left",
         "button_label": "",
@@ -195,7 +193,7 @@
       "custom_css": [
         ".container-full {padding: 0;}",
         "@media (min-width: 768px) {.m-content-box {padding-right: 15px; padding-left: 50px; }}",
-        "@media (min-width: 1280px) {.m-content-box {--offset-margin: calc((100vw - var(--fluid-container-width)) \/ 2); padding-right: max(var(--fluid-container-offset), var(--offset-margin)); padding-left: 50px; }}",
+        "@media (min-width: 1280px) {.m-content-box {--offset-margin: calc((100vw - var(--fluid-container-width)) / 2); padding-right: max(var(--fluid-container-offset), var(--offset-margin)); padding-left: 50px; }}",
         "@media (min-width: 1536px) {.m-content-box {padding-left: 145px; }}",
         "@media (max-width: 1191px) {br {display: none; }}",
         "@media (max-width: 767px) {.m-content-box {padding: 0 15px 40px; }}"
@@ -219,7 +217,7 @@
         "second_image_offset_top": 10,
         "title": "Organic cotton uses crop rotation, cover crops",
         "sub_title": "We're Good Performers",
-        "text": "<p>This piece features a cord collar, button-front closure, and two front pockets<br\/> in durable organic cotton canvas.\u2028\u2028<br\/><\/p><p>Did You Know? Organic cotton uses crop rotation, cover crops, and organic<br\/> fertilizers instead of toxic chemical fertilizers or pesticides—which means<br\/> cleaner water, lower water usage, lower pesticide use, healthier soil, and a <br\/>safer working environment for cotton farmers, compared to conventional.<\/p>",
+        "text": "<p>This piece features a cord collar, button-front closure, and two front pockets<br/> in durable organic cotton canvas.  <br/></p><p>Did You Know? Organic cotton uses crop rotation, cover crops, and organic<br/> fertilizers instead of toxic chemical fertilizers or pesticides—which means<br/> cleaner water, lower water usage, lower pesticide use, healthier soil, and a <br/>safer working environment for cotton farmers, compared to conventional.</p>",
         "text_size": "medium",
         "content_alignment": "left",
         "button_label": "",
@@ -238,21 +236,21 @@
         "news_ErrXBG": {
           "type": "news",
           "settings": {
-            "title": "<p>\"Super class, cute, comfortable. You can wear them with just about anything.\"<\/p>",
+            "title": "<p>\"Super class, cute, comfortable. You can wear them with just about anything.\"</p>",
             "image_width": "150px"
           }
         },
         "news_6AN4bt": {
           "type": "news",
           "settings": {
-            "title": "<p>“We’re confident that this store will be <br\/>the next big thing in its industry.”<\/p>",
+            "title": "<p>“We’re confident that this store will be <br/>the next big thing in its industry.”</p>",
             "image_width": "150px"
           }
         },
         "news_rKU6i3": {
           "type": "news",
           "settings": {
-            "title": "<p>\"Super class, cute, comfortable. You can wear them with just about anything.\"<\/p>",
+            "title": "<p>\"Super class, cute, comfortable. You can wear them with just about anything.\"</p>",
             "image_width": "150px"
           }
         }
@@ -337,7 +335,7 @@
           "settings": {
             "image_by_url": "",
             "title": "100 Days Return",
-            "description": "<p>Enjoy a seamless shopping experience, facilitated<br\/> by our complimentary shipping.<\/p>",
+            "description": "<p>Enjoy a seamless shopping experience, facilitated<br/> by our complimentary shipping.</p>",
             "link": "",
             "button_label": "Learn more [arrow]",
             "button_style": "m-button--plain",
@@ -349,7 +347,7 @@
           "settings": {
             "image_by_url": "",
             "title": "Lifetime Warranty",
-            "description": "<p>Our dedicated team provides timely assistance, <br\/>committed to addressing your queries.<\/p>",
+            "description": "<p>Our dedicated team provides timely assistance, <br/>committed to addressing your queries.</p>",
             "link": "",
             "button_label": "Learn more [arrow]",
             "button_style": "m-button--plain",
@@ -361,7 +359,7 @@
           "settings": {
             "image_by_url": "",
             "title": "Customers Services",
-            "description": "<p>Invest in our activewear with absolute confidence, backed by our 30-day satisfaction guarantee.<\/p>",
+            "description": "<p>Invest in our activewear with absolute confidence, backed by our 30-day satisfaction guarantee.</p>",
             "link": "",
             "button_label": "Learn more [arrow]",
             "button_style": "m-button--plain",
@@ -379,7 +377,7 @@
         ".m-icon-box__heading {font-weight: 400;}"
       ],
       "settings": {
-        "heading": "Why Minimog?",
+        "heading": "Why Aura Botanica?",
         "heading_size": "h3",
         "subheading": "",
         "description": "",

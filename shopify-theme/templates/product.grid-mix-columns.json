@@ -15,13 +15,11 @@
       "blocks": {
         "badge_ChqgGj": {
           "type": "badge",
-          "settings": {
-          }
+          "settings": {}
         },
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
@@ -32,8 +30,7 @@
         },
         "short_description_3iQnzA": {
           "type": "short_description",
-          "settings": {
-          }
+          "settings": {}
         },
         "visitors_DjEp79": {
           "type": "visitors",
@@ -81,7 +78,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Shipping Infomation",
-            "content": "<p>Efficient Shipping Information for a Seamless Shopping Experience<\/p>",
+            "content": "<p>Efficient Shipping Information for a Seamless Shopping Experience</p>",
             "liquid": "",
             "default_open": false
           }
@@ -90,7 +87,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Returns Policy",
-            "content": "<p>Enhance Your Shopping Experience with Our Simplified and Fair Returns Policy.<\/p>",
+            "content": "<p>Enhance Your Shopping Experience with Our Simplified and Fair Returns Policy.</p>",
             "liquid": "",
             "default_open": false
           }
@@ -103,14 +100,14 @@
             "deliver_days": "7",
             "date_format": "%b %d",
             "show_shipping_text": true,
-            "shipping_text": "<p><strong>Free Shipping & Returns: <\/strong>On all orders over $75<\/p>"
+            "shipping_text": "<p><strong>Free Shipping & Returns: </strong>On all orders over $75</p>"
           }
         },
         "trust_badge_NyBMd4": {
           "type": "trust_badge",
           "settings": {
-            "trust_badges_text": "<p>Guarantee safe & secure checkout<\/p>",
-            "trust_badges_image": "shopify:\/\/shop_images\/trust_965c85b7-ca37-4190-bea4-b7f926fd38d7.png",
+            "trust_badges_text": "<p>Guarantee safe & secure checkout</p>",
+            "trust_badges_image": "shopify://shop_images/trust_965c85b7-ca37-4190-bea4-b7f926fd38d7.png",
             "trust_badges_image_width": "60%",
             "position": "below"
           }
@@ -168,7 +165,7 @@
           "type": "tab",
           "settings": {
             "header": "Shipping & Return",
-            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.<\/p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.<\/p>",
+            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.</p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.</p>",
             "content_page": ""
           }
         }
@@ -199,7 +196,7 @@
           "settings": {
             "image_by_url": "",
             "title": "Keep Earth Clean",
-            "description": "<p>Materials play a leading role in the overall impacts<br\/> of a product contributing roughly 60% of its<br\/> environmental footprint.<\/p>",
+            "description": "<p>Materials play a leading role in the overall impacts<br/> of a product contributing roughly 60% of its<br/> environmental footprint.</p>",
             "link": "",
             "button_label": "",
             "button_style": "m-button--plain",
@@ -211,7 +208,7 @@
           "settings": {
             "image_by_url": "",
             "title": "Man-Made Cellulosic Fibers",
-            "description": "<p>Materials play a leading role in the overall impacts<br\/> of a product contributing roughly 60% of its<br\/> environmental footprint.<\/p>",
+            "description": "<p>Materials play a leading role in the overall impacts<br/> of a product contributing roughly 60% of its<br/> environmental footprint.</p>",
             "link": "",
             "button_label": "",
             "button_style": "m-button--plain",
@@ -223,7 +220,7 @@
           "settings": {
             "image_by_url": "",
             "title": "Do Right By People",
-            "description": "<p>Materials play a leading role in the overall impacts<br\/> of a product contributing roughly 60% of its<br\/> environmental footprint.<\/p>",
+            "description": "<p>Materials play a leading role in the overall impacts<br/> of a product contributing roughly 60% of its<br/> environmental footprint.</p>",
             "link": "",
             "button_label": "",
             "button_style": "m-button--plain",
@@ -286,9 +283,9 @@
         "link": "",
         "link_2": "",
         "second_image_offset_top": 14,
-        "title": "Dresses you’ll turn<br> to again and again.",
-        "sub_title": "The Dress Edit",
-        "text": "<p>This piece features a cord collar, button-front closure, and two front <br\/>pockets in durable organic cotton canvas.\u2028\u2028<br\/><\/p><p>Did You Know? Organic cotton uses crop rotation, cover crops,<br\/> and organic fertilizers instead of toxic chemical fertilizers or<br\/> pesticides—which means cleaner water, lower water usage, lower <br\/>pesticide use, healthier soil, and a safer working environment for <br\/>cotton farmers, compared to conventional.<\/p>",
+        "title": "Formulations you'll turn<br> to again and again.",
+        "sub_title": "The Botanical Edit",
+        "text": "<p>This piece features a cord collar, button-front closure, and two front <br/>pockets in durable organic cotton canvas.  <br/></p><p>Did You Know? Organic cotton uses crop rotation, cover crops,<br/> and organic fertilizers instead of toxic chemical fertilizers or<br/> pesticides—which means cleaner water, lower water usage, lower <br/>pesticide use, healthier soil, and a safer working environment for <br/>cotton farmers, compared to conventional.</p>",
         "text_size": "medium",
         "content_alignment": "left",
         "button_label": "",
@@ -309,7 +306,7 @@
           "settings": {
             "title": "Happy Customers",
             "subheading": "",
-            "text": "<p>A world of luxury without labels. Show us your world & tag <strong>@minimog<\/strong><\/p>",
+            "text": "<p>A world of luxury without labels. Show us your world & tag <strong>@minimog</strong></p>",
             "width": "100%",
             "alignment": "center",
             "align_text": "center",
@@ -352,7 +349,7 @@
         "testimonial_hrijcR": {
           "type": "testimonial",
           "settings": {
-            "text": "<p>“Cotton top with ruffled sleeves and embroidery.”<\/p>",
+            "text": "<p>“Cotton top with ruffled sleeves and embroidery.”</p>",
             "author": "Nathan J.",
             "icon": "5-stars"
           }
@@ -360,7 +357,7 @@
         "testimonial_gdUYUA": {
           "type": "testimonial",
           "settings": {
-            "text": "<p>“It runs true to size and I love that the neutral collars match many different sets.”<\/p>",
+            "text": "<p>“It runs true to size and I love that the neutral collars match many different sets.”</p>",
             "author": "Christa G.",
             "icon": "5-stars"
           }
@@ -368,7 +365,7 @@
         "testimonial_z4ACmz": {
           "type": "testimonial",
           "settings": {
-            "text": "<p>“Cotton top with ruffled sleeves and embroidery.”<\/p>",
+            "text": "<p>“Cotton top with ruffled sleeves and embroidery.”</p>",
             "author": "Christa G.",
             "icon": "5-stars"
           }
@@ -376,7 +373,7 @@
         "testimonial_RRNmDq": {
           "type": "testimonial",
           "settings": {
-            "text": "<p>“Absolutely love these joggers - so flattering and fantastic quality!”<\/p>",
+            "text": "<p>“Absolutely love these joggers - so flattering and fantastic quality!”</p>",
             "author": "Janie H.",
             "product": "bardot-bottom",
             "icon": "5-stars"
@@ -385,7 +382,7 @@
         "testimonial_JyxDkh": {
           "type": "testimonial",
           "settings": {
-            "text": "<p>“Absolutely love these joggers - so flattering and fantastic quality!”<\/p>",
+            "text": "<p>“Absolutely love these joggers - so flattering and fantastic quality!”</p>",
             "author": "Janie H.",
             "icon": "5-stars"
           }
@@ -431,7 +428,7 @@
           "settings": {
             "title": "The Urban Lifestyle",
             "subheading": "",
-            "text": "<p>Our new cozy collection is made with environmentally friendly materials and <br\/>simple to care for so you can stay cozy wherever .<\/p>",
+            "text": "<p>Our new cozy collection is made with environmentally friendly materials and <br/>simple to care for so you can stay cozy wherever .</p>",
             "width": "100%",
             "alignment": "center",
             "align_text": "center",
@@ -481,7 +478,7 @@
             "m_top": 66,
             "m_left": 11,
             "heading": "Waterproof",
-            "text": "<p>Clean lines meet rich leather in this architectural style, featuring a modern square toe, cushioned insole for extra comfort.<\/p>"
+            "text": "<p>Clean lines meet rich leather in this architectural style, featuring a modern square toe, cushioned insole for extra comfort.</p>"
           }
         },
         "hotpot_MpQAtL": {
@@ -492,7 +489,7 @@
             "m_top": 19,
             "m_left": 46,
             "heading": "Ethical is Beautiful",
-            "text": "<p>Clean lines meet rich leather in this architectural style, featuring a modern square toe, cushioned insole for extra comfort.<\/p>"
+            "text": "<p>Clean lines meet rich leather in this architectural style, featuring a modern square toe, cushioned insole for extra comfort.</p>"
           }
         },
         "hotpot_47HmCD": {
@@ -503,7 +500,7 @@
             "m_top": 78,
             "m_left": 42,
             "heading": "Made in Italy.",
-            "text": "<p>Clean lines meet rich leather in this architectural style, featuring a modern square toe, cushioned insole for extra comfort.<\/p>"
+            "text": "<p>Clean lines meet rich leather in this architectural style, featuring a modern square toe, cushioned insole for extra comfort.</p>"
           }
         }
       },

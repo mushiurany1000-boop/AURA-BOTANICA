@@ -2,13 +2,13 @@
   {
     "name": "theme_info",
     "theme_name": "Aura Botanica",
-    "theme_version": "5.3.0",
+    "theme_version": "2.0.0",
     "theme_author": "Aura Botanica Alchemy",
     "theme_documentation_url": "https://aurabotanica.com/docs",
     "theme_support_url": "https://aurabotanica.com/support"
   },
   {
-    "name": "General settings",
+    "name": "Branding",
     "settings": [
       {
         "type": "header",
@@ -748,6 +748,44 @@
     "settings": [
       {
         "type": "checkbox",
+        "id": "animation_enable",
+        "label": "Master animation toggle",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "animation_intensity",
+        "label": "Animation intensity",
+        "default": "subtle",
+        "options": [
+          {
+            "value": "off",
+            "label": "Off"
+          },
+          {
+            "value": "subtle",
+            "label": "Subtle (Luxury botanical pacing)"
+          },
+          {
+            "value": "full",
+            "label": "Full motion"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "animation_smooth_scroll",
+        "label": "Enable smooth scrolling",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "animation_custom_cursor",
+        "label": "Enable interactive magnetic cursor",
+        "default": false
+      },
+      {
+        "type": "checkbox",
         "id": "page_transition",
         "default": true,
         "label": "Enable page transition"
@@ -825,7 +863,7 @@
     ]
   },
   {
-    "name": "Product card",
+    "name": "Product cards",
     "settings": [
       {
         "type": "paragraph",
@@ -2124,7 +2162,7 @@
     ]
   },
   {
-    "name": "Social sharing",
+    "name": "Social",
     "settings": [
       {
         "type": "checkbox",
@@ -2323,7 +2361,7 @@
     ]
   },
   {
-    "name": "Cart settings",
+    "name": "Cart",
     "settings": [
       {
         "type": "paragraph",
@@ -2472,7 +2510,7 @@
     ]
   },
   {
-    "name": "GDPR settings",
+    "name": "Cookie & Compliance",
     "settings": [
       {
         "type": "paragraph",

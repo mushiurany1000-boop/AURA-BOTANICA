@@ -27,7 +27,7 @@
           "settings": {
             "design_filtergroup": "default",
             "title": "Size",
-            "filtergroup": "XS,S,M,L,XL",
+            "filtergroup": "30ml, 50ml, 100ml, 150ml, Travel Size",
             "show_label": false,
             "use_accordion": true,
             "open_filtergroup": true
@@ -69,7 +69,7 @@
           "settings": {
             "design_filtergroup": "inrow",
             "title": "Brands",
-            "filtergroup": "Minimog,Retrolie,Abby,Brook,Learts,Vagabond",
+            "filtergroup": "Aura Botanica, Bio-Ferment, Pure Alchemy, Phyto-Active",
             "show_label": false,
             "use_accordion": true,
             "open_filtergroup": true
@@ -80,7 +80,7 @@
           "settings": {
             "design_filtergroup": "inrow",
             "title": "Tags",
-            "filtergroup": "Dress,Tops,Shirts,Fashion,Hats,Sandal,Belt,Bags,Snacker,Denim,Minimog,Vagabond,Sunglasses, Beachwear,Vintage",
+            "filtergroup": "Barrier Repair, Deep Hydration, Firming, Radiance, Calm & Soothe, Gentle Cleansing",
             "show_label": false,
             "use_accordion": true,
             "open_filtergroup": true

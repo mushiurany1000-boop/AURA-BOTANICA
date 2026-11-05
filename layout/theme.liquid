@@ -68,9 +68,10 @@
     {%- comment -%} Aura Botanica Global Config & Theme Data {%- endcomment -%}
     {% render 'theme-data' %}
     {% render 'custom-code-head' %}
-    {{ 'aura-custom.css' | asset_url | stylesheet_tag }}
-  {{ 'theme.css' | asset_url | stylesheet_tag }}
-  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+    {%- comment -%}
+      Aura Botanica v2.0 Foundation: legacy prototype assets theme.css and theme.js retired; scoped to aura-base.css
+    {%- endcomment -%}
+    {{ 'aura-base.css' | asset_url | stylesheet_tag }}
 </head>
 
   <body

@@ -3,7 +3,7 @@
 **Theme Base:** Minimog 5.3.0 (Shopify Online Store 2.0)  
 **Upgrade Target:** Aura Botanica v2.0.0 (Luxury Botanical Clinical Skincare)  
 **Branch:** `v2-upgrade` | **Baseline Tag:** `v1-backup-before-v2`  
-**Date:** November 4, 2026  
+**Date:** November 5, 2026  
 
 ---
 
@@ -69,7 +69,24 @@ This document tracks every existing Minimog and Aura Botanica theme capability t
 
 ---
 
-## 2. Parity Verification Rules
+## 2. Phase 1 Foundation Deliverables & Honest Status Matrix
+
+| Foundation Subsystem | Verification Metric | Status | Evidence / Notes |
+| :--- | :--- | :---: | :--- |
+| **Scoped Base Stylesheet** | `assets/aura-base.css` created, linked in `layout/theme.liquid`, un-scoped prototype assets removed | **VERIFIED** | Zero global resets (`*, *::before, *::after { margin: 0; padding: 0; }` excluded), zero `!important` flags |
+| **Fluid Design System** | Fluid typography (`clamp(...)`), fluid spacing, easing & duration tokens declared | **VERIFIED** | `--font-size-hero` to `--font-size-body`, `--space-xs` to `--space-xl`, `--ease-out-expo`, `--duration-*` |
+| **Typography & Fonts** | Cormorant Garamond + Body font loaded via Shopify `font_picker` | **VERIFIED** | `snippets/font-face.liquid` uses `font_face: font_display: 'swap'` + Shopify prefetch CDN |
+| **Settings Schema** | 24 categories, 285 settings, version 2.0.0 | **VERIFIED** | Preserved all 281 original setting IDs; added 4 animation controls (`animation_enable`, `animation_intensity`, `animation_smooth_scroll`, `animation_custom_cursor`) |
+| **Color Schemes** | `color_scheme_group` with 8 complete palettes | **VERIFIED** | All 8 palettes contain all 18 mandatory tokens (`default`, `dark`, `footer`, `badge-*`, UUIDs) |
+| **Theme Presets** | 3 distinct presets in `config/settings_data.json` | **VERIFIED** | *Botanical Ivory* (`#FCFBF7`), *Forest Night* (`#121A17`), and *Clay Rose* (`#FBF6F2`) verified truly distinct |
+| **Duplicate Sections** | 5 redundant section clones retired to `_deprecated/sections/` | **VERIFIED** | Authoritative Minimog base sections active; 0 broken template/JSON references |
+| **Apparel Cleanups** | Zero fashion/clothing remnants across all templates and settings | **VERIFIED** | Cleaned `product*.json`, `collection*.json`, `find-a-store.json`, `index.json`, customer templates audited |
+| **Directory Parity** | Bit-for-bit parity between `/` and `/shopify-theme/` | **VERIFIED** | `scripts/diff-all-theme-files.js` reports 0 differences across all 490+ theme files |
+| **Local Test Suite** | AST validation, Theme Editor deep check, Shopping flows, ZIP package | **VERIFIED** | `validate-theme.js` (172/172 PASS), `test-theme-editor-deep.js` (24/24 PASS, 100%) |
+| **Shopify CLI Check** | `shopify theme check` or `npx @shopify/theme-check` | **BLOCKED** | Shopify CLI binary not installed globally on host; sandbox network isolation blocks npm registry |
+
+---
+
+## 3. Parity Verification Rules
 1. **Zero Feature Drop:** No setting, section type, or block type can be removed without providing an alias migration in `config/settings_data.json` or `templates/*.json`.
 2. **Tooling Preservation:** Development tooling (`dev-server.js`, `preview/`, `data/`, `scripts/`, `package.json`) remains 100% operational in the local environment and is safely excluded from final Shopify theme archives.
-

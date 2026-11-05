@@ -15,13 +15,11 @@
       "blocks": {
         "badge_ChqgGj": {
           "type": "badge",
-          "settings": {
-          }
+          "settings": {}
         },
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
@@ -61,13 +59,13 @@
             "deliver_days": "7",
             "date_format": "%b %d",
             "show_shipping_text": true,
-            "shipping_text": "<p><strong>Free Shipping & Returns: <\/strong>On all orders over $75<\/p>"
+            "shipping_text": "<p><strong>Free Shipping & Returns: </strong>On all orders over $75</p>"
           }
         },
         "trust_badge_NyBMd4": {
           "type": "trust_badge",
           "settings": {
-            "trust_badges_text": "<p>Guarantee safe & secure checkout<\/p>",
+            "trust_badges_text": "<p>Guarantee safe & secure checkout</p>",
             "trust_badges_image_width": "60%",
             "position": "below"
           }
@@ -115,7 +113,7 @@
           "type": "tab",
           "settings": {
             "header": "Shipping & Return",
-            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.<\/p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.<\/p>",
+            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.</p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.</p>",
             "content_page": ""
           }
         }
@@ -223,7 +221,7 @@
           "settings": {
             "image_by_url": "",
             "title": "100 Days Return",
-            "description": "<p>Enjoy a seamless shopping experience, facilitated<br\/> by our complimentary shipping.<\/p>",
+            "description": "<p>Enjoy a seamless shopping experience, facilitated<br/> by our complimentary shipping.</p>",
             "link": "",
             "button_label": "Learn more [arrow]",
             "button_style": "m-button--plain",
@@ -235,7 +233,7 @@
           "settings": {
             "image_by_url": "",
             "title": "Lifetime Warranty",
-            "description": "<p>Our dedicated team provides timely assistance, <br\/>committed to addressing your queries.<\/p>",
+            "description": "<p>Our dedicated team provides timely assistance, <br/>committed to addressing your queries.</p>",
             "link": "",
             "button_label": "Learn more [arrow]",
             "button_style": "m-button--plain",
@@ -246,8 +244,8 @@
           "type": "iconbox",
           "settings": {
             "image_by_url": "",
-            "title": "Customers Services",
-            "description": "<p>Invest in our activewear with absolute confidence, backed by our 30-day satisfaction guarantee.<\/p>",
+            "title": "Pure Formulation Guarantee",
+            "description": "<p>Cold-pressed botanical bio-actives backed by our 30-day radiant skin satisfaction guarantee.</p>",
             "link": "",
             "button_label": "Learn more [arrow]",
             "button_style": "m-button--plain",
@@ -264,7 +262,7 @@
         ".m-icon-box__heading {font-weight: 400;}"
       ],
       "settings": {
-        "heading": "Why Minimog?",
+        "heading": "Why Aura Botanica?",
         "heading_size": "h3",
         "subheading": "",
         "description": "",
@@ -298,7 +296,7 @@
           "settings": {
             "header": "How long does it take to process an order?",
             "text_size": "h4",
-            "content": "<p>All the details you love about the original—with a fresh flared block heel and modern square toe. Expertly crafted using soft Nappa leather, this essential style molds and moves with you to keep you comfortably on your feet all day (and night). This boot uses leather sourced from a Leather Working Group-approved trader. The Leather Working Group (LWG) Audit Standards provide transparency and accountability within the leather supply chain—covering energy and water usage.<\/p>",
+            "content": "<p>All the details you love about the original—with a fresh flared block heel and modern square toe. Expertly crafted using soft Nappa leather, this essential style molds and moves with you to keep you comfortably on your feet all day (and night). This boot uses leather sourced from a Leather Working Group-approved trader. The Leather Working Group (LWG) Audit Standards provide transparency and accountability within the leather supply chain—covering energy and water usage.</p>",
             "content_page": "",
             "open": true
           }
@@ -308,7 +306,7 @@
           "settings": {
             "header": "Do you ship internationally?",
             "text_size": "h4",
-            "content": "<p>All the details you love about the original—with a fresh flared block heel and modern square toe. Expertly crafted using soft Nappa leather, this essential style molds and moves with you to keep you comfortably on your feet all day (and night). This boot uses leather sourced from a Leather Working Group-approved trader. The Leather Working Group (LWG) Audit Standards provide transparency and accountability within the leather supply chain—covering energy and water usage.<\/p>",
+            "content": "<p>All the details you love about the original—with a fresh flared block heel and modern square toe. Expertly crafted using soft Nappa leather, this essential style molds and moves with you to keep you comfortably on your feet all day (and night). This boot uses leather sourced from a Leather Working Group-approved trader. The Leather Working Group (LWG) Audit Standards provide transparency and accountability within the leather supply chain—covering energy and water usage.</p>",
             "content_page": "",
             "open": false
           }
@@ -318,7 +316,7 @@
           "settings": {
             "header": "What is your return policy?",
             "text_size": "h4",
-            "content": "<p>All the details you love about the original—with a fresh flared block heel and modern square toe. Expertly crafted using soft Nappa leather, this essential style molds and moves with you to keep you comfortably on your feet all day (and night). This boot uses leather sourced from a Leather Working Group-approved trader. The Leather Working Group (LWG) Audit Standards provide transparency and accountability within the leather supply chain—covering energy and water usage.<\/p>",
+            "content": "<p>All the details you love about the original—with a fresh flared block heel and modern square toe. Expertly crafted using soft Nappa leather, this essential style molds and moves with you to keep you comfortably on your feet all day (and night). This boot uses leather sourced from a Leather Working Group-approved trader. The Leather Working Group (LWG) Audit Standards provide transparency and accountability within the leather supply chain—covering energy and water usage.</p>",
             "content_page": "",
             "open": false
           }
@@ -328,7 +326,7 @@
           "settings": {
             "header": "What are your sizing options?",
             "text_size": "h4",
-            "content": "<p>All the details you love about the original—with a fresh flared block heel and modern square toe. Expertly crafted using soft Nappa leather, this essential style molds and moves with you to keep you comfortably on your feet all day (and night). This boot uses leather sourced from a Leather Working Group-approved trader. The Leather Working Group (LWG) Audit Standards provide transparency and accountability within the leather supply chain—covering energy and water usage.<\/p>",
+            "content": "<p>All the details you love about the original—with a fresh flared block heel and modern square toe. Expertly crafted using soft Nappa leather, this essential style molds and moves with you to keep you comfortably on your feet all day (and night). This boot uses leather sourced from a Leather Working Group-approved trader. The Leather Working Group (LWG) Audit Standards provide transparency and accountability within the leather supply chain—covering energy and water usage.</p>",
             "content_page": "",
             "open": false
           }
