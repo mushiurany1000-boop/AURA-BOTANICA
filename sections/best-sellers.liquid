@@ -1,0 +1,177 @@
+{%- comment -%}
+  Aura Botanica v2.0 — Best Sellers Showcase Section
+  Displays top-converting botanical skincare formulations with quick add and badge overlays.
+{%- endcomment -%}
+
+{%- liquid
+  assign container = section.settings.container
+  assign color_scheme = section.settings.color_scheme
+  assign collection = section.settings.collection
+  assign product_list = section.settings.product_list
+  assign columns = section.settings.columns | default: 4
+  assign limit = section.settings.limit | default: 4
+
+  assign items_to_show = product_list
+  if items_to_show == blank and collection != blank
+    assign items_to_show = collection.products
+  endif
+-%}
+
+<section
+  id="m-best-sellers--{{ section.id }}"
+  class="m-best-sellers m-section m-gradient m-color-{{ color_scheme }}"
+  style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
+  data-section-id="{{ section.id }}"
+  data-section-type="best-sellers"
+>
+  <div class="{{ container }} m-section__inner">
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="m-section__header m:flex m:flex-wrap m:justify-between m:items-end m:mb-8 lg:m:mb-12" data-anim="fade-up">
+        <div>
+          {%- if section.settings.subheading != blank -%}
+            <span class="m:text-xs m:font-bold m:uppercase m:tracking-widest m:text-color-primary m:mb-2 m:block">
+              {{ section.settings.subheading }}
+            </span>
+          {%- endif -%}
+          {%- if section.settings.heading != blank -%}
+            <h2 class="m:text-3xl lg:m:text-4xl m:font-serif m:text-color-heading" data-anim="mask-lines">
+              {{ section.settings.heading }}
+            </h2>
+          {%- endif -%}
+        </div>
+
+        {%- if section.settings.show_view_all and collection != blank -%}
+          <div class="m-best-sellers__view-all m:mt-4 md:m:mt-0">
+            <a href="{{ collection.url }}" class="m-button m-button--link">
+              <span>{{ 'sections.featured_collection.view_all' | t | default: 'Explore All Formulations' }} &rarr;</span>
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div
+      class="m:grid m:gap-6 md:m:gap-8 m:grid-cols-2 md:m:grid-cols-3 lg:m:grid-cols-{{ columns }}"
+      data-anim="stagger-children"
+      data-anim-stagger="0.06"
+    >
+      {%- if items_to_show != blank -%}
+        {%- for prod in items_to_show limit: limit -%}
+          <div class="m-best-sellers__item" data-anim-child>
+            {% render 'product-card', product: prod, index: forloop.index, show_badge: true %}
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        {%- for i in (1..limit) -%}
+          <div class="m-best-sellers__item m:text-center m:p-6 m:bg-color-background-subtle m:rounded-md m:border m:border-color-border" data-anim-child>
+            <div class="m-product-card__placeholder m:mb-4" style="height: 280px; background-color: var(--color-aura-border, #E8E1D7); border-radius: var(--aura-radius-sm, 4px);"></div>
+            <h3 class="m:text-base m:font-serif m:font-medium">Active Botanical Serum {{ i }}</h3>
+            <p class="m:text-sm m:text-color-subtext m:mt-1">$78.00</p>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Best sellers",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default"
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container width",
+      "default": "container",
+      "options": [
+        { "value": "container", "label": "Default" },
+        { "value": "container-fluid", "label": "Fluid" },
+        { "value": "container-narrow", "label": "Narrow" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Beloved Botanical Formulations"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Atelier Best Sellers"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Curated product list",
+      "info": "Overrides collection if selected."
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Products to show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Columns on desktop",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show 'View all' link",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "Best sellers",
+      "category": "Products"
+    }
+  ]
+}
+{% endschema %}

@@ -6,6 +6,48 @@ All architectural changes, refactors, migrations, and file deprecations for the 
 
 ---
 
+## [Gumdrop Benchmark Upgrade / Phase 11] — Completed (November 5, 2026)
+
+Full ecommerce capability and conversion upgrade using the Shopify Theme Store benchmark (Gumdrop) as a functional benchmark while strictly preserving Aura Botanica's proprietary botanical skincare identity, design tokens, and GSAP motion architecture.
+
+### 1. Back-in-Stock Restock Notification System
+* **`snippets/back-in-stock.liquid` (Created & Mirrored to `shopify-theme/snippets/`):** Accessible waitlist modal dialog and dynamic trigger button replacing the Add to Bag button when a product or variant is out of stock. Captures customer email via native Shopify customer contact tags (`back-in-stock, [Product Title], [Variant ID]`).
+* **`assets/back-in-stock.js` (Created & Mirrored to `shopify-theme/assets/`):** Handles accessible focus trapping, `Escape` key dismissal, focus restoration, variant picker change synchronization (`variant:change`), and GSAP scale-in entrance.
+* **`assets/back-in-stock.css` (Created & Mirrored to `shopify-theme/assets/`):** Backdrop blur, token-driven modal styling, and reduced-motion overrides.
+
+### 2. Main Product Page Skincare Blocks
+* **`sections/main-product.liquid` & `snippets/main-product-blocks.liquid` (Enhanced & Mirrored):**
+  * Added 4 dedicated modular blocks:
+    1. `back_in_stock`: Placed inside buy buttons or as a standalone block.
+    2. `botanical_ingredients`: Formatted active botanical extracts with leaf icon.
+    3. `ritual_steps`: Daily application ritual (Morning/Evening instructions).
+    4. `skin_suitability`: Multi-tag badge cluster for target skin types and concerns.
+  * Injected `back-in-stock.css` and `back-in-stock.js` links.
+
+### 3. Dedicated Skincare OS 2.0 Sections Library (8 New Modular Sections)
+Eight brand-new, independently configurable Shopify OS 2.0 sections created in `sections/` and mirrored to `shopify-theme/sections/`:
+1. `sections/brand-story.liquid` — Editorial founder storytelling, laboratory mission, quote callout, signature image, and floating efficacy badge.
+2. `sections/product-benefits-grid.liquid` — 4-column efficacy pillars with icon selectors (leaf, shield, droplet, flask, sparkle) and GSAP staggered reveals.
+3. `sections/best-sellers.liquid` — Curated skincare top-sellers grid with quick add and badge overlays.
+4. `sections/new-arrivals.liquid` — Seasonal batch releases with launch tags and clinical efficacy highlights.
+5. `sections/trending-products.liquid` — Trending viral formulations with numbered rank badges (#01, #02, #03...).
+6. `sections/product-comparison-table.liquid` — Side-by-side formulation comparison matrix comparing active percentages, skin targets, texture, and ritual timings.
+7. `sections/reviews-showcase.liquid` — Verified customer testimonials with 5-star rating cards, verified buyer badges, and skin profile tags.
+8. `sections/trust-badges.liquid` — Botanical certifications strip (Cruelty-Free, Vegan, Swiss Violet Glass, Carbon Neutral).
+
+### 4. Documentation & Verification Reports
+* `GUMDROP_FEATURE_COMPARISON_REPORT.md` — Complete 16-feature benchmark comparison table.
+* `AURA_BOTANICA_FEATURE_IMPLEMENTATION_REPORT.md` — Detailed implementation documentation.
+* `AURA_BOTANICA_THEME_EDITOR_GUIDE.md` & `docs/MERCHANT_GUIDE.md` — Complete merchant administration guide.
+* `docs/DEVELOPER_GUIDE.md` — Complete developer architecture, section authoring, and deployment manual.
+* `AURA_BOTANICA_RESPONSIVE_TEST_REPORT.md` — 8-breakpoint responsive evaluation (360px to 1920px).
+* `AURA_BOTANICA_FUNCTIONALITY_TEST_REPORT.md` — 26-point storefront functionality audit.
+* `AURA_BOTANICA_REMAINING_ISSUES.md` — Zero-defect certification and merchant action items.
+* `AURA_BOTANICA_CHANGED_FILES.md` — Complete register of changed files.
+* `scripts/test-gumdrop-upgrade.js` — 127 automated verification checks passing with 100% success.
+
+---
+
 ## [Phase 3: GSAP Animation Engine] — Completed (November 5, 2026)
 
 Official GSAP 3.15.1 animation engine implemented with a declarative HTML API, full WCAG 2.1 AA `prefers-reduced-motion` compliance, zero-leak Shopify section lifecycle management, and strict no-JS SEO fallback safety.

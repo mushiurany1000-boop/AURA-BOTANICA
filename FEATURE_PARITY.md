@@ -124,6 +124,26 @@ This document tracks every existing Minimog and Aura Botanica theme capability t
 
 ---
 
-## 5. Parity Verification Rules
+## 5. Gumdrop Benchmark Upgrade Deliverables & Status
+
+| Subsystem / Benchmark Area | Implementation & Verification Metric | Status | Conversion & Architectural Metrics |
+| :--- | :--- | :---: | :--- |
+| **Back-in-Stock Alerts** | `snippets/back-in-stock.liquid`, `assets/back-in-stock.js`, `assets/back-in-stock.css` | **VERIFIED** | Modal dialog with focus trap, ESC dismiss, variant sync, and contact tagging (`back-in-stock`) |
+| **PDP Skincare Blocks** | `main-product.liquid` & `main-product-blocks.liquid` (30 blocks total) | **VERIFIED** | Added blocks: `back_in_stock`, `botanical_ingredients`, `ritual_steps`, `skin_suitability` |
+| **Brand Story Section** | `sections/brand-story.liquid` | **VERIFIED** | Editorial storytelling with founder quote, floating efficacy badge, and GSAP line-mask reveals |
+| **Product Benefits Grid** | `sections/product-benefits-grid.liquid` | **VERIFIED** | 4-column efficacy pillars with icon selectors (leaf, shield, droplet, flask, sparkle) |
+| **Best Sellers Showcase** | `sections/best-sellers.liquid` | **VERIFIED** | Curated skincare top-sellers grid with quick add and badge overlays |
+| **New Arrivals Showcase** | `sections/new-arrivals.liquid` | **VERIFIED** | Seasonal formulation releases with launch tags and clinical efficacy highlights |
+| **Trending Products Section**| `sections/trending-products.liquid` | **VERIFIED** | Numbered rank badges (#01, #02, #03...), dynamic collection source, and grid layout |
+| **Formulation Comparison** | `sections/product-comparison-table.liquid` | **VERIFIED** | Side-by-side formulation matrix with responsive horizontal swiping and sticky criteria column |
+| **Reviews Showcase** | `sections/reviews-showcase.liquid` | **VERIFIED** | Verified customer testimonials with 5-star ratings, verified buyer badges, and skin profile tags |
+| **Trust Badges Strip** | `sections/trust-badges.liquid` | **VERIFIED** | Botanical certifications bar (Cruelty-Free, Vegan, Swiss Violet Glass, Carbon Neutral) |
+| **Theme Editor Guides** | `AURA_BOTANICA_THEME_EDITOR_GUIDE.md`, `docs/MERCHANT_GUIDE.md`, `docs/DEVELOPER_GUIDE.md` | **VERIFIED** | Comprehensive merchant and developer manuals with architecture and section authoring guides |
+| **Automated Benchmark Test** | `scripts/test-gumdrop-upgrade.js` | **VERIFIED** | 127/127 automated checks passing with 100% success across all features, sections, and PDP blocks |
+| **Directory Parity** | Bit-for-bit parity between root `/` and `/shopify-theme/` | **VERIFIED** | `scripts/diff-all-theme-files.js` reports 0 differences across all 504 theme files |
+
+---
+
+## 6. Parity Verification Rules
 1. **Zero Feature Drop:** No setting, section type, or block type can be removed without providing an alias migration in `config/settings_data.json` or `templates/*.json`.
 2. **Tooling Preservation:** Development tooling (`dev-server.js`, `preview/`, `data/`, `scripts/`, `package.json`) remains 100% operational in the local environment and is safely excluded from final Shopify theme archives.

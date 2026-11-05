@@ -1,0 +1,109 @@
+{%- comment -%}
+  Aura Botanica v2.0 — Back In Stock Notification Modal & Trigger
+  Enables customers to register for restock alerts when formulations or variants are sold out.
+{%- endcomment -%}
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign is_available = current_variant.available
+-%}
+
+<div class="m-back-in-stock-wrapper{% if is_available %} m:hidden{% endif %}" data-back-in-stock-wrapper>
+  <button
+    type="button"
+    class="m-button m-button--secondary m:w-full m-back-in-stock__trigger"
+    data-back-in-stock-trigger
+    aria-haspopup="dialog"
+    aria-controls="AuraBackInStockModal"
+  >
+    <svg class="m-svg-icon--medium m:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+    </svg>
+    <span>{{ 'products.product.notify_me_when_available' | t | default: 'Notify Me When Restocked' }}</span>
+  </button>
+</div>
+
+<!-- Back in Stock Alert Modal -->
+<div
+  id="AuraBackInStockModal"
+  class="m-back-in-stock-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="BackInStockTitle"
+  aria-hidden="true"
+  style="display: none;"
+  data-back-in-stock-modal
+>
+  <div class="m-back-in-stock-modal__backdrop" data-back-in-stock-close tabindex="-1"></div>
+  <div class="m-back-in-stock-modal__dialog" role="document">
+    <button
+      type="button"
+      class="m-back-in-stock-modal__close"
+      data-back-in-stock-close
+      aria-label="{{ 'general.accessibility.close' | t | default: 'Close' }}"
+    >
+      <svg class="m-svg-icon--medium" fill="currentColor" viewBox="0 0 320 512" aria-hidden="true">
+        <path d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z"/>
+      </svg>
+    </button>
+
+    <div class="m-back-in-stock-modal__content">
+      <div class="m-back-in-stock-modal__header">
+        <span class="m-back-in-stock-modal__badge">{{ 'products.product.sold_out' | t | default: 'Sold Out' }}</span>
+        <h3 id="BackInStockTitle" class="m-back-in-stock-modal__title">
+          {{ 'products.product.restock_alert_title' | t | default: 'Join the Atelier Waitlist' }}
+        </h3>
+        <p class="m-back-in-stock-modal__desc">
+          {{ 'products.product.restock_alert_desc' | t | default: 'Be the first to receive private notification when this botanical formulation is freshly prepared and bottled.' }}
+        </p>
+        <div class="m-back-in-stock-modal__product-summary">
+          <strong data-bis-product-title>{{ product.title }}</strong>
+          {%- if current_variant.title != 'Default Title' -%}
+            <span class="m:text-sm m:text-color-subtle" data-bis-variant-title> — {{ current_variant.title }}</span>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- form 'contact', id: 'AuraBackInStockForm', class: 'm-back-in-stock__form' -%}
+        {%- if form.posted_successfully? -%}
+          <div class="m-notification m-notification--success m:mb-4" role="alert">
+            <svg class="m-svg-icon--medium" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <p>{{ 'products.product.restock_success' | t | default: "Thank you! We'll notify you as soon as this formulation is back in stock." }}</p>
+          </div>
+        {%- endif -%}
+
+        {%- if form.errors -%}
+          <div class="m-notification m-notification--error m:mb-4" role="alert">
+            {{ form.errors | default_errors }}
+          </div>
+        {%- endif -%}
+
+        <input type="hidden" name="contact[tags]" value="back-in-stock, {{ product.title | escape }}, {{ current_variant.id }}" data-bis-tags-input />
+        <input type="hidden" name="contact[body]" value="Customer requested restock notification for: {{ product.title | escape }} (Variant ID: {{ current_variant.id }})" data-bis-body-input />
+
+        <div class="m-form-group m:mb-4">
+          <label for="BackInStockEmail" class="m:block m:text-sm m:font-medium m:mb-1">
+            {{ 'general.newsletter.email' | t | default: 'Email Address' }} *
+          </label>
+          <input
+            type="email"
+            id="BackInStockEmail"
+            name="contact[email]"
+            class="form-field form-field--input m:w-full"
+            placeholder="{{ 'general.newsletter.placeholder' | t | default: 'Enter your email' }}"
+            value="{% if customer %}{{ customer.email }}{% endif %}"
+            required
+            autocomplete="email"
+            aria-required="true"
+          />
+        </div>
+
+        <button type="submit" class="m-button m-button--primary m:w-full">
+          <span>{{ 'products.product.send_restock_notification' | t | default: 'Notify Me When Available' }}</span>
+        </button>
+      {%- endform -%}
+    </div>
+  </div>
+</div>

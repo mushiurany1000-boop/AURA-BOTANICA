@@ -1,0 +1,200 @@
+{%- comment -%}
+  Aura Botanica v2.0 — Botanical Trust & Certifications Bar
+  Displays verified clinical and botanical quality badges (Cruelty-Free, Vegan, Violet Glass, etc.).
+{%- endcomment -%}
+
+{%- liquid
+  assign container = section.settings.container
+  assign color_scheme = section.settings.color_scheme
+  assign columns_desktop = section.settings.columns_desktop | default: 4
+-%}
+
+<section
+  id="m-trust-badges--{{ section.id }}"
+  class="m-trust-badges m-section m-gradient m-color-{{ color_scheme }}"
+  style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
+  data-section-id="{{ section.id }}"
+  data-section-type="trust-badges"
+>
+  <div class="{{ container }} m-section__inner">
+    <div
+      class="m:grid m:gap-6 md:m:gap-8 m:grid-cols-2 lg:m:grid-cols-{{ columns_desktop }}"
+      data-anim="stagger-children"
+      data-anim-stagger="0.06"
+    >
+      {%- for block in section.blocks -%}
+        <div
+          class="m-trust-badge-item m:flex m:items-center m:gap-4 m:p-4 m:rounded-md m:border m:border-color-border m:bg-color-background-subtle"
+          data-anim-child
+          {{ block.shopify_attributes }}
+        >
+          <div class="m-trust-badge-item__icon m:flex-shrink-0 m:w-10 m:h-10 m:rounded-full m:flex m:items-center m:justify-center m:bg-color-primary-subtle m:text-color-primary">
+            {%- case block.settings.icon -%}
+              {%- when 'shield' -%}
+                <svg class="m-svg-icon--medium" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              {%- when 'leaf' -%}
+                <svg class="m-svg-icon--medium" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+              {%- when 'recycle' -%}
+                <svg class="m-svg-icon--medium" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                </svg>
+              {%- when 'shipping' -%}
+                <svg class="m-svg-icon--medium" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              {%- else -%}
+                <svg class="m-svg-icon--medium" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/>
+                </svg>
+            {%- endcase -%}
+          </div>
+          <div>
+            {%- if block.settings.title != blank -%}
+              <h4 class="m:text-sm m:font-serif m:font-semibold m:text-color-heading m:leading-snug">
+                {{ block.settings.title }}
+              </h4>
+            {%- endif -%}
+            {%- if block.settings.subtitle != blank -%}
+              <p class="m:text-xs m:text-color-subtext m:mt-0.5">
+                {{ block.settings.subtitle }}
+              </p>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trust badges",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default"
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container width",
+      "default": "container",
+      "options": [
+        { "value": "container", "label": "Default" },
+        { "value": "container-fluid", "label": "Fluid" },
+        { "value": "container-narrow", "label": "Narrow" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns on desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Trust badge",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "leaf",
+          "options": [
+            { "value": "leaf", "label": "Botanical Leaf" },
+            { "value": "shield", "label": "Clinical Shield" },
+            { "value": "recycle", "label": "Recyclable Glass" },
+            { "value": "shipping", "label": "Carbon Neutral" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Badge title",
+          "default": "100% Cruelty-Free & Vegan"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle / Certifier",
+          "default": "Leaping Bunny Certified"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust badges",
+      "blocks": [
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "leaf",
+            "title": "100% Cruelty-Free & Vegan",
+            "subtitle": "Leaping Bunny Certified"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "shield",
+            "title": "Dermatologist Formulated",
+            "subtitle": "Hypoallergenic & Non-Comedogenic"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "recycle",
+            "title": "Swiss Miron Violet Glass",
+            "subtitle": "100% Infinitely Recyclable"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "icon": "shipping",
+            "title": "Carbon-Neutral Shipping",
+            "subtitle": "Complimentary on orders over $75"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
