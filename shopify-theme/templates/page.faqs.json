@@ -15,7 +15,7 @@
       "settings": {
         "heading": "Frequently Asked Questions",
         "heading_size": "h2",
-        "subheading": "Aura Botanica Client Care",
+        "subheading": "KAYRA Beauty Client Care",
         "description": "Everything you need to know about our organic formulations, sustainable packaging, and order fulfillment.",
         "header_alignment": "center",
         "container": "container-fluid",
@@ -43,7 +43,7 @@
         "accordion-1": {
           "type": "accordion",
           "settings": {
-            "title": "What skin types are Aura Botanica formulations designed for?",
+            "title": "What skin types are KAYRA Beauty formulations designed for?",
             "content": "<p>Our biocompatible formulations are designed for all skin types, including sensitive, sensitized, and barrier-compromised skin. Each product is formulated without artificial fragrances, harsh sulfates, parabens, or synthetic dyes, focusing on soothing nourishment and skin-barrier restoration.</p>",
             "open": true
           }
@@ -68,7 +68,7 @@
           "type": "accordion",
           "settings": {
             "title": "Are your ingredients vegan and cruelty-free?",
-            "content": "<p>100% yes. Aura Botanica is certified cruelty-free. We never test on animals, nor do we source from suppliers that do. All formulations are vegan and blended using sustainably harvested botanical extracts.</p>",
+            "content": "<p>100% yes. KAYRA Beauty is certified cruelty-free. We never test on animals, nor do we source from suppliers that do. All formulations are vegan and blended using sustainably harvested botanical extracts.</p>",
             "open": false
           }
         },

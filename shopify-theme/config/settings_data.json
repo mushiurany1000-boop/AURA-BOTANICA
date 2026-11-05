@@ -56,7 +56,7 @@
     "cookie_design_mode": false,
     "cookie_consent_placement": "bottom",
     "cookie_consent_theme": "black",
-    "custom_css": "/* Aura Botanica: Scoped Brand Overrides */\n.m-header__logo-text { letter-spacing: 0.18em; font-weight: 500; }",
+    "custom_css": "/* KAYRA Beauty: Scoped Brand Overrides */\n.m-header__logo-text { letter-spacing: 0.18em; font-weight: 500; }",
     "content_for_index": [],
     "color_schemes": {
       "default": {
@@ -562,7 +562,7 @@
     "sections": {
       "header": {
         "settings": {
-          "logo_text": "AURA BOTANICA",
+          "logo_text": "KAYRA BEAUTY",
           "tagline": "Pure Botanical Alchemy"
         }
       }
@@ -633,7 +633,7 @@
       "cookie_design_mode": false,
       "cookie_consent_placement": "bottom",
       "cookie_consent_theme": "black",
-      "custom_css": "/* Aura Botanica: Scoped Brand Overrides */\n.m-header__logo-text { letter-spacing: 0.18em; font-weight: 500; }",
+      "custom_css": "/* KAYRA Beauty: Scoped Brand Overrides */\n.m-header__logo-text { letter-spacing: 0.18em; font-weight: 500; }",
       "content_for_index": [],
       "color_schemes": {
         "default": {
@@ -1101,7 +1101,7 @@
       "cookie_design_mode": false,
       "cookie_consent_placement": "bottom",
       "cookie_consent_theme": "black",
-      "custom_css": "/* Aura Botanica: Scoped Brand Overrides */\n.m-header__logo-text { letter-spacing: 0.18em; font-weight: 500; }",
+      "custom_css": "/* KAYRA Beauty: Scoped Brand Overrides */\n.m-header__logo-text { letter-spacing: 0.18em; font-weight: 500; }",
       "content_for_index": [],
       "color_schemes": {
         "default": {
@@ -1572,7 +1572,7 @@
       "cookie_design_mode": false,
       "cookie_consent_placement": "bottom",
       "cookie_consent_theme": "black",
-      "custom_css": "/* Aura Botanica: Scoped Brand Overrides */\n.m-header__logo-text { letter-spacing: 0.18em; font-weight: 500; }",
+      "custom_css": "/* KAYRA Beauty: Scoped Brand Overrides */\n.m-header__logo-text { letter-spacing: 0.18em; font-weight: 500; }",
       "content_for_index": [],
       "color_schemes": {
         "default": {
@@ -2043,7 +2043,7 @@
       "cookie_design_mode": false,
       "cookie_consent_placement": "bottom",
       "cookie_consent_theme": "black",
-      "custom_css": "/* Aura Botanica: Scoped Brand Overrides */\n.m-header__logo-text { letter-spacing: 0.18em; font-weight: 500; }",
+      "custom_css": "/* KAYRA Beauty: Scoped Brand Overrides */\n.m-header__logo-text { letter-spacing: 0.18em; font-weight: 500; }",
       "content_for_index": [],
       "color_schemes": {
         "default": {
@@ -2514,7 +2514,7 @@
       "cookie_design_mode": false,
       "cookie_consent_placement": "bottom",
       "cookie_consent_theme": "black",
-      "custom_css": "/* Aura Botanica: Scoped Brand Overrides */\n.m-header__logo-text { letter-spacing: 0.18em; font-weight: 500; }",
+      "custom_css": "/* KAYRA Beauty: Scoped Brand Overrides */\n.m-header__logo-text { letter-spacing: 0.18em; font-weight: 500; }",
       "content_for_index": [],
       "color_schemes": {
         "default": {
@@ -3020,7 +3020,7 @@
       "sections": {
         "header": {
           "settings": {
-            "logo_text": "AURA BOTANICA",
+            "logo_text": "KAYRA BEAUTY",
             "tagline": "Pure Botanical Alchemy"
           }
         }
@@ -3083,7 +3083,7 @@
       "cookie_design_mode": false,
       "cookie_consent_placement": "bottom",
       "cookie_consent_theme": "black",
-      "custom_css": "/* Aura Botanica: Scoped Brand Overrides */\n.m-header__logo-text { letter-spacing: 0.18em; font-weight: 500; }",
+      "custom_css": "/* KAYRA Beauty: Scoped Brand Overrides */\n.m-header__logo-text { letter-spacing: 0.18em; font-weight: 500; }",
       "content_for_index": [],
       "color_schemes": {
         "default": {
@@ -3589,7 +3589,7 @@
       "sections": {
         "header": {
           "settings": {
-            "logo_text": "AURA BOTANICA",
+            "logo_text": "KAYRA BEAUTY",
             "tagline": "Pure Botanical Alchemy"
           }
         }

@@ -14,3 +14,4 @@ if (fs.existsSync(previewDir)) {
   }
   console.log('✓ Updated preview HTML files with Cormorant Garamond & Jost');
 }
+

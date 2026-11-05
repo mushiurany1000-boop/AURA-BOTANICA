@@ -39,7 +39,14 @@
                 alt: logo_alt
               }}
             {% else %}
-              <strong>{{ header_settings.logo_text | default: shop.name }}</strong>
+              {% if header_settings.logo_text contains 'KAYRA' %}
+      <span class="kayra-brand-logo">
+        <span class="kayra-brand-logo__wordmark">KAYRA</span>
+        <span class="kayra-brand-logo__subtitle">BEAUTY</span>
+      </span>
+    {% else %}
+      <strong>{{ header_settings.logo_text | default: shop.name }}</strong>
+    {% endif %}
             {% endif %}
           </div>
         {% endif %}

@@ -217,7 +217,14 @@
           </a>
         {% else %}
           <a href="{{ routes.root_url }}" class="m:block m:text-center">
-            <strong>{{ logo_text | default: shop.name }}</strong>
+            {% if logo_text contains 'KAYRA' %}
+      <span class="kayra-brand-logo">
+        <span class="kayra-brand-logo__wordmark">KAYRA</span>
+        <span class="kayra-brand-logo__subtitle">BEAUTY</span>
+      </span>
+    {% else %}
+      <strong>{{ logo_text | default: shop.name }}</strong>
+    {% endif %}
           </a>
         {% endif %}
       </div>

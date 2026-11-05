@@ -27,3 +27,4 @@ cleanJsonDir('sections');
 cleanJsonDir('config');
 cleanJsonDir('locales');
 console.log('JSON comments cleaned successfully.');
+

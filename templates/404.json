@@ -415,7 +415,7 @@
         "item_ejqWrB": {
           "type": "item",
           "settings": {
-            "question": "What skin types are Aura Botanica formulations designed for?",
+            "question": "What skin types are KAYRA Beauty formulations designed for?",
             "answer": "<p>Our biocompatible formulations are designed for all skin types, including sensitive, reactive, and barrier-compromised skin. Each formula is free of synthetic fragrances, parabens, and aggressive sulfates.</p>",
             "open": true
           }
@@ -432,7 +432,7 @@
           "type": "item",
           "settings": {
             "question": "Are your ingredients certified cruelty-free and vegan?",
-            "answer": "<p>Every Aura Botanica formulation is 100% cruelty-free, leaping-bunny compliant, and blended with ethically wildcrafted botanicals.</p>",
+            "answer": "<p>Every KAYRA Beauty formulation is 100% cruelty-free, leaping-bunny compliant, and blended with ethically wildcrafted botanicals.</p>",
             "open": false
           }
         }

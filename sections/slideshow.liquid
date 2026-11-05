@@ -10,7 +10,7 @@
             {{ block.settings.image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'w-full h-full object-cover' }}
           {%- else -%}
             <div class="m-slideshow__placeholder bg-neutral-200 aspect-[16/9] flex items-center justify-center">
-              <span class="text-neutral-500 font-serif text-2xl">{{ block.settings.heading | default: 'Aura Botanica Formulations' }}</span>
+              <span class="text-neutral-500 font-serif text-2xl">{{ block.settings.heading | default: 'KAYRA Beauty Formulations' }}</span>
             </div>
           {%- endif -%}
           <div class="m-slideshow__content absolute inset-0 flex flex-col justify-center items-{{ block.settings.text_alignment }} p-8 md:p-16 bg-black/20">

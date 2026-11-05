@@ -786,3 +786,39 @@ button.m-add-to-cart,
     padding-bottom: var(--spacing-sections-mobile, 64px);
   }
 }
+
+
+/* ==========================================================================
+   KAYRA BEAUTY BRAND LOGO WORDMARK
+   ========================================================================== */
+.kayra-brand-logo {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  line-height: 1 !important;
+  vertical-align: middle;
+}
+
+.kayra-brand-logo__wordmark {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif !important;
+  font-size: clamp(1.6rem, 2.2vw + 0.8rem, 2.25rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  color: var(--color-aura-forest, var(--color-heading, #1E4123)) !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+}
+
+.kayra-brand-logo__subtitle {
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: clamp(0.55rem, 0.15vw + 0.45rem, 0.675rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.35em !important;
+  color: var(--color-aura-muted, var(--color-foreground-secondary, #7A5248)) !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  margin-top: 3px !important;
+  padding-left: 0.35em !important;
+}

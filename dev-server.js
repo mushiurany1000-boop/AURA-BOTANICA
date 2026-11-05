@@ -810,7 +810,7 @@ const server = http.createServer((req, res) => {
           header: {
             type: "header",
             settings: {
-              logo_text: "AURA BOTANICA",
+              logo_text: "KAYRA BEAUTY",
               tagline: "Pure Botanical Alchemy"
             }
           }
@@ -986,7 +986,7 @@ server.on('error', (err) => {
 function startServer(port) {
   server.listen(port, '0.0.0.0', () => {
     console.log('\n======================================================');
-    console.log('🌿 AURA BOTANICA — MODERN SKINCARE THEME & ADMIN');
+    console.log('🌿 KAYRA BEAUTY — MODERN SKINCARE THEME & ADMIN');
     console.log('======================================================');
     console.log(`\n  ➜ Storefront View:   http://localhost:${port}`);
     console.log(`  ➜ Product Detail:    http://localhost:${port}/product`);

@@ -1,7 +1,7 @@
 {
-  "name": "aura-botanica-skincare-theme",
+  "name": "kayra-beauty-skincare-theme",
   "version": "1.0.0",
-  "description": "Modern Luxury Skincare Shopify Online Store 2.0 Theme",
+  "description": "KAYRA Beauty Luxury Skincare Shopify Online Store 2.0 Theme",
   "main": "dev-server.js",
   "scripts": {
     "dev": "node dev-server.js",

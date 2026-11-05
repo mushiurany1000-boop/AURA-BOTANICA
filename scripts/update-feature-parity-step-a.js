@@ -14,3 +14,4 @@ const normalized = content.replace(/\r\n/g, '\n');
 const replaced = normalized.replace(oldLines.replace(/\r\n/g, '\n'), newLines);
 fs.writeFileSync('FEATURE_PARITY.md', replaced.replace(/\n/g, '\r\n'));
 console.log('✓ Updated FEATURE_PARITY.md with Step A capabilities');
+
