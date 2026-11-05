@@ -3,36 +3,38 @@
    ========================================================================== */
 
 :root {
-  /* Luxury Botanical Color System (Phase 9.1) */
-  --color-bg-primary: #F8F5EF;
-  --color-bg-secondary: #F0ECE1;
-  --color-bg-card: #FFFFFF;
-  --color-text-primary: #292D28;
-  --color-text-secondary: #5B6E64;
-  --color-text-light: #7A897F;
-  --color-botanical-dark: #244638;
-  --color-accent: #315B45;
-  --color-accent-hover: #244638;
-  --color-sage: #A7B49B;
-  --color-sage-light: #EBF0E6;
-  --color-border: #E3DDD1;
-  --color-border-dark: #D4CCC0;
-  --color-gold: #B89A62;
+  /* Luxury Botanical Color System (Phase 12 Terracotta Atelier Reference) */
+  --color-bg-primary: #FDF5F2;
+  --color-bg-secondary: #F6E8E2;
+  --color-bg-card: #F6E8E2;
+  --color-text-primary: #3B1E18;
+  --color-text-secondary: #6A625F;
+  --color-text-light: #806E6A;
+  --color-botanical-dark: #5E1E16;
+  --color-accent: #843C2D;
+  --color-accent-hover: #6A2A1F;
+  --color-sage: #B87350;
+  --color-sage-light: #F3E3DC;
+  --color-border: #E9D5CC;
+  --color-border-dark: #D9C2B8;
+  --color-gold: #DEBC8C;
+  --color-rust: #7E3023;
+  --color-rust-card: #93422F;
   
-  /* Luxury Typography System (Phase 9.1: Playfair Display 700 & Montserrat) */
-  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-body-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Luxury Typography System (Cormorant Garamond 500/600 & Jost) */
+  --font-heading: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-body: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-body-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   --spacing-unit: 8px;
-  --container-max-width: 1280px;
+  --container-max-width: 1240px;
   --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  --shadow-subtle: 0 4px 20px rgba(28, 36, 33, 0.05);
-  --shadow-floating: 0 12px 36px rgba(28, 36, 33, 0.09);
-  --radius-sm: 4px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
+  --shadow-subtle: none;
+  --shadow-floating: none;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
   --radius-full: 9999px;
 }
 

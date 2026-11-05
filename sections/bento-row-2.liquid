@@ -1,47 +1,53 @@
 {%- comment -%}
-  KAYRA Beauty v2.0 — Bento Row 2 Section
-  Two-up editorial cards: Routine Finder / Skin Quiz and Editorial Journal / Blog Feature.
+  Aura Botanica v2.0 — Bento Row 2 Section
+  Phase 12 Exact Replica of Reference Design:
+  - Left Card (53.5%): Routine Finder in Warm Blush Cream (#F8EFEA), "Your skin. Your ritual.", Solid Rust Button, Cream Texture Swatch.
+  - Right Card (45.4%): Journal in Warm Blush (#F7EEEA), Bottles Photo Left, "Slow care, lasting glow", Excerpt, Read Journal Link.
 {%- endcomment -%}
 
 {%- liquid
   assign section_id = 'm-bento-row-2-' | append: section.id
   assign container = section.settings.container | default: 'container'
+  assign quiz_bg = section.settings.quiz_bg_color | default: '#F8EFEA'
+  assign journal_bg = section.settings.journal_bg_color | default: '#F7EEEA'
 -%}
 
 <section
   id="{{ section_id }}"
-  class="m-section m-bento-row-2 py-8 md:py-14 relative overflow-hidden"
-  style="--section-padding-top: {{ section.settings.padding_top | default: 32 }}px; --section-padding-bottom: {{ section.settings.padding_bottom | default: 32 }}px;"
+  class="m-section m-bento-row-2 py-4 md:py-6 lg:py-8 relative overflow-hidden"
+  style="--section-padding-top: {{ section.settings.padding_top | default: 16 }}px; --section-padding-bottom: {{ section.settings.padding_bottom | default: 24 }}px;"
   data-section-id="{{ section.id }}"
   data-section-type="bento-row-2"
 >
-  <div class="{{ container }} px-4 sm:px-6">
+  <div class="{{ container }} max-w-[1240px] mx-auto px-4 sm:px-6">
     <div
-      class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch"
+      class="grid grid-cols-1 lg:grid-cols-[53.5%_1fr] gap-4 lg:gap-4 items-stretch"
       data-anim="stagger-children"
       data-anim-stagger="0.12"
     >
       
-      <!-- Card A: Routine Finder / Skin Quiz -->
+      <!-- Card A: Routine Finder (Left, 53.5% Warm Blush Cream #F8EFEA) -->
       <div
-        class="aura-bento-hero m-color-{{ section.settings.quiz_color_scheme | default: 'default' }} rounded-[4px] p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group min-h-[380px] border border-color-border"
+        class="aura-bento-card--routine rounded-none p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group min-h-[320px] sm:min-h-[350px] border border-[#E9D5CC]"
+        style="background-color: {{ quiz_bg }};"
         data-anim-child
       >
-        <div class="w-full sm:w-1/2 flex flex-col items-start z-10 text-left">
+        <!-- Text Area (Left half of Card A) -->
+        <div class="w-full sm:w-[55%] flex flex-col items-start z-10 text-left">
           {%- if section.settings.quiz_eyebrow != blank -%}
-            <span class="aura-eyebrow text-color-primary mb-2">
+            <span class="aura-eyebrow text-[#6D514E] mb-2 sm:mb-3 text-[11px] uppercase tracking-[0.20em] font-semibold">
               {{ section.settings.quiz_eyebrow }}
             </span>
           {%- endif -%}
 
           {%- if section.settings.quiz_heading != blank -%}
-            <h3 class="text-2xl sm:text-3xl md:text-4xl font-serif text-color-heading mb-3 leading-tight">
+            <h3 class="text-2xl sm:text-3xl md:text-[34px] font-serif text-[#5E1E16] mb-3 leading-[1.12] font-medium tracking-tight">
               {{ section.settings.quiz_heading }}
             </h3>
           {%- endif -%}
 
           {%- if section.settings.quiz_text != blank -%}
-            <p class="text-xs sm:text-sm text-color-foreground opacity-90 leading-relaxed mb-6 max-w-xs">
+            <p class="text-xs sm:text-sm text-[#6A625F] leading-relaxed mb-6 max-w-xs font-normal">
               {{ section.settings.quiz_text }}
             </p>
           {%- endif -%}
@@ -49,83 +55,121 @@
           {%- if section.settings.quiz_button_label != blank -%}
             <a
               href="{{ section.settings.quiz_button_link | default: '/pages/skin-quiz' }}"
-              class="m-button m-button--primary px-6 py-2.5 text-xs uppercase tracking-widest font-semibold"
+              class="m-editorial-split__btn-primary !min-w-[170px] !h-[44px] !px-6 !text-xs"
             >
               {{ section.settings.quiz_button_label }}
             </a>
           {%- endif -%}
         </div>
 
-        <div class="w-full sm:w-1/2 h-56 sm:h-full min-h-[220px] relative rounded overflow-hidden flex items-center justify-center">
+        <!-- Cream Texture Swatch (Right half of Card A) -->
+        <div class="w-full sm:w-[45%] h-48 sm:h-full min-h-[200px] relative overflow-hidden flex items-center justify-center">
           {%- if section.settings.quiz_image != blank -%}
             {{ section.settings.quiz_image | image_url: width: 800 | image_tag: 
               loading: 'lazy', 
-              class: 'w-full h-full object-contain p-4 transition-transform duration-700 ease-out group-hover:scale-105' 
+              class: 'w-full h-full object-contain p-2 transition-transform duration-700 ease-out group-hover:scale-105' 
             }}
           {%- else -%}
-            <div class="w-full h-full bg-color-background-secondary rounded flex flex-col items-center justify-center p-4 text-center">
-              <svg class="w-12 h-12 text-color-primary-accent opacity-60 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              <span class="text-xs font-serif text-color-heading">Biocompatible Emulsion Texture</span>
-            </div>
+            <!-- Fallback SVG: Pure White Botanical Cosmetic Cream Swirl -->
+            <svg class="w-full h-full object-contain transition-transform duration-700 ease-out group-hover:scale-105" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Biocompatible Emulsion Swatch">
+              <defs>
+                <filter id="swatch-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="2" dy="8" stdDeviation="6" flood-color="#8C5C4E" flood-opacity="0.12"/>
+                </filter>
+                <linearGradient id="cream-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFFFFF"/>
+                  <stop offset="80%" stop-color="#FAF5F2"/>
+                  <stop offset="100%" stop-color="#EDE2DA"/>
+                </linearGradient>
+              </defs>
+              <g filter="url(#swatch-shadow)">
+                <!-- Tactile cream ribbon stroke -->
+                <path d="M190 55 C160 50 110 85 95 125 C80 165 65 195 50 205 C40 212 45 200 60 170 C75 140 120 70 175 48 C195 40 200 48 190 55 Z" fill="url(#cream-grad)"/>
+                <path d="M175 60 C145 75 105 120 85 165 C78 180 72 195 65 200" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+                <!-- Delicate droplet pearls -->
+                <circle cx="105" cy="85" r="4" fill="#FFFFFF"/>
+                <circle cx="85" cy="105" r="3.5" fill="#FFFFFF"/>
+                <circle cx="75" cy="125" r="3" fill="#FFFFFF"/>
+              </g>
+            </svg>
           {%- endif -%}
         </div>
       </div>
 
-      <!-- Card B: Editorial Journal / Blog Feature -->
+      <!-- Card B: Journal / Blog Feature (Right, 45.4% Warm Blush #F7EEEA) -->
       {%- liquid
         assign featured_blog = blogs[section.settings.blog]
         assign latest_article = featured_blog.articles.first
         assign journal_title = section.settings.journal_heading | default: latest_article.title | default: 'Slow care, lasting glow'
-        assign journal_excerpt = section.settings.journal_excerpt | default: latest_article.excerpt | default: latest_article.content | strip_html | truncatewords: 18 | default: 'Mindful routines and ingredient insights to support your skin every day.'
+        assign journal_excerpt = section.settings.journal_excerpt | default: latest_article.excerpt | default: latest_article.content | strip_html | truncatewords: 16 | default: 'Mindful routines and ingredient insights to support your skin every day.'
         assign journal_link = section.settings.journal_link | default: latest_article.url | default: featured_blog.url | default: routes.root_url
         assign journal_image = section.settings.journal_image | default: latest_article.image
       -%}
       <div
-        class="aura-bento-hero m-color-{{ section.settings.journal_color_scheme | default: 'scheme-clay-rose' }} rounded-[4px] p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group min-h-[380px] border border-color-border"
+        class="aura-bento-card--journal rounded-none p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group min-h-[320px] sm:min-h-[350px] border border-[#E9D5CC]"
+        style="background-color: {{ journal_bg }};"
         data-anim-child
       >
-        <!-- Journal Photo on Left Side -->
-        <div class="w-full sm:w-1/2 h-56 sm:h-full min-h-[220px] relative rounded overflow-hidden">
+        <!-- Photo on Left Side of Card B -->
+        <div class="w-full sm:w-[45%] h-48 sm:h-full min-h-[200px] relative overflow-hidden flex items-center justify-center order-2 sm:order-1">
           {%- if journal_image != blank -%}
             {{ journal_image | image_url: width: 800 | image_tag: 
               loading: 'lazy', 
               class: 'w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105' 
             }}
           {%- else -%}
-            <div class="w-full h-full bg-color-background-secondary rounded flex flex-col items-center justify-center p-4 text-center">
-              <svg class="w-10 h-10 text-color-primary opacity-50 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
-              </svg>
-              <span class="text-xs font-serif text-color-heading">Botanical Journal</span>
-            </div>
+            <!-- Fallback SVG: Skincare Bottles with Warm Botanical Sun Shadows -->
+            <svg class="w-full h-full object-contain transition-transform duration-700 ease-out group-hover:scale-105" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Apothecary Journal Feature">
+              <defs>
+                <linearGradient id="sun-shadow" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#E5D3C8" stop-opacity="0.6"/>
+                  <stop offset="100%" stop-color="#D9C2B5" stop-opacity="0.3"/>
+                </linearGradient>
+              </defs>
+              <!-- Sun shadow branch silhouettes -->
+              <path d="M190 20 C140 60 100 120 70 210" stroke="url(#sun-shadow)" stroke-width="8" stroke-linecap="round"/>
+              <path d="M150 70 C120 90 90 140 80 180" stroke="url(#sun-shadow)" stroke-width="5" stroke-linecap="round"/>
+              <!-- Tall pump dispenser bottle -->
+              <rect x="85" y="80" width="40" height="110" rx="4" fill="#FFFFFF" stroke="#E0CFC6" stroke-width="1"/>
+              <rect x="97" y="68" width="16" height="12" rx="2" fill="#C5856E"/>
+              <path d="M102 68 L102 54 L90 56 C87 56 87 52 90 52 L106 50 C108 50 109 52 109 54 L109 68 Z" fill="#C5856E"/>
+              <!-- Dropper bottle next to it -->
+              <rect x="135" y="110" width="30" height="80" rx="4" fill="#F4C7B7" fill-opacity="0.9" stroke="#E2B1A2" stroke-width="1"/>
+              <rect x="142" y="100" width="16" height="10" rx="1.5" fill="#C5856E"/>
+              <path d="M146 100 C146 88 154 88 154 100 Z" fill="#FFFFFF"/>
+            </svg>
           {%- endif -%}
         </div>
 
-        <!-- Journal Text on Right Side -->
-        <div class="w-full sm:w-1/2 flex flex-col items-start z-10 text-left">
+        <!-- Text Area on Right Side of Card B -->
+        <div class="w-full sm:w-[55%] flex flex-col items-start z-10 text-left order-1 sm:order-2 pl-0 sm:pl-3">
           {%- if section.settings.journal_eyebrow != blank -%}
-            <span class="aura-eyebrow text-color-primary mb-2">
+            <span class="aura-eyebrow text-[#6D514E] mb-2 text-[11px] uppercase tracking-[0.20em] font-semibold">
               {{ section.settings.journal_eyebrow }}
             </span>
           {%- endif -%}
 
-          <h3 class="text-2xl sm:text-3xl md:text-4xl font-serif text-color-heading mb-3 leading-tight">
-            {{ journal_title }}
-          </h3>
+          {%- if journal_title != blank -%}
+            <h3 class="text-2xl sm:text-3xl md:text-[34px] font-serif text-[#5E1E16] mb-3 leading-[1.12] font-medium tracking-tight">
+              {{ journal_title }}
+            </h3>
+          {%- endif -%}
 
-          <p class="text-xs sm:text-sm text-color-foreground opacity-90 leading-relaxed mb-6 max-w-xs">
-            {{ journal_excerpt }}
-          </p>
+          {%- if journal_excerpt != blank -%}
+            <p class="text-xs sm:text-sm text-[#6A625F] leading-relaxed mb-6 font-normal">
+              {{ journal_excerpt }}
+            </p>
+          {%- endif -%}
 
-          <a
-            href="{{ journal_link }}"
-            class="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-semibold text-color-primary hover:text-color-heading transition-colors group/link"
-          >
-            {{ section.settings.journal_link_label | default: 'READ THE JOURNAL' }}
-            <span class="transition-transform duration-300 group-hover/link:translate-x-1">&rarr;</span>
-          </a>
+          {%- if section.settings.journal_link_label != blank -%}
+            <a
+              href="{{ journal_link }}"
+              class="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.16em] font-semibold text-[#5E1E16] hover:text-[#8B3224] transition-colors group/journal"
+            >
+              {{ section.settings.journal_link_label }}
+              <span class="transition-transform duration-300 group-hover/journal:translate-x-1.5 font-sans">&rarr;</span>
+            </a>
+          {%- endif -%}
         </div>
 
       </div>
@@ -143,49 +187,49 @@
       "id": "container",
       "label": "Container layout",
       "options": [
-        { "value": "container-fluid", "label": "Full width" },
-        { "value": "container", "label": "Boxed container" }
+        { "value": "container", "label": "Boxed container (Recommended)" },
+        { "value": "container-fluid", "label": "Full width" }
       ],
       "default": "container"
     },
     {
       "type": "header",
-      "content": "Card A — Routine Finder / Skin Quiz"
+      "content": "Card A — Routine Finder (53.5% Width)"
     },
     {
-      "type": "color_scheme",
-      "id": "quiz_color_scheme",
-      "label": "Quiz card color scheme",
-      "default": "default"
+      "type": "color",
+      "id": "quiz_bg_color",
+      "label": "Routine card background",
+      "default": "#F8EFEA"
     },
     {
       "type": "text",
       "id": "quiz_eyebrow",
-      "label": "Quiz eyebrow",
+      "label": "Eyebrow",
       "default": "ROUTINE FINDER"
     },
     {
       "type": "text",
       "id": "quiz_heading",
-      "label": "Quiz heading",
+      "label": "Heading",
       "default": "Your skin. Your ritual."
     },
     {
       "type": "textarea",
       "id": "quiz_text",
-      "label": "Quiz description",
-      "default": "Answer a few quick questions and get a custom routine made for your barrier."
+      "label": "Description",
+      "default": "Answer a few quick questions and get a routine made for you."
     },
     {
       "type": "text",
       "id": "quiz_button_label",
-      "label": "Quiz button label",
+      "label": "Button label",
       "default": "TAKE THE QUIZ"
     },
     {
       "type": "url",
       "id": "quiz_button_link",
-      "label": "Quiz button link"
+      "label": "Button link"
     },
     {
       "type": "image_picker",
@@ -194,70 +238,72 @@
     },
     {
       "type": "header",
-      "content": "Card B — Journal / Editorial Feature"
+      "content": "Card B — Journal Feature (45.4% Width)"
     },
     {
-      "type": "color_scheme",
-      "id": "journal_color_scheme",
-      "label": "Journal card color scheme",
-      "default": "scheme-clay-rose"
-    },
-    {
-      "type": "blog",
-      "id": "blog",
-      "label": "Select blog"
+      "type": "color",
+      "id": "journal_bg_color",
+      "label": "Journal card background",
+      "default": "#F7EEEA"
     },
     {
       "type": "text",
       "id": "journal_eyebrow",
-      "label": "Journal eyebrow",
+      "label": "Eyebrow",
       "default": "JOURNAL"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
     },
     {
       "type": "text",
       "id": "journal_heading",
-      "label": "Custom title (optional)"
+      "label": "Heading override",
+      "default": "Slow care, lasting glow"
     },
     {
       "type": "textarea",
       "id": "journal_excerpt",
-      "label": "Custom excerpt (optional)"
+      "label": "Excerpt override",
+      "default": "Mindful routines and ingredient insights to support your skin every day."
     },
     {
       "type": "text",
       "id": "journal_link_label",
-      "label": "Journal link label",
+      "label": "Link label",
       "default": "READ THE JOURNAL"
     },
     {
       "type": "url",
       "id": "journal_link",
-      "label": "Custom journal link (optional)"
+      "label": "Custom link override"
     },
     {
       "type": "image_picker",
       "id": "journal_image",
-      "label": "Custom journal photo"
+      "label": "Journal photo override"
     },
     {
       "type": "range",
       "id": "padding_top",
       "label": "Top padding",
       "min": 0,
-      "max": 100,
+      "max": 80,
       "step": 4,
       "unit": "px",
-      "default": 32
+      "default": 16
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "label": "Bottom padding",
       "min": 0,
-      "max": 100,
+      "max": 80,
       "step": 4,
       "unit": "px",
-      "default": 32
+      "default": 24
     }
   ],
   "presets": [
@@ -267,4 +313,3 @@
   ]
 }
 {% endschema %}
-
