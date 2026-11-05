@@ -202,3 +202,4 @@ document.addEventListener("shopify:section:reorder", function () {
 - [x] Full `prefers-reduced-motion` compliance
 - [x] Zero-leak Shopify Section lifecycle integration
 - [x] 100% no-JS fallback safety (Zero CLS)
+

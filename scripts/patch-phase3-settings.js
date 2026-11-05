@@ -119,3 +119,4 @@ function patchThemeLiquid(baseDir) {
 });
 
 console.log('Phase 3 Settings & Theme.liquid patched successfully.');
+

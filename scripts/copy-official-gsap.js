@@ -28,3 +28,4 @@ filesToCopy.forEach(fileName => {
 });
 
 console.log('GSAP official minified files copied successfully to root and shopify-theme.');
+
