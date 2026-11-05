@@ -1,6 +1,7 @@
 {%- comment -%}
   KAYRA Beauty v2.0 — Luxury Editorial Hero Split Section
-  Refined split-panel banner inspired by minimalist botanical atelier layouts.
+  Phase 12 Exact Replica of Reference Design (50/50 Desktop Split, Cormorant Garamond H1,
+  Solid Rust CTA Button, Full-Bleed Media with Fallback Botanical Art).
 {%- endcomment -%}
 
 {%- liquid
@@ -11,12 +12,13 @@
   assign height_mode = section.settings.height | default: '80vh'
   assign alignment = section.settings.alignment | default: 'left'
   assign container = section.settings.container | default: 'container-fluid'
+  assign panel_bg = section.settings.bg_color | default: '#FCF5EF'
 
   case height_mode
     when 'full'
       assign height_class = 'min-h-screen lg:min-h-[100dvh]'
     when '80vh'
-      assign height_class = 'min-h-[70vh] lg:min-h-[80dvh]'
+      assign height_class = 'min-h-[70vh] lg:min-h-[640px] xl:min-h-[680px]'
     else
       assign height_class = 'min-h-auto'
   endcase
@@ -25,19 +27,22 @@
 <section
   id="{{ section_id }}"
   class="m-section m-editorial-split m-color-{{ color_scheme }} relative overflow-hidden"
-  style="--section-padding-top: {{ section.settings.padding_top | default: 0 }}px; --section-padding-bottom: {{ section.settings.padding_bottom | default: 0 }}px; background-color: {{ section.settings.bg_color | default: 'transparent' }};"
+  style="--section-padding-top: {{ section.settings.padding_top | default: 0 }}px; --section-padding-bottom: {{ section.settings.padding_bottom | default: 0 }}px;"
   data-section-id="{{ section.id }}"
   data-section-type="editorial-split"
 >
-  <div class="{{ container }} px-0 lg:px-6">
+  <div class="{{ container }} px-0">
     <div class="grid grid-cols-1 lg:grid-cols-2 {{ height_class }} items-stretch">
       
-      <!-- Text / Content Panel -->
-      <div class="flex flex-col justify-center px-6 py-12 md:px-12 lg:px-16 xl:px-24 {% if image_pos == 'left' %}lg:order-2{% else %}lg:order-1{% endif %} {% if mobile_order == 'image_first' %}order-2{% else %}order-1{% endif %} {% if alignment == 'center' %}text-center items-center{% else %}text-left items-start{% endif %}">
+      <!-- Text / Content Panel (Left in reference) -->
+      <div
+        class="flex flex-col justify-center px-6 py-14 sm:px-10 md:px-16 lg:px-16 xl:px-24 2xl:px-28 {% if image_pos == 'left' %}lg:order-2{% else %}lg:order-1{% endif %} {% if mobile_order == 'image_first' %}order-2{% else %}order-1{% endif %} {% if alignment == 'center' %}text-center items-center{% else %}text-left items-start{% endif %}"
+        style="background-color: {{ panel_bg }};"
+      >
         
         {%- if section.settings.subheading != blank -%}
           <span
-            class="aura-eyebrow text-color-primary"
+            class="aura-eyebrow text-[#6D514E] mb-3 sm:mb-4 tracking-[0.20em] text-xs font-semibold uppercase"
             data-anim="fade-up"
             data-anim-delay="0.1"
           >
@@ -47,7 +52,7 @@
 
         {%- if section.settings.heading != blank -%}
           <h1
-            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-color-heading mb-6 leading-[1.12] tracking-tight"
+            class="m-editorial-split__heading font-serif text-[#5E1E16] mb-2 sm:mb-3 leading-[1.02] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-[68px] xl:text-[76px] font-medium"
             data-anim="mask-lines"
             data-anim-delay="0.15"
           >
@@ -55,9 +60,19 @@
           </h1>
         {%- endif -%}
 
+        {%- if section.settings.subtitle != blank -%}
+          <p
+            class="m-editorial-split__subtitle text-[#806E6A] font-sans text-sm sm:text-base md:text-lg mb-4 tracking-wide font-normal"
+            data-anim="fade-up"
+            data-anim-delay="0.2"
+          >
+            {{ section.settings.subtitle }}
+          </p>
+        {%- endif -%}
+
         {%- if section.settings.text != blank -%}
           <div
-            class="text-color-foreground-secondary text-base md:text-lg leading-relaxed mb-8 max-w-xl"
+            class="text-[#6A625F] text-sm sm:text-base leading-relaxed mb-8 max-w-lg"
             data-anim="fade-up"
             data-anim-delay="0.25"
           >
@@ -67,14 +82,14 @@
 
         <!-- Action CTAs -->
         <div
-          class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+          class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
           data-anim="fade-up"
           data-anim-delay="0.35"
         >
           {%- if section.settings.button_label != blank -%}
             <a
               href="{{ section.settings.button_link | default: routes.all_products_collection_url }}"
-              class="m-button m-button--primary w-full sm:w-auto text-center"
+              class="m-editorial-split__btn-primary text-center"
             >
               {{ section.settings.button_label }}
             </a>
@@ -83,7 +98,7 @@
           {%- if section.settings.secondary_button_label != blank -%}
             <a
               href="{{ section.settings.secondary_button_link | default: routes.root_url }}"
-              class="m-button m-button--link text-color-primary hover:text-color-heading underline underline-offset-4 w-full sm:w-auto text-center font-medium"
+              class="inline-flex items-center justify-center gap-2 text-xs uppercase tracking-widest font-semibold text-[#5E1E16] hover:text-[#8B3224] transition-colors py-3 sm:py-0 px-2"
             >
               {{ section.settings.secondary_button_label }} &rarr;
             </a>
@@ -92,8 +107,8 @@
 
       </div>
 
-      <!-- Image / Media Panel -->
-      <div class="relative overflow-hidden w-full h-[50vh] sm:h-[60vh] lg:h-auto min-h-[350px] {% if image_pos == 'left' %}lg:order-1{% else %}lg:order-2{% endif %} {% if mobile_order == 'image_first' %}order-1{% else %}order-2{% endif %}">
+      <!-- Image / Media Panel (Right in reference) -->
+      <div class="relative overflow-hidden w-full h-[50vh] sm:h-[60vh] lg:h-auto min-h-[380px] lg:min-h-[640px] {% if image_pos == 'left' %}lg:order-1{% else %}lg:order-2{% endif %} {% if mobile_order == 'image_first' %}order-1{% else %}order-2{% endif %}">
         {%- if section.settings.image != blank -%}
           <picture>
             {%- if section.settings.mobile_image != blank -%}
@@ -108,12 +123,91 @@
             }}
           </picture>
         {%- else -%}
-          <div class="w-full h-full bg-color-background-secondary flex flex-col items-center justify-center p-8 text-center" data-anim="fade-in">
-            <svg class="w-16 h-16 text-color-primary-accent opacity-40 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          <!-- High-Fidelity Botanical Skincare Trio Artwork (Matching Reference Layout) -->
+          <div class="w-full h-full bg-[#EADBD4] flex items-center justify-center relative overflow-hidden" data-anim="fade-in">
+            <svg class="w-full h-full object-cover" viewBox="0 0 720 680" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-label="KAYRA Beauty Atelier Skincare Formulations">
+              <defs>
+                <linearGradient id="hero-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#EEDFD8"/>
+                  <stop offset="50%" stop-color="#E2CEC5"/>
+                  <stop offset="100%" stop-color="#D6BEB3"/>
+                </linearGradient>
+                <linearGradient id="pedestal-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#DAC7BD"/>
+                  <stop offset="100%" stop-color="#C2ABA0"/>
+                </linearGradient>
+                <linearGradient id="bottle-white-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#FFFFFF"/>
+                  <stop offset="70%" stop-color="#FBF8F6"/>
+                  <stop offset="100%" stop-color="#EBE2DD"/>
+                </linearGradient>
+                <linearGradient id="copper-lid-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#C5856E"/>
+                  <stop offset="40%" stop-color="#E0A792"/>
+                  <stop offset="70%" stop-color="#BE7B63"/>
+                  <stop offset="100%" stop-color="#9E5B45"/>
+                </linearGradient>
+                <linearGradient id="serum-glass-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#E6A691" stop-opacity="0.95"/>
+                  <stop offset="60%" stop-color="#F4C7B7" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#C9846E" stop-opacity="0.95"/>
+                </linearGradient>
+                <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#55271B" flood-opacity="0.15"/>
+                </filter>
+              </defs>
+
+              <!-- Warm Textured Studio Background -->
+              <rect width="720" height="680" fill="url(#hero-bg-grad)"/>
+
+              <!-- Soft Organic Caustic / Botanical Shadows -->
+              <path d="M420 40 C560 90 680 200 660 380 C640 540 500 620 380 640 C260 660 140 580 180 440 C220 300 280 -10 420 40 Z" fill="#E6D3CA" opacity="0.45"/>
+              <circle cx="580" cy="180" r="140" fill="#DFCAC0" opacity="0.35"/>
+
+              <!-- Travertine / Stone Pedestal -->
+              <path d="M120 490 L600 480 L630 680 L90 680 Z" fill="url(#pedestal-grad)"/>
+              <path d="M120 490 L600 480 L605 498 L115 508 Z" fill="#E8D8CF" opacity="0.7"/>
+
+              <!-- Bottle 1: Gentle Cleanser (Tall White Bottle with Copper Pump) -->
+              <g filter="url(#soft-shadow)">
+                <!-- Bottle Body -->
+                <rect x="200" y="220" width="115" height="265" rx="10" fill="url(#bottle-white-grad)"/>
+                <!-- Pump Neck & Collar -->
+                <rect x="240" y="195" width="35" height="25" rx="3" fill="url(#copper-lid-grad)"/>
+                <!-- Pump Stem & Nozzle -->
+                <path d="M250 195 L250 165 L225 168 C220 169 220 162 225 161 L262 157 C266 157 268 160 268 164 L268 195 Z" fill="url(#copper-lid-grad)"/>
+                <!-- Minimalist Typography on Bottle -->
+                <text x="257" y="275" font-family="'Jost', sans-serif" font-size="8" font-weight="600" letter-spacing="2" fill="#7A6059" text-anchor="middle">GENTLE CLEANSER</text>
+                <text x="257" y="292" font-family="'Jost', sans-serif" font-size="6" letter-spacing="1.5" fill="#A8948D" text-anchor="middle">ALOE + OAT</text>
+                <text x="257" y="325" font-family="'Jost', sans-serif" font-size="6" letter-spacing="1" fill="#B09F98" text-anchor="middle">Purify &amp; Calm</text>
+              </g>
+
+              <!-- Bottle 2: Rich Moisturizer (Round Cream Jar with Rose Copper Lid) -->
+              <g filter="url(#soft-shadow)">
+                <!-- Jar Body -->
+                <rect x="345" y="340" width="135" height="145" rx="12" fill="url(#bottle-white-grad)"/>
+                <!-- Copper Metallic Lid -->
+                <rect x="340" y="315" width="145" height="32" rx="6" fill="url(#copper-lid-grad)"/>
+                <line x1="340" y1="346" x2="485" y2="346" stroke="#8E4E37" stroke-width="1.5"/>
+                <!-- Label Typography -->
+                <text x="412" y="385" font-family="'Jost', sans-serif" font-size="8" font-weight="600" letter-spacing="2" fill="#7A6059" text-anchor="middle">RICH MOISTURIZER</text>
+                <text x="412" y="402" font-family="'Jost', sans-serif" font-size="6" letter-spacing="1.5" fill="#A8948D" text-anchor="middle">BAKUCHIOL + SQUALANE</text>
+                <text x="412" y="430" font-family="'Jost', sans-serif" font-size="6" letter-spacing="1" fill="#B09F98" text-anchor="middle">Nourish &amp; Protect</text>
+              </g>
+
+              <!-- Bottle 3: Radiance Serum (Blush Dropper Bottle) -->
+              <g filter="url(#soft-shadow)">
+                <!-- Glass Bottle Body -->
+                <rect x="505" y="280" width="85" height="205" rx="10" fill="url(#serum-glass-grad)"/>
+                <!-- Dropper Cap (White + Rose Copper Ring) -->
+                <rect x="525" y="258" width="45" height="22" rx="2" fill="url(#copper-lid-grad)"/>
+                <path d="M537 258 C537 232 557 232 557 258 Z" fill="#FFFFFF"/>
+                <!-- Serum Label -->
+                <text x="547" y="335" font-family="'Jost', sans-serif" font-size="7" font-weight="600" letter-spacing="1.8" fill="#58291D" text-anchor="middle">RADIANCE SERUM</text>
+                <text x="547" y="350" font-family="'Jost', sans-serif" font-size="5.5" letter-spacing="1.2" fill="#7B493B" text-anchor="middle">VITAMIN C + PEPTIDE</text>
+                <text x="547" y="375" font-family="'Jost', sans-serif" font-size="5.5" letter-spacing="0.8" fill="#8C584A" text-anchor="middle">Brighten &amp; Renew</text>
+              </g>
             </svg>
-            <span class="font-serif text-2xl md:text-3xl text-color-heading mb-2">KAYRA Beauty Formulations</span>
-            <span class="text-xs uppercase tracking-widest text-color-foreground-secondary">100% Wildcrafted Bio-Active Skincare</span>
           </div>
         {%- endif -%}
 
@@ -146,13 +240,19 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Pure Formulation Alchemy for Cellular Balance"
+      "default": "KAYRA Beauty Skincare"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle concept line",
+      "default": "Refined Botanical Formulations"
     },
     {
       "type": "richtext",
       "id": "text",
       "label": "Text",
-      "default": "<p>Thoughtful rituals. Pure biocompatible ingredients. Visible care designed for your skin barrier and daily vitality.</p>"
+      "default": "<p>Thoughtful rituals. Pure biocompatible ingredients.<br>Visible care designed for your skin barrier and daily vitality.</p>"
     },
     {
       "type": "image_picker",
@@ -230,7 +330,7 @@
       "type": "text",
       "id": "secondary_button_label",
       "label": "Secondary link label",
-      "default": "Our Philosophy"
+      "default": "Our Botanical Philosophy"
     },
     {
       "type": "url",
@@ -250,8 +350,8 @@
     {
       "type": "color",
       "id": "bg_color",
-      "label": "Legacy background color fallback",
-      "default": "#FCFBF7"
+      "label": "Left panel background color",
+      "default": "#FCF5EF"
     },
     {
       "type": "range",
@@ -279,7 +379,8 @@
       "name": "Editorial split",
       "settings": {
         "subheading": "PREMIUM BOTANICAL SKINCARE",
-        "heading": "Pure Formulation Alchemy for Cellular Balance",
+        "heading": "KAYRA Beauty Skincare",
+        "subtitle": "Refined Botanical Formulations",
         "button_label": "Explore Collection"
       }
     }

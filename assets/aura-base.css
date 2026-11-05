@@ -822,3 +822,127 @@ button.m-add-to-cart,
   margin-top: 3px !important;
   padding-left: 0.35em !important;
 }
+
+
+/* ==========================================================================
+   PHASE 12 STEP B (1-4) — HOMEPAGE SECTIONS 1-4 EXACT REPLICA STYLES
+   ========================================================================== */
+
+/* 1. Hero Split Refinements */
+.m-editorial-split__heading {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.m-editorial-split__subtitle {
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.m-editorial-split__btn-primary {
+  min-width: 200px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2.25rem;
+  background-color: #8B3224;
+  color: #FFFFFF !important;
+  border-radius: 0px !important;
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.m-editorial-split__btn-primary:hover {
+  background-color: #6E261B;
+  color: #FFFFFF !important;
+}
+
+/* 2. Benefits Strip Hairline Dividers */
+.m-benefits-strip {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .m-benefits-strip__col:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.22);
+  }
+}
+
+@media (max-width: 1023px) {
+  .m-benefits-strip__col:nth-child(1),
+  .m-benefits-strip__col:nth-child(2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1.5rem;
+  }
+  .m-benefits-strip__col:nth-child(odd) {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* 3. Category Cards Side-by-Side Replica */
+.aura-category-card--replica {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background-color: #F3E8E2;
+  border: 1px solid #E9D5CC;
+  border-radius: 0px !important;
+  min-height: 170px;
+  text-decoration: none;
+  box-shadow: none !important;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+@media (hover: hover) {
+  .aura-category-card--replica:hover {
+    transform: translateY(-3px);
+    border-color: #8B3224;
+    box-shadow: 0 10px 24px -6px rgba(94, 30, 22, 0.08) !important;
+  }
+  .aura-category-card--replica:hover .aura-category-arrow {
+    transform: translateX(4px);
+  }
+}
+
+/* 4. Bento Row 1 Asymmetric Replica */
+.aura-bento-hero--ritual {
+  border-radius: 0px !important;
+  color: #FFF7F5;
+  box-shadow: none !important;
+}
+
+.aura-bento-hero--ingredient {
+  border: 1px solid #E9D5CC;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+}
+
+.aura-bento-btn--ritual {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  border: 1px solid #FCE8E7;
+  color: #FCE8E7 !important;
+  border-radius: 0px !important;
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.aura-bento-btn--ritual:hover {
+  background-color: #FCE8E7;
+  color: #873223 !important;
+}

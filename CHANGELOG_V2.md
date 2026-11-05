@@ -6,6 +6,54 @@ All architectural changes, refactors, migrations, and file deprecations for the 
 
 ---
 
+## [Phase 12 Step B (1–4) — Homepage Sections 1 to 4 Exact Replica] — Completed (November 5, 2026)
+
+Exact reproduction of Homepage Sections 1 through 4 matching `docs/reference/home-reference.png` proportions, layout geometry, color values, typography, and interactive behaviors:
+
+### 1. Section 1: Hero Split (`sections/editorial-split.liquid`)
+* **Proportions & Layout:** 50/50 desktop split (fluid height `min-h-[640px] lg:min-h-[660px] xl:min-h-[680px]` matching 44.88% of width).
+* **Left Panel:** Warm atelier ivory background (`#FCF5EF`) with deep inner padding (`px-6 py-14 lg:px-16 xl:px-24`).
+* **Typography:**
+  - Eyebrow: `PREMIUM SKINCARE BRAND` in small-caps uppercase, Jost ~11px, `letter-spacing: 0.20em`, color `#6D514E`.
+  - H1: Cormorant Garamond serif, tight line-height `1.02`, tracking `-0.02em`, fluid clamp (`clamp(2.5rem, 5.2vw, 5.5rem)`), rich maroon `#5E1E16`.
+  - Subtitle: Concept subtitle line (`Refined Botanical Formulations`), Jost ~14px, tracked `0.04em`, `#806E6A`.
+  - Paragraph: 2-line intro, Jost ~15-16px, line-height 1.5, `#6A625F`.
+* **CTA Button:** Solid rust button `#8B3224` (hover `#6E261B`), text white, rectangular (`rounded-none`), uppercase tracking `0.15em`, padding `16px 36px`, min-height `48px`.
+* **Right Panel:** Full-bleed media with `data-anim="parallax"`. When empty, renders custom inline botanical skincare SVG artwork showing 3 bottles on travertine pedestal matching reference composition.
+* **Mobile:** Image on top (aspect-ratio 4:5), text panel below, full-width button.
+
+### 2. Section 2: Benefits Strip (`sections/benefits-strip.liquid`)
+* **Full-Width Band:** Deep rich terracotta background (`#7C2E21` / `#803326`) with text `#FCE8E7` and white.
+* **4 Columns:**
+  - SHOP: Shopping bag icon + `SHOP` + `Curated essentials for every skin`.
+  - RITUAL: Mortar & pestle icon + `RITUAL` + `Simple steps. Lasting results.`.
+  - INGREDIENTS: Botanical leaf icon + `INGREDIENTS` + `Transparent. Purposeful. Clean.`.
+  - SKIN QUIZ: Contour face profile icon + `SKIN QUIZ` + `Find your routine in minutes`.
+* **Hairline Dividers:** 1px vertical borders (`rgba(255, 255, 255, 0.22)`) between columns on desktop; 2×2 grid with hairline cross dividers on mobile.
+* **Icons & Animation:** Fine 1.25px stroke SVGs with group hover scale (1.1). Accessible full-column touch links.
+
+### 3. Section 3: Shop by Category (`sections/collection-list.liquid`)
+* **Header Row:** Left eyebrow `SHOP BY CATEGORY` (Jost ~13px uppercase, tracking `0.20em`, `#5E1E16`) and right link `View all products →` (Jost ~12px uppercase, hover arrow shift).
+* **Grid:** 4 columns on desktop (container max 1240px); mobile horizontal scroll-snap carousel.
+* **Side-by-Side Card Design (`.aura-category-card--replica`):**
+  - Flat blush background `#F3E8E2`, 1px border `#E9D5CC`, sharp rectangular corners (`0px` radius).
+  - Left side (~42%): Cutout product bottle/jar/tube image with custom SVG fallbacks for Cleansers, Serums, Moisturizers, and Sun Care.
+  - Right side (~58%): Uppercase title, 2-line subtitle, and right arrow `→`.
+  - Hover: Subtle lift (`translateY(-3px)`), border highlight, arrow translates right (`translateX(4px)`).
+
+### 4. Section 4: Bento Row 1 (`sections/bento-row-1.liquid`)
+* **Asymmetric Grid:** `grid-cols-1 lg:grid-cols-[53.5%_1fr]` with 16px gap.
+* **Card A (Left, 53.5% Width):**
+  - Background: Deep rich terracotta rust `#873223`.
+  - Text: Eyebrow `FEATURED RITUAL` (`#FCE8E7`), Cormorant Garamond heading `The Hydration Reset Ritual` (`#FFF7F5`), 2-line subtext, outline button `DISCOVER RITUAL` (`border: 1px solid #FCE8E7`, hover fill).
+  - Media: Flush right edge-to-edge image (fallback SVG: ritual bottles on stone with pink botanical blossom).
+* **Card B (Right, 45.4% Width):**
+  - Background: Flat blush `#F2E6E0`, 1px border `#E9D5CC`.
+  - Media: Circular laboratory glass dish spotlight (`w-36 h-36 sm:w-44 sm:h-44 rounded-full border border-[#E9D5CC]`) with hibiscus petal & squalane oil droplets.
+  - Text: Eyebrow `INGREDIENT SPOTLIGHT`, Cormorant Garamond heading `Squalane` (`#5E1E16`), 3 bullet points (`Deep moisture.`, `Silky, weightless feel.`, `Barrier support.`), and link `EXPLORE INGREDIENTS →`.
+
+---
+
 ## [Brand Identity Update — Rebranded to KAYRA Beauty] — Completed (November 5, 2026)
 
 Global rebrand from "Aura Botanica" to "KAYRA Beauty" matching the exact typography and stacked wordmark from the user reference image (`KAYRA` in high-contrast serif + `BEAUTY` in tracked sans):

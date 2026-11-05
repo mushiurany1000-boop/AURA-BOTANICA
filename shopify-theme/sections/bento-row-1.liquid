@@ -1,47 +1,53 @@
 {%- comment -%}
   KAYRA Beauty v2.0 — Bento Row 1 Section
-  Two-up editorial cards: Featured Ritual (deep tone) and Ingredient Spotlight (blush tone).
+  Phase 12 Exact Replica of Reference Design:
+  - Left Card (53.5%): Featured Ritual in Deep Rust (#873223), Serif Title, Outline Button, Bottles Photo.
+  - Right Card (45.4%): Ingredient Spotlight in Blush (#F2E6E0), Circular Dish, Squalane, 3 Benefits, Link.
 {%- endcomment -%}
 
 {%- liquid
   assign section_id = 'm-bento-row-1-' | append: section.id
   assign container = section.settings.container | default: 'container'
+  assign ritual_bg = section.settings.ritual_bg_color | default: '#873223'
+  assign ingredient_bg = section.settings.ingredient_bg_color | default: '#F2E6E0'
 -%}
 
 <section
   id="{{ section_id }}"
-  class="m-section m-bento-row-1 py-8 md:py-14 relative overflow-hidden"
+  class="m-section m-bento-row-1 py-8 md:py-12 lg:py-14 relative overflow-hidden"
   style="--section-padding-top: {{ section.settings.padding_top | default: 32 }}px; --section-padding-bottom: {{ section.settings.padding_bottom | default: 32 }}px;"
   data-section-id="{{ section.id }}"
   data-section-type="bento-row-1"
 >
-  <div class="{{ container }} px-4 sm:px-6">
+  <div class="{{ container }} max-w-[1240px] mx-auto px-4 sm:px-6">
     <div
-      class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch"
+      class="grid grid-cols-1 lg:grid-cols-[53.5%_1fr] gap-4 lg:gap-4 items-stretch"
       data-anim="stagger-children"
       data-anim-stagger="0.12"
     >
       
-      <!-- Card A: Featured Ritual (Deep Tone) -->
+      <!-- Card A: Featured Ritual (Left, 53.5% Deep Rust #873223) -->
       <div
-        class="aura-bento-hero m-color-{{ section.settings.ritual_color_scheme | default: 'dark' }} rounded-[4px] p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group min-h-[380px]"
+        class="aura-bento-hero--ritual rounded-none p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group min-h-[340px] sm:min-h-[380px]"
+        style="background-color: {{ ritual_bg }};"
         data-anim-child
       >
+        <!-- Text Area (Left half of Card A) -->
         <div class="w-full sm:w-1/2 flex flex-col items-start z-10 text-left">
           {%- if section.settings.ritual_eyebrow != blank -%}
-            <span class="aura-eyebrow text-color-primary-accent mb-2">
+            <span class="aura-eyebrow text-[#FCE8E7] opacity-90 mb-2 sm:mb-3 text-[11px] uppercase tracking-[0.20em] font-semibold">
               {{ section.settings.ritual_eyebrow }}
             </span>
           {%- endif -%}
 
           {%- if section.settings.ritual_heading != blank -%}
-            <h3 class="text-2xl sm:text-3xl md:text-4xl font-serif text-color-heading mb-3 leading-tight">
+            <h3 class="text-2xl sm:text-3xl md:text-[34px] font-serif text-[#FFF7F5] mb-3 leading-[1.12] font-medium tracking-tight">
               {{ section.settings.ritual_heading }}
             </h3>
           {%- endif -%}
 
           {%- if section.settings.ritual_text != blank -%}
-            <p class="text-xs sm:text-sm text-color-foreground opacity-90 leading-relaxed mb-6 max-w-xs">
+            <p class="text-xs sm:text-sm text-[#FCE8E7] opacity-90 leading-relaxed mb-6 max-w-xs font-normal">
               {{ section.settings.ritual_text }}
             </p>
           {%- endif -%}
@@ -49,70 +55,113 @@
           {%- if section.settings.ritual_button_label != blank -%}
             <a
               href="{{ section.settings.ritual_button_link | default: routes.all_products_collection_url }}"
-              class="m-button m-button--secondary border-current text-color-heading hover:bg-color-heading hover:text-color-background px-6 py-2.5 text-xs uppercase tracking-widest font-semibold transition-all"
+              class="aura-bento-btn--ritual"
             >
               {{ section.settings.ritual_button_label }}
             </a>
           {%- endif -%}
         </div>
 
-        <div class="w-full sm:w-1/2 h-56 sm:h-full min-h-[220px] relative rounded overflow-hidden">
+        <!-- Image Area (Right half of Card A) -->
+        <div class="w-full sm:w-1/2 h-56 sm:h-full min-h-[220px] sm:min-h-[300px] relative overflow-hidden flex items-center justify-end">
           {%- if section.settings.ritual_image != blank -%}
             {{ section.settings.ritual_image | image_url: width: 800 | image_tag: 
               loading: 'lazy', 
               class: 'w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105' 
             }}
           {%- else -%}
-            <div class="w-full h-full bg-color-background-secondary flex flex-col items-center justify-center p-4 text-center">
-              <svg class="w-10 h-10 text-color-primary-accent opacity-50 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-              </svg>
-              <span class="text-xs font-serif text-color-heading">Atelier Botanical Ritual</span>
-            </div>
+            <!-- Fallback SVG: Botanical Ritual Trio on Stone Slab with Blossom -->
+            <svg class="w-full h-full object-contain" viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Ritual Formulations">
+              <defs>
+                <linearGradient id="rit-stone" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#CBB5AA"/>
+                  <stop offset="100%" stop-color="#9C8276"/>
+                </linearGradient>
+                <linearGradient id="rit-copper" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#B87350"/>
+                  <stop offset="50%" stop-color="#E2A68F"/>
+                  <stop offset="100%" stop-color="#934D2E"/>
+                </linearGradient>
+              </defs>
+              <!-- Stone Slab -->
+              <path d="M40 210 L280 200 L270 250 L30 250 Z" fill="url(#rit-stone)"/>
+              <path d="M40 210 L280 200 L282 208 L38 218 Z" fill="#EADBD4" opacity="0.6"/>
+
+              <!-- Tall White Pump Cleanser -->
+              <rect x="75" y="70" width="48" height="135" rx="5" fill="#FFFFFF"/>
+              <rect x="91" y="56" width="16" height="14" rx="2" fill="url(#rit-copper)"/>
+              <path d="M96 56 L96 38 L80 40 C76 40 76 35 80 35 L102 33 C105 33 106 35 106 37 L106 56 Z" fill="url(#rit-copper)"/>
+
+              <!-- Dropper Serum Bottle -->
+              <rect x="140" y="100" width="38" height="105" rx="5" fill="#F4C7B7" fill-opacity="0.95"/>
+              <rect x="149" y="88" width="20" height="12" rx="1.5" fill="url(#rit-copper)"/>
+              <path d="M154 88 C154 74 164 74 164 88 Z" fill="#FFFFFF"/>
+
+              <!-- Cream Jar -->
+              <rect x="195" y="140" width="62" height="65" rx="6" fill="#FFFFFF"/>
+              <rect x="192" y="126" width="68" height="16" rx="3" fill="url(#rit-copper)"/>
+
+              <!-- Delicate Pink Botanical Blossom -->
+              <circle cx="58" cy="225" r="9" fill="#E89B8F" fill-opacity="0.85"/>
+              <circle cx="70" cy="220" r="8" fill="#E89B8F" fill-opacity="0.85"/>
+              <circle cx="68" cy="232" r="8" fill="#E89B8F" fill-opacity="0.85"/>
+              <circle cx="56" cy="234" r="7" fill="#E89B8F" fill-opacity="0.85"/>
+              <circle cx="64" cy="227" r="3" fill="#FFE8E2"/>
+            </svg>
           {%- endif -%}
         </div>
       </div>
 
-      <!-- Card B: Ingredient Spotlight (Blush / Clay Rose Tone) -->
+      <!-- Card B: Ingredient Spotlight (Right, 45.4% Blush #F2E6E0) -->
       <div
-        class="aura-bento-hero m-color-{{ section.settings.ingredient_color_scheme | default: 'scheme-clay-rose' }} rounded-[4px] p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group min-h-[380px]"
+        class="aura-bento-hero--ingredient rounded-none p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group min-h-[340px] sm:min-h-[380px]"
+        style="background-color: {{ ingredient_bg }};"
         data-anim-child
       >
-        <!-- Circular Ingredient Image Area -->
-        <div class="w-full sm:w-1/2 flex items-center justify-center order-2 sm:order-1">
-          <div class="aura-circular-spotlight w-44 h-44 sm:w-52 sm:h-52 bg-color-background relative flex items-center justify-center p-2 border border-color-border">
+        <!-- Circular Petri Dish Spotlight (Left side of Card B) -->
+        <div class="w-full sm:w-[45%] flex items-center justify-center order-2 sm:order-1">
+          <div class="aura-circular-spotlight w-36 h-36 sm:w-44 sm:h-44 bg-white relative flex items-center justify-center p-2 border border-[#E9D5CC] shadow-sm">
             {%- if section.settings.ingredient_image != blank -%}
               {{ section.settings.ingredient_image | image_url: width: 600 | image_tag: 
                 loading: 'lazy', 
                 class: 'w-full h-full object-cover rounded-full transition-transform duration-700 ease-out group-hover:scale-110' 
               }}
             {%- else -%}
-              <div class="w-full h-full rounded-full bg-color-background-secondary flex flex-col items-center justify-center text-center p-3">
-                <svg class="w-8 h-8 text-color-primary mb-1" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                </svg>
-                <span class="text-[10px] uppercase font-bold tracking-wider text-color-heading">Pure Phyto Extract</span>
-              </div>
+              <!-- Fallback SVG: Laboratory Glass Dish with Botanical Petal & Oil Droplets -->
+              <svg class="w-full h-full rounded-full transition-transform duration-700 ease-out group-hover:scale-105" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Squalane Spotlight">
+                <!-- Outer Glass Rim -->
+                <circle cx="80" cy="80" r="76" fill="#FDFBF9" stroke="#E5D6CD" stroke-width="2"/>
+                <circle cx="80" cy="80" r="72" stroke="#FFFFFF" stroke-width="1.5"/>
+                <!-- Secondary Glass Overlap Dish -->
+                <circle cx="60" cy="95" r="28" fill="#FBF4EF" stroke="#E8DACF" stroke-width="1.2" fill-opacity="0.6"/>
+                <!-- Botanical Hibiscus / Rose Petal -->
+                <path d="M75 55 C90 45 115 55 110 75 C105 92 88 100 78 88 C70 78 65 62 75 55 Z" fill="#E18A80" fill-opacity="0.85"/>
+                <path d="M78 58 C88 50 108 58 104 74" stroke="#FFF0ED" stroke-width="1" stroke-linecap="round"/>
+                <!-- Pure Squalane Liquid Droplets -->
+                <circle cx="95" cy="100" r="8" fill="#FFFFFF" fill-opacity="0.8" stroke="#E2D0C5" stroke-width="0.8"/>
+                <circle cx="97" cy="98" r="2" fill="#FFFFFF"/>
+                <circle cx="50" cy="70" r="5" fill="#FFFFFF" fill-opacity="0.75" stroke="#E2D0C5" stroke-width="0.8"/>
+              </svg>
             {%- endif -%}
           </div>
         </div>
 
-        <!-- Text & Bullet Benefits -->
-        <div class="w-full sm:w-1/2 flex flex-col items-start z-10 text-left order-1 sm:order-2">
+        <!-- Text & 3 Benefit Bullets (Right side of Card B) -->
+        <div class="w-full sm:w-[55%] flex flex-col items-start z-10 text-left order-1 sm:order-2">
           {%- if section.settings.ingredient_eyebrow != blank -%}
-            <span class="aura-eyebrow text-color-primary mb-2">
+            <span class="aura-eyebrow text-[#6D514E] mb-2 text-[11px] uppercase tracking-[0.20em] font-semibold">
               {{ section.settings.ingredient_eyebrow }}
             </span>
           {%- endif -%}
 
           {%- if section.settings.ingredient_heading != blank -%}
-            <h3 class="text-2xl sm:text-3xl md:text-4xl font-serif text-color-heading mb-4 leading-tight">
+            <h3 class="text-2xl sm:text-3xl md:text-[34px] font-serif text-[#5E1E16] mb-3 leading-tight font-medium tracking-tight">
               {{ section.settings.ingredient_heading }}
             </h3>
           {%- endif -%}
 
           {%- if section.settings.ingredient_benefits != blank -%}
-            <div class="text-xs sm:text-sm text-color-foreground opacity-90 leading-relaxed mb-6 space-y-1.5">
+            <div class="text-xs sm:text-sm text-[#6A625F] leading-relaxed mb-5 space-y-1 font-normal">
               {{ section.settings.ingredient_benefits }}
             </div>
           {%- endif -%}
@@ -120,10 +169,10 @@
           {%- if section.settings.ingredient_link_label != blank -%}
             <a
               href="{{ section.settings.ingredient_link | default: routes.all_products_collection_url }}"
-              class="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-semibold text-color-primary hover:text-color-heading transition-colors group/link"
+              class="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.16em] font-semibold text-[#5E1E16] hover:text-[#8B3224] transition-colors group/link"
             >
               {{ section.settings.ingredient_link_label }}
-              <span class="transition-transform duration-300 group-hover/link:translate-x-1">&rarr;</span>
+              <span class="transition-transform duration-300 group-hover/link:translate-x-1.5 font-sans">&rarr;</span>
             </a>
           {%- endif -%}
         </div>
@@ -143,20 +192,20 @@
       "id": "container",
       "label": "Container layout",
       "options": [
-        { "value": "container-fluid", "label": "Full width" },
-        { "value": "container", "label": "Boxed container" }
+        { "value": "container", "label": "Boxed container (Recommended)" },
+        { "value": "container-fluid", "label": "Full width" }
       ],
       "default": "container"
     },
     {
       "type": "header",
-      "content": "Card A — Featured Ritual"
+      "content": "Card A — Featured Ritual (53.5% Width)"
     },
     {
-      "type": "color_scheme",
-      "id": "ritual_color_scheme",
-      "label": "Ritual color scheme",
-      "default": "dark"
+      "type": "color",
+      "id": "ritual_bg_color",
+      "label": "Ritual card background",
+      "default": "#873223"
     },
     {
       "type": "text",
@@ -194,13 +243,13 @@
     },
     {
       "type": "header",
-      "content": "Card B — Ingredient Spotlight"
+      "content": "Card B — Ingredient Spotlight (45.4% Width)"
     },
     {
-      "type": "color_scheme",
-      "id": "ingredient_color_scheme",
-      "label": "Ingredient color scheme",
-      "default": "scheme-clay-rose"
+      "type": "color",
+      "id": "ingredient_bg_color",
+      "label": "Ingredient card background",
+      "default": "#F2E6E0"
     },
     {
       "type": "text",
@@ -264,4 +313,3 @@
   ]
 }
 {% endschema %}
-

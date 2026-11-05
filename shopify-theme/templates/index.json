@@ -4,21 +4,22 @@
       "type": "editorial-split",
       "settings": {
         "color_scheme": "default",
-        "subheading": "PREMIUM BOTANICAL SKINCARE",
-        "heading": "Grounded in Botany, Proven by Clinical Science",
-        "text": "<p>Thoughtful rituals. Pure biocompatible ingredients. Visible care designed for your skin barrier and daily vitality.</p>",
+        "subheading": "PREMIUM SKINCARE BRAND",
+        "heading": "KAYRA Beauty Skincare",
+        "text": "<p>Thoughtful rituals. Pure biocompatible ingredients.<br>Visible care designed for your skin barrier and daily vitality.</p>",
         "image_position": "right",
         "mobile_order": "image_first",
         "height": "80vh",
         "alignment": "left",
         "overlay_opacity": 0,
-        "button_label": "Explore Collection",
+        "button_label": "EXPLORE COLLECTION",
         "button_link": "/collections/all",
         "secondary_button_label": "Our Botanical Philosophy",
         "secondary_button_link": "/pages/about-us",
         "container": "container-fluid",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "subtitle": "Refined Botanical Formulations"
       }
     },
     "benefits_strip": {

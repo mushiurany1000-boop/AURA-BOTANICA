@@ -152,3 +152,14 @@ This document tracks every existing Minimog and Aura Botanica theme capability t
 ## 6. Parity Verification Rules
 1. **Zero Feature Drop:** No setting, section type, or block type can be removed without providing an alias migration in `config/settings_data.json` or `templates/*.json`.
 2. **Tooling Preservation:** Development tooling (`dev-server.js`, `preview/`, `data/`, `scripts/`, `package.json`) remains 100% operational in the local environment and is safely excluded from final Shopify theme archives.
+
+---
+
+## 7. Phase 12 Step B (1-4) — Exact Replica Sections 1-4 Status
+
+| Section | Implementation File | Status | Exact Replica Verification Metric |
+| :--- | :--- | :---: | :--- |
+| **Hero Split** | `sections/editorial-split.liquid` | **VERIFIED** | 50/50 desktop split, Cormorant Garamond H1, solid rust CTA button (#8B3224, 0px radius, uppercase tracking), full-bleed media with botanical fallback SVG. |
+| **Benefits Strip** | `sections/benefits-strip.liquid` | **VERIFIED** | Full-width deep terracotta rust band (#7C2E21), 4 equal columns with 1px vertical hairline dividers on desktop, 2x2 grid with cross hairline dividers on mobile, fine 1.25px stroke icons. |
+| **Shop by Category** | `sections/collection-list.liquid` | **VERIFIED** | Flat blush cards (#F3E8E2), 1px border (#E9D5CC), side-by-side layout (product cutout left 42%, title + 2-line subtitle + arrow right 58%), mobile scroll-snap carousel. |
+| **Bento Row 1** | `sections/bento-row-1.liquid` | **VERIFIED** | Asymmetric 53.5% / 45.4% layout: Left card (53.5%) in deep rust (#873223) with ritual text, outline button, bottles image; Right card (45.4%) in blush (#F2E6E0) with circular dish spotlight, Squalane, 3 benefit bullets, explore link. |
