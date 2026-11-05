@@ -1930,7 +1930,7 @@ h1, h2, h3, h4, h5 {
   margin-bottom: 6px;
 }
 .quick-view__title {
-  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-family: var(--font-heading-family, var(--font-heading, 'Playfair Display', serif));
   font-size: 1.85rem;
   line-height: 1.2;
   margin: 0 0 10px;
@@ -2049,7 +2049,7 @@ h1, h2, h3, h4, h5 {
   align-items: center;
 }
 .wishlist-drawer__title {
-  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-family: var(--font-heading-family, var(--font-heading, 'Playfair Display', serif));
   font-size: 1.35rem;
   margin: 0;
   color: #1F2D24;
@@ -2105,7 +2105,7 @@ h1, h2, h3, h4, h5 {
   flex: 1;
 }
 .wishlist-title {
-  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-family: var(--font-heading-family, var(--font-heading, 'Playfair Display', serif));
   font-size: 1.05rem;
   margin: 0 0 4px;
 }
@@ -2253,7 +2253,7 @@ h1, h2, h3, h4, h5 {
   padding-bottom: 16px;
 }
 .compare-modal__title {
-  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-family: var(--font-heading-family, var(--font-heading, 'Playfair Display', serif));
   font-size: 1.75rem;
   margin: 0;
   color: #1F2D24;

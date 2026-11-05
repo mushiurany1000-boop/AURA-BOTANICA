@@ -6,23 +6,34 @@
 
 :root {
   /* ========================================================================
-     1. COLOR DESIGN TOKENS
+     1. COLOR DESIGN TOKENS (Phase 9 Botanical System)
      ======================================================================== */
-  --color-aura-ivory: #FCFBF7;
-  --color-aura-forest: #18231F;
-  --color-aura-sage: #4D6459;
-  --color-aura-clay: #D9C9B8;
-  --color-aura-copper: #B9784D;
-  --color-aura-gold: #D4AF37;
-  --color-aura-border: #E8E1D7;
+  --color-aura-ivory: rgb(var(--color-background, 252, 251, 247));
+  --color-aura-bg-subtle: rgb(var(--color-background-secondary, 248, 246, 240));
+  --color-aura-forest: rgb(var(--color-heading, 24, 35, 31));
+  --color-aura-text: rgb(var(--color-foreground, 24, 35, 31));
+  --color-aura-muted: rgb(var(--color-foreground-secondary, 91, 110, 100));
+  --color-aura-primary-accent: rgb(var(--color-primary-accent, 35, 56, 49));
+  --color-aura-sage: rgb(var(--color-secondary-accent, 91, 110, 100));
+  --color-aura-copper: rgb(var(--color-highlight-accent, 185, 120, 77));
+  --color-aura-gold: #C5A059;
+  --color-aura-border: rgb(var(--color-border, 229, 223, 211));
   --color-aura-border-dark: #CFC5B8;
-  --color-aura-bg-subtle: #F7F5F0;
+  --color-aura-clay: #D9C9B8;
+  --color-aura-btn-bg: rgb(var(--color-button, 35, 56, 49));
+  --color-aura-btn-text: rgb(var(--color-button-text, 252, 251, 247));
+  --color-aura-btn-hover: rgb(var(--color-button-hover, 24, 35, 31));
+  --color-aura-btn-text-hover: rgb(var(--color-button-text-hover, 252, 251, 247));
 
   /* ========================================================================
-     2. TYPOGRAPHY TOKENS
+     2. TYPOGRAPHY TOKENS (Phase 9 Luxury System)
      ======================================================================== */
-  --font-heading-family: 'Cormorant Garamond', Georgia, serif;
-  --font-body-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading-family: var(--font-stack-header, 'Playfair Display', Georgia, serif);
+  --font-body-family: var(--font-stack-body, 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  --font-weight-body: 400;
+  --font-weight-nav: 500;
+  --font-weight-btn: 600;
+  --font-weight-heading: 700;
 
   /* ========================================================================
      3. SPACING & SHAPES
@@ -70,20 +81,129 @@
 }
 
 /* ==========================================================================
+   GLOBAL VIEWPORT & TYPOGRAPHY HIERARCHY
+   ========================================================================== */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  background-color: var(--color-aura-ivory);
+  color: var(--color-aura-text);
+  font-family: var(--font-body-family);
+  font-weight: var(--font-weight-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings Hierarchy (Playfair Display 700 Bold) */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.m-hero__title,
+.m-section__title,
+.m-section-header__title {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-weight-heading);
+  color: var(--color-aura-forest);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.m-menu__item,
+.m-navigation,
+.m-nav-link,
+.m-header__menu-item {
+  font-family: var(--font-body-family);
+  font-weight: var(--font-weight-nav);
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   BUTTON & INTERACTION SYSTEM (Task 5: Montserrat 600, Accessible Focus)
+   ========================================================================== */
+.m-button,
+.sf__btn,
+button.m-add-to-cart {
+  font-family: var(--font-body-family);
+  font-weight: var(--font-weight-btn, 600);
+  border-radius: var(--btn-border-radius, 4px);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 28px;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.m-button--primary,
+.sf__btn-primary,
+button.m-add-to-cart {
+  background-color: var(--color-aura-btn-bg, #233831);
+  color: var(--color-aura-btn-text, #FCFBF7);
+  border: 1px solid var(--color-aura-btn-bg, #233831);
+}
+
+@media (hover: hover) {
+  .m-button--primary:hover,
+  .sf__btn-primary:hover,
+  button.m-add-to-cart:hover {
+    background-color: var(--color-aura-btn-hover, #18231F);
+    color: var(--color-aura-btn-text-hover, #FCFBF7);
+    border-color: var(--color-aura-btn-hover, #18231F);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(24, 35, 31, 0.12);
+  }
+}
+
+.m-button--secondary,
+.sf__btn-secondary,
+.m-button--outline {
+  background-color: transparent;
+  color: var(--color-aura-primary-accent, #233831);
+  border: 1.5px solid var(--color-aura-primary-accent, #233831);
+}
+
+@media (hover: hover) {
+  .m-button--secondary:hover,
+  .sf__btn-secondary:hover,
+  .m-button--outline:hover {
+    background-color: var(--color-aura-primary-accent, #233831);
+    color: var(--color-aura-ivory, #FCFBF7);
+    border-color: var(--color-aura-primary-accent, #233831);
+    transform: translateY(-1px);
+  }
+}
+
+.m-button:disabled,
+.sf__btn:disabled,
+button.m-add-to-cart:disabled,
+.m-button[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ==========================================================================
    4. ACCESSIBILITY & KEYBOARD FOCUS (WCAG 2.2 AA COMPLIANT)
    ========================================================================== */
 :focus-visible {
-  outline: 2px solid var(--color-aura-copper, #B9784D);
-  outline-offset: 3px;
+  outline: 2px solid var(--color-aura-copper, #B9784D) !important;
+  outline-offset: 3px !important;
 }
 
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 select:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid var(--color-aura-copper, #B9784D);
-  outline-offset: 2px;
+textarea:focus-visible,
+.m-button:focus-visible {
+  outline: 2px solid var(--color-aura-copper, #B9784D) !important;
+  outline-offset: 2px !important;
 }
 
 /* Reduced Motion Override for Accessibility */
@@ -129,6 +249,15 @@ textarea:focus-visible {
   overflow: hidden;
   background-color: var(--color-aura-bg-subtle);
   border-radius: var(--aura-radius-sm);
+  aspect-ratio: var(--aspect-ratio, 4/5);
+}
+
+.m-product-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .m-product-card__image-secondary {
@@ -142,6 +271,9 @@ textarea:focus-visible {
 }
 
 @media (hover: hover) {
+  .m-product-card:hover .m-product-card__media img:not(.m-product-card__image-secondary) {
+    transform: scale(1.03);
+  }
   .m-product-card:hover .m-product-card__image-secondary {
     opacity: 1;
   }

@@ -126,7 +126,7 @@
         "type": "font_picker",
         "id": "type_base_font",
         "label": "Font",
-        "default": "helvetica_n4"
+        "default": "montserrat_n4"
       },
       {
         "type": "checkbox",
@@ -217,7 +217,7 @@
         "type": "font_picker",
         "id": "type_header_font",
         "label": "Font",
-        "default": "helvetica_n7"
+        "default": "playfair_display_n7"
       },
       {
         "type": "checkbox",
@@ -414,7 +414,7 @@
         "id": "btn_weight",
         "type": "select",
         "label": "Font weight",
-        "default": "500",
+        "default": "600",
         "options": [
           {
             "value": "100",
@@ -626,6 +626,28 @@
             "id": "border",
             "label": "Border",
             "default": "#EEEEEE"
+          },
+          {
+            "type": "header",
+            "content": "Botanical Accents"
+          },
+          {
+            "type": "color",
+            "id": "primary_accent",
+            "label": "Primary accent (Forest)",
+            "default": "#233831"
+          },
+          {
+            "type": "color",
+            "id": "secondary_accent",
+            "label": "Secondary accent (Sage)",
+            "default": "#5B6E64"
+          },
+          {
+            "type": "color",
+            "id": "highlight_accent",
+            "label": "Highlight accent (Terracotta / Gold)",
+            "default": "#B9784D"
           }
         ],
         "role": {
@@ -947,7 +969,7 @@
         "type": "select",
         "id": "pcard_image_ratio",
         "label": "Aspect ratio",
-        "default": "original",
+        "default": "4/5",
         "options": [
           {
             "value": "original",
@@ -960,6 +982,10 @@
           {
             "value": "3/4",
             "label": "3:4"
+          },
+          {
+            "value": "4/5",
+            "label": "4:5 (Luxury Editorial Portrait)"
           },
           {
             "value": "4/3",

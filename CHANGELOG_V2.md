@@ -6,6 +6,48 @@ All architectural changes, refactors, migrations, and file deprecations for the 
 
 ---
 
+## [Phase 9 — Luxury Visual Refinement & Advanced Theme Customization] — Completed (November 5, 2026)
+
+Upgrade of Aura Botanica's visual authenticity, typography, color system, and Shopify Theme Editor customization, benchmarked against luxury storefronts (Gumdrop inspiration):
+
+### 1. Luxury Typography System
+* **`snippets/font-face.liquid` (Refactored & Mirrored to `shopify-theme/snippets/`):**
+  * Migrated default heading font to *Playfair Display Bold 700* (`playfair_display_n7`) and body font to *Montserrat Regular 400* (`montserrat_n4`).
+  * Added `base_font_500` (navigation 500) and `base_font_600` (buttons 600) via `font_modify: 'weight'`.
+  * Preserved zero external CDN layout shift by loading directly through Shopify's font engine with `font_display: 'swap'`.
+* **`config/settings_schema.json` & `config/settings_data.json`:**
+  * Updated defaults for `type_header_font` to `playfair_display_n7` and `type_base_font` to `montserrat_n4`.
+  * Set `btn_weight` to `600` (Semi-bold) and updated all 4 presets (`Default`, `Botanical Ivory`, `Forest Night`, `Clay Rose`).
+* **`assets/theme.css`:**
+  * Updated hardcoded font fallbacks from `'Cormorant Garamond'` to `var(--font-heading-family, var(--font-heading, 'Playfair Display', serif))`.
+
+### 2. Premium Botanical Color System
+* **`config/settings_schema.json`:**
+  * Added `primary_accent` (`#233831`), `secondary_accent` (`#5B6E64`), and `highlight_accent` (`#B9784D`) to the `color_schemes` definition.
+* **`config/settings_data.json`:**
+  * Updated `default`, `dark`, and `footer` schemes with refined botanical colors: Warm Ivory (`#FCFBF7`), Natural Cream (`#F8F6F0`), Deep Botanical Charcoal (`#18231F`), Forest Green (`#233831`), Muted Sage (`#5B6E64`), and Warm Terracotta (`#B9784D`).
+  * Contrast ratio verified at 15.61:1 (WCAG AAA compliant).
+* **`snippets/style-tags.liquid`:**
+  * Added dynamic export of `--color-primary-accent`, `--color-secondary-accent`, and `--color-highlight-accent` from color scheme settings.
+
+### 3. Button & Interaction System
+* **`assets/aura-base.css`:**
+  * Styled `.m-button--primary` and `.sf__btn-primary` with Forest Green (`#233831`), Warm Ivory text, Montserrat 600, 44px min-height, and smooth hover state.
+  * Styled `.m-button--secondary` with 1.5px Forest Green outline and hover inversion.
+  * Implemented accessible `:focus-visible` ring with `2px solid var(--color-aura-copper, #B9784D)` and 2px offset.
+
+### 4. Realistic Skincare Content & Apparel Cleanup
+* **`templates/index.json`, `templates/list-collections.json`, `templates/product.grid-mix-columns.json`:**
+  * Removed all leftover apparel copy ("The ReCotton Tee", "upgrade your wardrobe", "@minimog").
+  * Enforced 4:5 portrait aspect ratio on product cards (`pcard_image_ratio: '4/5'`) and `object-fit: cover` to eliminate uneven heights and distorted bottles.
+
+### 5. Verification & Parity
+* Authored `scripts/patch-phase9-settings.js`, `scripts/sync-root-to-theme.js`, `scripts/test-phase9-design.js` (47/47 PASS).
+* Synchronized authoritative root `/` and `shopify-theme/` to 100% byte parity (0 mismatches).
+* Repackaged `aura-skincare-theme.zip` (1.09 MB, 504 entries, 20/20 PASS).
+
+---
+
 ## [Gumdrop Benchmark Upgrade / Phase 11] — Completed (November 5, 2026)
 
 Full ecommerce capability and conversion upgrade using the Shopify Theme Store benchmark (Gumdrop) as a functional benchmark while strictly preserving Aura Botanica's proprietary botanical skincare identity, design tokens, and GSAP motion architecture.

@@ -13,6 +13,11 @@ This document tracks every existing Minimog and Aura Botanica theme capability t
 
 | Feature Domain | Specific Capability | Current Implementation File(s) | v2.0 Evolution Strategy | Status |
 | :--- | :--- | :--- | :--- | :---: |
+| **Typography** | Luxury Typography Engine (Playfair Display Bold 700 + Montserrat 400/500/600) | `snippets/font-face.liquid`, `assets/aura-base.css` | Native Shopify font picker loading with font_display: 'swap' | **IMPROVED** |
+| **Color Palette** | Botanical Color System & Accents | `config/settings_schema.json`, `snippets/style-tags.liquid` | Full Theme Editor accent controls (Forest, Sage, Terracotta) with 15.6:1 AAA contrast | **IMPROVED** |
+| **Buttons & Interactions** | Button System & Accessible Focus States | `assets/aura-base.css` | Montserrat 600, 44px min-height touch targets, 2px accessible focus rings | **IMPROVED** |
+| **Product Presentation** | 4:5 Portrait Aspect Ratio & Coverage | `assets/aura-base.css`, `config/settings_data.json` | Uniform 4:5 image aspect ratio, object-fit: cover, prevents distorted bottles | **IMPROVED** |
+| **Storefront Copy** | Clinical Botanical Skincare Copy | `templates/index.json`, `templates/list-collections.json` | Eliminated all apparel residue ("The ReCotton Tee", "wardrobe", "@minimog") | **IMPROVED** |
 | **Header** | 3 Header Layout Designs | `sections/header.liquid` | Kept & refined; clean design tokens applied | **KEPT** |
 | **Header** | Sticky Header (Scroll Up / Always) | `sections/header.liquid`, `assets/header.js` | Upgraded to GSAP ScrollTrigger smooth show/hide | **IMPROVED** |
 | **Header** | Transparent Header Mode | `sections/header.liquid` | Kept; supports hero banner overlays | **KEPT** |

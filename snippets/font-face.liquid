@@ -3,6 +3,8 @@
   assign header_font_bolder = header_font | font_modify: 'weight', 'bolder'
   assign header_font_lighter = header_font | font_modify: 'weight', '-100'
   assign base_font = settings.type_base_font
+  assign base_font_500 = base_font | font_modify: 'weight', '500'
+  assign base_font_600 = base_font | font_modify: 'weight', '600'
   assign base_font_bolder = base_font | font_modify: 'weight', 'bolder'
   assign base_font_bold = base_font | font_modify: 'weight', 'bold'
   assign base_font_italic = base_font | font_modify: 'style', 'italic'
@@ -21,7 +23,11 @@
 
 {%- unless use_custom_font_body or settings.type_base_font.system? -%}
   <link rel="preload" as="font" href="{{ base_font | font_url }}" type="font/woff2" crossorigin>
-  <link rel="preload" as="font" href="{{ base_font_bold | font_url }}" type="font/woff2" crossorigin>
+  {%- if base_font_600 -%}
+    <link rel="preload" as="font" href="{{ base_font_600 | font_url }}" type="font/woff2" crossorigin>
+  {%- elsif base_font_bold -%}
+    <link rel="preload" as="font" href="{{ base_font_bold | font_url }}" type="font/woff2" crossorigin>
+  {%- endif -%}
 {%- endunless -%}
 
 {%- unless use_custom_font_heading or settings.type_header_font.system? -%}
@@ -93,11 +99,19 @@
 {%- endif -%}
 {% else %}
 {{ base_font | font_face: font_display: 'swap' }}
+{%- if base_font_500 -%}
+{{ base_font_500 | font_face: font_display: 'swap' }}
+{%- endif -%}
+{%- if base_font_600 -%}
+{{ base_font_600 | font_face: font_display: 'swap' }}
+{%- endif -%}
 {{ base_font_bold | font_face: font_display: 'swap' }}
 {{ base_font_bolder | font_face: font_display: 'swap' }}
 {{ base_font_italic | font_face: font_display: 'swap' }}
 {{ base_font_bold_italic | font_face: font_display: 'swap' }}
 :root {
+  --font-weight-body--medium: {{ base_font_500.weight | default: 500 }};
+  --font-weight-body--semibold: {{ base_font_600.weight | default: 600 }};
   --font-weight-body--bold: {{ base_font_bold.weight | default: 700 }};
   --font-weight-body--bolder: {{ base_font_bolder.weight | default: 700 }};
   --font-stack-body: {{ base_font.family }}, {{ base_font.fallback_families }};

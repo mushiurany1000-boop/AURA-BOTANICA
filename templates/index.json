@@ -22,9 +22,9 @@
             "second_button_link": "",
             "second_button_style": "m-button--primary",
             "second_button_size": "",
-            "show_footer": true,
+            "show_footer": false,
             "footer_alignment": "end",
-            "footer_text": "The ReCotton Tee",
+            "footer_text": "Restorative Botanical Barrier Elixir",
             "footer_button": "Shop Now",
             "button_link": "/collections/all"
           }
@@ -48,9 +48,9 @@
             "second_button_link": "",
             "second_button_style": "m-button--primary",
             "second_button_size": "",
-            "show_footer": true,
+            "show_footer": false,
             "footer_alignment": "end",
-            "footer_text": "The ReCotton Tee",
+            "footer_text": "Restorative Botanical Barrier Elixir",
             "footer_button": "Shop Now",
             "button_link": "/collections/all"
           }
@@ -74,9 +74,9 @@
             "second_button_link": "",
             "second_button_style": "m-button--primary",
             "second_button_size": "",
-            "show_footer": true,
+            "show_footer": false,
             "footer_alignment": "end",
-            "footer_text": "The ReCotton Tee",
+            "footer_text": "Restorative Botanical Barrier Elixir",
             "footer_button": "Shop Now",
             "button_link": "/collections/all"
           }
@@ -354,7 +354,7 @@
         "shop_this_look_EcLGgQ"
       ],
       "settings": {
-        "heading": "Check out mix & match",
+        "heading": "Curated Daily Botanical Rituals",
         "heading_size": "h3",
         "subheading": "",
         "description": "",
@@ -921,14 +921,14 @@
           "type": "text",
           "settings": {
             "title": "Nourish your skin with<br> concentrated botanical extracts",
-            "subheading": "Mix & Match",
-            "text": "<p>Here is your chance to upgrade your wardrobe <br/>with a variation of styles and fits that are both.</p>",
+            "subheading": "Active Botanicals",
+            "text": "<p>Elevate your daily ritual with cold-pressed botanical extracts and clinical bio-ferments tailored to soothe, nourish, and protect your skin barrier.</p>",
             "width": "50%",
             "alignment": "center",
             "align_text": "center",
             "text_size": "large",
             "text_color": "inherit",
-            "button_label": "Shop Mix & Match",
+            "button_label": "Explore Clinical Rituals",
             "button_style": "m-button--secondary",
             "button_size": "",
             "block_custom_class": "",
@@ -1073,7 +1073,7 @@
         "heading": "Follow us Instagram",
         "heading_size": "h3",
         "subheading": "",
-        "description": "Tag <span class=\"text-black\">@minimog</span> in your Instagram photos for a chance to be featured here.<br>\nFind more inspiration on <a href=\"#\">our Instagram.</a>",
+        "description": "Tag <span class=\"text-black\">@aurabotanica</span> in your daily rituals for a chance to be featured in our botanical gallery.<br>\nFind mindful skincare inspiration on <a href=\"#\">our Instagram.</a>",
         "header_alignment": "center",
         "container": "w-full",
         "color_scheme": "",
@@ -1083,7 +1083,7 @@
         "grid_columns": 5,
         "gap": 0,
         "mobile_gap": 0,
-        "profile": "https://www.instagram.com/minimog.trendy/",
+        "profile": "https://www.instagram.com/aurabotanica/",
         "button_label": "",
         "button_style": "m-button--secondary",
         "use_scroll_mobile": true,
