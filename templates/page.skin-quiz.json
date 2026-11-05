@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "skin-quiz",
+      "settings": {
+        "color_scheme": "default",
+        "subheading": "BOTANICAL DIAGNOSTIC",
+        "heading": "Find Your Personalized Ritual",
+        "description": "Answer 3 quick questions about your skin barrier and daily environmental exposure to discover your personalized phyto-active regimen.",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

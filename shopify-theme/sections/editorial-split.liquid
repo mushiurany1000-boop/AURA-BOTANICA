@@ -1,65 +1,288 @@
+{%- comment -%}
+  Aura Botanica v2.0 — Luxury Editorial Hero Split Section
+  Refined split-panel banner inspired by minimalist botanical atelier layouts.
+{%- endcomment -%}
+
 {%- liquid
   assign section_id = 'm-editorial-split-' | append: section.id
+  assign color_scheme = section.settings.color_scheme | default: 'default'
+  assign image_pos = section.settings.image_position | default: 'right'
+  assign mobile_order = section.settings.mobile_order | default: 'image_first'
+  assign height_mode = section.settings.height | default: '80vh'
+  assign alignment = section.settings.alignment | default: 'left'
+  assign container = section.settings.container | default: 'container-fluid'
+
+  case height_mode
+    when 'full'
+      assign height_class = 'min-h-screen lg:min-h-[100dvh]'
+    when '80vh'
+      assign height_class = 'min-h-[70vh] lg:min-h-[80dvh]'
+    else
+      assign height_class = 'min-h-auto'
+  endcase
 -%}
-<div id="{{ section_id }}" class="m-section m-editorial-split py-16" style="background-color: {{ section.settings.bg_color }};">
-  <div class="{{ section.settings.container }}">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div class="order-2 {% if section.settings.image_position == 'left' %}lg:order-2{% else %}lg:order-1{% endif %}">
+
+<section
+  id="{{ section_id }}"
+  class="m-section m-editorial-split m-color-{{ color_scheme }} relative overflow-hidden"
+  style="--section-padding-top: {{ section.settings.padding_top | default: 0 }}px; --section-padding-bottom: {{ section.settings.padding_bottom | default: 0 }}px; background-color: {{ section.settings.bg_color | default: 'transparent' }};"
+  data-section-id="{{ section.id }}"
+  data-section-type="editorial-split"
+>
+  <div class="{{ container }} px-0 lg:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 {{ height_class }} items-stretch">
+      
+      <!-- Text / Content Panel -->
+      <div class="flex flex-col justify-center px-6 py-12 md:px-12 lg:px-16 xl:px-24 {% if image_pos == 'left' %}lg:order-2{% else %}lg:order-1{% endif %} {% if mobile_order == 'image_first' %}order-2{% else %}order-1{% endif %} {% if alignment == 'center' %}text-center items-center{% else %}text-left items-start{% endif %}">
+        
         {%- if section.settings.subheading != blank -%}
-          <span class="text-xs uppercase tracking-widest text-[#B9784D] block mb-2 font-medium">{{ section.settings.subheading }}</span>
+          <span
+            class="aura-eyebrow text-color-primary"
+            data-anim="fade-up"
+            data-anim-delay="0.1"
+          >
+            {{ section.settings.subheading }}
+          </span>
         {%- endif -%}
-        <h2 class="text-3xl md:text-5xl font-serif text-[#18231F] mb-6 leading-tight">{{ section.settings.heading }}</h2>
-        <div class="text-[#5C6B61] text-base leading-relaxed mb-8">{{ section.settings.text }}</div>
-        {%- if section.settings.button_label != blank -%}
-          <a href="{{ section.settings.button_link }}" class="m-button m-button--primary inline-block">{{ section.settings.button_label }}</a>
+
+        {%- if section.settings.heading != blank -%}
+          <h1
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-color-heading mb-6 leading-[1.12] tracking-tight"
+            data-anim="mask-lines"
+            data-anim-delay="0.15"
+          >
+            {{ section.settings.heading }}
+          </h1>
         {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <div
+            class="text-color-foreground-secondary text-base md:text-lg leading-relaxed mb-8 max-w-xl"
+            data-anim="fade-up"
+            data-anim-delay="0.25"
+          >
+            {{ section.settings.text }}
+          </div>
+        {%- endif -%}
+
+        <!-- Action CTAs -->
+        <div
+          class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+          data-anim="fade-up"
+          data-anim-delay="0.35"
+        >
+          {%- if section.settings.button_label != blank -%}
+            <a
+              href="{{ section.settings.button_link | default: routes.all_products_collection_url }}"
+              class="m-button m-button--primary w-full sm:w-auto text-center"
+            >
+              {{ section.settings.button_label }}
+            </a>
+          {%- endif -%}
+
+          {%- if section.settings.secondary_button_label != blank -%}
+            <a
+              href="{{ section.settings.secondary_button_link | default: routes.root_url }}"
+              class="m-button m-button--link text-color-primary hover:text-color-heading underline underline-offset-4 w-full sm:w-auto text-center font-medium"
+            >
+              {{ section.settings.secondary_button_label }} &rarr;
+            </a>
+          {%- endif -%}
+        </div>
+
       </div>
-      <div class="order-1 {% if section.settings.image_position == 'left' %}lg:order-1{% else %}lg:order-2{% endif %} rounded-2xl overflow-hidden aspect-[4/5] bg-neutral-200">
+
+      <!-- Image / Media Panel -->
+      <div class="relative overflow-hidden w-full h-[50vh] sm:h-[60vh] lg:h-auto min-h-[350px] {% if image_pos == 'left' %}lg:order-1{% else %}lg:order-2{% endif %} {% if mobile_order == 'image_first' %}order-1{% else %}order-2{% endif %}">
         {%- if section.settings.image != blank -%}
-          {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', class: 'w-full h-full object-cover' }}
+          <picture>
+            {%- if section.settings.mobile_image != blank -%}
+              <source media="(max-width: 767px)" srcset="{{ section.settings.mobile_image | image_url: width: 800 }}">
+            {%- endif -%}
+            {{ section.settings.image | image_url: width: 1600 | image_tag: 
+              loading: 'eager', 
+              fetchpriority: 'high',
+              class: 'w-full h-full object-cover object-center transition-transform duration-1000 ease-out',
+              data-anim: 'parallax',
+              data-anim-speed: '0.08'
+            }}
+          </picture>
         {%- else -%}
-          <div class="w-full h-full bg-[#18231F] flex items-center justify-center p-8 text-center text-[#FCFBF7] font-serif text-2xl">Editorial Botanical Ritual</div>
+          <div class="w-full h-full bg-color-background-secondary flex flex-col items-center justify-center p-8 text-center" data-anim="fade-in">
+            <svg class="w-16 h-16 text-color-primary-accent opacity-40 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+            <span class="font-serif text-2xl md:text-3xl text-color-heading mb-2">Aura Botanica Formulations</span>
+            <span class="text-xs uppercase tracking-widest text-color-foreground-secondary">100% Wildcrafted Bio-Active Skincare</span>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.overlay_opacity > 0 -%}
+          <div class="absolute inset-0 bg-black pointer-events-none" style="opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
         {%- endif -%}
       </div>
+
     </div>
   </div>
-</div>
+</section>
 
 {% schema %}
 {
   "name": "Editorial split",
   "settings": [
-    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Pure Formulation Alchemy" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Grounded in Botany, Proven by Clinical Science" },
-    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Aura Botanica exists at the confluence of ancient herbal wisdom and advanced biotechnological synthesis. Our formulations nourish lipid integrity and promote radiant skin vitality.</p>" },
-    { "type": "image_picker", "id": "image", "label": "Image" },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "PREMIUM BOTANICAL SKINCARE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Pure Formulation Alchemy for Cellular Balance"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Thoughtful rituals. Pure biocompatible ingredients. Visible care designed for your skin barrier and daily vitality.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image (optional)"
+    },
     {
       "type": "select",
       "id": "image_position",
-      "label": "Image position",
+      "label": "Desktop image position",
       "options": [
         { "value": "left", "label": "Left" },
         { "value": "right", "label": "Right" }
       ],
+      "default": "right"
+    },
+    {
+      "type": "select",
+      "id": "mobile_order",
+      "label": "Mobile display order",
+      "options": [
+        { "value": "image_first", "label": "Image first" },
+        { "value": "text_first", "label": "Text first" }
+      ],
+      "default": "image_first"
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "label": "Section height",
+      "options": [
+        { "value": "auto", "label": "Auto" },
+        { "value": "80vh", "label": "80% Viewport (Recommended)" },
+        { "value": "full", "label": "100% Full Viewport" }
+      ],
+      "default": "80vh"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Content alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
       "default": "left"
     },
-    { "type": "text", "id": "button_label", "label": "Button label", "default": "Discover Our Philosophy" },
-    { "type": "url", "id": "button_link", "label": "Button link" },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Image overlay opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Primary button label",
+      "default": "Explore Collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_label",
+      "label": "Secondary link label",
+      "default": "Our Philosophy"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Secondary link link"
+    },
     {
       "type": "select",
       "id": "container",
-      "label": "Container",
+      "label": "Container layout",
       "options": [
-        { "value": "container-fluid", "label": "Full width" },
-        { "value": "container", "label": "Container box" }
+        { "value": "container-fluid", "label": "Full width bleed" },
+        { "value": "container", "label": "Boxed container" }
       ],
-      "default": "container"
+      "default": "container-fluid"
     },
-    { "type": "color", "id": "bg_color", "label": "Background", "default": "#FCFBF7" }
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Legacy background color fallback",
+      "default": "#FCFBF7"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "default": 0
+    }
   ],
   "presets": [
-    { "name": "Editorial split" }
+    {
+      "name": "Editorial split",
+      "settings": {
+        "subheading": "PREMIUM BOTANICAL SKINCARE",
+        "heading": "Pure Formulation Alchemy for Cellular Balance",
+        "button_label": "Explore Collection"
+      }
+    }
   ]
 }
 {% endschema %}
-

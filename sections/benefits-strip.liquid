@@ -1,0 +1,203 @@
+{%- comment -%}
+  Aura Botanica v2.0 — Luxury Benefits Strip Section
+  Full-width colored bar displaying 4 pillars with thin-line icons and editorial typography.
+{%- endcomment -%}
+
+{%- liquid
+  assign section_id = 'm-benefits-strip-' | append: section.id
+  assign color_scheme = section.settings.color_scheme | default: 'scheme-clay-rose'
+-%}
+
+<section
+  id="{{ section_id }}"
+  class="m-section m-benefits-strip m-color-{{ color_scheme }} relative overflow-hidden"
+  style="--section-padding-top: {{ section.settings.padding_top | default: 24 }}px; --section-padding-bottom: {{ section.settings.padding_bottom | default: 24 }}px;"
+  data-section-id="{{ section.id }}"
+  data-section-type="benefits-strip"
+>
+  <div class="w-full px-4 sm:px-6 lg:px-12 py-6 md:py-8">
+    <div
+      class="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 items-center"
+      data-anim="stagger-children"
+      data-anim-stagger="0.08"
+    >
+      {%- for block in section.blocks -%}
+        <div
+          class="aura-benefits-item flex flex-col items-center justify-center text-center px-2 sm:px-4 md:px-6 relative group"
+          data-anim-child
+          {{ block.shopify_attributes }}
+        >
+          <!-- Icon Display -->
+          <div class="w-9 h-9 sm:w-10 sm:h-10 mb-3 flex items-center justify-center text-color-primary transition-transform duration-300 group-hover:scale-110">
+            {%- if block.settings.icon_image != blank -%}
+              {{ block.settings.icon_image | image_url: width: 80 | image_tag: loading: 'lazy', class: 'w-full h-full object-contain' }}
+            {%- else -%}
+              {%- case block.settings.icon -%}
+                {%- when 'shopping-bag' -%}
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                  </svg>
+                {%- when 'mortar-pestle' -%}
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5a3 3 0 01-3 3 3 3 0 01-3-3V5L8 4z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 19a2 2 0 002 2h12a2 2 0 002-2v-2H4v2z"/>
+                  </svg>
+                {%- when 'leaf' -%}
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                  </svg>
+                {%- when 'skin-quiz' -%}
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                  </svg>
+                {%- when 'shield' -%}
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                  </svg>
+                {%- else -%}
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                  </svg>
+              {%- endcase -%}
+            {%- endif -%}
+          </div>
+
+          <!-- Small-caps Label -->
+          {%- if block.settings.label != blank -%}
+            <span class="aura-eyebrow text-color-heading mb-1 tracking-[0.18em]">
+              {{ block.settings.label }}
+            </span>
+          {%- endif -%}
+
+          <!-- 2-line Description -->
+          {%- if block.settings.text != blank -%}
+            <p class="text-xs sm:text-sm text-color-foreground opacity-90 max-w-[210px] leading-snug">
+              {{ block.settings.text }}
+            </p>
+          {%- endif -%}
+
+          {%- if block.settings.link != blank -%}
+            <a href="{{ block.settings.link }}" class="absolute inset-0 z-10" aria-label="{{ block.settings.label | default: 'Learn more' }}"></a>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Benefits strip",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-clay-rose"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit column",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Built-in icon",
+          "options": [
+            { "value": "shopping-bag", "label": "Shopping bag" },
+            { "value": "mortar-pestle", "label": "Mortar & pestle / Ritual" },
+            { "value": "leaf", "label": "Botanical leaf / Ingredients" },
+            { "value": "skin-quiz", "label": "Profile / Skin quiz" },
+            { "value": "shield", "label": "Shield / Clean guarantee" }
+          ],
+          "default": "shopping-bag"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Custom icon image (optional)"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Small-caps label",
+          "default": "SHOP"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "2-line subtext",
+          "default": "Curated essentials for every skin"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Optional link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits strip",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "shopping-bag",
+            "label": "SHOP",
+            "text": "Curated essentials for every skin"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "mortar-pestle",
+            "label": "RITUAL",
+            "text": "Simple steps. Lasting results."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "leaf",
+            "label": "INGREDIENTS",
+            "text": "Transparent. Purposeful. Clean."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "skin-quiz",
+            "label": "SKIN QUIZ",
+            "text": "Find your routine in minutes"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

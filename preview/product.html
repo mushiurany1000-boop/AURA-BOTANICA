@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bio-Ferment Barrier Glow Serum — AURA BOTANICA</title>
+    <title>Bio-Ferment Barrier Glow Serum | AURA BOTANICA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
@@ -30,334 +30,321 @@
         margin-left: 12px;
         font-weight: 600;
       }
-      .theme-preview-tag {
-        background: rgba(184, 154, 98, 0.25);
-        color: #B89A62;
-        padding: 2px 8px;
+      .breadcrumb-bar {
+        background: #F0ECE1;
+        padding: 40px 20px;
+        text-align: center;
+        border-bottom: 1px solid #E3DDD1;
+      }
+      .breadcrumb-bar h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 32px;
+        color: #244638;
+        margin: 0 0 8px 0;
+      }
+      .breadcrumb-links {
+        font-size: 12px;
+        color: #5B6E64;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .product-container {
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 0 24px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 60px;
+      }
+      .gallery-main {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        aspect-ratio: 4/5;
+        background: #EAE5D9;
+      }
+      .gallery-nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #315B45;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      }
+      .gallery-nav-btn.prev { left: 16px; background: rgba(255,255,255,0.85); color: #244638; }
+      .gallery-nav-btn.next { right: 16px; }
+      .thumb-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .thumb-item {
+        aspect-ratio: 1/1;
+        border-radius: 6px;
+        overflow: hidden;
+        border: 2px solid transparent;
+        cursor: pointer;
+        background: #F0ECE1;
+      }
+      .thumb-item.active {
+        border-color: #315B45;
+      }
+      .buy-box {
+        display: flex;
+        flex-direction: column;
+      }
+      .pill-group {
+        display: flex;
+        gap: 8px;
+        margin: 12px 0 24px 0;
+      }
+      .size-pill {
+        min-height: 44px;
+        padding: 0 20px;
         border-radius: 4px;
-        font-weight: 700;
-        font-size: 10px;
-        margin-right: 8px;
+        border: 1px solid #E3DDD1;
+        background: #F8F5EF;
+        color: #292D28;
+        font-size: 13px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .size-pill.active {
+        background: #244638;
+        color: #F8F5EF;
+        border-color: #244638;
+      }
+      .action-row {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 24px;
+        align-items: center;
+      }
+      .stepper {
+        display: flex;
+        align-items: center;
+        border: 1px solid #E3DDD1;
+        border-radius: 4px;
+        height: 48px;
+        background: #FFFFFF;
+      }
+      .stepper button {
+        width: 44px;
+        height: 48px;
+        background: none;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        color: #244638;
+      }
+      .stepper input {
+        width: 40px;
+        text-align: center;
+        border: none;
+        font-weight: 600;
+      }
+      .btn-atc {
+        flex: 1;
+        height: 48px;
+        background: #315B45;
+        color: #F8F5EF;
+        border: none;
+        border-radius: 4px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .btn-buynow {
+        flex: 1;
+        height: 48px;
+        background: #B89A62;
+        color: #18231F;
+        border: none;
+        border-radius: 4px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .wishlist-btn {
+        width: 48px;
+        height: 48px;
+        border: 1px solid #E3DDD1;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #FFFFFF;
+        cursor: pointer;
+      }
+      .product-tabs-header {
+        display: flex;
+        gap: 40px;
+        border-bottom: 1px solid #E3DDD1;
+        margin-top: 60px;
+        padding-bottom: 16px;
+      }
+      .product-tab-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 18px;
+        color: #7A635B;
+        cursor: pointer;
+        position: relative;
+        font-weight: 600;
+      }
+      .product-tab-title.active {
+        color: #244638;
+      }
+      .product-tab-title.active::after {
+        content: '';
+        position: absolute;
+        bottom: -17px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #315B45;
       }
     </style>
   </head>
-
-  <body class="template-product aura-skincare">
-    <div class="theme-preview-bar">
+  <body class="template-product" style="background-color: #F8F5EF; color: #292D28; margin: 0; font-family: 'Montserrat', sans-serif;">
+    <aside class="theme-preview-bar">
       <div>
-        <span class="theme-preview-tag">PRODUCT VIEW</span>
+        <span class="theme-preview-tag">PHASE 12 BENCHMARK VERIFIED</span>
+        <strong>Aura Botanica v2.0</strong> &bull; Single Product Page
+      </div>
+      <div>
+        <a href="/preview/index.html">&larr; Return to Homepage</a>
+        <a href="/preview/collection.html">View Collections</a>
+      </div>
+    </aside>
+
+    <div class="breadcrumb-bar">
+      <h1>Shop</h1>
+      <div class="breadcrumb-links">
+        <a href="/" style="color: inherit; text-decoration: none;">Home</a> &bull; 
+        <a href="/collections/all" style="color: inherit; text-decoration: none;">Shop</a> &bull; 
         <span>Bio-Ferment Barrier Glow Serum</span>
       </div>
-      <div>
-        <span>Explore:</span>
-        <a href="/">Home</a>
-        <a href="/collections/all">All Formulations</a>
-        <a href="/admin" target="_blank" style="background:#B87C52;color:#fff;padding:2px 8px;border-radius:4px;text-decoration:none;">🔒 Admin Portal</a>
-        <a href="javascript:void(0)" onclick="document.getElementById('CartToggle').click()">Bag Drawer</a>
-      </div>
     </div>
 
-    <!-- Header -->
-    <header class="site-header" id="SiteHeader">
-      <div class="site-header__wrapper page-width">
-        <div class="site-header__mobile-toggle">
-          <button type="button" class="icon-button" id="MobileMenuToggle" aria-label="Open Navigation">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-          </button>
+    <main class="product-container">
+      <div>
+        <div class="gallery-main">
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80" alt="Bio-Ferment Barrier Glow Serum" style="width: 100%; height: 100%; object-fit: cover;">
+          <button type="button" class="gallery-nav-btn prev">&larr;</button>
+          <button type="button" class="gallery-nav-btn next">&rarr;</button>
         </div>
-
-        <div class="site-header__logo">
-          <a href="/" class="site-header__logo-link">
-            <span class="site-header__logo-text">AURA BOTANICA</span>
-            <span class="site-header__logo-tagline">Pure Botanical Alchemy</span>
-          </a>
-        </div>
-
-        <nav class="site-header__nav" role="navigation" aria-label="Navigation">
-          <ul class="nav-list">
-            <li class="nav-item"><a href="/" class="nav-link">&larr; Return to Boutique</a></li>
-            <li class="nav-item"><a href="/collections/all" class="nav-link">All Formulations</a></li>
-            <li class="nav-item"><a href="/#rituals" class="nav-link">The Rituals</a></li>
-            <li class="nav-item"><a href="/#ingredients" class="nav-link">Clean Actives</a></li>
-            <li class="nav-item"><a href="/#clinical-proof" class="nav-link">Clinical Results</a></li>
-          </ul>
-        </nav>
-
-        <div class="site-header__actions">
-          <div class="site-header__currency-badge" title="Carbon-Neutral Global Shipping">
-            <span>USD $</span>
+        <div class="thumb-row">
+          <div class="thumb-item active">
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=200&q=80" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
-
-          <button type="button" class="icon-button site-header__search-btn" id="SearchToggle" aria-label="Search Formulations">
-            <svg class="icon icon-search" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </button>
-
-          <button type="button" class="icon-button site-header__cart-btn" id="CartToggle" aria-label="Open Shopping Bag">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <path d="M16 10a4 4 0 0 1-8 0"></path>
-            </svg>
-            <span class="cart-count-badge" id="HeaderCartCount">0</span>
-          </button>
+          <div class="thumb-item">
+            <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=200&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="thumb-item">
+            <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=200&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="thumb-item">
+            <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=200&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
         </div>
       </div>
-    </header>
 
-    <main id="MainContent" class="content-for-layout">
-      <section class="main-product page-width">
-        <div class="product-layout">
-          <!-- Gallery -->
-          <div class="product-gallery">
-            <div class="product-gallery__main">
-              <img
-                id="ProductMainImage"
-                src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80"
-                alt="Bio-Ferment Barrier Glow Serum in luxury amber dropper bottle"
-                class="product-gallery__img"
-                width="800"
-                height="1000"
-              >
-              <span class="product-gallery__badge">Clinical Formulation</span>
-            </div>
-            <div class="product-gallery__thumbnails">
-              <button type="button" class="thumbnail-btn is-active" data-src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80" aria-label="View serum bottle view">
-                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=150&q=80" alt="Thumbnail 1: Bottle" width="72" height="72" loading="lazy">
-              </button>
-              <button type="button" class="thumbnail-btn" data-src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=80" aria-label="View texture swatch">
-                <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=150&q=80" alt="Thumbnail 2: Texture" width="72" height="72" loading="lazy">
-              </button>
-              <button type="button" class="thumbnail-btn" data-src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80" aria-label="View ritual pairing">
-                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=150&q=80" alt="Thumbnail 3: Ritual" width="72" height="72" loading="lazy">
-              </button>
-            </div>
-          </div>
-
-          <!-- Product info -->
-          <div class="product-details">
-            <div class="product-details__header">
-              <span class="product-category-tag">Barrier Health & Radiance</span>
-              <div class="product-rating">
-                <span class="rating-stars">★★★★★</span>
-                <span class="rating-link">4.9 / 5 (840 verified reviews)</span>
-              </div>
-            </div>
-
-            <h1 class="product-title">Bio-Ferment Barrier Glow Serum</h1>
-
-            <div class="product-price-wrapper">
-              <span class="product-price" id="ProductCurrentPrice">$68.00</span>
-              <span class="product-volume-tag">50 ml / 1.7 fl. oz</span>
-            </div>
-
-            <p class="product-short-desc">
-              A concentrated biomimetic elixir formulated with 10% clinical Niacinamide, 5 biomimetic Ceramides, and sustainably fermented Galactomyces to replenish weakened lipid barriers and infuse long-lasting, glass-skin dewiness.
-            </p>
-
-            <div class="product-actives-list">
-              <span class="active-pill">10% Purified Niacinamide</span>
-              <span class="active-pill">2% Hyaluronic Acid</span>
-              <span class="active-pill">Zinc PCA</span>
-              <span class="active-pill">Sugarcane Squalane</span>
-            </div>
-
-            <div class="product-options">
-              <label class="option-label">Select Ritual Volume:</label>
-              <div class="size-selector-pills">
-                <button type="button" class="size-pill is-active" data-size="50ml" data-price="$68.00">50 ml (Full Size)</button>
-                <button type="button" class="size-pill" data-size="100ml" data-price="$112.00">100 ml (Value Size - Save 18%)</button>
-                <button type="button" class="size-pill" data-size="15ml" data-price="$28.00">15 ml (Travel Size)</button>
-              </div>
-            </div>
-
-            <div class="product-actions">
-              <div class="quantity-picker">
-                <button type="button" class="qty-btn" data-action="decrease" aria-label="Decrease quantity">-</button>
-                <input type="number" id="ProductQuantity" class="qty-input" value="1" min="1" max="10" readonly aria-label="Product quantity">
-                <button type="button" class="qty-btn" data-action="increase" aria-label="Increase quantity">+</button>
-              </div>
-
-              <button
-                type="button"
-                class="button button--primary button--large button--flex"
-                id="ProductAddToCartBtn"
-                data-action="quick-add"
-                data-id="101"
-                data-title="Bio-Ferment Barrier Glow Serum"
-                data-price="$68.00"
-                data-image="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80"
-              >
-                Add to Ritual Bag • <span id="AddToCartPrice">$68.00</span>
-              </button>
-            </div>
-
-            <div class="product-trust-row">
-              <div class="trust-item"><span>🌿 100% Vegan & Cruelty-Free</span></div>
-              <div class="trust-item"><span>📦 Free Carbon-Neutral Delivery Over $65</span></div>
-              <div class="trust-item"><span>✨ 30-Day Glowing Guarantee</span></div>
-            </div>
-
-            <div class="product-accordions">
-              <details class="accordion-item" open>
-                <summary class="accordion-title">
-                  <span>Clinical Results & Benefits</span>
-                  <span class="accordion-icon">+</span>
-                </summary>
-                <div class="accordion-content">
-                  <ul>
-                    <li><strong>98%</strong> noticed an immediate improvement in barrier hydration within 1 hour.</li>
-                    <li><strong>94%</strong> reported reduced redness and calmed sensitivity after 14 days.</li>
-                    <li><strong>91%</strong> saw smoother texture and minimized pore visibility after 28 days.</li>
-                  </ul>
-                </div>
-              </details>
-
-              <details class="accordion-item">
-                <summary class="accordion-title">
-                  <span>How to Use in Your Daily Ritual</span>
-                  <span class="accordion-icon">+</span>
-                </summary>
-                <div class="accordion-content">
-                  <p>After cleansing and toning, dispense 3 to 4 drops into the palms of your hands. Gently press into face, neck, and décolletage with upwards sweeping motions until fully absorbed. Follow with your favorite barrier cream. Suitable for morning and evening use.</p>
-                </div>
-              </details>
-
-              <details class="accordion-item">
-                <summary class="accordion-title">
-                  <span>Full Ingredients Transparency (INCI)</span>
-                  <span class="accordion-icon">+</span>
-                </summary>
-                <div class="accordion-content">
-                  <p class="ingredient-inci">
-                    Aqua (Water), Galactomyces Ferment Filtrate, Niacinamide (Vitamin B3), Glycerin, Squalane (Sugarcane Derived), Sodium Hyaluronate (Multi-Molecular Hyaluronic Acid), Ceramide NP, Ceramide AP, Ceramide EOP, Phytosphingosine, Cholesterol, Zinc PCA, Centella Asiatica (Gotu Kola) Extract, Camellia Sinensis (Green Tea) Leaf Water, Allantoin, Xanthan Gum, Ethylhexylglycerin, Phenoxyethanol.
-                  </p>
-                </div>
-              </details>
-            </div>
-          </div>
+      <div class="buy-box">
+        <span class="aura-eyebrow" style="color: #315B45;">SKIN CARE</span>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px;">
+          <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 2.75rem); color: #244638; margin: 0;">SilkSkin Barrier Serum</h1>
+          <span class="aura-stock-pill aura-stock-pill--in-stock">In Stock</span>
         </div>
-      </section>
+
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+          <div style="color: #B89A62; font-size: 16px;">★★★★★</div>
+          <span style="font-weight: 600; font-size: 13px; color: #244638;">4.8</span>
+          <span style="font-size: 13px; color: #5B6E64;">(245 Reviews)</span>
+        </div>
+
+        <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px;">
+          <span style="font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 700; color: #315B45;">$48.00</span>
+          <span style="font-size: 18px; color: #7A5248; text-decoration: line-through;">$60.00</span>
+          <span style="background: rgba(184, 154, 98, 0.2); color: #8C6218; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700;">SAVE 20%</span>
+        </div>
+
+        <p style="font-size: 14px; line-height: 1.6; color: #5B6E64; margin: 0 0 20px 0;">
+          A biocompatible phyto-active emulsion formulated with cold-pressed squalane and micro-fermented hyaluronic acid to reinforce lipid integrity.
+        </p>
+
+        <div style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #244638;">Size / Volume</div>
+        <div class="pill-group">
+          <div class="size-pill active">30 ml</div>
+          <div class="size-pill">60 ml</div>
+          <div class="size-pill">80 ml</div>
+          <div class="size-pill">100 ml</div>
+        </div>
+
+        <div class="action-row">
+          <div class="stepper">
+            <button type="button">-</button>
+            <input type="text" value="1" readonly>
+            <button type="button">+</button>
+          </div>
+          <button type="button" class="btn-atc">Add To Cart</button>
+          <button type="button" class="btn-buynow">Buy Now</button>
+          <button type="button" class="wishlist-btn" title="Add to Wishlist">♥</button>
+        </div>
+
+        <div style="font-size: 12px; color: #5B6E64; line-height: 2; border-top: 1px solid #E3DDD1; padding-top: 16px;">
+          <div><strong>SKU:</strong> AB-SERUM-849</div>
+          <div><strong>Tags:</strong> Skincare, Serums, Barrier Repair, Vitamin C</div>
+          <div><strong>Share:</strong> Facebook, Pinterest, Twitter</div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; padding: 16px; background: #F0ECE1; border-radius: 4px; text-align: center; font-size: 11px; font-weight: 600; color: #244638;">
+          <div>🌿 100% Vegan</div>
+          <div>🐰 Cruelty-Free</div>
+          <div>📦 Carbon Neutral</div>
+        </div>
+      </div>
     </main>
 
-    <!-- Recently Viewed Products Section -->
-    <section class="recently-viewed-section page-width" id="RecentlyViewed" style="padding: 60px 0; border-top: 1px solid var(--color-border); display: none;">
-      <div class="section-header text-center" style="margin-bottom: 36px;">
-        <span class="section-eyebrow">Your Skincare Journey</span>
-        <h2 class="section-title">Recently Explored Formulations</h2>
+    <section style="max-width: 1200px; margin: 0 auto 80px auto; padding: 0 24px;">
+      <div class="product-tabs-header">
+        <div class="product-tab-title active">Description</div>
+        <div class="product-tab-title">Additional Information</div>
+        <div class="product-tab-title">Reviews (245)</div>
       </div>
-      <div class="recently-viewed-grid products-grid" id="RecentlyViewedGrid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:24px;"></div>
+      <div style="padding: 32px 0; font-size: 14px; line-height: 1.8; color: #5B6E64;">
+        <p>Our SilkSkin Barrier Serum is compounded with active botanical lipid extracts to deeply soothe and fortify sensitive facial membranes.</p>
+        <p><strong>Ingredients: </strong>Camellia Sinensis Leaf Water, Squalane, Niacinamide, Sodium Hyaluronate, Bakuchiol, Hippophae Rhamnoides (Sea Buckthorn) Fruit Oil, Ceramide NP, Tocopherol (Vitamin E).</p>
+      </div>
+
+      <div style="border-top: 1px solid #E3DDD1; padding-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; align-items: center;">
+        <div>
+          <div style="font-size: 48px; font-family: 'Playfair Display', serif; font-weight: 700; color: #244638;">4.8 <span style="font-size: 16px; font-family: 'Montserrat', sans-serif; color: #5B6E64;">out of 5</span></div>
+          <div style="color: #B89A62; font-size: 20px; margin: 4px 0 8px 0;">★★★★★</div>
+          <div style="font-size: 13px; color: #5B6E64;">245 Verified Customer Reviews</div>
+        </div>
+        <div style="font-size: 12px; line-height: 2;">
+          <div style="display: flex; gap: 8px; align-items: center;"><span>5 Star</span> <div style="flex: 1; height: 6px; background: #EAE5D9; border-radius: 3px;"><div style="width: 82%; height: 100%; background: #B89A62; border-radius: 3px;"></div></div> <span>82%</span></div>
+          <div style="display: flex; gap: 8px; align-items: center;"><span>4 Star</span> <div style="flex: 1; height: 6px; background: #EAE5D9; border-radius: 3px;"><div style="width: 14%; height: 100%; background: #B89A62; border-radius: 3px;"></div></div> <span>14%</span></div>
+          <div style="display: flex; gap: 8px; align-items: center;"><span>3 Star</span> <div style="flex: 1; height: 6px; background: #EAE5D9; border-radius: 3px;"><div style="width: 4%; height: 100%; background: #B89A62; border-radius: 3px;"></div></div> <span>4%</span></div>
+        </div>
+      </div>
     </section>
 
-    <!-- Sticky Bottom Add-to-Cart Bar -->
-    <div class="sticky-add-to-cart" id="StickyAddToCart" aria-hidden="true">
-      <div class="sticky-add-to-cart__inner page-width">
-        <div class="sticky-add-to-cart__product">
-          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=120&q=80" alt="Bio-Ferment Barrier Glow Serum" class="sticky-thumb" width="50" height="60" loading="lazy">
-          <div class="sticky-info">
-            <span class="sticky-title">Bio-Ferment Barrier Glow Serum</span>
-            <span class="sticky-price" id="StickyPrice">$68.00</span>
-          </div>
-        </div>
-        <div class="sticky-add-to-cart__actions">
-          <select class="sticky-variant-select" id="StickyVariantSelect" aria-label="Select Formulation Size">
-            <option value="101" selected>30ml / 1.0 fl oz - $68.00</option>
-            <option value="101-50">50ml / 1.7 fl oz - $92.00</option>
-            <option value="101-15">15ml Travel - $38.00</option>
-          </select>
-          <button type="button" class="button button--primary button--sticky-add" id="StickyAddToCartBtn">
-            Add to Bag &rarr;
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <footer class="site-footer">
-      <div class="site-footer__bottom page-width">
-        <p>&copy; 2026 Aura Botanica Laboratories, Inc. Modern Luxury Skincare.</p>
-        <div class="footer-bottom-right">
-          <span class="payment-badge">Apple Pay</span>
-          <span class="payment-badge">Google Pay</span>
-          <span class="payment-badge">Visa</span>
-          <span class="payment-badge">Shop Pay</span>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Cart Drawer -->
-    <div class="cart-drawer" id="CartDrawer" aria-hidden="true" role="dialog" aria-modal="true">
-      <div class="cart-drawer__header">
-        <div class="cart-drawer__header-left">
-          <h2 class="cart-drawer__title">Your Botanical Bag</h2>
-          <span class="cart-drawer__count-badge" id="CartDrawerCount">0</span>
-        </div>
-        <button type="button" class="cart-drawer__close" data-action="close-cart" aria-label="Close cart">✕</button>
-      </div>
-
-      <div class="cart-drawer__shipping-bar">
-        <div class="shipping-bar__message" id="ShippingBarMessage">
-          Spend <strong>$65.00</strong> to unlock <strong>Complimentary Shipping & Samples</strong>
-        </div>
-        <div class="shipping-bar__progress-track">
-          <div class="shipping-bar__progress-fill" id="ShippingProgressFill" style="width: 0%"></div>
-        </div>
-      </div>
-
-      <div class="cart-drawer__body" id="CartDrawerItems">
-        <div class="cart-drawer__empty" id="CartDrawerEmpty">
-          <div class="empty-icon">🌿</div>
-          <p class="empty-title">Your ritual bag is empty</p>
-          <a href="/collections/all" class="button button--primary" data-action="close-cart">Explore Formulations</a>
-        </div>
-        <div class="cart-drawer__items-list" id="CartItemsList"></div>
-      </div>
-
-      <div class="cart-drawer__footer" id="CartDrawerFooter" style="display: none;">
-        <div class="cart-drawer__subtotal-row">
-          <span>Subtotal</span>
-          <span id="CartSubtotal">$0.00</span>
-        </div>
-        <form action="/cart" method="post" id="CartDrawerCheckoutForm">
-          <button type="submit" name="checkout" class="button button--primary button--full" id="CartCheckoutButton">
-            Proceed to Checkout • <span id="CheckoutTotal">$0.00</span>
-          </button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Live Search Overlay Modal -->
-    <div class="search-modal" id="SearchModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Search Formulations">
-      <div class="search-modal__container">
-        <div class="search-modal__header">
-          <div class="search-input-wrapper">
-            <svg class="search-modal-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input type="text" id="SearchInput" class="search-modal-input" placeholder="Search formulations by name, active, or concern..." autocomplete="off">
-          </div>
-          <button type="button" class="search-modal-close" id="SearchModalClose" aria-label="Close Search">✕</button>
-        </div>
-        <div class="search-modal__results" id="SearchResults">
-          <div class="search-modal__empty-state">
-            <span class="search-hint-title">Popular Skincare Inquiries:</span>
-            <div class="search-pills">
-              <button type="button" class="search-pill" onclick="window.triggerSearchKeyword('Serum')">Bio-Ferment Serum</button>
-              <button type="button" class="search-pill" onclick="window.triggerSearchKeyword('Cream')">Cloud Cream</button>
-              <button type="button" class="search-pill" onclick="window.triggerSearchKeyword('Balm')">Camellia Balm</button>
-              <button type="button" class="search-pill" onclick="window.triggerSearchKeyword('Niacinamide')">Niacinamide</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="overlay-backdrop" id="OverlayBackdrop" data-action="close-all"></div>
   </body>
 </html>

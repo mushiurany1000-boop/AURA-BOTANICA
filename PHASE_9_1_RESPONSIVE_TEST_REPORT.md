@@ -67,3 +67,4 @@ On viewports below 768px:
   3. **Wishlist** (Customer favorites)
   4. **Bag / Cart** (Slide-in drawer with badge counter)
 * Modals, drawers, and popups feature backdrop blur (`backdrop-filter: blur(8px)`), swipe-to-dismiss support, and automatic focus management returning focus to the trigger upon closure.
+

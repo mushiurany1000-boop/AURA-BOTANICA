@@ -130,3 +130,4 @@ In accordance with Shopify Online Store 2.0 standards, merchants can apply custo
 | **Animation Intensity** | **PASS** | Dropdown with `off`, `subtle`, and `full` options controls GSAP engine |
 | **Product Card Ratio** | **PASS** | Options for `4/5` (recommended), `1/1`, and `adapt` available in settings |
 | **Restock Waitlist Modal** | **PASS** | Merchant toggle to enable back-in-stock capture on sold-out items |
+

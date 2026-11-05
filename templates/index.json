@@ -1,1207 +1,347 @@
 {
   "sections": {
-    "1621243260e1af0c20": {
-      "type": "slider",
-      "blocks": {
-        "1621243260e1af0c20-0": {
-          "type": "slider_item",
-          "settings": {
-            "content_in_container": false,
-            "content_position": "left middle",
-            "text_alignment": "left",
-            "text_size": "large",
-            "text_color": "black",
-            "subheading": "Clinically Proven Active Botanical Alchemy",
-            "title": "Bio-Ferment Barrier<br> Glow Serum",
-            "description": "",
-            "image_link": "",
-            "button_text": "Discover Serum",
-            "button_style": "sf__btn-secondary",
-            "button_size": "",
-            "second_button_text": "",
-            "second_button_link": "",
-            "second_button_style": "m-button--primary",
-            "second_button_size": "",
-            "show_footer": false,
-            "footer_alignment": "end",
-            "footer_text": "Restorative Botanical Barrier Elixir",
-            "footer_button": "Shop Now",
-            "button_link": "/collections/all"
-          }
-        },
-        "1621243260e1af0c20-1": {
-          "type": "slider_item",
-          "settings": {
-            "content_in_container": false,
-            "content_position": "left middle",
-            "text_alignment": "left",
-            "text_size": "large",
-            "text_color": "black",
-            "subheading": "Multi-Ceramide Barrier Restoration with Squalane",
-            "title": "Deep Lipid Moisture<br> Cloud Cream",
-            "description": "",
-            "image_link": "",
-            "button_text": "Explore Creams",
-            "button_style": "sf__btn-secondary",
-            "button_size": "",
-            "second_button_text": "",
-            "second_button_link": "",
-            "second_button_style": "m-button--primary",
-            "second_button_size": "",
-            "show_footer": false,
-            "footer_alignment": "end",
-            "footer_text": "Restorative Botanical Barrier Elixir",
-            "footer_button": "Shop Now",
-            "button_link": "/collections/all"
-          }
-        },
-        "1621243260e1af0c20-2": {
-          "type": "slider_item",
-          "settings": {
-            "content_in_container": false,
-            "content_position": "left middle",
-            "text_alignment": "left",
-            "text_size": "large",
-            "text_color": "black",
-            "subheading": "Gentle Plant Retinol for Youthful Cellular Renewal",
-            "title": "Golden Bakuchiol<br> Midnight Nectar",
-            "description": "",
-            "image_link": "",
-            "button_text": "Shop Night Rituals",
-            "button_style": "sf__btn-secondary",
-            "button_size": "",
-            "second_button_text": "",
-            "second_button_link": "",
-            "second_button_style": "m-button--primary",
-            "second_button_size": "",
-            "show_footer": false,
-            "footer_alignment": "end",
-            "footer_text": "Restorative Botanical Barrier Elixir",
-            "footer_button": "Shop Now",
-            "button_link": "/collections/all"
-          }
-        }
-      },
-      "block_order": [
-        "1621243260e1af0c20-0",
-        "1621243260e1af0c20-1",
-        "1621243260e1af0c20-2"
-      ],
+    "hero_split": {
+      "type": "editorial-split",
       "settings": {
-        "container": "w-full",
-        "slideshow_height": "adapt",
-        "show_overlay": false,
-        "dots_position": "right",
-        "dots_color": "dark",
-        "show_dots": true,
-        "show_arrows": false,
-        "autorotate": true,
-        "autorotate_speed": 4,
-        "use_content_above": false,
-        "custom_class": "sf-home__slideshow",
-        "animations": "inherit"
-      }
-    },
-    "16225316461d1cff80": {
-      "type": "collection-list",
-      "blocks": {
-        "65e38235-f03b-43c9-8590-38c9c656e51c": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "all",
-            "title": "Active Serums"
-          }
-        },
-        "694c01c9-a95f-4c09-9cf0-ec75f0131e98": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "all",
-            "title": "Barrier Creams"
-          }
-        },
-        "16225316461d1cff80-1": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "all",
-            "title": "Botanical Cleansers"
-          }
-        },
-        "6d4abb37-5aa2-4499-a2b0-5d85f0d36eec": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "all",
-            "title": "Facial Elixirs"
-          }
-        },
-        "12985deb-0775-45ce-80f6-6be7f3150a91": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "all",
-            "title": "Curated Sets"
-          }
-        }
-      },
-      "block_order": [
-        "65e38235-f03b-43c9-8590-38c9c656e51c",
-        "694c01c9-a95f-4c09-9cf0-ec75f0131e98",
-        "16225316461d1cff80-1",
-        "6d4abb37-5aa2-4499-a2b0-5d85f0d36eec",
-        "12985deb-0775-45ce-80f6-6be7f3150a91"
-      ],
-      "custom_css": [
-        ".m-collection-card__title {font-weight: 400;}",
-        "@media (max-width: 767px) {.m-slider-controls[class*=\"-bottom-left\"], .m-section__header {text-align: center; }}"
-      ],
-      "settings": {
-        "heading": "Shop by Categories",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "left",
-        "color_scheme": "",
-        "container": "container-fluid",
-        "layout": "grid",
-        "expanded": true,
-        "card_style": "inside",
-        "text_alignment": "left",
-        "hover_effect": "scaling-up",
-        "show_product_count": true,
-        "count_inline_title": true,
-        "image_rounded": false,
-        "items_per_row": 3,
-        "item_gap": 40,
-        "enable_slider": true,
-        "show_pagination": true,
-        "show_navigation": true,
-        "autorotate": false,
-        "autorotate_speed": 4,
-        "mobile_disable_slider": false,
-        "use_scroll_mobile": true,
-        "mobile_gap": 16,
-        "hidden_slide_control_mobile": false,
-        "padding_top": 100,
-        "padding_bottom": 0,
-        "custom_class": "sf-home__collection-list",
-        "animations": "inherit",
-        "title": "Shop Formulations by Ritual"
-      }
-    },
-    "162251092958fcda7c": {
-      "type": "product-tabs",
-      "blocks": {
-        "162251092958fcda7c-0": {
-          "type": "tab",
-          "settings": {
-            "title": "Award Winners",
-            "collection": "all"
-          }
-        },
-        "162251092958fcda7c-1": {
-          "type": "tab",
-          "settings": {
-            "title": "New Formulations",
-            "collection": "all"
-          }
-        }
-      },
-      "block_order": [
-        "162251092958fcda7c-0",
-        "162251092958fcda7c-1"
-      ],
-      "custom_css": [
-        ".m-section__header {--m-section-header-spacing-bottom: 60px;}"
-      ],
-      "settings": {
-        "heading": "Pure Botanical Alchemy",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "container": "container-fluid",
-        "color_scheme": "",
-        "tab_header": "select",
-        "limit": 10,
-        "show_button": true,
-        "button_type": "link",
-        "button_label": "Shop All Products",
-        "button_style": "m-button--secondary",
-        "button_size": "",
-        "pcard_layout": "",
-        "pcard_image_ratio": "",
-        "show_vendor": false,
-        "items_per_row": 5,
-        "item_gap": 30,
-        "enable_slider": false,
-        "show_navigation": false,
-        "show_pagination": false,
-        "mobile_disable_slider": false,
-        "use_scroll_mobile": true,
-        "item_gap_mobile": 16,
-        "padding_top": 100,
-        "padding_bottom": 10,
-        "custom_class": "sf-home__product-tab",
-        "animations": "inherit"
-      }
-    },
-    "7ea56e8d-5794-4708-8812-8ee9604a3a21": {
-      "type": "custom-content",
-      "blocks": {
-        "template--15977492021425__7ea56e8d-5794-4708-8812-8ee9604a3a21-1678440566c64de1a8-1": {
-          "type": "image",
-          "settings": {
-            "link": "",
-            "width": "50%",
-            "alignment": "center",
-            "block_custom_class": "",
-            "animations": "zoom-fade"
-          }
-        },
-        "5c5877d5-05b2-4a50-81e3-78c3f6d0d833": {
-          "type": "image_card",
-          "settings": {
-            "width": "50%",
-            "color_scheme": "",
-            "content_position": "top_center",
-            "content_alignment": "center",
-            "text_size": "medium",
-            "text_color": "black",
-            "title": "Wild-Harvested Rosehip<br> & Squalane Elixir",
-            "subtitle": "New collection",
-            "description": "",
-            "button_label": "Shop New Collection",
-            "button_style": "m-button--primary",
-            "button_size": "m-button--large",
-            "button_fixed": true,
-            "use_content_above": true,
-            "block_custom_class": "",
-            "animations": "inherit",
-            "button_text": "Explore Elixir",
-            "button_link": "/collections/all"
-          }
-        }
-      },
-      "block_order": [
-        "template--15977492021425__7ea56e8d-5794-4708-8812-8ee9604a3a21-1678440566c64de1a8-1",
-        "5c5877d5-05b2-4a50-81e3-78c3f6d0d833"
-      ],
-      "custom_css": [
-        ".container-full {padding-left: 0; padding-right: 0;}",
-        ".m-button--fixed {border-color: #e2e2e2; padding: 24px 0; margin-bottom: 24px;}",
-        "@media (min-width: 1280px) {.m-image-card__content {padding-top: 115px; }}",
-        "@media (max-width: 767px) {.m-button--fixed {border: none; margin-bottom: 0; justify-content: center; column-gap: 12px; } .m-image-card__content {padding-top: 30px; }}"
-      ],
-      "settings": {
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "container": "w-full",
-        "color_scheme": "",
-        "content_color_scheme": "",
-        "enable_parallax": false,
-        "gap": 0,
-        "gap_mobile": 0,
-        "use_scroll_mobile": false,
-        "padding_top": 90,
-        "padding_bottom": 0,
-        "custom_class": "sf-custom--collection-banner"
-      }
-    },
-    "lookbook_MB4Mr4": {
-      "type": "lookbook",
-      "blocks": {
-        "shop_this_look_amDhCa": {
-          "type": "shop-this-look",
-          "settings": {
-            "color_scheme": "",
-            "title_text": "Botanical Alchemy. Clinically Proven.",
-            "title_size": "m:text-base",
-            "text_alignment": "center",
-            "title_link": "",
-            "button_label": "Shop this look",
-            "product_list": []
-          }
-        },
-        "shop_this_look_AVdw3f": {
-          "type": "shop-this-look",
-          "settings": {
-            "color_scheme": "",
-            "title_text": "Daily Restorative Rituals for Radiance.",
-            "title_size": "m:text-base",
-            "text_alignment": "center",
-            "title_link": "",
-            "button_label": "Shop this look",
-            "product_list": []
-          }
-        },
-        "shop_this_look_EcLGgQ": {
-          "type": "shop-this-look",
-          "settings": {
-            "color_scheme": "",
-            "title_text": "Pure Active Phyto-Nutrients for Barrier Health.",
-            "title_size": "m:text-base",
-            "text_alignment": "center",
-            "title_link": "",
-            "button_label": "Shop this look",
-            "product_list": []
-          }
-        }
-      },
-      "block_order": [
-        "shop_this_look_amDhCa",
-        "shop_this_look_AVdw3f",
-        "shop_this_look_EcLGgQ"
-      ],
-      "settings": {
-        "heading": "Curated Daily Botanical Rituals",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "container": "container-fluid",
-        "color_scheme": "",
-        "image_aspect_ratio": "3/4",
-        "use_scroll_mobile": true,
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "custom_class": "",
-        "animations": "inherit",
-        "enable_bg_zoom_effect": true
-      }
-    },
-    "scrolling_promotion_jjrFyf": {
-      "type": "scrolling-promotion",
-      "blocks": {
-        "image_LqzGfW": {
-          "type": "image",
-          "settings": {
-            "image_height": 80,
-            "image_link": ""
-          }
-        },
-        "announcement_w3tNiH": {
-          "type": "announcement",
-          "settings": {
-            "custom_svg": "",
-            "icon_size": "medium",
-            "text": "New Season Essential",
-            "text_size": 42,
-            "text_link": ""
-          }
-        },
-        "image_HiyPPp": {
-          "type": "image",
-          "settings": {
-            "image_height": 80,
-            "image_link": ""
-          }
-        },
-        "announcement_nafDhJ": {
-          "type": "announcement",
-          "settings": {
-            "custom_svg": "",
-            "icon_size": "medium",
-            "text": "Purposefully Designed",
-            "text_size": 42,
-            "text_link": ""
-          }
-        },
-        "image_YkTdm3": {
-          "type": "image",
-          "settings": {
-            "image_height": 80,
-            "image_link": ""
-          }
-        },
-        "announcement_JfYdTK": {
-          "type": "announcement",
-          "settings": {
-            "custom_svg": "",
-            "icon_size": "medium",
-            "text": "New Season Essential",
-            "text_size": 42,
-            "text_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "image_LqzGfW",
-        "announcement_w3tNiH",
-        "image_HiyPPp",
-        "announcement_nafDhJ",
-        "image_YkTdm3",
-        "announcement_JfYdTK"
-      ],
-      "custom_css": [
-        ".m-scrolling-promotion-section {border-width: 1px 0 1px 0; border-color: rgb(var(--color-border));}",
-        "@media (max-width: 767px) {.m-promotion__text {font-size: 30px; } .m-promotion__item img {--image-height: 70px; } .m-section-py {padding-top: 15px; padding-bottom: 15px; }}"
-      ],
-      "settings": {
-        "container": "w-full",
-        "direction": "left",
-        "speed": 30,
-        "item_gap": 40,
-        "item_gap_mobile": 20,
-        "color_scheme": "",
-        "padding_top": 26,
-        "padding_bottom": 26,
-        "custom_class": ""
-      }
-    },
-    "collection_tabs_QE4TLj": {
-      "type": "collection-tabs",
-      "blocks": {
-        "collection_Yy3bMf": {
-          "type": "collection",
-          "settings": {
-            "heading": "Sweaters & Cardigans",
-            "heading_size": "h4",
-            "text": "<p>This snuggly soft Cloud Relaxed Cardigan serves a relaxed fit, with saddle shoulders—where the armhole seams curve towards the neckline so that the sleeve seamlessly hugs your shoulder</p>",
-            "title": "Antioxidant Serums",
-            "collection": "all"
-          }
-        },
-        "collection_EhyPJ6": {
-          "type": "collection",
-          "settings": {
-            "heading": "Active Botanical Serums",
-            "heading_size": "h4",
-            "text": "<p>This snuggly soft Cloud Relaxed Cardigan serves a relaxed fit, with saddle shoulders—where the armhole seams curve towards the neckline so that the sleeve seamlessly hugs your shoulder</p>",
-            "title": "Hydrating Creams",
-            "collection": "all"
-          }
-        },
-        "collection_PEi4at": {
-          "type": "collection",
-          "settings": {
-            "heading": "Restorative Lipid Creams",
-            "heading_size": "h4",
-            "text": "<p>This snuggly soft Cloud Relaxed Cardigan serves a relaxed fit, with saddle shoulders—where the armhole seams curve towards the neckline so that the sleeve seamlessly hugs your shoulder</p>",
-            "title": "Restorative Oils",
-            "collection": "all"
-          }
-        }
-      },
-      "block_order": [
-        "collection_Yy3bMf",
-        "collection_EhyPJ6",
-        "collection_PEi4at"
-      ],
-      "settings": {
-        "container": "container-fluid",
-        "color_scheme": "",
-        "header_alignment": "left",
-        "heading": "Beautifully functional <br>consciously crafted",
-        "heading_size": "h2",
-        "subheading": "Hot This Week",
-        "description": "",
+        "color_scheme": "default",
+        "subheading": "PREMIUM BOTANICAL SKINCARE",
+        "heading": "Grounded in Botany, Proven by Clinical Science",
+        "text": "<p>Thoughtful rituals. Pure biocompatible ingredients. Visible care designed for your skin barrier and daily vitality.</p>",
         "image_position": "right",
-        "image_ratio": "1/1",
-        "prefix_header": "ordinal_number",
-        "trigger_behavior": "hover",
-        "autoplay": true,
-        "autoplay_duration": 3,
-        "padding_top": 100,
-        "padding_bottom": 0,
-        "custom_class": "",
-        "animations": "inherit",
-        "title": "Cellular Science Meets<br> Conscious Botanical Craft"
-      }
-    },
-    "brands_list_XfN79B": {
-      "type": "brands-list",
-      "blocks": {
-        "image_DRQGaG": {
-          "type": "image",
-          "settings": {
-            "image_by_url": "",
-            "image_link": "",
-            "max_width": "150px"
-          }
-        },
-        "image_iz6arX": {
-          "type": "image",
-          "settings": {
-            "image_by_url": "",
-            "image_link": "",
-            "max_width": "150px"
-          }
-        },
-        "image_mWnYAa": {
-          "type": "image",
-          "settings": {
-            "image_by_url": "",
-            "image_link": "",
-            "max_width": "150px"
-          }
-        },
-        "image_GkqNqL": {
-          "type": "image",
-          "settings": {
-            "image_by_url": "",
-            "image_link": "",
-            "max_width": "150px"
-          }
-        },
-        "image_VKAxfW": {
-          "type": "image",
-          "settings": {
-            "image_by_url": "",
-            "image_link": "",
-            "max_width": "150px"
-          }
-        },
-        "image_9dYQ7c": {
-          "type": "image",
-          "settings": {
-            "image_by_url": "",
-            "image_link": "",
-            "max_width": "150px"
-          }
-        }
-      },
-      "block_order": [
-        "image_DRQGaG",
-        "image_iz6arX",
-        "image_mWnYAa",
-        "image_GkqNqL",
-        "image_VKAxfW",
-        "image_9dYQ7c"
-      ],
-      "custom_css": [
-        ".m-section__heading {font-size: 18px; font-weight: 500;}",
-        "@media (max-width: 767px) {.m-brands-list__inner {grid-template-columns: repeat(3, minmax(0, 1fr)); }}"
-      ],
-      "settings": {
-        "heading": "Featured in Press",
-        "heading_size": "h3",
-        "subheading": "",
-        "header_alignment": "center",
+        "mobile_order": "image_first",
+        "height": "80vh",
+        "alignment": "left",
+        "overlay_opacity": 0,
+        "button_label": "Explore Collection",
+        "button_link": "/collections/all",
+        "secondary_button_label": "Our Botanical Philosophy",
+        "secondary_button_link": "/pages/about-us",
         "container": "container-fluid",
-        "color_scheme": "",
-        "item_per_row": 6,
-        "column_gap": 0,
-        "row_gap": 30,
-        "column_gap_mobile": 10,
-        "row_gap_mobile": 10,
-        "enable_slider": false,
-        "show_nav": false,
-        "show_pagination": false,
-        "autorotate": false,
-        "autorotate_speed": 3,
-        "padding_top": 100,
-        "padding_bottom": 80,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
-    "custom_content_xALaMf": {
-      "type": "custom-content",
-      "blocks": {
-        "html_gbT3c7": {
-          "type": "html",
-          "settings": {
-            "code": "<div class=\"m-divider\"></div>",
-            "width": "100%",
-            "block_custom_class": "",
-            "animations": "inherit"
-          }
-        }
-      },
-      "block_order": [
-        "html_gbT3c7"
-      ],
-      "custom_css": [
-        ".m-divider {height: 1px; width: 100%; background: rgb(var(--color-border));}"
-      ],
-      "settings": {
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "container": "container-fluid",
-        "color_scheme": "",
-        "content_color_scheme": "",
-        "enable_parallax": false,
-        "gap": 30,
-        "gap_mobile": 16,
-        "use_scroll_mobile": false,
         "padding_top": 0,
-        "padding_bottom": 0,
-        "custom_class": ""
+        "padding_bottom": 0
       }
     },
-    "custom_content_f3reLw": {
-      "type": "custom-content",
+    "benefits_strip": {
+      "type": "benefits-strip",
       "blocks": {
-        "text_DppTKH": {
-          "type": "text",
+        "benefit_shop": {
+          "type": "benefit",
           "settings": {
-            "title": "The Botanical Apothecary",
-            "subheading": "",
-            "text": "<p>Our new cozy collection is made with environmentally friendly materials and<br/> simple to care for so you can stay cozy wherever.</p>",
-            "width": "100%",
-            "alignment": "center",
-            "align_text": "center",
-            "text_size": "large",
-            "text_color": "inherit",
-            "button_label": "Shop Now",
-            "button_style": "m-button--secondary",
-            "button_size": "",
-            "block_custom_class": "",
-            "animations": "inherit",
-            "sub_title": "HARVESTED IN HARMONY WITH NATURE"
-          }
-        }
-      },
-      "block_order": [
-        "text_DppTKH"
-      ],
-      "custom_css": [
-        ".m-richtext__description {font-size: 16px;}"
-      ],
-      "settings": {
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "container": "container-fluid",
-        "color_scheme": "",
-        "content_color_scheme": "",
-        "enable_parallax": false,
-        "gap": 0,
-        "gap_mobile": 16,
-        "use_scroll_mobile": false,
-        "padding_top": 100,
-        "padding_bottom": 0,
-        "custom_class": ""
-      }
-    },
-    "custom_content_btgYN3": {
-      "type": "custom-content",
-      "blocks": {
-        "lookbook_XVdfNy": {
-          "type": "lookbook",
-          "settings": {
-            "color_scheme": "",
-            "width": "50%",
-            "top_1": 31,
-            "left_1": 37,
-            "product_1": "short-sleeve-white",
-            "top_2": 26,
-            "left_2": 50,
-            "product_2": "",
-            "top_3": 61,
-            "left_3": 48,
-            "product_3": "",
-            "top_4": 0,
-            "left_4": 0,
-            "product_4": "",
-            "top_5": 20,
-            "left_5": 0,
-            "product_5": "",
-            "block_custom_class": "m-block-first",
-            "animations": "inherit"
+            "icon": "shopping-bag",
+            "label": "SHOP",
+            "text": "Curated essentials for every skin",
+            "link": "/collections/all"
           }
         },
-        "lookbook_hDUCNi": {
-          "type": "lookbook",
+        "benefit_ritual": {
+          "type": "benefit",
           "settings": {
-            "color_scheme": "",
-            "width": "50%",
-            "top_1": 50,
-            "left_1": 36,
-            "product_1": "faded-effect-jean",
-            "top_2": 26,
-            "left_2": 50,
-            "product_2": "",
-            "top_3": 61,
-            "left_3": 48,
-            "product_3": "",
-            "top_4": 0,
-            "left_4": 0,
-            "product_4": "",
-            "top_5": 20,
-            "left_5": 0,
-            "product_5": "",
-            "block_custom_class": "",
-            "animations": "inherit"
+            "icon": "mortar-pestle",
+            "label": "RITUAL",
+            "text": "Simple steps. Lasting results.",
+            "link": "/collections/all"
+          }
+        },
+        "benefit_ingredients": {
+          "type": "benefit",
+          "settings": {
+            "icon": "leaf",
+            "label": "INGREDIENTS",
+            "text": "Transparent. Purposeful. Clean.",
+            "link": "/pages/about-us"
+          }
+        },
+        "benefit_quiz": {
+          "type": "benefit",
+          "settings": {
+            "icon": "skin-quiz",
+            "label": "SKIN QUIZ",
+            "text": "Find your routine in minutes",
+            "link": "/pages/skin-quiz"
           }
         }
       },
       "block_order": [
-        "lookbook_XVdfNy",
-        "lookbook_hDUCNi"
-      ],
-      "custom_css": [
-        ".m-custom-content__wrapper, .m-block-first {position: relative; z-index: 1;}"
-      ],
-      "settings": {
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "container": "container-fluid",
-        "color_scheme": "",
-        "content_color_scheme": "",
-        "enable_parallax": false,
-        "gap": 0,
-        "gap_mobile": 0,
-        "use_scroll_mobile": false,
-        "padding_top": 100,
-        "padding_bottom": 0,
-        "custom_class": ""
-      }
-    },
-    "custom_content_hh6hmV": {
-      "type": "custom-content",
-      "blocks": {
-        "text_Dxjzb6": {
-          "type": "text",
-          "settings": {
-            "title": "Clean botanical formulations honoring the wisdom of earth and cellular science",
-            "subheading": "Aura Botanica Atelier",
-            "text": "<p>Our new cozy collection is made with environmentally friendly materials and <br/> simple to care for so you can stay cozy wherever .</p>",
-            "width": "100%",
-            "alignment": "center",
-            "align_text": "center",
-            "text_size": "medium",
-            "text_color": "inherit",
-            "button_label": "Shop Collection",
-            "button_style": "m-button--link",
-            "button_size": "",
-            "block_custom_class": "",
-            "animations": "inherit"
-          }
-        }
-      },
-      "block_order": [
-        "text_Dxjzb6"
-      ],
-      "custom_css": [
-        "@media (max-width: 767px) {br {display: none; }}"
+        "benefit_shop",
+        "benefit_ritual",
+        "benefit_ingredients",
+        "benefit_quiz"
       ],
       "settings": {
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "container": "container-fluid",
-        "color_scheme": "",
-        "content_color_scheme": "",
-        "enable_parallax": false,
-        "gap": 30,
-        "gap_mobile": 16,
-        "use_scroll_mobile": false,
-        "padding_top": 100,
-        "padding_bottom": 0,
-        "custom_class": ""
+        "color_scheme": "scheme-clay-rose",
+        "padding_top": 24,
+        "padding_bottom": 24
       }
     },
-    "collection_list_tjXYY7": {
+    "shop_by_category": {
       "type": "collection-list",
       "blocks": {
-        "collection_block_jRJk76": {
-          "type": "collection_block",
+        "cat_cleansers": {
+          "type": "collection",
           "settings": {
-            "collection": "all",
-            "title": "Cleansers"
+            "title": "CLEANSERS",
+            "text": "Purify & refresh"
           }
         },
-        "collection_block_F6rPLj": {
-          "type": "collection_block",
+        "cat_serums": {
+          "type": "collection",
           "settings": {
-            "collection": "all",
-            "title": "Toners & Mists"
+            "title": "SERUMS",
+            "text": "Treat & transform"
           }
         },
-        "collection_block_rFmir7": {
-          "type": "collection_block",
+        "cat_moisturizers": {
+          "type": "collection",
           "settings": {
-            "collection": "all",
-            "title": "Active Serums"
+            "title": "MOISTURIZERS",
+            "text": "Nourish & protect"
           }
         },
-        "collection_block_YXwFjp": {
-          "type": "collection_block",
+        "cat_suncare": {
+          "type": "collection",
           "settings": {
-            "collection": "all",
-            "title": "Barrier Creams"
-          }
-        },
-        "collection_block_pYgiyF": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "all",
-            "title": "Face Oils"
-          }
-        },
-        "collection_block_i7CRfm": {
-          "type": "collection_block",
-          "settings": {
-            "collection": "all",
-            "title": "Treatment Masks"
+            "title": "SUN CARE",
+            "text": "Shield & care"
           }
         }
       },
       "block_order": [
-        "collection_block_jRJk76",
-        "collection_block_F6rPLj",
-        "collection_block_rFmir7",
-        "collection_block_YXwFjp",
-        "collection_block_pYgiyF",
-        "collection_block_i7CRfm"
-      ],
-      "custom_css": [
-        ".m-collection-list {--mobile-column-width: 40vw;}",
-        ".m-collection-card__image {max-width: 140px; margin: 0 auto;}",
-        ".m-collection-card__title {font-size: 18px;}"
+        "cat_cleansers",
+        "cat_serums",
+        "cat_moisturizers",
+        "cat_suncare"
       ],
       "settings": {
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "color_scheme": "",
-        "container": "container-fluid",
-        "layout": "grid",
-        "expanded": true,
-        "card_style": "standard",
-        "text_alignment": "center",
-        "hover_effect": "scaling-up",
-        "show_product_count": true,
-        "count_inline_title": true,
-        "image_rounded": true,
-        "items_per_row": 6,
-        "item_gap": 0,
-        "enable_slider": false,
-        "show_pagination": false,
-        "show_navigation": false,
-        "autorotate": false,
-        "autorotate_speed": 5,
-        "mobile_disable_slider": false,
-        "use_scroll_mobile": true,
-        "mobile_gap": 16,
-        "hidden_slide_control_mobile": false,
-        "padding_top": 80,
-        "padding_bottom": 0,
-        "custom_class": "",
-        "animations": "inherit"
+        "color_scheme": "default",
+        "subheading": "SHOP BY CATEGORY",
+        "heading": "Curated Botanical Categories",
+        "show_view_all": true,
+        "view_all_label": "View all products",
+        "view_all_link": "/collections/all",
+        "columns_desktop": 4,
+        "container": "container",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
-    "custom_content_KiFzqG": {
-      "type": "custom-content",
-      "blocks": {
-        "image_comparison_fRB8LR": {
-          "type": "image_comparison",
-          "settings": {
-            "width": "50%",
-            "product": "",
-            "subtitle": "",
-            "title": "",
-            "text": "",
-            "text_size": "medium",
-            "content_alignment": "left",
-            "text_color": "black",
-            "layout": "horizontal",
-            "image_height": "adapt",
-            "before_heading": "Before",
-            "after_heading": "After",
-            "block_custom_class": "",
-            "animations": "inherit"
-          }
-        },
-        "text_ADAEHz": {
-          "type": "text",
-          "settings": {
-            "title": "Nourish your skin with<br> concentrated botanical extracts",
-            "subheading": "Active Botanicals",
-            "text": "<p>Elevate your daily ritual with cold-pressed botanical extracts and clinical bio-ferments tailored to soothe, nourish, and protect your skin barrier.</p>",
-            "width": "50%",
-            "alignment": "center",
-            "align_text": "center",
-            "text_size": "large",
-            "text_color": "inherit",
-            "button_label": "Explore Clinical Rituals",
-            "button_style": "m-button--secondary",
-            "button_size": "",
-            "block_custom_class": "",
-            "animations": "inherit"
-          }
-        }
-      },
-      "block_order": [
-        "image_comparison_fRB8LR",
-        "text_ADAEHz"
-      ],
-      "custom_css": [
-        ".m-image-comparison__heading {box-shadow: none; border-radius: 5px; padding: 5px 12px; letter-spacing: 0; min-height: 34px;}",
-        ".m-richtext__description {font-size: 16px;}",
-        ".m-image-comparison__after .m-image-comparison__heading {bottom: 20px; top: auto;}",
-        "@media (max-width: 767px) {.m-image-comparison__heading, .m-richtext__description br {display: none; } .m-custom-content__wrapper {flex-direction: column-reverse; } .m-custom-content__block {padding: 0 15px; }}"
-      ],
+    "best_sellers": {
+      "type": "best-sellers",
       "settings": {
-        "heading": "",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "container": "container-fluid",
-        "color_scheme": "",
-        "content_color_scheme": "",
-        "enable_parallax": false,
-        "gap": 0,
-        "gap_mobile": 48,
-        "use_scroll_mobile": false,
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "custom_class": ""
+        "color_scheme": "default",
+        "container": "container",
+        "subheading": "ATELIER FAVORITES",
+        "heading": "Bestselling Formulations",
+        "limit": 4,
+        "columns": 4,
+        "show_view_all": true,
+        "padding_top": 40,
+        "padding_bottom": 60
       }
     },
-    "testimonials_pnyUnX": {
+    "bento_row_1": {
+      "type": "bento-row-1",
+      "settings": {
+        "container": "container",
+        "ritual_color_scheme": "dark",
+        "ritual_eyebrow": "FEATURED RITUAL",
+        "ritual_heading": "The Hydration Reset Ritual",
+        "ritual_text": "A calming routine to cleanse, hydrate, and restore your natural glow.",
+        "ritual_button_label": "DISCOVER RITUAL",
+        "ritual_button_link": "/collections/all",
+        "ingredient_color_scheme": "scheme-clay-rose",
+        "ingredient_eyebrow": "INGREDIENT SPOTLIGHT",
+        "ingredient_heading": "Squalane",
+        "ingredient_benefits": "<p>Deep moisture.<br>Silky, weightless feel.<br>Barrier support.</p>",
+        "ingredient_link_label": "EXPLORE INGREDIENTS",
+        "ingredient_link": "/pages/about-us",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "bento_row_2": {
+      "type": "bento-row-2",
+      "settings": {
+        "container": "container",
+        "quiz_color_scheme": "default",
+        "quiz_eyebrow": "ROUTINE FINDER",
+        "quiz_heading": "Your skin. Your ritual.",
+        "quiz_text": "Answer a few quick questions and get a routine made for your barrier.",
+        "quiz_button_label": "TAKE THE QUIZ",
+        "quiz_button_link": "/pages/skin-quiz",
+        "journal_color_scheme": "scheme-clay-rose",
+        "journal_eyebrow": "JOURNAL",
+        "journal_heading": "Slow care, lasting glow",
+        "journal_excerpt": "Mindful routines and ingredient insights to support your skin every day.",
+        "journal_link_label": "READ THE JOURNAL",
+        "journal_link": "/blogs/news",
+        "padding_top": 32,
+        "padding_bottom": 48
+      }
+    },
+    "subscribe_save": {
+      "type": "subscribe-save-banner",
+      "settings": {
+        "color_scheme": "scheme-clay-rose",
+        "container": "container",
+        "eyebrow": "NEVER RUN LOW",
+        "heading": "Subscribe & stay effortlessly consistent",
+        "text": "Flexible delivery schedules. Guaranteed freshly compounded formulations. Pause, skip, or cancel anytime with one click.",
+        "button_label": "LEARN MORE",
+        "button_link": "/collections/all",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "testimonials": {
       "type": "testimonials",
       "blocks": {
-        "testimonial_7bVRtk": {
+        "test_1": {
           "type": "testimonial",
           "settings": {
-            "title": "Love it so much",
-            "description": "<p>The Bio-Ferment Barrier Serum completely restored my skin barrier within two weeks. My complexion has never felt this deeply nourished and luminous.</p>",
-            "footer": "<p>Jared S.</p>",
-            "image_text": "",
-            "image_link": ""
+            "title": "Cellular Transformation",
+            "description": "<p>The restorative lipid cream restored my sensitized barrier in two weeks. Truly remarkable botanical purity.</p>",
+            "footer": "Dr. Evelyn Vance — Dermatological Researcher"
           }
         },
-        "testimonial_BaC37W": {
+        "test_2": {
           "type": "testimonial",
           "settings": {
-            "title": "Love it so much",
-            "description": "<p>Aura Botanica has transformed my evening ritual. The Bakuchiol Midnight Nectar gives all the benefits of retinol without a hint of irritation or redness.</p>",
-            "footer": "<p>Alyssa A.</p>",
-            "image_text": "",
-            "image_link": ""
+            "title": "Pure Apothecary Luxury",
+            "description": "<p>The scent, texture, and immediate glow feel like a private bespoke facial atelier treatment at home.</p>",
+            "footer": "Clara Beaumont — Esthetics Director"
           }
         },
-        "testimonial_X8q9A4": {
+        "test_3": {
           "type": "testimonial",
           "settings": {
-            "title": "Love it so much",
-            "description": "<p>The Camellia Cleansing Balm melts away waterproof SPF effortlessly without stripping essential lipids. Absolute luxury in a glass jar.</p>",
-            "footer": "<p>Ben B.</p>",
-            "image_text": "",
-            "image_link": ""
-          }
-        },
-        "testimonial_ef4Etp": {
-          "type": "testimonial",
-          "settings": {
-            "title": "Love it so much",
-            "description": "<p>After trying countless luxury brands, Aura Botanica is the only formulation that healed my dry, reactive skin. Truly clinical alchemy in every drop.</p>",
-            "footer": "<p>Dean D. US</p>",
-            "image_text": "",
-            "image_link": ""
-          }
-        },
-        "testimonial_bUi88K": {
-          "type": "testimonial",
-          "settings": {
-            "title": "Love it so much",
-            "description": "<p>My skin texture is remarkably softer and more radiant. The botanical aromatics make my morning skincare routine feel like a high-end spa retreat.</p>",
-            "footer": "<p>John D.</p>",
-            "image_text": "",
-            "image_link": ""
-          }
-        },
-        "testimonial_NMt6Em": {
-          "type": "testimonial",
-          "settings": {
-            "title": "Love it so much",
-            "description": "<p>Clean, thoughtful ingredients with real results. The Deep Lipid Moisture Cream keeps my skin plump and protected all day long.</p>",
-            "footer": "<p>Dean J.</p>",
-            "image_text": "",
-            "image_link": ""
+            "title": "Unrivaled Hydration",
+            "description": "<p>Weightless squalane and cold-pressed bio-ferments keep my complexion plump and soothed all day.</p>",
+            "footer": "Naomi Campbell — Holistic Skincare Advocate"
           }
         }
       },
       "block_order": [
-        "testimonial_7bVRtk",
-        "testimonial_BaC37W",
-        "testimonial_X8q9A4",
-        "testimonial_ef4Etp",
-        "testimonial_bUi88K",
-        "testimonial_NMt6Em"
-      ],
-      "custom_css": [
-        ".m-svg-icon {width: 12px; height: 12px;}",
-        ".m-stars {column-gap: 2px;}",
-        "@media (min-width: 1280px) {.m-testimonials__header {margin-bottom: 40px; }}",
-        "@media (max-width: 767px) {.m-testimonials__header {margin-bottom: 24px; } .m-section__header {text-align: center; }}"
+        "test_1",
+        "test_2",
+        "test_3"
       ],
       "settings": {
-        "heading": "Happy Customers",
+        "heading": "Trusted by Botanists & Skin Ritualists",
         "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "left",
-        "container": "container-fluid",
-        "color_scheme": "scheme-cee058e4-58e3-46aa-9af9-219dadc79066",
-        "design": "testimonials-6",
+        "subheading": "VERIFIED EXPERIENCES",
+        "header_alignment": "center",
+        "container": "container",
+        "color_scheme": "default",
+        "design": "testimonials-1",
         "show_stars": true,
         "autorotate": false,
         "show_navigation": true,
         "show_pagination": true,
-        "star_color": "#000000",
-        "item_color_scheme": "",
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "custom_class": "",
-        "animations": "inherit"
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
-    "11cfb44f-b725-4daf-8ee7-4bbf2c63914d": {
-      "type": "instagram",
-      "custom_css": [
-        ".container-full {padding-left: 0; padding-right: 0;}",
-        "@media (max-width: 767px) {br {display: none; }}"
-      ],
-      "settings": {
-        "heading": "Follow us Instagram",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "Tag <span class=\"text-black\">@aurabotanica</span> in your daily rituals for a chance to be featured in our botanical gallery.<br>\nFind mindful skincare inspiration on <a href=\"#\">our Instagram.</a>",
-        "header_alignment": "center",
-        "container": "w-full",
-        "color_scheme": "",
-        "color_scheme_content": "",
-        "layout": "grid",
-        "images_count": 5,
-        "grid_columns": 5,
-        "gap": 0,
-        "mobile_gap": 0,
-        "profile": "https://www.instagram.com/aurabotanica/",
-        "button_label": "",
-        "button_style": "m-button--secondary",
-        "use_scroll_mobile": true,
-        "padding_top": 100,
-        "padding_bottom": 0,
-        "custom_class": ""
-      }
-    },
-    "16225125199f82d8fe": {
-      "type": "icon-box",
+    "faq": {
+      "type": "faq",
       "blocks": {
-        "16225125199f82d8fe-0": {
-          "type": "iconbox",
+        "faq_1": {
+          "type": "item",
           "settings": {
-            "image_by_url": "",
-            "title": "Free Shipping",
-            "description": "<p>Free Shipping for orders over £130</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "sf__btn-link",
-            "button_size": ""
+            "question": "Are your products suitable for sensitive skin?",
+            "answer": "<p>Yes. Every formulation is crafted with bio-calming actives designed to soothe reactive barriers.</p>",
+            "open": true
           }
         },
-        "16225125199f82d8fe-1": {
-          "type": "iconbox",
+        "faq_2": {
+          "type": "item",
           "settings": {
-            "image_by_url": "",
-            "title": "Money Guarantee",
-            "description": "<p>Within 30 days for an exchange.</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "sf__btn-link",
-            "button_size": ""
+            "question": "How do I build a routine?",
+            "answer": "<p>Start with our 3-step fundamental ritual: Gentle Cleanser, Active Bio-Serum, and Restorative Lipid Cream.</p>",
+            "open": false
           }
         },
-        "16225125199f82d8fe-2": {
-          "type": "iconbox",
+        "faq_3": {
+          "type": "item",
           "settings": {
-            "image_by_url": "",
-            "title": "Online Support",
-            "description": "<p>24 hours a day, 7 days a week</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "sf__btn-link",
-            "button_size": ""
+            "question": "What makes your ingredients clean?",
+            "answer": "<p>We source only ethically wild-harvested botanicals cold-pressed to preserve cellular bio-potency without synthetic fragrances.</p>",
+            "open": false
           }
         },
-        "71deafbb-3baf-443a-a087-3f7b8af7b9fa": {
-          "type": "iconbox",
+        "faq_4": {
+          "type": "item",
           "settings": {
-            "image_by_url": "",
-            "title": "Flexible Payment",
-            "description": "<p>Pay with Multiple Credit Cards</p>",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "sf__btn-link",
-            "button_size": ""
+            "question": "Where do you ship?",
+            "answer": "<p>We offer complimentary carbon-neutral shipping on domestic orders over  and global temperature-controlled delivery.</p>",
+            "open": false
           }
         }
       },
       "block_order": [
-        "16225125199f82d8fe-0",
-        "16225125199f82d8fe-1",
-        "16225125199f82d8fe-2",
-        "71deafbb-3baf-443a-a087-3f7b8af7b9fa"
-      ],
-      "custom_css": [
-        ".m-icon-box__icon {margin-right: 12px;}"
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
       ],
       "settings": {
-        "heading": "",
+        "color_scheme": "default",
+        "subheading": "FREQUENTLY ASKED",
+        "heading": "Frequently Asked Questions",
+        "show_view_all": true,
+        "view_all_label": "View all FAQs",
+        "view_all_link": "/pages/faqs",
+        "container": "container",
+        "padding_top": 48,
+        "padding_bottom": 60
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "container": "container",
+        "color_scheme": "default",
+        "form_layout": "horizontal",
+        "form_design": "design-1",
+        "heading": "Join Our Botanical Sanctuary",
+        "description": "<p>Receive seasonal harvest dispatches, formulation previews, and 15% off your inaugural order.</p>",
+        "email_placeholder": "Enter your email address",
+        "submit_button": "Subscribe",
+        "show_agreement": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "instagram": {
+      "type": "instagram",
+      "settings": {
+        "heading": "Moments of Botanical Ritual",
         "heading_size": "h3",
-        "subheading": "",
-        "description": "",
+        "subheading": "@AURABOTANICA",
         "header_alignment": "center",
         "container": "container-fluid",
-        "color_scheme": "",
-        "item_per_row": 4,
-        "item_gap": 30,
-        "item_gap_mobile": 10,
-        "card_color_scheme": "",
-        "card_style": "horizontal",
-        "image_max_width": "60px",
-        "content_alignment": "start",
-        "hover_effect": "none",
-        "enable_slider": false,
-        "show_pagination": true,
-        "show_navigation": true,
-        "use_scroll_mobile": false,
-        "use_grid_column_mb": false,
-        "padding_top": 46,
-        "padding_bottom": 46,
-        "custom_class": "m-icon-box--small",
-        "animations": "inherit"
+        "color_scheme": "default",
+        "layout": "grid",
+        "images_count": 5,
+        "grid_columns": 5,
+        "gap": 16,
+        "mobile_gap": 8,
+        "button_label": "Follow on Instagram",
+        "padding_top": 40,
+        "padding_bottom": 60
       }
     }
   },
   "order": [
-    "1621243260e1af0c20",
-    "16225316461d1cff80",
-    "162251092958fcda7c",
-    "7ea56e8d-5794-4708-8812-8ee9604a3a21",
-    "lookbook_MB4Mr4",
-    "scrolling_promotion_jjrFyf",
-    "collection_tabs_QE4TLj",
-    "brands_list_XfN79B",
-    "custom_content_xALaMf",
-    "custom_content_f3reLw",
-    "custom_content_btgYN3",
-    "custom_content_hh6hmV",
-    "collection_list_tjXYY7",
-    "custom_content_KiFzqG",
-    "testimonials_pnyUnX",
-    "11cfb44f-b725-4daf-8ee7-4bbf2c63914d",
-    "16225125199f82d8fe"
+    "hero_split",
+    "benefits_strip",
+    "shop_by_category",
+    "best_sellers",
+    "bento_row_1",
+    "bento_row_2",
+    "subscribe_save",
+    "testimonials",
+    "faq",
+    "newsletter",
+    "instagram"
   ]
 }

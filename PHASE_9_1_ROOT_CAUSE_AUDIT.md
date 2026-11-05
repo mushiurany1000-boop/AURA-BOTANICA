@@ -108,3 +108,4 @@ All root causes have been addressed and verified through automated test suites:
 - `scripts/validate-theme.js`: **180 / 180 checks PASSED** (100%).
 - `scripts/verify-zip-archive.js`: **20 / 20 checks PASSED** (100%).
 - Root `/` and `shopify-theme/` directory parity: **100% byte identical** (0 mismatches).
+

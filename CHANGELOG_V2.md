@@ -6,6 +6,59 @@ All architectural changes, refactors, migrations, and file deprecations for the 
 
 ---
 
+## [Phase 12 — Luxury Homepage + Single Product Page Redesign] — Completed (November 5, 2026)
+
+Execution of Phase 12 luxury storefront redesign benchmarked against the attached reference mockups (Mockup 1: "Mira Vale" editorial homepage; Mockup 2: Single Product Page layout), delivering refined aesthetics, conversion-focused interactions, and authentic botanical skincare storytelling:
+
+### 1. Palette & CSS Design System
+* **`config/settings_data.json`:** Injected `scheme-clay-rose` under `current.color_schemes` featuring rust `#8B3A2F` button/heading, blush `#F3E3DC` background, warm ivory `#F8F5EF` container, and copper accent `#B9784D` to mirror the warm terracotta aesthetic of Mockup 1.
+* **`assets/aura-base.css`:** Appended luxury typography and component styling rules:
+  - Small-caps tracked eyebrows (`.aura-eyebrow`) with `letter-spacing: 0.14em` and `text-transform: uppercase`.
+  - Luxury card elevations (`.aura-card-luxury`) with soft 2px-4px border-radius and subtle borders.
+  - Benefits strip layout (`.aura-benefits-item`) with hairline column dividers and 2x2 responsive wrapping.
+  - Category navigation cards (`.aura-category-card`) with product cutout alignment, hover elevation, and chevron slide.
+  - Buy box variant pills (`.aura-pill-option`) and real-time inventory indicator (`.aura-stock-pill--in-stock`).
+  - Two-column desktop FAQ grid (`.aura-faq-two-col`) collapsing gracefully on mobile viewports.
+
+### 2. Homepage Redesign & Section Architecture
+* **`sections/editorial-split.liquid` (Hero Split):** Upgraded to luxury split layout with ivory text panel, small-caps eyebrow, Playfair Display heading, mask-lines reveal animation, dual CTAs (solid primary + subtle secondary link), and full-bleed photography with subtle parallax.
+* **`sections/benefits-strip.liquid` (4-Pillar Strip):** Created full-width band with 4 customizable pillar blocks (Shop, Ritual, Ingredients, Skin Quiz), thin-line SVG icons, small-caps labels, 2-line descriptions, vertical hairline dividers, and GSAP stagger-in animation.
+* **`sections/collection-list.liquid` (Shop by Category):** Refactored to 4-card category grid with eyebrow, "View all products" header link, soft-tinted cards, product cutout frame, category title, 1-line benefit description, directional arrow, and smooth hover elevation.
+* **`sections/bento-row-1.liquid` (Ritual & Ingredients Bento):** Two-up asymmetric bento row. Card A: Featured Ritual deep terracotta card with white outlined pill button. Card B: Ingredient Spotlight blush card featuring circular botanical imagery, key ingredient highlight (e.g., Squalane), benefit bullet points, and clinical link.
+* **`sections/bento-row-2.liquid` (Routine Finder & Journal Bento):** Two-up asymmetric bento row. Card A: Routine Finder / Skin Quiz card with texture swatch visual and CTA linking to `/pages/skin-quiz`. Card B: Journal editorial feature with lifestyle photography, date, title, and excerpt.
+* **`sections/skin-quiz.liquid` & `templates/page.skin-quiz.json`:** Created interactive 3-step diagnostic wizard (Skin Focus ➔ Texture Preference ➔ Sensitivity Assessment) dynamically recommending curated collections.
+* **`sections/subscribe-save-banner.liquid` (Replenishment Banner):** Full-width replenishment banner featuring unboxing photography, 15% discount selling plan proposition, flexible delivery schedule badges, and subscription CTA.
+* **`sections/faq.liquid` (2-Column Accordion):** Two-column desktop FAQ layout with category header, "View all FAQs" link, accessible `aria-expanded` accordion toggles, GSAP height transition, and JSON-LD `Schema.org/FAQPage` structured data.
+* **`templates/index.json`:** Rewired with the exact 11-section sequence requested:
+  1. `hero_split` (`editorial-split`)
+  2. `benefits_strip` (`benefits-strip`)
+  3. `shop_by_category` (`collection-list`)
+  4. `best_sellers` (`featured-collection`)
+  5. `bento_row_1` (`bento-row-1`)
+  6. `bento_row_2` (`bento-row-2`)
+  7. `subscribe_save` (`subscribe-save-banner`)
+  8. `testimonials` (`testimonials`)
+  9. `faq` (`faq`)
+  10. `newsletter` (`newsletter`)
+  11. `instagram` (`instagram-feed`)
+
+### 3. Single Product Page & Metafield Architecture
+* **`sections/main-product.liquid` & Buy Box:**
+  - Re-styled buy box with small-caps category eyebrow, Playfair Display title, live In-Stock pill (`#244638` / `#E8F3EE`), star rating link, compare-at savings badge, size/volume pills, quantity stepper, and dual CTA (Forest Green ATC + Golden Dynamic Checkout Buy Now).
+  - Trust icon badges (Cruelty-Free, Clean Formula, Recyclable Glass, Carbon Neutral).
+* **`sections/product-details-tabs.liquid`:** Tabbed accordion component with Description, INCI Ingredients, How to Use / Ritual, and Shipping/Returns tabs supporting dynamic metafield sources.
+* **`sections/product-reviews.liquid`:** Implemented 5-star summary rating breakdown bars when review data exists. Standardized on zero fake review data: renders clean "Be the first to review" empty state with active submit form if no third-party review app is installed.
+* **`docs/METAFIELDS.md`:** Comprehensive documentation detailing standard metafield namespaces (`custom.ingredients`, `custom.how_to_use`, `custom.skin_suitability`, `custom.volume_size`, `reviews.rating`, `reviews.rating_count`) and Theme Editor dynamic source connections.
+* **`templates/product.json`:** Rewired with `breadcrumb`, `main`, `product_details_tabs`, `product_reviews`, `product_recommendations`, and `recent_viewed_products`. Cleaned all leftover Minimog apparel/shoe placeholder text.
+
+### 4. Verification & Directory Parity
+* **Test Suite (`scripts/test-phase12-redesign.js`):** 54 / 54 checks passed (100%).
+* **Theme Validation (`scripts/validate-theme.js`):** 187 / 187 checks passed (100%).
+* **Directory Parity (`scripts/sync-root-to-theme.js`):** Synchronized all 8 theme directories between root `/` and `shopify-theme/` (0 byte differences).
+* **Production Packaging (`aura-skincare-theme.zip`):** 1.11 MB, 511 files, 20/20 verification checks passed.
+
+---
+
 ## [Phase 9.1 — Mandatory Visual Transformation & Root-Cause Remediation] — Completed (November 5, 2026)
 
 Corrective implementation addressing root causes of previous storefront rendering discrepancies across Git branches, local preview environments, and CSS cascade specificity:

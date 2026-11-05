@@ -1,0 +1,269 @@
+{%- comment -%}
+  Aura Botanica v2.0 — Bento Row 2 Section
+  Two-up editorial cards: Routine Finder / Skin Quiz and Editorial Journal / Blog Feature.
+{%- endcomment -%}
+
+{%- liquid
+  assign section_id = 'm-bento-row-2-' | append: section.id
+  assign container = section.settings.container | default: 'container'
+-%}
+
+<section
+  id="{{ section_id }}"
+  class="m-section m-bento-row-2 py-8 md:py-14 relative overflow-hidden"
+  style="--section-padding-top: {{ section.settings.padding_top | default: 32 }}px; --section-padding-bottom: {{ section.settings.padding_bottom | default: 32 }}px;"
+  data-section-id="{{ section.id }}"
+  data-section-type="bento-row-2"
+>
+  <div class="{{ container }} px-4 sm:px-6">
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch"
+      data-anim="stagger-children"
+      data-anim-stagger="0.12"
+    >
+      
+      <!-- Card A: Routine Finder / Skin Quiz -->
+      <div
+        class="aura-bento-hero m-color-{{ section.settings.quiz_color_scheme | default: 'default' }} rounded-[4px] p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group min-h-[380px] border border-color-border"
+        data-anim-child
+      >
+        <div class="w-full sm:w-1/2 flex flex-col items-start z-10 text-left">
+          {%- if section.settings.quiz_eyebrow != blank -%}
+            <span class="aura-eyebrow text-color-primary mb-2">
+              {{ section.settings.quiz_eyebrow }}
+            </span>
+          {%- endif -%}
+
+          {%- if section.settings.quiz_heading != blank -%}
+            <h3 class="text-2xl sm:text-3xl md:text-4xl font-serif text-color-heading mb-3 leading-tight">
+              {{ section.settings.quiz_heading }}
+            </h3>
+          {%- endif -%}
+
+          {%- if section.settings.quiz_text != blank -%}
+            <p class="text-xs sm:text-sm text-color-foreground opacity-90 leading-relaxed mb-6 max-w-xs">
+              {{ section.settings.quiz_text }}
+            </p>
+          {%- endif -%}
+
+          {%- if section.settings.quiz_button_label != blank -%}
+            <a
+              href="{{ section.settings.quiz_button_link | default: '/pages/skin-quiz' }}"
+              class="m-button m-button--primary px-6 py-2.5 text-xs uppercase tracking-widest font-semibold"
+            >
+              {{ section.settings.quiz_button_label }}
+            </a>
+          {%- endif -%}
+        </div>
+
+        <div class="w-full sm:w-1/2 h-56 sm:h-full min-h-[220px] relative rounded overflow-hidden flex items-center justify-center">
+          {%- if section.settings.quiz_image != blank -%}
+            {{ section.settings.quiz_image | image_url: width: 800 | image_tag: 
+              loading: 'lazy', 
+              class: 'w-full h-full object-contain p-4 transition-transform duration-700 ease-out group-hover:scale-105' 
+            }}
+          {%- else -%}
+            <div class="w-full h-full bg-color-background-secondary rounded flex flex-col items-center justify-center p-4 text-center">
+              <svg class="w-12 h-12 text-color-primary-accent opacity-60 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span class="text-xs font-serif text-color-heading">Biocompatible Emulsion Texture</span>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <!-- Card B: Editorial Journal / Blog Feature -->
+      {%- liquid
+        assign featured_blog = blogs[section.settings.blog]
+        assign latest_article = featured_blog.articles.first
+        assign journal_title = section.settings.journal_heading | default: latest_article.title | default: 'Slow care, lasting glow'
+        assign journal_excerpt = section.settings.journal_excerpt | default: latest_article.excerpt | default: latest_article.content | strip_html | truncatewords: 18 | default: 'Mindful routines and ingredient insights to support your skin every day.'
+        assign journal_link = section.settings.journal_link | default: latest_article.url | default: featured_blog.url | default: routes.root_url
+        assign journal_image = section.settings.journal_image | default: latest_article.image
+      -%}
+      <div
+        class="aura-bento-hero m-color-{{ section.settings.journal_color_scheme | default: 'scheme-clay-rose' }} rounded-[4px] p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group min-h-[380px] border border-color-border"
+        data-anim-child
+      >
+        <!-- Journal Photo on Left Side -->
+        <div class="w-full sm:w-1/2 h-56 sm:h-full min-h-[220px] relative rounded overflow-hidden">
+          {%- if journal_image != blank -%}
+            {{ journal_image | image_url: width: 800 | image_tag: 
+              loading: 'lazy', 
+              class: 'w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105' 
+            }}
+          {%- else -%}
+            <div class="w-full h-full bg-color-background-secondary rounded flex flex-col items-center justify-center p-4 text-center">
+              <svg class="w-10 h-10 text-color-primary opacity-50 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+              </svg>
+              <span class="text-xs font-serif text-color-heading">Botanical Journal</span>
+            </div>
+          {%- endif -%}
+        </div>
+
+        <!-- Journal Text on Right Side -->
+        <div class="w-full sm:w-1/2 flex flex-col items-start z-10 text-left">
+          {%- if section.settings.journal_eyebrow != blank -%}
+            <span class="aura-eyebrow text-color-primary mb-2">
+              {{ section.settings.journal_eyebrow }}
+            </span>
+          {%- endif -%}
+
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-serif text-color-heading mb-3 leading-tight">
+            {{ journal_title }}
+          </h3>
+
+          <p class="text-xs sm:text-sm text-color-foreground opacity-90 leading-relaxed mb-6 max-w-xs">
+            {{ journal_excerpt }}
+          </p>
+
+          <a
+            href="{{ journal_link }}"
+            class="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-semibold text-color-primary hover:text-color-heading transition-colors group/link"
+          >
+            {{ section.settings.journal_link_label | default: 'READ THE JOURNAL' }}
+            <span class="transition-transform duration-300 group-hover/link:translate-x-1">&rarr;</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bento row 2",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container layout",
+      "options": [
+        { "value": "container-fluid", "label": "Full width" },
+        { "value": "container", "label": "Boxed container" }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "header",
+      "content": "Card A — Routine Finder / Skin Quiz"
+    },
+    {
+      "type": "color_scheme",
+      "id": "quiz_color_scheme",
+      "label": "Quiz card color scheme",
+      "default": "default"
+    },
+    {
+      "type": "text",
+      "id": "quiz_eyebrow",
+      "label": "Quiz eyebrow",
+      "default": "ROUTINE FINDER"
+    },
+    {
+      "type": "text",
+      "id": "quiz_heading",
+      "label": "Quiz heading",
+      "default": "Your skin. Your ritual."
+    },
+    {
+      "type": "textarea",
+      "id": "quiz_text",
+      "label": "Quiz description",
+      "default": "Answer a few quick questions and get a custom routine made for your barrier."
+    },
+    {
+      "type": "text",
+      "id": "quiz_button_label",
+      "label": "Quiz button label",
+      "default": "TAKE THE QUIZ"
+    },
+    {
+      "type": "url",
+      "id": "quiz_button_link",
+      "label": "Quiz button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "quiz_image",
+      "label": "Texture swatch image"
+    },
+    {
+      "type": "header",
+      "content": "Card B — Journal / Editorial Feature"
+    },
+    {
+      "type": "color_scheme",
+      "id": "journal_color_scheme",
+      "label": "Journal card color scheme",
+      "default": "scheme-clay-rose"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Select blog"
+    },
+    {
+      "type": "text",
+      "id": "journal_eyebrow",
+      "label": "Journal eyebrow",
+      "default": "JOURNAL"
+    },
+    {
+      "type": "text",
+      "id": "journal_heading",
+      "label": "Custom title (optional)"
+    },
+    {
+      "type": "textarea",
+      "id": "journal_excerpt",
+      "label": "Custom excerpt (optional)"
+    },
+    {
+      "type": "text",
+      "id": "journal_link_label",
+      "label": "Journal link label",
+      "default": "READ THE JOURNAL"
+    },
+    {
+      "type": "url",
+      "id": "journal_link",
+      "label": "Custom journal link (optional)"
+    },
+    {
+      "type": "image_picker",
+      "id": "journal_image",
+      "label": "Custom journal photo"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bento row 2"
+    }
+  ]
+}
+{% endschema %}

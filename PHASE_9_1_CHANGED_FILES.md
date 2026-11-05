@@ -62,3 +62,4 @@ All 10 local preview files were patched to directly load Google Fonts (Playfair 
 | `PHASE_9_1_FEATURE_TEST_REPORT.md` | 16-point feature status table with PASS/BLOCKED statuses and evidence. |
 | `PHASE_9_1_CHANGED_FILES.md` | Exhaustive register of all modified and created files. |
 | `PHASE_9_1_REMAINING_ISSUES.md` | Merchant guidance on live photography, Instagram feed linking, and policy documents. |
+

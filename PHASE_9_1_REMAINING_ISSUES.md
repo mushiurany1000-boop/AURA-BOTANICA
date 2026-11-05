@@ -58,3 +58,4 @@ When deploying `aura-skincare-theme.zip` to your Shopify store:
 5. Verify that the primary button is **Forest Green** (`#315B45`) and turns **Deep Botanical Green** on hover.
 6. Verify that Tab navigation displays the **Champagne Gold** focus outline.
 7. Click **Actions $\rightarrow$ Publish** when ready to take the theme live.
+

@@ -358,7 +358,30 @@
       "no_content": "This section doesn’t currently include any content. Add content to this section using the sidebar.",
       "blog_readmore": "Read more",
       "blog_tag": "Minimog"
-    }
+    },
+    "view_all_products": "View all products",
+    "view_all_faqs": "View all FAQs",
+    "explore_collection": "Explore Collection",
+    "discover_ritual": "Discover Ritual",
+    "explore_ingredients": "Explore Ingredients",
+    "take_the_quiz": "Take the Quiz",
+    "read_the_journal": "Read the Journal",
+    "learn_more": "Learn More",
+    "subscribe_save_title": "Subscribe & stay effortlessly consistent",
+    "subscribe_save_subtext": "Flexible delivery. Pause or cancel anytime.",
+    "routine_finder_title": "Your skin. Your ritual.",
+    "routine_finder_subtext": "Answer a few quick questions and get a routine made for you.",
+    "ingredient_spotlight_title": "Squalane",
+    "featured_ritual_title": "The Hydration Reset Ritual",
+    "featured_ritual_subtext": "A calming routine to cleanse, hydrate, and restore your natural glow.",
+    "benefits_shop": "SHOP",
+    "benefits_shop_subtext": "Curated essentials for every skin",
+    "benefits_ritual": "RITUAL",
+    "benefits_ritual_subtext": "Simple steps. Lasting results.",
+    "benefits_ingredients": "INGREDIENTS",
+    "benefits_ingredients_subtext": "Transparent. Purposeful. Clean.",
+    "benefits_quiz": "SKIN QUIZ",
+    "benefits_quiz_subtext": "Find your routine in minutes"
   },
   "layout": {
     "back_to_shopping": "Back to shopping",
@@ -456,7 +479,17 @@
       "preorder_note": "Preorder item",
       "sale_text": "Sale",
       "inventory_quantity_html": "<span class=\"m-product-inventory__quantity\">{{ quantity }}</span> In stock",
-      "inventory_low_quantity_html": "Only <span class=\"m-product-inventory__quantity\">{{ quantity }}</span> left"
+      "inventory_low_quantity_html": "Only <span class=\"m-product-inventory__quantity\">{{ quantity }}</span> left",
+      "be_the_first_to_review": "Be the first to review",
+      "reviews_summary": "Customer Reviews",
+      "complete_the_routine": "Complete the Routine",
+      "delivery_and_returns": "Delivery & Returns",
+      "inci_ingredients": "Full Ingredients (INCI)",
+      "how_to_use": "How to Use",
+      "additional_information": "Additional Information",
+      "in_stock_pill": "In Stock",
+      "low_stock_pill": "Low Stock",
+      "sold_out_pill": "Sold Out"
     }
   },
   "gift_cards": {

@@ -1,0 +1,266 @@
+{%- comment -%}
+  Aura Botanica v2.0 — Bento Row 1 Section
+  Two-up editorial cards: Featured Ritual (deep tone) and Ingredient Spotlight (blush tone).
+{%- endcomment -%}
+
+{%- liquid
+  assign section_id = 'm-bento-row-1-' | append: section.id
+  assign container = section.settings.container | default: 'container'
+-%}
+
+<section
+  id="{{ section_id }}"
+  class="m-section m-bento-row-1 py-8 md:py-14 relative overflow-hidden"
+  style="--section-padding-top: {{ section.settings.padding_top | default: 32 }}px; --section-padding-bottom: {{ section.settings.padding_bottom | default: 32 }}px;"
+  data-section-id="{{ section.id }}"
+  data-section-type="bento-row-1"
+>
+  <div class="{{ container }} px-4 sm:px-6">
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch"
+      data-anim="stagger-children"
+      data-anim-stagger="0.12"
+    >
+      
+      <!-- Card A: Featured Ritual (Deep Tone) -->
+      <div
+        class="aura-bento-hero m-color-{{ section.settings.ritual_color_scheme | default: 'dark' }} rounded-[4px] p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group min-h-[380px]"
+        data-anim-child
+      >
+        <div class="w-full sm:w-1/2 flex flex-col items-start z-10 text-left">
+          {%- if section.settings.ritual_eyebrow != blank -%}
+            <span class="aura-eyebrow text-color-primary-accent mb-2">
+              {{ section.settings.ritual_eyebrow }}
+            </span>
+          {%- endif -%}
+
+          {%- if section.settings.ritual_heading != blank -%}
+            <h3 class="text-2xl sm:text-3xl md:text-4xl font-serif text-color-heading mb-3 leading-tight">
+              {{ section.settings.ritual_heading }}
+            </h3>
+          {%- endif -%}
+
+          {%- if section.settings.ritual_text != blank -%}
+            <p class="text-xs sm:text-sm text-color-foreground opacity-90 leading-relaxed mb-6 max-w-xs">
+              {{ section.settings.ritual_text }}
+            </p>
+          {%- endif -%}
+
+          {%- if section.settings.ritual_button_label != blank -%}
+            <a
+              href="{{ section.settings.ritual_button_link | default: routes.all_products_collection_url }}"
+              class="m-button m-button--secondary border-current text-color-heading hover:bg-color-heading hover:text-color-background px-6 py-2.5 text-xs uppercase tracking-widest font-semibold transition-all"
+            >
+              {{ section.settings.ritual_button_label }}
+            </a>
+          {%- endif -%}
+        </div>
+
+        <div class="w-full sm:w-1/2 h-56 sm:h-full min-h-[220px] relative rounded overflow-hidden">
+          {%- if section.settings.ritual_image != blank -%}
+            {{ section.settings.ritual_image | image_url: width: 800 | image_tag: 
+              loading: 'lazy', 
+              class: 'w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105' 
+            }}
+          {%- else -%}
+            <div class="w-full h-full bg-color-background-secondary flex flex-col items-center justify-center p-4 text-center">
+              <svg class="w-10 h-10 text-color-primary-accent opacity-50 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+              </svg>
+              <span class="text-xs font-serif text-color-heading">Atelier Botanical Ritual</span>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <!-- Card B: Ingredient Spotlight (Blush / Clay Rose Tone) -->
+      <div
+        class="aura-bento-hero m-color-{{ section.settings.ingredient_color_scheme | default: 'scheme-clay-rose' }} rounded-[4px] p-6 sm:p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group min-h-[380px]"
+        data-anim-child
+      >
+        <!-- Circular Ingredient Image Area -->
+        <div class="w-full sm:w-1/2 flex items-center justify-center order-2 sm:order-1">
+          <div class="aura-circular-spotlight w-44 h-44 sm:w-52 sm:h-52 bg-color-background relative flex items-center justify-center p-2 border border-color-border">
+            {%- if section.settings.ingredient_image != blank -%}
+              {{ section.settings.ingredient_image | image_url: width: 600 | image_tag: 
+                loading: 'lazy', 
+                class: 'w-full h-full object-cover rounded-full transition-transform duration-700 ease-out group-hover:scale-110' 
+              }}
+            {%- else -%}
+              <div class="w-full h-full rounded-full bg-color-background-secondary flex flex-col items-center justify-center text-center p-3">
+                <svg class="w-8 h-8 text-color-primary mb-1" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+                <span class="text-[10px] uppercase font-bold tracking-wider text-color-heading">Pure Phyto Extract</span>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <!-- Text & Bullet Benefits -->
+        <div class="w-full sm:w-1/2 flex flex-col items-start z-10 text-left order-1 sm:order-2">
+          {%- if section.settings.ingredient_eyebrow != blank -%}
+            <span class="aura-eyebrow text-color-primary mb-2">
+              {{ section.settings.ingredient_eyebrow }}
+            </span>
+          {%- endif -%}
+
+          {%- if section.settings.ingredient_heading != blank -%}
+            <h3 class="text-2xl sm:text-3xl md:text-4xl font-serif text-color-heading mb-4 leading-tight">
+              {{ section.settings.ingredient_heading }}
+            </h3>
+          {%- endif -%}
+
+          {%- if section.settings.ingredient_benefits != blank -%}
+            <div class="text-xs sm:text-sm text-color-foreground opacity-90 leading-relaxed mb-6 space-y-1.5">
+              {{ section.settings.ingredient_benefits }}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.ingredient_link_label != blank -%}
+            <a
+              href="{{ section.settings.ingredient_link | default: routes.all_products_collection_url }}"
+              class="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-semibold text-color-primary hover:text-color-heading transition-colors group/link"
+            >
+              {{ section.settings.ingredient_link_label }}
+              <span class="transition-transform duration-300 group-hover/link:translate-x-1">&rarr;</span>
+            </a>
+          {%- endif -%}
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bento row 1",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container layout",
+      "options": [
+        { "value": "container-fluid", "label": "Full width" },
+        { "value": "container", "label": "Boxed container" }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "header",
+      "content": "Card A — Featured Ritual"
+    },
+    {
+      "type": "color_scheme",
+      "id": "ritual_color_scheme",
+      "label": "Ritual color scheme",
+      "default": "dark"
+    },
+    {
+      "type": "text",
+      "id": "ritual_eyebrow",
+      "label": "Ritual eyebrow",
+      "default": "FEATURED RITUAL"
+    },
+    {
+      "type": "text",
+      "id": "ritual_heading",
+      "label": "Ritual heading",
+      "default": "The Hydration Reset Ritual"
+    },
+    {
+      "type": "textarea",
+      "id": "ritual_text",
+      "label": "Ritual description",
+      "default": "A calming routine to cleanse, hydrate, and restore your natural glow."
+    },
+    {
+      "type": "text",
+      "id": "ritual_button_label",
+      "label": "Ritual button label",
+      "default": "DISCOVER RITUAL"
+    },
+    {
+      "type": "url",
+      "id": "ritual_button_link",
+      "label": "Ritual button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "ritual_image",
+      "label": "Ritual photo"
+    },
+    {
+      "type": "header",
+      "content": "Card B — Ingredient Spotlight"
+    },
+    {
+      "type": "color_scheme",
+      "id": "ingredient_color_scheme",
+      "label": "Ingredient color scheme",
+      "default": "scheme-clay-rose"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_eyebrow",
+      "label": "Ingredient eyebrow",
+      "default": "INGREDIENT SPOTLIGHT"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_heading",
+      "label": "Ingredient name",
+      "default": "Squalane"
+    },
+    {
+      "type": "richtext",
+      "id": "ingredient_benefits",
+      "label": "Benefit bullet points",
+      "default": "<p>Deep moisture.<br>Silky, weightless feel.<br>Barrier support.</p>"
+    },
+    {
+      "type": "text",
+      "id": "ingredient_link_label",
+      "label": "Ingredient link label",
+      "default": "EXPLORE INGREDIENTS"
+    },
+    {
+      "type": "url",
+      "id": "ingredient_link",
+      "label": "Ingredient link"
+    },
+    {
+      "type": "image_picker",
+      "id": "ingredient_image",
+      "label": "Circular ingredient photo"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bento row 1"
+    }
+  ]
+}
+{% endschema %}

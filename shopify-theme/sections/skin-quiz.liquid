@@ -1,0 +1,241 @@
+{%- comment -%}
+  Aura Botanica v2.0 — Interactive Skin Quiz Section
+  Maps user skincare concerns and answers to personalized botanical collection recommendations.
+{%- endcomment -%}
+
+{%- liquid
+  assign section_id = 'm-skin-quiz-' | append: section.id
+  assign color_scheme = section.settings.color_scheme | default: 'default'
+-%}
+
+<section
+  id="{{ section_id }}"
+  class="m-section m-skin-quiz m-color-{{ color_scheme }} py-16 md:py-24 relative overflow-hidden"
+  style="--section-padding-top: {{ section.settings.padding_top | default: 60 }}px; --section-padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;"
+  data-section-id="{{ section.id }}"
+  data-section-type="skin-quiz"
+>
+  <div class="container max-w-3xl mx-auto px-4 sm:px-6">
+    
+    <!-- Quiz Header -->
+    <div class="text-center mb-10 md:mb-14" data-anim="fade-up">
+      {%- if section.settings.subheading != blank -%}
+        <span class="aura-eyebrow text-color-primary">
+          {{ section.settings.subheading }}
+        </span>
+      {%- endif -%}
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-serif text-color-heading mb-4">
+        {{ section.settings.heading | default: 'Find Your Botanical Ritual' }}
+      </h1>
+      <p class="text-base text-color-foreground-secondary max-w-xl mx-auto leading-relaxed">
+        {{ section.settings.description | default: 'Answer 3 quick questions about your skin barrier and daily environmental exposure to discover your personalized phyto-active regimen.' }}
+      </p>
+    </div>
+
+    <!-- Quiz Wizard Card -->
+    <div
+      class="aura-card-luxury p-6 sm:p-10 md:p-12 relative"
+      data-anim="fade-up"
+      data-anim-delay="0.15"
+    >
+      <form id="AuraSkinQuizForm" class="space-y-10">
+        
+        <!-- Question 1 -->
+        <fieldset class="space-y-4">
+          <legend class="text-lg sm:text-xl font-serif text-color-heading font-semibold mb-4">
+            1. What is your primary skin focus?
+          </legend>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="aura-quiz-option flex items-center gap-3 p-4 rounded border border-color-border cursor-pointer hover:border-color-primary transition-all">
+              <input type="radio" name="focus" value="barrier" class="w-4 h-4 text-color-primary focus:ring-color-primary" checked>
+              <span class="text-sm font-medium text-color-foreground">Hydration & Barrier Repair</span>
+            </label>
+            <label class="aura-quiz-option flex items-center gap-3 p-4 rounded border border-color-border cursor-pointer hover:border-color-primary transition-all">
+              <input type="radio" name="focus" value="radiance" class="w-4 h-4 text-color-primary focus:ring-color-primary">
+              <span class="text-sm font-medium text-color-foreground">Radiance & Vitamin C Glow</span>
+            </label>
+            <label class="aura-quiz-option flex items-center gap-3 p-4 rounded border border-color-border cursor-pointer hover:border-color-primary transition-all">
+              <input type="radio" name="focus" value="clarifying" class="w-4 h-4 text-color-primary focus:ring-color-primary">
+              <span class="text-sm font-medium text-color-foreground">Clarifying & Blemish Balance</span>
+            </label>
+            <label class="aura-quiz-option flex items-center gap-3 p-4 rounded border border-color-border cursor-pointer hover:border-color-primary transition-all">
+              <input type="radio" name="focus" value="firming" class="w-4 h-4 text-color-primary focus:ring-color-primary">
+              <span class="text-sm font-medium text-color-foreground">Age-Defying & Cellular Firmness</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Question 2 -->
+        <fieldset class="space-y-4">
+          <legend class="text-lg sm:text-xl font-serif text-color-heading font-semibold mb-4">
+            2. What formulation texture do you love most?
+          </legend>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <label class="aura-quiz-option flex items-center gap-3 p-4 rounded border border-color-border cursor-pointer hover:border-color-primary transition-all">
+              <input type="radio" name="texture" value="oil" class="w-4 h-4 text-color-primary focus:ring-color-primary" checked>
+              <span class="text-sm font-medium text-color-foreground">Silky Facial Elixir</span>
+            </label>
+            <label class="aura-quiz-option flex items-center gap-3 p-4 rounded border border-color-border cursor-pointer hover:border-color-primary transition-all">
+              <input type="radio" name="texture" value="serum" class="w-4 h-4 text-color-primary focus:ring-color-primary">
+              <span class="text-sm font-medium text-color-foreground">Lightweight Fluid Serum</span>
+            </label>
+            <label class="aura-quiz-option flex items-center gap-3 p-4 rounded border border-color-border cursor-pointer hover:border-color-primary transition-all">
+              <input type="radio" name="texture" value="cream" class="w-4 h-4 text-color-primary focus:ring-color-primary">
+              <span class="text-sm font-medium text-color-foreground">Rich Velvet Lipid Cream</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Question 3 -->
+        <fieldset class="space-y-4">
+          <legend class="text-lg sm:text-xl font-serif text-color-heading font-semibold mb-4">
+            3. How sensitive is your skin to active botanicals?
+          </legend>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="aura-quiz-option flex items-center gap-3 p-4 rounded border border-color-border cursor-pointer hover:border-color-primary transition-all">
+              <input type="radio" name="sensitivity" value="sensitive" class="w-4 h-4 text-color-primary focus:ring-color-primary" checked>
+              <span class="text-sm font-medium text-color-foreground">Reactive / Prone to Redness</span>
+            </label>
+            <label class="aura-quiz-option flex items-center gap-3 p-4 rounded border border-color-border cursor-pointer hover:border-color-primary transition-all">
+              <input type="radio" name="sensitivity" value="balanced" class="w-4 h-4 text-color-primary focus:ring-color-primary">
+              <span class="text-sm font-medium text-color-foreground">Resilient & Balanced</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Submit Button -->
+        <div class="text-center pt-4">
+          <button
+            type="submit"
+            class="m-button m-button--primary w-full sm:w-auto px-10 py-3.5 text-sm uppercase tracking-widest font-semibold"
+          >
+            Reveal My Custom Ritual &rarr;
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Results Area (Hidden Initially) -->
+      <div id="AuraQuizResults" class="hidden text-center py-6">
+        <span class="aura-eyebrow text-color-primary">YOUR FORMULATION MATCH</span>
+        <h3 id="AuraQuizResultTitle" class="text-2xl sm:text-3xl font-serif text-color-heading mb-3">
+          The Bio-Ferment Barrier Restoration Ritual
+        </h3>
+        <p id="AuraQuizResultDesc" class="text-sm sm:text-base text-color-foreground-secondary mb-6 max-w-md mx-auto">
+          Tailored specifically to calm reactive barrier lipids, provide restorative moisture, and maintain cellular balance.
+        </p>
+        <a
+          id="AuraQuizResultCTA"
+          href="{{ routes.all_products_collection_url }}"
+          class="m-button m-button--primary inline-block px-8 py-3 text-xs uppercase tracking-widest font-semibold"
+        >
+          Shop Recommended Ritual
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const quizForm = document.getElementById('AuraSkinQuizForm');
+    const quizResults = document.getElementById('AuraQuizResults');
+    const resultTitle = document.getElementById('AuraQuizResultTitle');
+    const resultDesc = document.getElementById('AuraQuizResultDesc');
+    const resultCTA = document.getElementById('AuraQuizResultCTA');
+
+    if (!quizForm) return;
+
+    quizForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(quizForm);
+      const focus = formData.get('focus');
+      const texture = formData.get('texture');
+
+      let recTitle = 'The Hydration Reset Ritual';
+      let recDesc = 'Calming hydration and restorative botanical lipids for balanced radiance.';
+      let recUrl = '{{ routes.all_products_collection_url }}';
+
+      if (focus === 'radiance') {
+        recTitle = 'The Cellular Radiance Edit';
+        recDesc = 'Infused with cold-pressed Bakuchiol and Vitamin C bio-esters for luminous vitality.';
+      } else if (focus === 'clarifying') {
+        recTitle = 'The Pure Balance Clarifying Regimen';
+        recDesc = 'Micro-filtered botanicals and zinc PCA to soothe reactive pores and regulate sebum.';
+      } else if (focus === 'firming') {
+        recTitle = 'The Velvet Peptide Regeneration Ritual';
+        recDesc = 'Multi-weight bio-peptides and squalane lipid complexes for visibly sculpted firmness.';
+      }
+
+      resultTitle.textContent = recTitle;
+      resultDesc.textContent = recDesc;
+      resultCTA.href = recUrl;
+
+      quizForm.classList.add('hidden');
+      quizResults.classList.remove('hidden');
+
+      if (window.gsap) {
+        window.gsap.from('#AuraQuizResults', { opacity: 0, y: 20, duration: 0.6, ease: 'power2.out' });
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Skin quiz",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "BOTANICAL DIAGNOSTIC"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Find Your Personalized Ritual"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Answer 3 quick questions about your skin barrier and daily environmental exposure to discover your personalized phyto-active regimen."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 6,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 6,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Skin quiz"
+    }
+  ]
+}
+{% endschema %}

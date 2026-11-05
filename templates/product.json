@@ -13,28 +13,32 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "badge_ChqgGj": {
+        "badge_tag": {
           "type": "badge",
           "settings": {}
         },
-        "title": {
+        "title_block": {
           "type": "title",
           "settings": {}
         },
-        "price": {
+        "rating_block": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price_block": {
           "type": "price",
           "settings": {
-            "show_saving": false,
+            "show_saving": true,
             "sale_badge_type": "percentage"
           }
         },
-        "variant_picker": {
+        "variant_picker_block": {
           "type": "variant_picker",
           "settings": {
-            "size_title": "Size"
+            "size_title": "Size/Volume"
           }
         },
-        "buy_buttons": {
+        "buy_buttons_block": {
           "type": "buy_buttons",
           "settings": {
             "show_quantity_selector": true,
@@ -43,43 +47,44 @@
             "show_gift_card_recipient": true
           }
         },
-        "addons": {
+        "trust_badge_block": {
+          "type": "trust_badge",
+          "settings": {
+            "trust_badges_text": "<p>100% Vegan ? Cruelty-Free ? Carbon-Neutral Shipping</p>",
+            "trust_badges_image_width": "60%",
+            "position": "below"
+          }
+        },
+        "shipping_block": {
+          "type": "shipping",
+          "settings": {
+            "show_delivery_times": true,
+            "deliver_text": "Estimated Atelier Delivery:",
+            "deliver_days": "3-5",
+            "date_format": "%b %d",
+            "show_shipping_text": true,
+            "shipping_text": "<p><strong>Complimentary Cold-Chain Shipping: </strong>On domestic orders over .</p>"
+          }
+        },
+        "addons_block": {
           "type": "addons",
           "settings": {
             "show_atcp": true,
             "show_ask_a_question": true,
             "show_social": true
           }
-        },
-        "shipping_VBJFtx": {
-          "type": "shipping",
-          "settings": {
-            "show_delivery_times": true,
-            "deliver_text": "Estimated Delivery:",
-            "deliver_days": "7",
-            "date_format": "%b %d",
-            "show_shipping_text": true,
-            "shipping_text": "<p><strong>Free Shipping & Returns: </strong>On all orders over $75</p>"
-          }
-        },
-        "trust_badge_NyBMd4": {
-          "type": "trust_badge",
-          "settings": {
-            "trust_badges_text": "<p>Guarantee safe & secure checkout</p>",
-            "trust_badges_image_width": "60%",
-            "position": "below"
-          }
         }
       },
       "block_order": [
-        "badge_ChqgGj",
-        "title",
-        "price",
-        "variant_picker",
-        "buy_buttons",
-        "addons",
-        "shipping_VBJFtx",
-        "trust_badge_NyBMd4"
+        "badge_tag",
+        "title_block",
+        "rating_block",
+        "price_block",
+        "variant_picker_block",
+        "buy_buttons_block",
+        "trust_badge_block",
+        "shipping_block",
+        "addons_block"
       ],
       "settings": {
         "container": "container",
@@ -95,303 +100,102 @@
         "show_pagination_mobile": true,
         "use_sticky_atc": true,
         "use_sticky_atc_on_mobile": true,
-        "enable_dynamic_checkout": false,
+        "enable_dynamic_checkout": true,
         "sticky_atc_wishtlist": false,
         "sticky_atc_compare": false
       }
     },
-    "product-details-tabs": {
+    "product_details_tabs": {
       "type": "product-details-tabs",
       "blocks": {
-        "description": {
+        "desc_tab": {
           "type": "description",
           "settings": {
-            "header": "Product description"
+            "header": "Description"
           }
         },
-        "tab": {
+        "tab_ingredients": {
           "type": "tab",
           "settings": {
-            "header": "Shipping & Return",
-            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.</p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.</p>",
+            "header": "Full Ingredients (INCI)",
+            "content": "<p>Camellia Sinensis Leaf Water, Squalane, Niacinamide, Sodium Hyaluronate, Bakuchiol, Hippophae Rhamnoides (Sea Buckthorn) Fruit Oil, Ceramide NP, Tocopherol (Vitamin E), Centella Asiatica Extract. Free of synthetic fragrance, sulfates, and parabens.</p>",
+            "content_page": ""
+          }
+        },
+        "tab_ritual": {
+          "type": "tab",
+          "settings": {
+            "header": "How to Use (The Ritual)",
+            "content": "<p>Dispense 3-4 drops into palms. Warm gently between hands and press into freshly cleansed, damp skin morning and evening. Follow with our Restorative Lipid Cream for optimal barrier sealing.</p>",
+            "content_page": ""
+          }
+        },
+        "tab_additional": {
+          "type": "tab",
+          "settings": {
+            "header": "Additional Information",
+            "content": "<p><strong>Skin Type: </strong>All skin types, including sensitive, reactive, and post-procedure skin.<br><strong>Volume: </strong>50ml / 1.7 fl. oz.<br><strong>Packaging: </strong>Biophotonic ultraviolet glass bottle with dropper dispenser.</p>",
             "content_page": ""
           }
         }
       },
       "block_order": [
-        "description",
-        "tab"
-      ],
-      "custom_css": [
-        ".m-tabs__header {justify-content: flex-start;}"
+        "desc_tab",
+        "tab_ingredients",
+        "tab_ritual",
+        "tab_additional"
       ],
       "settings": {
         "container": "container",
-        "color_scheme": "",
+        "color_scheme": "default",
         "default_open": true,
-        "padding_top": 0,
+        "padding_top": 20,
         "padding_bottom": 50,
         "custom_class": "",
         "animations": "inherit"
       }
     },
-    "scrolling_promotion_MVNN6Q": {
-      "type": "scrolling-promotion",
-      "blocks": {
-        "announcement_wewTPP": {
-          "type": "announcement",
-          "settings": {
-            "custom_svg": "",
-            "icon_size": "medium",
-            "text": "Free Delivery on orders over $200",
-            "text_size": 16,
-            "text_link": ""
-          }
-        },
-        "image_88JkQc": {
-          "type": "image",
-          "settings": {
-            "image_height": 8,
-            "image_link": ""
-          }
-        },
-        "announcement_iDtgyD": {
-          "type": "announcement",
-          "settings": {
-            "custom_svg": "",
-            "icon_size": "medium",
-            "text": "Free Delivery on orders over $200",
-            "text_size": 16,
-            "text_link": ""
-          }
-        },
-        "image_T6f3z4": {
-          "type": "image",
-          "settings": {
-            "image_height": 8,
-            "image_link": ""
-          }
-        },
-        "announcement_pPW8nc": {
-          "type": "announcement",
-          "settings": {
-            "custom_svg": "",
-            "icon_size": "medium",
-            "text": "Free Delivery on orders over $200",
-            "text_size": 16,
-            "text_link": ""
-          }
-        },
-        "image_83fwGn": {
-          "type": "image",
-          "settings": {
-            "image_height": 8,
-            "image_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement_wewTPP",
-        "image_88JkQc",
-        "announcement_iDtgyD",
-        "image_T6f3z4",
-        "announcement_pPW8nc",
-        "image_83fwGn"
-      ],
-      "custom_css": [
-        ".m-promotion__text {font-weight: 500;}"
-      ],
+    "product_reviews": {
+      "type": "product-reviews",
       "settings": {
-        "container": "w-full",
-        "direction": "left",
-        "speed": 20,
-        "item_gap": 50,
-        "item_gap_mobile": 30,
-        "color_scheme": "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74",
-        "padding_top": 24,
-        "padding_bottom": 24,
-        "custom_class": ""
-      }
-    },
-    "icon_box_9UtNky": {
-      "type": "icon-box",
-      "blocks": {
-        "iconbox_pJbJGA": {
-          "type": "iconbox",
-          "settings": {
-            "image_by_url": "",
-            "title": "100 Days Return",
-            "description": "<p>Enjoy a seamless shopping experience, facilitated<br/> by our complimentary shipping.</p>",
-            "link": "",
-            "button_label": "Learn more [arrow]",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        },
-        "iconbox_RW46nE": {
-          "type": "iconbox",
-          "settings": {
-            "image_by_url": "",
-            "title": "Lifetime Warranty",
-            "description": "<p>Our dedicated team provides timely assistance, <br/>committed to addressing your queries.</p>",
-            "link": "",
-            "button_label": "Learn more [arrow]",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        },
-        "iconbox_EiwgTg": {
-          "type": "iconbox",
-          "settings": {
-            "image_by_url": "",
-            "title": "Pure Formulation Guarantee",
-            "description": "<p>Cold-pressed botanical bio-actives backed by our 30-day radiant skin satisfaction guarantee.</p>",
-            "link": "",
-            "button_label": "Learn more [arrow]",
-            "button_style": "m-button--plain",
-            "button_size": ""
-          }
-        }
-      },
-      "block_order": [
-        "iconbox_pJbJGA",
-        "iconbox_RW46nE",
-        "iconbox_EiwgTg"
-      ],
-      "custom_css": [
-        ".m-icon-box__heading {font-weight: 400;}"
-      ],
-      "settings": {
-        "heading": "Why Aura Botanica?",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
+        "color_scheme": "default",
+        "heading": "Customer Reviews",
         "container": "container",
-        "color_scheme": "",
-        "item_per_row": 3,
-        "item_gap": 30,
-        "item_gap_mobile": 10,
-        "card_color_scheme": "",
-        "card_style": "vertical",
-        "image_max_width": "70px",
-        "content_alignment": "center",
-        "hover_effect": "scaling-up",
-        "enable_slider": false,
-        "show_pagination": false,
-        "show_navigation": false,
-        "use_scroll_mobile": true,
-        "use_grid_column_mb": false,
-        "padding_top": 100,
-        "padding_bottom": 0,
-        "custom_class": "",
-        "animations": "inherit"
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
-    "collapsible_tabs_JndiBV": {
-      "type": "collapsible-tabs",
-      "blocks": {
-        "item_bHzngY": {
-          "type": "item",
-          "settings": {
-            "header": "How long does it take to process an order?",
-            "text_size": "h4",
-            "content": "<p>All the details you love about the original—with a fresh flared block heel and modern square toe. Expertly crafted using soft Nappa leather, this essential style molds and moves with you to keep you comfortably on your feet all day (and night). This boot uses leather sourced from a Leather Working Group-approved trader. The Leather Working Group (LWG) Audit Standards provide transparency and accountability within the leather supply chain—covering energy and water usage.</p>",
-            "content_page": "",
-            "open": true
-          }
-        },
-        "item_RGMrHr": {
-          "type": "item",
-          "settings": {
-            "header": "Do you ship internationally?",
-            "text_size": "h4",
-            "content": "<p>All the details you love about the original—with a fresh flared block heel and modern square toe. Expertly crafted using soft Nappa leather, this essential style molds and moves with you to keep you comfortably on your feet all day (and night). This boot uses leather sourced from a Leather Working Group-approved trader. The Leather Working Group (LWG) Audit Standards provide transparency and accountability within the leather supply chain—covering energy and water usage.</p>",
-            "content_page": "",
-            "open": false
-          }
-        },
-        "item_nceVP8": {
-          "type": "item",
-          "settings": {
-            "header": "What is your return policy?",
-            "text_size": "h4",
-            "content": "<p>All the details you love about the original—with a fresh flared block heel and modern square toe. Expertly crafted using soft Nappa leather, this essential style molds and moves with you to keep you comfortably on your feet all day (and night). This boot uses leather sourced from a Leather Working Group-approved trader. The Leather Working Group (LWG) Audit Standards provide transparency and accountability within the leather supply chain—covering energy and water usage.</p>",
-            "content_page": "",
-            "open": false
-          }
-        },
-        "item_NQRQAp": {
-          "type": "item",
-          "settings": {
-            "header": "What are your sizing options?",
-            "text_size": "h4",
-            "content": "<p>All the details you love about the original—with a fresh flared block heel and modern square toe. Expertly crafted using soft Nappa leather, this essential style molds and moves with you to keep you comfortably on your feet all day (and night). This boot uses leather sourced from a Leather Working Group-approved trader. The Leather Working Group (LWG) Audit Standards provide transparency and accountability within the leather supply chain—covering energy and water usage.</p>",
-            "content_page": "",
-            "open": false
-          }
-        }
-      },
-      "block_order": [
-        "item_bHzngY",
-        "item_RGMrHr",
-        "item_nceVP8",
-        "item_NQRQAp"
-      ],
-      "custom_css": [
-        ".m-collapsible--button {font-weight: 400;}",
-        ".m-collapsible + .m-collapsible {margin-top: 20px; display: block;}",
-        ".m-collapsible--content__inner {padding-bottom: 0; color: rgb(var(--color-foreground-secondary));}"
-      ],
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "image_position": "left",
-        "column_gap": 100,
-        "heading": "Discover more in our FAQ",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "padding_top": 100,
-        "padding_bottom": 0,
-        "animations": "inherit",
-        "custom_class": ""
-      }
-    },
-    "product-recommendations": {
+    "product_recommendations": {
       "type": "product-recommendations",
       "settings": {
         "container": "container-fluid",
-        "color_scheme": "",
+        "color_scheme": "default",
         "remove_params": false,
-        "heading": "You Might Also Like",
+        "heading": "Complete the Botanical Ritual",
         "heading_size": "h3",
         "text_align": "center",
-        "limit": 8,
-        "columns": 5,
+        "limit": 4,
+        "columns": 4,
         "column_gap": 30,
         "enable_slider": true,
         "use_scroll_mobile": true,
-        "padding_top": 100,
-        "padding_bottom": 100,
+        "padding_top": 60,
+        "padding_bottom": 60,
         "custom_class": "",
         "animations": "inherit"
       }
     },
-    "recent-viewed-products": {
+    "recent_viewed_products": {
       "type": "recent-viewed-products",
       "settings": {
         "container": "container-fluid",
-        "color_scheme": "",
-        "heading": "Recently Viewed Products",
+        "color_scheme": "default",
+        "heading": "Recently Viewed Formulations",
         "heading_size": "h3",
         "text_align": "center",
-        "limit": 8,
-        "columns": 5,
+        "limit": 4,
+        "columns": 4,
         "column_gap": 30,
-        "pcard_layout": "",
-        "pcard_image_ratio": "",
         "show_vendor": false,
         "hide_title": false,
         "enable_slider": true,
@@ -401,7 +205,7 @@
         "use_scroll_mobile": true,
         "item_gap_mobile": 16,
         "padding_top": 0,
-        "padding_bottom": 100,
+        "padding_bottom": 80,
         "custom_class": "",
         "animations": "inherit"
       }
@@ -410,11 +214,9 @@
   "order": [
     "breadcrumb",
     "main",
-    "product-details-tabs",
-    "scrolling_promotion_MVNN6Q",
-    "icon_box_9UtNky",
-    "collapsible_tabs_JndiBV",
-    "product-recommendations",
-    "recent-viewed-products"
+    "product_details_tabs",
+    "product_reviews",
+    "product_recommendations",
+    "recent_viewed_products"
   ]
 }
