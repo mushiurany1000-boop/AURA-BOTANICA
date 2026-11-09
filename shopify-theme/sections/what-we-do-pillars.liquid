@@ -1,0 +1,150 @@
+{%- comment -%}
+  KAYRA Beauty v2.0 — What We Formulate / Specialized Pillars Section
+  Split layout with bold typography left & 4 active pillars right matching Noir Velvet reference
+{%- endcomment -%}
+
+{%- liquid
+  assign container = section.settings.container | default: 'container'
+  assign color_scheme = section.settings.color_scheme | default: 'default'
+-%}
+
+<section
+  id="m-pillars-{{ section.id }}"
+  class="m-section m-pillars py-16 md:py-24 bg-[#180509] text-[#FFF8F5] m-color-{{ color_scheme }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="what-we-do-pillars"
+>
+  <div class="{{ container }} max-w-[1240px] mx-auto px-4 sm:px-6">
+    
+    <!-- Section Header -->
+    <div class="mb-10 pb-3 border-b border-[rgba(226,183,168,0.2)]" data-anim="fade-up">
+      <div class="aura-eyebrow-plus text-xs font-semibold uppercase tracking-[0.22em] text-[#E2B7A8]">
+        + {{ section.settings.eyebrow | default: 'WHAT I DO' }}
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      
+      <!-- Left: Bold Punchy Heading (4 cols) -->
+      <div class="lg:col-span-4" data-anim="fade-up">
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-[40px] font-normal leading-[1.12] text-[#FFFFFF] tracking-tight">
+          {{ section.settings.heading | default: 'Strategic design.<br>Seamless experience.<br>Real impact.' }}
+        </h2>
+      </div>
+
+      <!-- Right: 4 Feature Columns Grid (8 cols) -->
+      <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-anim="stagger-children" data-anim-stagger="0.08">
+        {%- for block in section.blocks -%}
+          <div class="flex flex-col items-start" data-anim-child {{ block.shopify_attributes }}>
+            
+            <!-- Icon -->
+            <div class="w-10 h-10 mb-4 text-[#E2B7A8] flex items-center justify-start">
+              {%- case forloop.index -%}
+                {%- when 1 -%}
+                  <svg class="w-8 h-8 stroke-current stroke-[1.4]" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                {%- when 2 -%}
+                  <svg class="w-8 h-8 stroke-current stroke-[1.4]" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                {%- when 3 -%}
+                  <svg class="w-8 h-8 stroke-current stroke-[1.4]" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg>
+                {%- else -%}
+                  <svg class="w-8 h-8 stroke-current stroke-[1.4]" viewBox="0 0 24 24" fill="none"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              {%- endcase -%}
+            </div>
+
+            <!-- Title & Description -->
+            <h4 class="text-xs font-semibold uppercase tracking-[0.16em] text-[#FFFFFF] mb-2 font-sans">
+              {{ block.settings.title }}
+            </h4>
+            <p class="text-xs text-[#C5A59E] leading-relaxed font-sans">
+              {{ block.settings.text }}
+            </p>
+
+          </div>
+        {%- endfor -%}
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "What We Formulate",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "WHAT I DO"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Main heading",
+      "default": "Strategic design.<br>Seamless experience.<br>Real impact."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pillar",
+      "name": "Pillar Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Pillar Title",
+          "default": "UI/UX DESIGN"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Pillar Description",
+          "default": "User-centered interfaces that look stunning and work effortlessly."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "What We Formulate",
+      "blocks": [
+        {
+          "type": "pillar",
+          "settings": {
+            "title": "UI/UX DESIGN",
+            "text": "User-centered interfaces that look stunning and work effortlessly."
+          }
+        },
+        {
+          "type": "pillar",
+          "settings": {
+            "title": "WEB DESIGN",
+            "text": "Modern websites that elevate your brand and engage users."
+          }
+        },
+        {
+          "type": "pillar",
+          "settings": {
+            "title": "BRANDING",
+            "text": "Visual identities that make your brand unforgettable."
+          }
+        },
+        {
+          "type": "pillar",
+          "settings": {
+            "title": "CONSULTING",
+            "text": "Expert guidance for products, design systems, and digital strategy."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -39,3 +39,4 @@ adminHtml = adminHtml.replace(
 
 fs.writeFileSync('preview/admin.html', adminHtml);
 console.log('preview/admin.html orders total patched.');
+

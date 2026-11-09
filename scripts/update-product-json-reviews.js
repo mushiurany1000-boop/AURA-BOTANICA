@@ -70,3 +70,4 @@ prod.sections.product_reviews = {
 
 fs.writeFileSync('templates/product.json', JSON.stringify(prod, null, 2));
 console.log('Successfully updated templates/product.json with default review blocks!');
+

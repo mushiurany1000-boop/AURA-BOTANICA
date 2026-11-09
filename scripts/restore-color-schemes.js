@@ -86,3 +86,4 @@ data.current.color_schemes['scheme-forest-gold'] = {
 
 fs.writeFileSync('config/settings_data.json', JSON.stringify(data, null, 2));
 console.log('Restored color schemes in config/settings_data.json');
+

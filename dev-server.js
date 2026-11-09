@@ -105,40 +105,42 @@ function parseJsonBody(req, callback) {
 }
 
 function rebuildThemeZip() {
-  try {
-    const zipName = 'aura-skincare-theme.zip';
-    const zipPath = path.join(ROOT, zipName);
-    if (fs.existsSync(zipPath)) {
-      try { fs.unlinkSync(zipPath); } catch (e) {}
-    }
-    // Use bsdtar (tar.exe) to create POSIX-standard forward-slash zip archives required by Shopify
-    execSync(`tar.exe -a -c -f "${zipName}" -C "shopify-theme" assets blocks config layout locales sections snippets templates`, {
-      cwd: ROOT,
-      stdio: 'ignore'
-    });
-    return true;
-  } catch (err) {
+  const zipNames = ['kayra-beauty-shopify-theme.zip', 'aura-skincare-theme.zip'];
+  let allSuccess = true;
+
+  for (const zipName of zipNames) {
     try {
-      const psScript = `
-        Add-Type -AssemblyName System.IO.Compression;
-        Add-Type -AssemblyName System.IO.Compression.FileSystem;
-        $src = (Resolve-Path 'shopify-theme').Path;
-        $dest = Join-Path (Get-Location) 'aura-skincare-theme.zip';
-        if (Test-Path $dest) { Remove-Item $dest };
-        $zip = [System.IO.Compression.ZipFile]::Open($dest, [System.IO.Compression.ZipArchiveMode]::Create);
-        Get-ChildItem -Path $src -Recurse -File | ForEach-Object {
-          $rel = $_.FullName.Substring($src.Length + 1).Replace('\\', '/');
-          [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, $_.FullName, $rel);
-        };
-        $zip.Dispose();
-      `.replace(/\s+/g, ' ').trim();
-      execSync(`powershell -NoProfile -Command "${psScript}"`, { cwd: ROOT, stdio: 'ignore' });
-      return true;
-    } catch (err2) {
-      console.error('Error auto-packaging theme:', err2.message);
-      return false;
+      const zipPath = path.join(ROOT, zipName);
+      if (fs.existsSync(zipPath)) {
+        try { fs.unlinkSync(zipPath); } catch (e) {}
+      }
+      execSync(`tar.exe -a -c -f "${zipName}" -C "shopify-theme" assets blocks config layout locales sections snippets templates`, {
+        cwd: ROOT,
+        stdio: 'ignore'
+      });
+    } catch (err) {
+      try {
+        const psScript = `
+          Add-Type -AssemblyName System.IO.Compression;
+          Add-Type -AssemblyName System.IO.Compression.FileSystem;
+          $src = (Resolve-Path 'shopify-theme').Path;
+          $dest = Join-Path (Get-Location) '${zipName}';
+          if (Test-Path $dest) { Remove-Item $dest };
+          $zip = [System.IO.Compression.ZipFile]::Open($dest, [System.IO.Compression.ZipArchiveMode]::Create);
+          Get-ChildItem -Path $src -Recurse -File | ForEach-Object {
+            $rel = $_.FullName.Substring($src.Length + 1).Replace('\\', '/');
+            [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, $_.FullName, $rel);
+          };
+          $zip.Dispose();
+        `.replace(/\s+/g, ' ').trim();
+        execSync(`powershell -NoProfile -Command "${psScript}"`, { cwd: ROOT, stdio: 'ignore' });
+      } catch (err2) {
+        console.error('Error auto-packaging theme:', err2.message);
+        allSuccess = false;
+      }
     }
   }
+  return allSuccess;
 }
 
 function runThemeCheckCLI() {
@@ -866,9 +868,10 @@ const server = http.createServer((req, res) => {
   }
 
   // 9. Download Theme ZIP File Directly
-  if (req.method === 'GET' && (urlPath === '/api/theme/download' || urlPath === '/download/aura-skincare-theme.zip')) {
+  if (req.method === 'GET' && (urlPath === '/api/theme/download' || urlPath === '/download/kayra-beauty-shopify-theme.zip' || urlPath === '/download/aura-skincare-theme.zip')) {
     rebuildThemeZip(); // Ensure it is 100% fresh
-    const zipPath = path.join(ROOT, 'aura-skincare-theme.zip');
+    const chosenFile = urlPath.includes('aura') ? 'aura-skincare-theme.zip' : 'kayra-beauty-shopify-theme.zip';
+    const zipPath = path.join(ROOT, chosenFile);
 
     if (!fs.existsSync(zipPath)) {
       res.writeHead(404, { 'Content-Type': 'text/plain' });
@@ -878,7 +881,7 @@ const server = http.createServer((req, res) => {
     const stat = fs.statSync(zipPath);
     res.writeHead(200, {
       'Content-Type': 'application/zip',
-      'Content-Disposition': 'attachment; filename="aura-skincare-theme.zip"',
+      'Content-Disposition': `attachment; filename="${chosenFile}"`, 
       'Content-Length': stat.size
     });
 
@@ -893,7 +896,8 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({
       success,
-      archive: 'aura-skincare-theme.zip',
+      archive: 'kayra-beauty-shopify-theme.zip',
+      altArchive: 'aura-skincare-theme.zip',
       downloadUrl: '/api/theme/download',
       message: success ? 'Theme successfully packaged as aura-skincare-theme.zip' : 'Packaging failed'
     }));
@@ -905,6 +909,9 @@ const server = http.createServer((req, res) => {
   let responseStatusCode = 200;
 
   if (urlPath === '/' || urlPath === '/index.html') {
+    filePath = path.join(ROOT, 'preview', 'index.html');
+  } else if (urlPath === '/terracotta' || urlPath === '/terracotta.html') {
+    filePath = path.join(ROOT, 'preview', 'terracotta.html');
     filePath = path.join(ROOT, 'preview', 'index.html');
   } else if (urlPath === '/product' || urlPath === '/product.html' || urlPath.startsWith('/products/')) {
     filePath = path.join(ROOT, 'preview', 'product.html');

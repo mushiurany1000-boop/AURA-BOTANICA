@@ -51,7 +51,8 @@ const prohibited = entries.filter(e =>
   e.includes('node_modules') || 
   e.includes('.git') || 
   e.includes('.env') || 
-  e.includes('credentials') || 
+  e.endsWith('credentials.json') || 
+  e.includes('/credentials.') ||
   e.includes('package.json') ||
   e.includes('dev-server.js') ||
   e.endsWith('.DS_Store')

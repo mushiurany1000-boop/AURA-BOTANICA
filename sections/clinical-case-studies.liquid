@@ -1,0 +1,189 @@
+{%- comment -%}
+  KAYRA Beauty v2.0 — Case Studies / Clinical Proof Section
+  3 horizontal split cards matching Noir Velvet reference
+{%- endcomment -%}
+
+{%- liquid
+  assign container = section.settings.container | default: 'container'
+  assign color_scheme = section.settings.color_scheme | default: 'default'
+-%}
+
+<section
+  id="m-case-studies-{{ section.id }}"
+  class="m-section m-case-studies py-16 md:py-24 bg-[#1A070B] text-[#FFF8F5] m-color-{{ color_scheme }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="clinical-case-studies"
+>
+  <div class="{{ container }} max-w-[1240px] mx-auto px-4 sm:px-6">
+    
+    <!-- Section Header Row -->
+    <div class="flex items-center justify-between mb-8 pb-3 border-b border-[rgba(226,183,168,0.2)]" data-anim="fade-up">
+      <div class="aura-eyebrow-plus text-xs font-semibold uppercase tracking-[0.22em] text-[#E2B7A8]">
+        + {{ section.settings.heading | default: 'CASE STUDIES' }}
+      </div>
+      {%- if section.settings.link_label != blank -%}
+        <a
+          href="{{ section.settings.link_url | default: '/blogs/news' }}"
+          class="text-xs uppercase font-semibold tracking-[0.16em] text-[#C5A59E] hover:text-[#FFFFFF] transition-colors inline-flex items-center gap-1.5"
+        >
+          {{ section.settings.link_label }}
+          <span class="font-sans">&rarr;</span>
+        </a>
+      {%- endif -%}
+    </div>
+
+    <!-- 3 Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-anim="stagger-children" data-anim-stagger="0.1">
+      {%- for block in section.blocks -%}
+        <div
+          class="aura-card-work rounded-sm p-5 flex flex-col justify-between group min-h-[280px]"
+          style="background-color: {{ block.settings.card_bg | default: '#24090F' }}; border: 1px solid rgba(226,183,168,0.2);"
+          data-anim-child
+          {{ block.shopify_attributes }}
+        >
+          <!-- Top Tag & Title -->
+          <div class="mb-4">
+            <span class="text-[10px] font-mono text-[#E2B7A8] tracking-[0.2em] mb-1 block">
+              0{{ forloop.index }}
+            </span>
+            <h3 class="font-serif text-2xl font-medium tracking-wide uppercase text-[#FFFFFF] mb-2">
+              {{ block.settings.title }}
+            </h3>
+            <p class="text-xs text-[#C5A59E] leading-relaxed font-sans mb-4">
+              {{ block.settings.description }}
+            </p>
+            <a
+              href="{{ block.settings.link | default: '/pages/about-us' }}"
+              class="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#E2B7A8] hover:text-[#FFFFFF] transition-colors inline-flex items-center gap-1"
+            >
+              {{ block.settings.button_label | default: 'VIEW CASE STUDY' }}
+              <span class="font-sans">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Media Preview (Right or Bottom half) -->
+          <div class="w-full aspect-[16/9] rounded-sm overflow-hidden bg-[#160408] border border-[rgba(226,183,168,0.15)] flex items-center justify-center">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 800 | image_tag: 
+                loading: 'lazy', 
+                class: 'w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105' 
+              }}
+            {%- else -%}
+              <svg class="w-full h-full object-cover p-2 transition-transform duration-700 ease-out group-hover:scale-105" viewBox="0 0 280 150" fill="none">
+                <rect width="280" height="150" fill="#2E0D15"/>
+                <circle cx="140" cy="75" r="45" fill="#4A1822"/>
+                <path d="M100 120 C120 60 160 60 180 120 Z" fill="#E2B7A8" opacity="0.7"/>
+              </svg>
+            {%- endif -%}
+          </div>
+
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Case Studies / Proof",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section header text",
+      "default": "CASE STUDIES"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Header link label",
+      "default": "SEE ALL CASE STUDIES"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Header link URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "case_study",
+      "name": "Case Study",
+      "settings": [
+        {
+          "type": "color",
+          "id": "card_bg",
+          "label": "Card background color",
+          "default": "#24090F"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "LUMINA"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "How we restored lipid barrier strength by 62% in a 14-day clinical trial."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button text",
+          "default": "VIEW CASE STUDY"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Destination link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Media photo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Case Studies / Proof",
+      "blocks": [
+        {
+          "type": "case_study",
+          "settings": {
+            "title": "LUMINA",
+            "description": "How we restored lipid barrier strength by 62% in a 14-day clinical trial.",
+            "card_bg": "#24090F"
+          }
+        },
+        {
+          "type": "case_study",
+          "settings": {
+            "title": "VIREO STUDIO",
+            "description": "Formulating micro-nutrient delivery for hypersensitive rosacea skin.",
+            "card_bg": "#24090F"
+          }
+        },
+        {
+          "type": "case_study",
+          "settings": {
+            "title": "AURORA LIVING",
+            "description": "Bio-fermented active compounds delivering deep dermal hydration.",
+            "card_bg": "#24090F"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -33,3 +33,4 @@ schema.forEach((group, gIdx) => {
 
 console.log(`Total schema fixes made: ${fixesCount}`);
 fs.writeFileSync('config/settings_schema.json', JSON.stringify(schema, null, 2));
+

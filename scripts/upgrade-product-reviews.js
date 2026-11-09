@@ -405,3 +405,4 @@ const liquidContent = `{%- comment -%}
 
 fs.writeFileSync('sections/product-reviews.liquid', liquidContent);
 console.log('Successfully upgraded sections/product-reviews.liquid with Reference 2 breakdown and blocks!');
+

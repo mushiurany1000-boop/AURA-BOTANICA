@@ -1,0 +1,240 @@
+{%- comment -%}
+  KAYRA Beauty v2.0 — Hero Noir Arch Section
+  Luxury Editorial Suite inspired by Noir Velvet & Rose Champagne layout:
+  - Left: Headline ("BEAUTY with INTENT"), Subtitle, Pill Buttons
+  - Right: Neo-classical Arch Window with luxury editorial visual & Circular Seal Stamp
+{%- endcomment -%}
+
+{%- liquid
+  assign container = section.settings.container | default: 'container'
+  assign color_scheme = section.settings.color_scheme | default: 'default'
+-%}
+
+<section
+  id="m-hero-noir-{{ section.id }}"
+  class="m-section m-hero-noir relative overflow-hidden py-12 md:py-20 lg:py-24 bg-[#1A070B] text-[#FFF8F5] m-color-{{ color_scheme }}"
+  style="--section-padding-top: {{ section.settings.padding_top | default: 60 }}px; --section-padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;"
+  data-section-id="{{ section.id }}"
+  data-section-type="hero-noir-arch"
+>
+  <div class="{{ container }} max-w-[1240px] mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      
+      <!-- Left Column: Editorial Headline & Actions (7 cols) -->
+      <div class="lg:col-span-7 flex flex-col items-start z-10" data-anim="fade-up">
+        
+        {%- if section.settings.eyebrow != blank -%}
+          <div class="aura-eyebrow-plus mb-4 text-[#E2B7A8] text-xs font-semibold tracking-[0.22em] uppercase">
+            {{ section.settings.eyebrow }}
+          </div>
+        {%- endif -%}
+
+        <h1 class="aura-headline-noir text-4xl sm:text-6xl md:text-7xl font-serif text-[#FFFFFF] leading-[1.04] mb-6">
+          {{ section.settings.heading_line_1 | default: 'BEAUTY' }}<br>
+          <span class="script italic font-normal text-[#E2B7A8]">{{ section.settings.heading_italic | default: 'with' }}</span>
+          {{ section.settings.heading_line_2 | default: 'INTENT' }}
+        </h1>
+
+        {%- if section.settings.text != blank -%}
+          <p class="text-sm sm:text-base text-[#C5A59E] leading-relaxed max-w-lg mb-8 font-sans">
+            {{ section.settings.text }}
+          </p>
+        {%- endif -%}
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap items-center gap-4 sm:gap-6">
+          {%- if section.settings.button_label != blank -%}
+            <a
+              href="{{ section.settings.button_link | default: '/collections/all' }}"
+              class="aura-btn-pill-rose text-xs font-semibold uppercase tracking-[0.16em] inline-flex items-center gap-2"
+            >
+              {{ section.settings.button_label }}
+              <span class="font-sans">&rarr;</span>
+            </a>
+          {%- endif -%}
+
+          {%- if section.settings.secondary_label != blank -%}
+            <a
+              href="{{ section.settings.secondary_link | default: '#the-ritual' }}"
+              class="text-xs font-semibold uppercase tracking-[0.16em] text-[#C5A59E] hover:text-[#FFFFFF] transition-colors inline-flex items-center gap-1.5"
+            >
+              {{ section.settings.secondary_label }}
+              <span class="font-sans">&darr;</span>
+            </a>
+          {%- endif -%}
+        </div>
+
+      </div>
+
+      <!-- Right Column: Neo-classical Arch Frame with Luxury Visual (5 cols) -->
+      <div class="lg:col-span-5 relative flex justify-center items-center mt-8 lg:mt-0" data-anim="fade-up">
+        
+        <!-- Arch Window Frame -->
+        <div class="aura-arch-frame w-full max-w-[400px] aspect-[4/5] bg-[#24090F] border border-[rgba(226,183,168,0.25)] relative overflow-hidden flex items-center justify-center group">
+          {%- if section.settings.image != blank -%}
+            {{ section.settings.image | image_url: width: 1000 | image_tag: 
+              loading: 'eager', 
+              class: 'w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105' 
+            }}
+          {%- else -%}
+            <!-- High-Fidelity Fallback SVG: Elegant Editorial Skincare Silhouette & Velvet Rose Arch -->
+            <svg class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Editorial Skincare Ritual in Velvet Arch">
+              <defs>
+                <linearGradient id="arch-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#4A1822"/>
+                  <stop offset="50%" stop-color="#2D0C14"/>
+                  <stop offset="100%" stop-color="#160408"/>
+                </linearGradient>
+                <radialGradient id="rose-glow" cx="60%" cy="40%" r="55%">
+                  <stop offset="0%" stop-color="#8B2838" stop-opacity="0.8"/>
+                  <stop offset="100%" stop-color="#1A070B" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <!-- Glowing Velvet Background -->
+              <rect width="400" height="500" fill="url(#arch-bg-grad)"/>
+              <circle cx="260" cy="220" r="180" fill="url(#rose-glow)"/>
+              
+              <!-- Soft Velvet Floral Petal Silhouettes -->
+              <path d="M-20 450 C80 320 220 380 260 500 Z" fill="#3D121B" opacity="0.6"/>
+              <path d="M180 500 C240 380 380 400 420 500 Z" fill="#280A10" opacity="0.8"/>
+
+              <!-- Editorial Skincare Silhouette Profile -->
+              <path d="M220 130 C220 90 270 90 270 130 C270 160 250 180 250 200 C250 230 290 270 310 330 C330 390 320 460 310 500 L180 500 C170 450 180 390 190 340 C200 290 210 240 210 200 C210 170 220 150 220 130 Z" fill="#22070D"/>
+              <!-- Elegant Golden Earring Drop -->
+              <circle cx="240" cy="180" r="4" fill="#E2B7A8"/>
+              <path d="M240 184 L240 200" stroke="#E2B7A8" stroke-width="1.5"/>
+              <circle cx="240" cy="204" r="6" fill="#DEBC8C"/>
+
+              <!-- Bottle in Front -->
+              <rect x="130" y="270" width="60" height="130" rx="8" fill="#F8E5DB" opacity="0.95"/>
+              <rect x="148" y="240" width="24" height="30" rx="3" fill="#BA934E"/>
+              <ellipse cx="160" cy="230" rx="9" ry="12" fill="#FFFFFF"/>
+              <text x="160" y="340" font-family="'Cormorant Garamond', Georgia, serif" font-size="8" font-weight="600" letter-spacing="2" fill="#3A1C16" text-anchor="middle">KAYRA</text>
+            </svg>
+          {%- endif -%}
+        </div>
+
+        <!-- Floating Circular Seal / Monogram Stamp (Bottom Right of Arch) -->
+        <div class="aura-circular-seal absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 z-20 shadow-xl">
+          <div class="aura-seal-monogram">{{ section.settings.stamp_monogram | default: 'KB' }}</div>
+          <div class="aura-seal-text">{{ section.settings.stamp_text | default: 'CELLULAR CARE' }}</div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Noir Arch",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "BIOMIMETIC BOTANICAL ALCHEMY —"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_1",
+      "label": "Heading line 1",
+      "default": "BEAUTY"
+    },
+    {
+      "type": "text",
+      "id": "heading_italic",
+      "label": "Italic accent word",
+      "default": "with"
+    },
+    {
+      "type": "text",
+      "id": "heading_line_2",
+      "label": "Heading line 2",
+      "default": "INTENT"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Subtitle description",
+      "default": "We formulate bio-compatible botanical rituals that restore your cellular barrier and awaken radiant vitality."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Primary button label",
+      "default": "EXPLORE FORMULATIONS"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Primary button link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary link label",
+      "default": "DISCOVER RITUAL"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary link URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Arch window portrait/product image"
+    },
+    {
+      "type": "header",
+      "content": "Circular Seal Stamp"
+    },
+    {
+      "type": "text",
+      "id": "stamp_monogram",
+      "label": "Monogram text",
+      "default": "KB"
+    },
+    {
+      "type": "text",
+      "id": "stamp_text",
+      "label": "Seal subtitle text",
+      "default": "CELLULAR CARE"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Noir Arch"
+    }
+  ]
+}
+{% endschema %}

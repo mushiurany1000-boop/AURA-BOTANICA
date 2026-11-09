@@ -198,3 +198,4 @@ if (!data.current.product_tabs_style) data.current.product_tabs_style = "underli
 fs.writeFileSync('config/settings_schema.json', JSON.stringify(schema, null, 2));
 fs.writeFileSync('config/settings_data.json', JSON.stringify(data, null, 2));
 console.log('Successfully upgraded settings_schema.json and settings_data.json!');
+

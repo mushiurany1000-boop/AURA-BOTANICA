@@ -1,0 +1,181 @@
+{%- comment -%}
+  KAYRA Beauty v2.0 — Featured Collections Cards
+  3 wide horizontal blush cards with '+' badge and hover zoom matching Noir Velvet reference
+{%- endcomment -%}
+
+{%- liquid
+  assign container = section.settings.container | default: 'container'
+  assign color_scheme = section.settings.color_scheme | default: 'default'
+-%}
+
+<section
+  id="m-featured-cards-{{ section.id }}"
+  class="m-section m-featured-cards py-14 md:py-20 bg-[#1A070B] text-[#FFF8F5] m-color-{{ color_scheme }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="featured-collections-cards"
+>
+  <div class="{{ container }} max-w-[1240px] mx-auto px-4 sm:px-6">
+    
+    <!-- Section Header Row -->
+    <div class="flex items-center justify-between mb-8 pb-3 border-b border-[rgba(226,183,168,0.2)]" data-anim="fade-up">
+      <div class="aura-eyebrow-plus text-xs font-semibold uppercase tracking-[0.22em] text-[#E2B7A8]">
+        + {{ section.settings.heading | default: 'FEATURED FORMULATIONS' }}
+      </div>
+      {%- if section.settings.link_label != blank -%}
+        <a
+          href="{{ section.settings.link_url | default: '/collections/all' }}"
+          class="text-xs uppercase font-semibold tracking-[0.16em] text-[#C5A59E] hover:text-[#FFFFFF] transition-colors inline-flex items-center gap-1.5"
+        >
+          {{ section.settings.link_label }}
+          <span class="font-sans">&rarr;</span>
+        </a>
+      {%- endif -%}
+    </div>
+
+    <!-- 3 Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-anim="stagger-children" data-anim-stagger="0.1">
+      {%- for block in section.blocks -%}
+        <a
+          href="{{ block.settings.link | default: '/collections/all' }}"
+          class="aura-card-work block rounded-sm p-4 relative group min-h-[300px] flex flex-col justify-between"
+          style="background-color: {{ block.settings.card_bg | default: '#E4B5A8' }}; color: #2D0C14;"
+          data-anim-child
+          {{ block.shopify_attributes }}
+        >
+          <!-- Media Showcase Box -->
+          <div class="w-full aspect-[16/10] bg-[#FFF2EE] rounded-sm overflow-hidden mb-4 relative flex items-center justify-center">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 800 | image_tag: 
+                loading: 'lazy', 
+                class: 'w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105' 
+              }}
+            {%- else -%}
+              <!-- Fallback High-Fidelity SVG -->
+              <svg class="w-full h-full object-contain p-4 transition-transform duration-700 ease-out group-hover:scale-105" viewBox="0 0 300 180" fill="none">
+                <rect width="300" height="180" fill="#FDF7F4"/>
+                <ellipse cx="150" cy="140" rx="80" ry="20" fill="#E8D2C8"/>
+                <rect x="120" y="40" width="60" height="100" rx="6" fill="#FFFFFF" stroke="#DEC1B5"/>
+                <rect x="138" y="20" width="24" height="20" fill="#BA934E"/>
+                <text x="150" y="100" font-family="'Cormorant Garamond', serif" font-size="12" font-weight="600" letter-spacing="3" fill="#3D121B" text-anchor="middle">{{ block.settings.title | default: 'KAYRA' }}</text>
+              </svg>
+            {%- endif -%}
+          </div>
+
+          <!-- Card Content -->
+          <div class="pr-8">
+            <h3 class="font-serif text-2xl font-medium tracking-wide uppercase mb-1 text-[#2D0C14]">
+              {{ block.settings.title }}
+            </h3>
+            <p class="text-xs text-[#5C2E38] font-sans">
+              {{ block.settings.subtitle }}
+            </p>
+          </div>
+
+          <!-- Bottom Right Circular '+' Button -->
+          <div class="aura-card-work-plus">
+            +
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Cards Grid",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section header text",
+      "default": "FEATURED WORK"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Header link label",
+      "default": "VIEW ALL PROJECTS"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Header link URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Featured Card",
+      "settings": [
+        {
+          "type": "color",
+          "id": "card_bg",
+          "label": "Card background color",
+          "default": "#E4B5A8"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "LUMINA"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle / Category",
+          "default": "E-Commerce Redesign"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Destination link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Cards Grid",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "title": "LUMINA",
+            "subtitle": "E-Commerce Redesign",
+            "card_bg": "#E4B5A8"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "VIREO STUDIO",
+            "subtitle": "Creative Portfolio Website",
+            "card_bg": "#F0D5CC"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "AURORA LIVING",
+            "subtitle": "Luxury Brand Website",
+            "card_bg": "#E6C2B8"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

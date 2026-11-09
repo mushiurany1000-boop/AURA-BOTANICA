@@ -1,0 +1,228 @@
+{%- comment -%}
+  KAYRA Beauty v2.0 — CTA Noir Footer Section
+  Dramatic arch window, typography ("Let's create something extraordinary.."), contact links, and seal
+{%- endcomment -%}
+
+{%- liquid
+  assign container = section.settings.container | default: 'container'
+  assign color_scheme = section.settings.color_scheme | default: 'default'
+-%}
+
+<section
+  id="m-cta-footer-{{ section.id }}"
+  class="m-section m-cta-footer pt-16 md:pt-24 pb-12 bg-[#120306] text-[#FFF8F5] m-color-{{ color_scheme }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="cta-noir-footer"
+>
+  <div class="{{ container }} max-w-[1240px] mx-auto px-4 sm:px-6">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-16">
+      
+      <!-- Left Column: Big Headline & CTA Button (5 cols) -->
+      <div class="lg:col-span-5 flex flex-col items-start" data-anim="fade-up">
+        <h2 class="aura-headline-noir text-3xl sm:text-5xl lg:text-6xl font-serif text-[#FFFFFF] leading-[1.08] mb-8">
+          {{ section.settings.heading | default: "Let's create<br>something<br><span class='script'>extraordinary..</span>" }}
+        </h2>
+
+        {%- if section.settings.button_label != blank -%}
+          <a
+            href="{{ section.settings.button_link | default: '/collections/all' }}"
+            class="aura-btn-pill-rose text-xs font-semibold uppercase tracking-[0.16em] inline-flex items-center gap-2"
+          >
+            {{ section.settings.button_label }}
+            <span class="font-sans">&rarr;</span>
+          </a>
+        {%- endif -%}
+      </div>
+
+      <!-- Center Column: Glowing Arch Floral Window (4 cols) -->
+      <div class="lg:col-span-4 flex justify-center items-center" data-anim="fade-up">
+        <div class="aura-arch-frame w-full max-w-[280px] aspect-[3/4] bg-[#22070D] border border-[rgba(226,183,168,0.25)] relative overflow-hidden flex items-center justify-center">
+          {%- if section.settings.arch_image != blank -%}
+            {{ section.settings.arch_image | image_url: width: 600 | image_tag: 
+              loading: 'lazy', 
+              class: 'w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105' 
+            }}
+          {%- else -%}
+            <!-- Fallback SVG: Velvet Red Peony / Rose Petal Floral in Dark Arch -->
+            <svg class="w-full h-full object-cover" viewBox="0 0 300 400" fill="none">
+              <defs>
+                <radialGradient id="floral-glow" cx="50%" cy="50%" r="60%">
+                  <stop offset="0%" stop-color="#9C2738" stop-opacity="0.9"/>
+                  <stop offset="60%" stop-color="#4A101A" stop-opacity="0.7"/>
+                  <stop offset="100%" stop-color="#160307" stop-opacity="1"/>
+                </radialGradient>
+              </defs>
+              <rect width="300" height="400" fill="url(#floral-glow)"/>
+              <!-- Glowing Velvet Rose Petals -->
+              <circle cx="150" cy="220" r="80" fill="#6A1624" opacity="0.8"/>
+              <path d="M150 160 C110 180 100 240 150 260 C200 240 190 180 150 160 Z" fill="#B32B3E" opacity="0.9"/>
+              <path d="M120 200 C100 230 130 270 170 250 C180 210 150 190 120 200 Z" fill="#881E2E"/>
+              <path d="M150 210 C140 220 140 240 150 245 C160 240 160 220 150 210 Z" fill="#F0D5CC" opacity="0.7"/>
+            </svg>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <!-- Right Column: Contact Details & Circular Stamp (3 cols) -->
+      <div class="lg:col-span-3 flex flex-col items-start lg:items-end justify-between h-full gap-8" data-anim="fade-up">
+        
+        <!-- Contact List with Icons -->
+        <div class="space-y-4 text-xs font-sans text-[#C5A59E]">
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded-full border border-[rgba(226,183,168,0.3)] flex items-center justify-center text-[#E2B7A8] text-[10px]">✉</span>
+            <div>
+              <div class="text-[9px] uppercase tracking-[0.2em] text-[#E2B7A8]">EMAIL</div>
+              <a href="mailto:{{ section.settings.contact_email | default: 'atelier@kayrabeauty.com' }}" class="text-[#FFF8F5] hover:text-[#E2B7A8] transition-colors">
+                {{ section.settings.contact_email | default: 'atelier@kayrabeauty.com' }}
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded-full border border-[rgba(226,183,168,0.3)] flex items-center justify-center text-[#E2B7A8] text-[10px]">◎</span>
+            <div>
+              <div class="text-[9px] uppercase tracking-[0.2em] text-[#E2B7A8]">INSTAGRAM</div>
+              <a href="{{ section.settings.instagram_link | default: '#' }}" class="text-[#FFF8F5] hover:text-[#E2B7A8] transition-colors">
+                {{ section.settings.instagram_handle | default: '@kayra.beauty' }}
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded-full border border-[rgba(226,183,168,0.3)] flex items-center justify-center text-[#E2B7A8] text-[10px]">in</span>
+            <div>
+              <div class="text-[9px] uppercase tracking-[0.2em] text-[#E2B7A8]">LINKEDIN</div>
+              <a href="{{ section.settings.linkedin_link | default: '#' }}" class="text-[#FFF8F5] hover:text-[#E2B7A8] transition-colors">
+                {{ section.settings.linkedin_handle | default: 'linkedin.com/company/kayra-beauty' }}
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded-full border border-[rgba(226,183,168,0.3)] flex items-center justify-center text-[#E2B7A8] text-[10px]">📍</span>
+            <div>
+              <div class="text-[9px] uppercase tracking-[0.2em] text-[#E2B7A8]">LOCATION</div>
+              <span class="text-[#FFF8F5]">
+                {{ section.settings.location | default: 'Bordeaux, France' }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stamp Right -->
+        <div class="aura-circular-seal">
+          <div class="aura-seal-monogram">{{ section.settings.stamp_monogram | default: 'KB' }}</div>
+          <div class="aura-seal-text">{{ section.settings.stamp_text | default: 'ATELIER 2026' }}</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="pt-6 border-t border-[rgba(226,183,168,0.15)] flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#A88B85] font-sans gap-4">
+      <div>
+        &copy; {{ 'now' | date: '%Y' }} {{ shop.name }} ATELIER &bull; ALL RIGHTS RESERVED
+      </div>
+      <div class="flex gap-6">
+        <a href="/pages/about-us" class="hover:text-[#FFFFFF] transition-colors">Privacy Policy</a>
+        <a href="/pages/about-us" class="hover:text-[#FFFFFF] transition-colors">Terms of Service</a>
+        <a href="/admin" class="text-[#E2B7A8] font-semibold hover:underline">Merchant Portal</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CTA Noir Footer",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Let's create<br>something<br><span class='script'>extraordinary..</span>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button text",
+      "default": "LET'S WORK TOGETHER"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "image_picker",
+      "id": "arch_image",
+      "label": "Center arch image"
+    },
+    {
+      "type": "header",
+      "content": "Contact Info"
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Email address",
+      "default": "atelier@kayrabeauty.com"
+    },
+    {
+      "type": "text",
+      "id": "instagram_handle",
+      "label": "Instagram handle",
+      "default": "@kayra.beauty"
+    },
+    {
+      "type": "url",
+      "id": "instagram_link",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "text",
+      "id": "linkedin_handle",
+      "label": "LinkedIn handle",
+      "default": "linkedin.com/company/kayra-beauty"
+    },
+    {
+      "type": "url",
+      "id": "linkedin_link",
+      "label": "LinkedIn URL"
+    },
+    {
+      "type": "text",
+      "id": "location",
+      "label": "Location",
+      "default": "Bordeaux, France"
+    },
+    {
+      "type": "text",
+      "id": "stamp_monogram",
+      "label": "Seal monogram",
+      "default": "KB"
+    },
+    {
+      "type": "text",
+      "id": "stamp_text",
+      "label": "Seal text",
+      "default": "ATELIER 2026"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA Noir Footer"
+    }
+  ]
+}
+{% endschema %}
