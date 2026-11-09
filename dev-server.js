@@ -450,7 +450,7 @@ const server = http.createServer((req, res) => {
     const orders = getOrders();
     const products = getProducts();
 
-    const totalRevenue = orders.reduce((sum, o) => sum + (Number(o.total) || 0), 0);
+    const totalRevenue = orders.reduce((sum, o) => sum + (Number(o.total || o.total_price) || 0), 0);
     const totalOrders = orders.length;
     const aov = totalOrders > 0 ? (totalRevenue / totalOrders) : 0;
     const unfulfilledCount = orders.filter(o => o.fulfillment_status === 'unfulfilled').length;
@@ -476,7 +476,7 @@ const server = http.createServer((req, res) => {
         created_at: o.created_at,
         customer_name: o.customer ? o.customer.name : 'Guest Customer',
         customer_city: o.customer ? o.customer.city : '',
-        total: o.total,
+        total: Number(o.total || o.total_price || 0),
         financial_status: o.financial_status,
         fulfillment_status: o.fulfillment_status,
         items_count: (o.items || []).reduce((c, i) => c + (i.quantity || 1), 0)

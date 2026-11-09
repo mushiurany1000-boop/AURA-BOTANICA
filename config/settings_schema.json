@@ -12,6 +12,60 @@
     "settings": [
       {
         "type": "header",
+        "content": "Store Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Primary logo (Desktop)",
+        "info": "Recommended: Transparent SVG or PNG, 400x120px"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_transparent",
+        "label": "Inverted / transparent header logo",
+        "info": "Displayed on top of dark or transparent heroes"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_mobile",
+        "label": "Mobile logo",
+        "info": "Optional override for mobile viewports"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "label": "Desktop logo width",
+        "min": 60,
+        "max": 350,
+        "step": 5,
+        "unit": "px",
+        "default": 160
+      },
+      {
+        "type": "range",
+        "id": "logo_width_mobile",
+        "label": "Mobile logo width",
+        "min": 50,
+        "max": 200,
+        "step": 5,
+        "unit": "px",
+        "default": 110
+      },
+      {
+        "type": "text",
+        "id": "brand_wordmark",
+        "label": "Brand wordmark (Text fallback)",
+        "default": "KAYRA"
+      },
+      {
+        "type": "text",
+        "id": "brand_tagline",
+        "label": "Brand tagline / subtitle",
+        "default": "BEAUTY"
+      },
+      {
+        "type": "header",
         "content": "Favicon"
       },
       {
@@ -327,9 +381,7 @@
       {
         "type": "range",
         "id": "type_header_spacing",
-        "label": {
-          "en": "Letter spacing"
-        },
+        "label": "Letter spacing",
         "default": 0,
         "min": 0,
         "max": 10,
@@ -347,17 +399,13 @@
       {
         "type": "checkbox",
         "id": "btn_uppercase_text",
-        "label": {
-          "en": "Uppercase text label"
-        },
+        "label": "Uppercase text label",
         "default": false
       },
       {
         "type": "range",
         "id": "btn_base_size",
-        "label": {
-          "en": "Font size"
-        },
+        "label": "Font size",
         "default": 16,
         "min": 14,
         "max": 20,
@@ -367,9 +415,7 @@
       {
         "type": "range",
         "id": "btn_letter_spacing",
-        "label": {
-          "en": "Letter spacing"
-        },
+        "label": "Letter spacing",
         "default": 0,
         "min": 0,
         "max": 20,
@@ -389,9 +435,7 @@
       {
         "type": "range",
         "id": "btn_border_radius",
-        "label": {
-          "en": "Border radius"
-        },
+        "label": "Border radius",
         "default": 0,
         "min": 0,
         "max": 100,
@@ -401,9 +445,7 @@
       {
         "type": "range",
         "id": "btn_line_height",
-        "label": {
-          "en": "Line height"
-        },
+        "label": "Line height",
         "default": 23,
         "min": 1,
         "max": 50,
@@ -1221,6 +1263,127 @@
         "id": "pcard_show_lowest_prices",
         "label": "Show lowest prices",
         "default": false
+      }
+    ]
+  },
+  {
+    "name": "Product page",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Media & Gallery"
+      },
+      {
+        "type": "select",
+        "id": "product_media_layout",
+        "label": "Desktop gallery layout",
+        "options": [
+          {
+            "value": "layout-4",
+            "label": "Thumbnail slider with circular controls"
+          },
+          {
+            "value": "layout-1",
+            "label": "Vertical thumbnails left"
+          },
+          {
+            "value": "layout-2",
+            "label": "Stacked 1-column"
+          },
+          {
+            "value": "layout-3",
+            "label": "2-column grid"
+          }
+        ],
+        "default": "layout-4"
+      },
+      {
+        "type": "select",
+        "id": "product_media_aspect_ratio",
+        "label": "Media aspect ratio",
+        "options": [
+          {
+            "value": "square",
+            "label": "Square (1:1)"
+          },
+          {
+            "value": "portrait",
+            "label": "Portrait (3:4)"
+          },
+          {
+            "value": "natural",
+            "label": "Natural"
+          }
+        ],
+        "default": "square"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_product_zoom",
+        "label": "Enable click-to-zoom (Photoswipe)",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Buy Box & Actions"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_stock_badge",
+        "label": "Show 'In Stock' pill badge",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_sku",
+        "label": "Show SKU code",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_product_tags",
+        "label": "Show product tags",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_share_buttons",
+        "label": "Show social sharing icons",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Reviews & Ratings"
+      },
+      {
+        "type": "color",
+        "id": "review_star_color",
+        "label": "Rating stars color",
+        "default": "#E2C25D"
+      },
+      {
+        "type": "header",
+        "content": "Tabs & Collapsibles"
+      },
+      {
+        "type": "select",
+        "id": "product_tabs_style",
+        "label": "Tabs indicator style",
+        "options": [
+          {
+            "value": "underline",
+            "label": "Active underline bar (Reference style)"
+          },
+          {
+            "value": "pills",
+            "label": "Pill buttons"
+          },
+          {
+            "value": "minimal",
+            "label": "Minimalist fade"
+          }
+        ],
+        "default": "underline"
       }
     ]
   },
