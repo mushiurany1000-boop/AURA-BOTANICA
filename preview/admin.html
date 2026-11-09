@@ -1736,7 +1736,7 @@
                 <td>${dateStr}</td>
                 <td>${o.customer_name}</td>
                 <td>${o.customer_city || '—'}</td>
-                <td>$${Number(o.total).toFixed(2)}</td>
+                <td>${Number(o.total || o.total_price || 0).toFixed(2)}</td>
                 <td><span class="status-badge badge-success">Paid</span></td>
                 <td>${fulfillBadge}</td>
               `;
@@ -2018,7 +2018,7 @@
             </td>
             <td>${o.customer ? o.customer.city : '—'}</td>
             <td style="font-size:0.8rem;line-height:1.4;">${itemsSummary}</td>
-            <td><strong>$${Number(o.total).toFixed(2)}</strong></td>
+            <td><strong>${Number(o.total || o.total_price || 0).toFixed(2)}</strong></td>
             <td><span class="status-badge badge-success">Paid</span></td>
             <td>${fulfillBadge}</td>
           `;

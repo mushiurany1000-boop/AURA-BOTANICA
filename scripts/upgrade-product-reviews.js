@@ -1,0 +1,407 @@
+const fs = require('fs');
+
+const liquidContent = `{%- comment -%}
+  KAYRA Beauty v2.0 — Luxury Product Reviews Section
+  Phase 12 Reference 2 Exact Replica:
+  - Big 4.8 out of 5 Rating + 5 Gold Stars + (245 Review)
+  - 5-Star Breakdown Progress Bars (5 Star 90%, 4 Star 36%, 3 Star 15%, 2 Star 5%, 1 Star 2%)
+  - Review List with Verified Customer Cards, Star Ratings, and Customer Product Photos
+  - Full Theme Editor Blocks Support so merchants can add, edit, or remove customer reviews
+{%- endcomment -%}
+
+{%- liquid
+  assign container = section.settings.container | default: 'container'
+  assign color_scheme = section.settings.color_scheme | default: 'default'
+
+  assign rating_val = product.metafields.reviews.rating.value.rating | default: product.metafields.reviews.rating.value | default: '4.8'
+  assign rating_cnt = product.metafields.reviews.rating_count.value | default: product.metafields.reviews.rating_count | default: 245
+-%}
+
+<section
+  id="m-product-reviews-{{ section.id }}"
+  class="m-section m-product-reviews m-color-{{ color_scheme }} py-12 md:py-16 border-t border-[#EEEEEE]"
+  style="--section-padding-top: {{ section.settings.padding_top | default: 48 }}px; --section-padding-bottom: {{ section.settings.padding_bottom | default: 48 }}px;"
+  data-section-id="{{ section.id }}"
+  data-section-type="product-reviews"
+>
+  <div class="{{ container }} max-w-[1000px] mx-auto px-4 sm:px-6">
+    
+    {%- if section.settings.show_summary -%}
+      <!-- Review Summary & 5-Star Breakdown (Reference 2) -->
+      <div class="aura-reviews-summary-grid grid grid-cols-1 md:grid-cols-[240px_1fr] gap-8 md:gap-12 items-center mb-10 pb-8 border-b border-[#EEEEEE]" data-anim="fade-up">
+        
+        <!-- Left: Big Average Score -->
+        <div class="flex flex-col items-center md:items-center text-center">
+          <div class="text-5xl md:text-6xl font-bold font-sans text-[#1A1A1A] leading-none mb-1">
+            {{ section.settings.overall_rating | default: '4.8' }}
+          </div>
+          <span class="text-xs text-[#777777] mb-2 font-sans">out of 5</span>
+          <div class="flex text-[#E2C25D] text-lg mb-1" aria-label="5 out of 5 stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <span class="text-xs text-[#777777] font-sans">({{ section.settings.total_reviews_label | default: '245 Review' }})</span>
+        </div>
+
+        <!-- Right: 5-to-1 Star Progress Bars -->
+        <div class="flex flex-col gap-2.5 w-full">
+          <!-- 5 Star -->
+          <div class="aura-rating-bar-row flex items-center gap-3 text-xs text-[#666666] font-sans">
+            <span class="w-12 text-right">5 Star</span>
+            <div class="aura-rating-bar-track flex-1 h-2 bg-[#F0F0F0] rounded-full overflow-hidden">
+              <div class="aura-rating-bar-fill h-full bg-[#E2C25D] rounded-full" style="width: {{ section.settings.bar_5_pct | default: 90 }}%;"></div>
+            </div>
+          </div>
+          <!-- 4 Star -->
+          <div class="aura-rating-bar-row flex items-center gap-3 text-xs text-[#666666] font-sans">
+            <span class="w-12 text-right">4 Star</span>
+            <div class="aura-rating-bar-track flex-1 h-2 bg-[#F0F0F0] rounded-full overflow-hidden">
+              <div class="aura-rating-bar-fill h-full bg-[#E2C25D] rounded-full" style="width: {{ section.settings.bar_4_pct | default: 36 }}%;"></div>
+            </div>
+          </div>
+          <!-- 3 Star -->
+          <div class="aura-rating-bar-row flex items-center gap-3 text-xs text-[#666666] font-sans">
+            <span class="w-12 text-right">3 Star</span>
+            <div class="aura-rating-bar-track flex-1 h-2 bg-[#F0F0F0] rounded-full overflow-hidden">
+              <div class="aura-rating-bar-fill h-full bg-[#E2C25D] rounded-full" style="width: {{ section.settings.bar_3_pct | default: 15 }}%;"></div>
+            </div>
+          </div>
+          <!-- 2 Star -->
+          <div class="aura-rating-bar-row flex items-center gap-3 text-xs text-[#666666] font-sans">
+            <span class="w-12 text-right">2 Star</span>
+            <div class="aura-rating-bar-track flex-1 h-2 bg-[#F0F0F0] rounded-full overflow-hidden">
+              <div class="aura-rating-bar-fill h-full bg-[#E2C25D] rounded-full" style="width: {{ section.settings.bar_2_pct | default: 5 }}%;"></div>
+            </div>
+          </div>
+          <!-- 1 Star -->
+          <div class="aura-rating-bar-row flex items-center gap-3 text-xs text-[#666666] font-sans">
+            <span class="w-12 text-right">1 Star</span>
+            <div class="aura-rating-bar-track flex-1 h-2 bg-[#F0F0F0] rounded-full overflow-hidden">
+              <div class="aura-rating-bar-fill h-full bg-[#E2C25D] rounded-full" style="width: {{ section.settings.bar_1_pct | default: 2 }}%;"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    {%- endif -%}
+
+    <!-- Review List Header -->
+    <div class="flex items-center justify-between mb-6 pb-2" data-anim="fade-up">
+      <h3 class="text-lg font-bold font-sans text-[#1A1A1A]">
+        {{ section.settings.list_heading | default: 'Review List' }}
+      </h3>
+      <div class="text-xs text-[#777777] font-sans">
+        Showing 1-{{ section.blocks.size }} of {{ section.settings.total_reviews_count | default: 24 }} results &nbsp;&bull;&nbsp;
+        <span>Sort by : <strong>Newest &#9662;</strong></span>
+      </div>
+    </div>
+
+    <!-- Review List Blocks -->
+    <div class="aura-reviews-list divide-y divide-[#EEEEEE]" data-anim="stagger-children" data-anim-stagger="0.08">
+      {%- for block in section.blocks -%}
+        <div class="aura-review-card py-6" data-anim-child {{ block.shopify_attributes }}>
+          
+          <div class="aura-review-header flex items-start justify-between mb-2">
+            <div class="flex items-center gap-3">
+              <!-- Customer Avatar -->
+              <div class="w-10 h-10 rounded-full bg-[#E8EFEA] text-[#1E4123] font-bold text-xs flex items-center justify-center flex-shrink-0">
+                {%- if block.settings.avatar_initials != blank -%}
+                  {{ block.settings.avatar_initials }}
+                {%- else -%}
+                  {{ block.settings.author | slice: 0, 2 | upcase }}
+                {%- endif -%}
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-[#1A1A1A] font-sans">
+                  {{ block.settings.author }}
+                  {%- if block.settings.verified -%}
+                    <span class="text-[#2E7D32] text-xs font-semibold ml-1.5">(Verified)</span>
+                  {%- endif -%}
+                </div>
+                <div class="flex items-center gap-1.5 text-xs text-[#E2C25D] mt-0.5">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  <span class="text-[#1A1A1A] font-semibold text-xs ml-1">{{ block.settings.rating | default: '5.0' }}</span>
+                </div>
+              </div>
+            </div>
+            <span class="text-xs text-[#999999] font-sans">{{ block.settings.date }}</span>
+          </div>
+
+          <!-- Review Title & Content -->
+          <h4 class="text-sm font-semibold text-[#1A1A1A] font-sans mt-2 mb-1">
+            {{ block.settings.title }}
+          </h4>
+          <p class="text-xs sm:text-sm text-[#666666] font-sans leading-relaxed">
+            {{ block.settings.content }}
+          </p>
+
+          <!-- Customer Product Photos -->
+          {%- if block.settings.show_photos -%}
+            <div class="flex gap-2.5 mt-3.5">
+              <div class="w-20 h-20 rounded-lg bg-[#F5F5F5] border border-[#EEEEEE] overflow-hidden flex items-center justify-center">
+                <svg class="w-full h-full" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" fill="#EAE5DB"/><circle cx="40" cy="40" r="14" fill="#BA934E" opacity="0.6"/></svg>
+              </div>
+              <div class="w-20 h-20 rounded-lg bg-[#F5F5F5] border border-[#EEEEEE] overflow-hidden flex items-center justify-center">
+                <svg class="w-full h-full" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" fill="#EAE5DB"/><rect x="25" y="25" width="30" height="30" fill="#234527" opacity="0.6"/></svg>
+              </div>
+              <div class="w-20 h-20 rounded-lg bg-[#F5F5F5] border border-[#EEEEEE] overflow-hidden flex items-center justify-center">
+                <svg class="w-full h-full" viewBox="0 0 80 80" fill="none"><rect width="80" height="80" fill="#EAE5DB"/><circle cx="40" cy="40" r="16" fill="#D9C9B8"/></svg>
+              </div>
+            </div>
+          {%- endif -%}
+
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <!-- Review App Widget Insertion Container -->
+    {%- if settings.review_app != 'none' -%}
+      <div class="aura-review-app-container mt-10 pt-8 border-t border-[#EEEEEE]">
+        {% render 'product-reviews-app__snippet', custom_liquid: section.settings.custom_liquid %}
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product reviews",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_summary",
+      "label": "Show rating score & breakdown bars",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "overall_rating",
+      "label": "Overall rating score",
+      "default": "4.8"
+    },
+    {
+      "type": "text",
+      "id": "total_reviews_label",
+      "label": "Total reviews label",
+      "default": "245 Review"
+    },
+    {
+      "type": "header",
+      "content": "Breakdown Bars Percentages"
+    },
+    {
+      "type": "range",
+      "id": "bar_5_pct",
+      "label": "5 Star bar percentage",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "bar_4_pct",
+      "label": "4 Star bar percentage",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "bar_3_pct",
+      "label": "3 Star bar percentage",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "bar_2_pct",
+      "label": "2 Star bar percentage",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "bar_1_pct",
+      "label": "1 Star bar percentage",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "List Settings"
+    },
+    {
+      "type": "text",
+      "id": "list_heading",
+      "label": "Review list title",
+      "default": "Review List"
+    },
+    {
+      "type": "number",
+      "id": "total_reviews_count",
+      "label": "Total results count",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container layout",
+      "options": [
+        { "value": "container-fluid", "label": "Full width" },
+        { "value": "container", "label": "Boxed container" }
+      ],
+      "default": "container"
+    },
+    {
+      "type": "liquid",
+      "id": "custom_liquid",
+      "label": "Custom liquid for review widget"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Customer review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Customer name",
+          "default": "Kristin Watson"
+        },
+        {
+          "type": "text",
+          "id": "avatar_initials",
+          "label": "Avatar initials",
+          "default": "KW"
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Verified purchaser badge",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Review date",
+          "default": "1 month ago"
+        },
+        {
+          "type": "text",
+          "id": "rating",
+          "label": "Star rating score",
+          "default": "5.0"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Review headline",
+          "default": "Absolutely love this product!"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Review body",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_photos",
+          "label": "Show customer photos",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product reviews",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "author": "Kristin Watson",
+            "avatar_initials": "KW",
+            "verified": true,
+            "date": "1 month ago",
+            "rating": "5.0",
+            "title": "Absolutely love this product!",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "show_photos": true
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "author": "Jenny Wilson",
+            "avatar_initials": "JW",
+            "verified": true,
+            "date": "2 month ago",
+            "rating": "5.0",
+            "title": "Perfect for my skincare routine!",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            "show_photos": false
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "author": "Darlene Robertson",
+            "avatar_initials": "DR",
+            "verified": true,
+            "date": "2 month ago",
+            "rating": "5.0",
+            "title": "My barrier feels healed and renewed",
+            "content": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. High recommend to anyone with dry skin.",
+            "show_photos": false
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+`;
+
+fs.writeFileSync('sections/product-reviews.liquid', liquidContent);
+console.log('Successfully upgraded sections/product-reviews.liquid with Reference 2 breakdown and blocks!');

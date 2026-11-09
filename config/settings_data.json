@@ -566,7 +566,20 @@
           "tagline": "Pure Botanical Alchemy"
         }
       }
-    }
+    },
+    "brand_wordmark": "KAYRA",
+    "brand_tagline": "BEAUTY",
+    "logo_width": 160,
+    "logo_width_mobile": 110,
+    "product_media_layout": "layout-4",
+    "product_media_aspect_ratio": "square",
+    "enable_product_zoom": true,
+    "show_stock_badge": true,
+    "show_sku": true,
+    "show_product_tags": true,
+    "show_share_buttons": true,
+    "review_star_color": "#E2C25D",
+    "product_tabs_style": "underline"
   },
   "platform_customizations": {
     "custom_css": [
