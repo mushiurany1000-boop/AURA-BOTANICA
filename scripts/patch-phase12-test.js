@@ -17,3 +17,4 @@ const newCheck = `  const matchesTerracotta = JSON.stringify(actualOrder) === JS
 content = content.replace(/\r\n/g, '\n').replace(oldCheck, newCheck);
 fs.writeFileSync(filePath, content, 'utf8');
 console.log('Successfully patched scripts/test-phase12-redesign.js');
+

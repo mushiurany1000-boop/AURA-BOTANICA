@@ -9,3 +9,4 @@ content = content.replace(/aura-skincare-theme\.zip/g, 'kayra-beauty-shopify-the
 
 fs.writeFileSync(adminPath, content, 'utf8');
 console.log('preview/admin.html successfully updated with KAYRA BEAUTY branding & ZIP export!');
+

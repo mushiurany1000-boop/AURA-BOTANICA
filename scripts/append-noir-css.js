@@ -240,3 +240,4 @@ if (!currentCss.includes('NOIR VELVET & ROSE GOLD')) {
 } else {
   console.log('Already contains Noir Velvet styles');
 }
+

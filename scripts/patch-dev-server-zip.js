@@ -82,3 +82,4 @@ content = content.replace(
 
 fs.writeFileSync(devServerPath, content, 'utf8');
 console.log('dev-server.js updated successfully!');
+

@@ -66,3 +66,4 @@ zipNames.forEach(zipName => {
 });
 
 console.log('>>> All theme ZIP archives built successfully and ready for Shopify upload.');
+

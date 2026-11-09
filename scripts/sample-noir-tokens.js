@@ -14,3 +14,4 @@ for (let i = 0; i < imgBuf.length - 8; i++) {
   }
 }
 console.log(`Image dimensions: ${width}x${height}`);
+

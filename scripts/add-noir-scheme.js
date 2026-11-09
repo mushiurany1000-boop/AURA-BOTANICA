@@ -46,3 +46,4 @@ data.presets['Noir Velvet & Rose Gold'] = {
 
 fs.writeFileSync('config/settings_data.json', JSON.stringify(data, null, 2));
 console.log('Successfully added scheme-noir-velvet to config/settings_data.json!');
+

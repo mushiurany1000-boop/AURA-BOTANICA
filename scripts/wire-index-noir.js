@@ -263,3 +263,4 @@ const newIndexJson = {
 
 fs.writeFileSync(indexPath, JSON.stringify(newIndexJson, null, 2), 'utf8');
 console.log('Successfully wired Noir Velvet suite into templates/index.json with 18 section options!');
+

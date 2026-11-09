@@ -14,3 +14,4 @@ files.forEach(f => {
     console.log(`Updated ${f} with class="floating-theme-bar"`);
   }
 });
+

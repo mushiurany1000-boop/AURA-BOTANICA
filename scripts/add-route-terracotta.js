@@ -10,3 +10,4 @@ if (!s.includes("'/terracotta'")) {
 } else {
   console.log('/terracotta route already exists.');
 }
+

@@ -1,0 +1,15 @@
+# Shopify GitHub Integration Ignore Rules
+# Excludes development tools, local preview mocks, and documentation from Shopify Theme sync
+
+dev-server.js
+preview/
+data/
+scripts/
+docs/
+*.zip
+*.log
+.shopify/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
