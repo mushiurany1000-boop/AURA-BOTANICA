@@ -3,7 +3,7 @@
     "d880451e-1d96-4f33-80f8-fffa1f3ffaa1": {
       "type": "custom-code",
       "settings": {
-        "custom_css": ".sf__index-custom-content {\n    background-image: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0595\/7291\/2305\/files\/bg-4.jpg?v=1631937503\");\n    background-size: cover;\n    background-position: bottom center;\n    background-repeat: no-repeat;\n}\n\n.sf__index-custom-content .m-section__header {\n    margin-bottom: 100px;\n}\n.sf__index-custom-content .sf-custom__grid {\n    padding-bottom: 10%;\n}\n.sf__index-custom-content ul.sf__custom-list li {\n    display: grid;\n    grid-template-columns: 48px auto;\n    grid-gap: 40px;\n    margin-bottom: 50px;\n}\n.sf__index-custom-content ul.sf__custom-list li:last-child {\n    margin-bottom: 0;\n}\n.sf__index-custom-content ul.sf__custom-list .content_box h3 {\n    font-size: 24px;\n    line-height: 1.5;\n    margin-bottom: 10px;\n}\n.sf__index-custom-content ul.sf__custom-list .content_box p {\n    color: rgb(var(--color-foreground-secondary));\n}\n@media (min-width: 1280px) {\n  .sf__index-custom-content .m-section__heading {\n    font-size: 48px;\n  }\n}\n@media (min-width: 1921px) {\n    .sf__index-custom-content {\n        background-position: top;\n    }\n}\n\n@media (max-width: 767px) {\n    .sf__index-custom-content {\n        background-image: none;\n    }\n    .sf__index-custom-content .m-section__header {\n        margin-bottom: 30px;\n    }\n    .sf__index-custom-content ul.sf__custom-list .content_box h3 {\n        font-size: 18px;\n        margin-bottom: 5px;\n    }\n    .sf__index-custom-content .sf-custom__grid {\n        padding-bottom: 0;\n    }\n    .sf__index-custom-content ul.sf__custom-list li {\n        grid-template-columns: 30px auto;\n        grid-gap: 20px;\n        margin-bottom: 30px;\n    }\n}"
+        "custom_css": ".sf__index-custom-content {\n    background-image: url(\"https://cdn.shopify.com/s/files/1/0595/7291/2305/files/bg-4.jpg?v=1631937503\");\n    background-size: cover;\n    background-position: bottom center;\n    background-repeat: no-repeat;\n}\n\n.sf__index-custom-content .m-section__header {\n    margin-bottom: 100px;\n}\n.sf__index-custom-content .sf-custom__grid {\n    padding-bottom: 10%;\n}\n.sf__index-custom-content ul.sf__custom-list li {\n    display: grid;\n    grid-template-columns: 48px auto;\n    grid-gap: 40px;\n    margin-bottom: 50px;\n}\n.sf__index-custom-content ul.sf__custom-list li:last-child {\n    margin-bottom: 0;\n}\n.sf__index-custom-content ul.sf__custom-list .content_box h3 {\n    font-size: 24px;\n    line-height: 1.5;\n    margin-bottom: 10px;\n}\n.sf__index-custom-content ul.sf__custom-list .content_box p {\n    color: rgb(var(--color-foreground-secondary));\n}\n@media (min-width: 1280px) {\n  .sf__index-custom-content .m-section__heading {\n    font-size: 48px;\n  }\n}\n@media (min-width: 1921px) {\n    .sf__index-custom-content {\n        background-position: top;\n    }\n}\n\n@media (max-width: 767px) {\n    .sf__index-custom-content {\n        background-image: none;\n    }\n    .sf__index-custom-content .m-section__header {\n        margin-bottom: 30px;\n    }\n    .sf__index-custom-content ul.sf__custom-list .content_box h3 {\n        font-size: 18px;\n        margin-bottom: 5px;\n    }\n    .sf__index-custom-content .sf-custom__grid {\n        padding-bottom: 0;\n    }\n    .sf__index-custom-content ul.sf__custom-list li {\n        grid-template-columns: 30px auto;\n        grid-gap: 20px;\n        margin-bottom: 30px;\n    }\n}"
       }
     },
     "1634180644dff29e33": {
@@ -21,11 +21,10 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "b8fdad34-11a8-4f1d-afd3-dd67baab79b6": {
-          "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
+          "type": "shopify://apps/product-reviews/blocks/star_rating/bae150af-8da8-48b2-9867-398188115e5f",
           "settings": {
             "stars_fill_color": "#000000",
             "star_size": 15,
@@ -43,8 +42,7 @@
         },
         "a7c33681-2e92-4afe-af6c-09be8f611b30": {
           "type": "short_description",
-          "settings": {
-          }
+          "settings": {}
         },
         "1bfc8830-45fe-4840-b192-262d4a0ed107": {
           "type": "visitors",
@@ -86,13 +84,13 @@
             "deliver_days": "7",
             "date_format": "%b %d",
             "show_shipping_text": true,
-            "shipping_text": "<p><strong>Free Shipping & Returns: <\/strong>On all orders over $75<\/p>"
+            "shipping_text": "<p><strong>Free Shipping & Returns: </strong>On all orders over $75</p>"
           }
         },
         "95858a21-0a8c-42d1-be95-cd4f1797f5fc": {
           "type": "trust_badge",
           "settings": {
-            "trust_badges_text": "<p>Guarantee safe & secure checkout<\/p>",
+            "trust_badges_text": "<p>Guarantee safe & secure checkout</p>",
             "trust_badges_image_width": "320px",
             "position": "below"
           }
@@ -141,7 +139,7 @@
           "type": "tab",
           "settings": {
             "header": "Shipping & Return",
-            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.<\/p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.<\/p>",
+            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.</p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.</p>",
             "content_page": ""
           }
         }
@@ -152,7 +150,6 @@
       ],
       "settings": {
         "container": "container",
-        "bg_color": "",
         "default_open": true,
         "animations": "inherit"
       }
@@ -163,7 +160,7 @@
         "738fcb4e-f5f8-4f2f-bd48-84198bac2a3e": {
           "type": "html",
           "settings": {
-            "code": "<ul class=\"sf__custom-list\">\n<li>\n<div class=\"img_box\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0595\/7291\/2305\/files\/icon-6.svg?v=1631810887\"><\/div>\n<div class=\"content_box rte\">\n<h3>Different Sound Experiences<\/h3>\n<p>Designed to be positioned up against<br> the wall on a shelf or side table.<\/p>\n<\/div>\n<\/li>\n<li>\n<div class=\"img_box\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0595\/7291\/2305\/files\/icon-7.svg?v=1631810887\"><\/div>\n<div class=\"content_box rte\">\n<h3>Sound Performance<\/h3>\n<p>Designed to be positioned up against<br> the wall on a shelf or side table.<\/p>\n<\/div>\n<\/li>\n<li>\n<div class=\"img_box\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0595\/7291\/2305\/files\/icon-8.svg?v=1631810887\"><\/div>\n<div class=\"content_box rte\">\n<h3>Active Room Compensation<\/h3>\n<p>Designed to be positioned up against<br> the wall on a shelf or side table.<\/p>\n<\/div>\n<\/li>\n<\/ul>",
+            "code": "<ul class=\"sf__custom-list\">\n<li>\n<div class=\"img_box\"><img src=\"https://cdn.shopify.com/s/files/1/0595/7291/2305/files/icon-6.svg?v=1631810887\"></div>\n<div class=\"content_box rte\">\n<h3>Different Sound Experiences</h3>\n<p>Designed to be positioned up against<br> the wall on a shelf or side table.</p>\n</div>\n</li>\n<li>\n<div class=\"img_box\"><img src=\"https://cdn.shopify.com/s/files/1/0595/7291/2305/files/icon-7.svg?v=1631810887\"></div>\n<div class=\"content_box rte\">\n<h3>Sound Performance</h3>\n<p>Designed to be positioned up against<br> the wall on a shelf or side table.</p>\n</div>\n</li>\n<li>\n<div class=\"img_box\"><img src=\"https://cdn.shopify.com/s/files/1/0595/7291/2305/files/icon-8.svg?v=1631810887\"></div>\n<div class=\"content_box rte\">\n<h3>Active Room Compensation</h3>\n<p>Designed to be positioned up against<br> the wall on a shelf or side table.</p>\n</div>\n</li>\n</ul>",
             "width": "33%",
             "block_custom_class": "",
             "animations": "inherit"
@@ -179,7 +176,6 @@
         "description": "",
         "header_alignment": "center",
         "container": "container",
-        "background_color": "#e7ebe1",
         "gap": 30,
         "use_scroll_mobile": false,
         "gap_mobile": 16,
@@ -192,9 +188,8 @@
       "type": "apps",
       "blocks": {
         "8f4356a7-e8b4-4e46-98b0-76eefbdf1a92": {
-          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
-          "settings": {
-          }
+          "type": "shopify://apps/product-reviews/blocks/reviews/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {}
         }
       },
       "block_order": [

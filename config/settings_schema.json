@@ -1770,7 +1770,7 @@
         "label": "Option value 1"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color1.png",
         "label": "Custom image for value 1"
       },
@@ -1780,7 +1780,7 @@
         "label": "Option value 2"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color2.png",
         "label": "Custom image for value 2"
       },
@@ -1790,7 +1790,7 @@
         "label": "Option value 3"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color3.png",
         "label": "Custom image for value 3"
       },
@@ -1800,7 +1800,7 @@
         "label": "Option value 4"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color4.png",
         "label": "Custom image for value 4"
       },
@@ -1810,7 +1810,7 @@
         "label": "Option value 5"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color5.png",
         "label": "Custom image for value 5"
       },
@@ -1820,7 +1820,7 @@
         "label": "Option value 6"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color6.png",
         "label": "Custom image for value 6"
       },
@@ -1830,7 +1830,7 @@
         "label": "Option value 7"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color7.png",
         "label": "Custom image for value 7"
       },
@@ -1840,7 +1840,7 @@
         "label": "Option value 8"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color8.png",
         "label": "Custom image for value 8"
       },
@@ -1850,7 +1850,7 @@
         "label": "Option value 9"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color9.png",
         "label": "Custom image for value 9"
       },
@@ -1860,7 +1860,7 @@
         "label": "Option value 10"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color10.png",
         "label": "Custom image for value10"
       },
@@ -1870,7 +1870,7 @@
         "label": "Option value 11"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color11.png",
         "label": "Custom image for value11"
       },
@@ -1880,7 +1880,7 @@
         "label": "Option value 12"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color12.png",
         "label": "Custom image for value12"
       },
@@ -1890,7 +1890,7 @@
         "label": "Option value 13"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color13.png",
         "label": "Custom image for value13"
       },
@@ -1900,7 +1900,7 @@
         "label": "Option value 14"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color14.png",
         "label": "Custom image for value14"
       },
@@ -1910,7 +1910,7 @@
         "label": "Option value 15"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color15.png",
         "label": "Custom image for value15"
       },
@@ -1920,7 +1920,7 @@
         "label": "Option value 16"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color16.png",
         "label": "Custom image for value16"
       },
@@ -1930,7 +1930,7 @@
         "label": "Option value 17"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color17.png",
         "label": "Custom image for value17"
       },
@@ -1940,7 +1940,7 @@
         "label": "Option value 18"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color18.png",
         "label": "Custom image for value18"
       },
@@ -1950,7 +1950,7 @@
         "label": "Option value 19"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color19.png",
         "label": "Custom image for value19"
       },
@@ -1960,7 +1960,7 @@
         "label": "Option value 20"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color20.png",
         "label": "Custom image for value20"
       },
@@ -1970,7 +1970,7 @@
         "label": "Option value 21"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color21.png",
         "label": "Custom image for value21"
       },
@@ -1980,7 +1980,7 @@
         "label": "Option value 22"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color22.png",
         "label": "Custom image for value22"
       },
@@ -1990,7 +1990,7 @@
         "label": "Option value 23"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color23.png",
         "label": "Custom image for value23"
       },
@@ -2000,7 +2000,7 @@
         "label": "Option value 24"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color24.png",
         "label": "Custom image for value24"
       },
@@ -2010,7 +2010,7 @@
         "label": "Option value 25"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color25.png",
         "label": "Custom image for value25"
       },
@@ -2020,7 +2020,7 @@
         "label": "Option value 26"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color26.png",
         "label": "Custom image for value26"
       },
@@ -2030,7 +2030,7 @@
         "label": "Option value 27"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color27.png",
         "label": "Custom image for value27"
       },
@@ -2040,7 +2040,7 @@
         "label": "Option value 28"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color28.png",
         "label": "Custom image for value28"
       },
@@ -2050,7 +2050,7 @@
         "label": "Option value 29"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color29.png",
         "label": "Custom image for value29"
       },
@@ -2060,7 +2060,7 @@
         "label": "Option value 30"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color30.png",
         "label": "Custom image for value30"
       },
@@ -2070,7 +2070,7 @@
         "label": "Option value 31"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color31.png",
         "label": "Custom image for value31"
       },
@@ -2080,7 +2080,7 @@
         "label": "Option value 32"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color32.png",
         "label": "Custom image for value32"
       },
@@ -2090,7 +2090,7 @@
         "label": "Option value 33"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color33.png",
         "label": "Custom image for value33"
       },
@@ -2100,7 +2100,7 @@
         "label": "Option value 34"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color34.png",
         "label": "Custom image for value34"
       },
@@ -2110,7 +2110,7 @@
         "label": "Option value 35"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color35.png",
         "label": "Custom image for value35"
       },
@@ -2120,7 +2120,7 @@
         "label": "Option value 36"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color36.png",
         "label": "Custom image for value36"
       },
@@ -2130,7 +2130,7 @@
         "label": "Option value 37"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color37.png",
         "label": "Custom image for value37"
       },
@@ -2140,7 +2140,7 @@
         "label": "Option value 38"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color38.png",
         "label": "Custom image for value38"
       },
@@ -2150,7 +2150,7 @@
         "label": "Option value 39"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color39.png",
         "label": "Custom image for value39"
       },
@@ -2160,7 +2160,7 @@
         "label": "Option value 40"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color40.png",
         "label": "Custom image for value40"
       },
@@ -2170,7 +2170,7 @@
         "label": "Option value 41"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color41.png",
         "label": "Custom image for value41"
       },
@@ -2180,7 +2180,7 @@
         "label": "Option value 42"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color42.png",
         "label": "Custom image for value42"
       },
@@ -2190,7 +2190,7 @@
         "label": "Option value 43"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color43.png",
         "label": "Custom image for value43"
       },
@@ -2200,7 +2200,7 @@
         "label": "Option value 44"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color44.png",
         "label": "Custom image for value44"
       },
@@ -2210,7 +2210,7 @@
         "label": "Option value 45"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color45.png",
         "label": "Custom image for value45"
       },
@@ -2220,7 +2220,7 @@
         "label": "Option value 46"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color46.png",
         "label": "Custom image for value46"
       },
@@ -2230,7 +2230,7 @@
         "label": "Option value 47"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color47.png",
         "label": "Custom image for value47"
       },
@@ -2240,7 +2240,7 @@
         "label": "Option value 48"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color48.png",
         "label": "Custom image for value48"
       },
@@ -2250,7 +2250,7 @@
         "label": "Option value 49"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color49.png",
         "label": "Custom image for value49"
       },
@@ -2260,7 +2260,7 @@
         "label": "Option value 50"
       },
       {
-        "type": "image",
+        "type": "image_picker",
         "id": "filter_color50.png",
         "label": "Custom image for value50"
       }
@@ -2579,11 +2579,15 @@
         "content": "Cart drawer"
       },
       {
-        "type": "number",
+        "type": "range",
         "id": "free_shipping_threshold",
         "label": "Free shipping goal threshold ($)",
         "info": "Set to 0 to disable. Example: 75 for free shipping on orders over $75.",
-        "default": 75
+        "default": 75,
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "unit": "$"
       },
       {
         "type": "checkbox",

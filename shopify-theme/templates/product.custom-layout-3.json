@@ -21,11 +21,10 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "b8fdad34-11a8-4f1d-afd3-dd67baab79b6": {
-          "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
+          "type": "shopify://apps/product-reviews/blocks/star_rating/bae150af-8da8-48b2-9867-398188115e5f",
           "settings": {
             "stars_fill_color": "#000000",
             "star_size": 15,
@@ -43,8 +42,7 @@
         },
         "a7c33681-2e92-4afe-af6c-09be8f611b30": {
           "type": "short_description",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -72,8 +70,7 @@
         "d92bbb2d-782d-4da9-9ec5-1d63c016c34d": {
           "type": "foxkit_stock_countdown",
           "disabled": true,
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -110,7 +107,7 @@
         "8427dd1a-162f-45bc-a587-08add8251ee2": {
           "type": "html",
           "settings": {
-            "code": "<h2 class=\"sf__custom-header mb-6\">Different Sound Experiences<\/h2>\n<p class=\"sf__custom-description prod__description text-color-subtext\">Enjoy rich, immersive sound in every room. Each speaker is carefully hand tuned by our engineers to give you the best quality listening experience in your space. Hear the difference.<\/p>\n<ul class=\"sf__custom-list\">\n  <li class=\"flex justify-between mt-8\">\n    <div class=\"img_box\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0595\/7291\/2305\/files\/icon1.svg?v=1632133613\"><\/div>\n    <div class=\"content_box rte pl-8\">\n      <h6 class=\"mb-2\">Different Sound Experiences<\/h6>\n      <p class=\"prod__description\">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla sint occaecat<\/p>\n    <\/div>\n  <\/li>\n  <li class=\"flex justify-between mt-10\">\n    <div class=\"img_box\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0595\/7291\/2305\/files\/icon2.svg?v=1632133612\"><\/div>\n    <div class=\"content_box rte pl-8\">\n      <h6 class=\"mb-2\">Sound Performance<\/h6>\n      <p class=\"prod__description\">Leae dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla sint occaecat cupidatat non<\/p>\n    <\/div>\n  <\/li>\n  <li class=\"flex justify-between mt-10\">\n    <div class=\"img_box\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0595\/7291\/2305\/files\/icon3.svg?v=1632133613\"><\/div>\n    <div class=\"content_box rte pl-8\">\n      <h6 class=\"mb-2\">Active Room Compensation<\/h6>\n      <p class=\"prod__description\">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fnt occaecat cupidatat non<\/p>\n    <\/div>\n  <\/li>\n<\/ul>",
+            "code": "<h2 class=\"sf__custom-header mb-6\">Different Sound Experiences</h2>\n<p class=\"sf__custom-description prod__description text-color-subtext\">Enjoy rich, immersive sound in every room. Each speaker is carefully hand tuned by our engineers to give you the best quality listening experience in your space. Hear the difference.</p>\n<ul class=\"sf__custom-list\">\n  <li class=\"flex justify-between mt-8\">\n    <div class=\"img_box\"><img src=\"https://cdn.shopify.com/s/files/1/0595/7291/2305/files/icon1.svg?v=1632133613\"></div>\n    <div class=\"content_box rte pl-8\">\n      <h6 class=\"mb-2\">Different Sound Experiences</h6>\n      <p class=\"prod__description\">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla sint occaecat</p>\n    </div>\n  </li>\n  <li class=\"flex justify-between mt-10\">\n    <div class=\"img_box\"><img src=\"https://cdn.shopify.com/s/files/1/0595/7291/2305/files/icon2.svg?v=1632133612\"></div>\n    <div class=\"content_box rte pl-8\">\n      <h6 class=\"mb-2\">Sound Performance</h6>\n      <p class=\"prod__description\">Leae dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla sint occaecat cupidatat non</p>\n    </div>\n  </li>\n  <li class=\"flex justify-between mt-10\">\n    <div class=\"img_box\"><img src=\"https://cdn.shopify.com/s/files/1/0595/7291/2305/files/icon3.svg?v=1632133613\"></div>\n    <div class=\"content_box rte pl-8\">\n      <h6 class=\"mb-2\">Active Room Compensation</h6>\n      <p class=\"prod__description\">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fnt occaecat cupidatat non</p>\n    </div>\n  </li>\n</ul>",
             "width": "50%",
             "block_custom_class": "sf__custom-left",
             "animations": "inherit"
@@ -137,7 +134,6 @@
         "description": "",
         "header_alignment": "center",
         "container": "container-fluid",
-        "background_color": "",
         "gap": 30,
         "use_scroll_mobile": false,
         "gap_mobile": 16,
@@ -162,7 +158,7 @@
         "c6b8f813-cc76-4add-90d5-a1fb1af6ea13": {
           "type": "html",
           "settings": {
-            "code": "<h2 class=\"sf__custom-header mb-6\">Product Specifications<\/h2>\n<p class=\"sf__custom-description prod__description\">Enjoy rich, immersive sound in every room. Each speaker is carefully hand tuned by our engineers to give you the best quality listening experience in your space. Hear the difference.<\/p>\n<ul class=\"sf__custom-list mt-6\">\n  <li class=\"flex mb-4\">\n    <label class=\"flex-1 font-medium\">Recommended Room Size<\/label>\n    <p class=\"flex-1 prod__description\">10-80 m²<\/p>\n  <\/li>\n  <li class=\"flex mb-4\">\n    <label class=\"flex-1 font-medium\">Speaker Configuration<\/label>\n    <p class=\"flex-1 prod__description\">2 x 5,25” woofer drivers<\/p>\n  <\/li>\n  <li class=\"flex mb-4\">\n    <label class=\"flex-1 font-medium\">Frequency Range<\/label>\n    <p class=\"flex-1 prod__description\">26 - 23,000 Hz<\/p>\n  <\/li>\n  <li class=\"flex mb-4\">\n    <label class=\"flex-1 font-medium\">Weight<\/label>\n    <p class=\"flex-1 prod__description\">7.2 kg<\/p>\n  <\/li>\n  <li class=\"flex mb-4\">\n    <label class=\"flex-1 font-medium\">Dimensions<\/label>\n    <p class=\"flex-1 prod__description\">20 W x 38 H x 20 D cm<\/p>\n  <\/li>\n  <li class=\"flex mb-4\">\n    <label class=\"flex-1 font-medium\">Bass Capability<\/label>\n    <p class=\"flex-1 prod__description\">88 dB SPL<\/p>\n  <\/li>\n  <li class=\"flex mb-4\">\n    <label class=\"flex-1 font-medium\">Amplifier<\/label>\n    <p class=\"flex-1 prod__description\">2 x 200 watt class D for bass 2ohm<\/p>\n  <\/li>\n<\/ul>",
+            "code": "<h2 class=\"sf__custom-header mb-6\">Product Specifications</h2>\n<p class=\"sf__custom-description prod__description\">Enjoy rich, immersive sound in every room. Each speaker is carefully hand tuned by our engineers to give you the best quality listening experience in your space. Hear the difference.</p>\n<ul class=\"sf__custom-list mt-6\">\n  <li class=\"flex mb-4\">\n    <label class=\"flex-1 font-medium\">Recommended Room Size</label>\n    <p class=\"flex-1 prod__description\">10-80 m²</p>\n  </li>\n  <li class=\"flex mb-4\">\n    <label class=\"flex-1 font-medium\">Speaker Configuration</label>\n    <p class=\"flex-1 prod__description\">2 x 5,25” woofer drivers</p>\n  </li>\n  <li class=\"flex mb-4\">\n    <label class=\"flex-1 font-medium\">Frequency Range</label>\n    <p class=\"flex-1 prod__description\">26 - 23,000 Hz</p>\n  </li>\n  <li class=\"flex mb-4\">\n    <label class=\"flex-1 font-medium\">Weight</label>\n    <p class=\"flex-1 prod__description\">7.2 kg</p>\n  </li>\n  <li class=\"flex mb-4\">\n    <label class=\"flex-1 font-medium\">Dimensions</label>\n    <p class=\"flex-1 prod__description\">20 W x 38 H x 20 D cm</p>\n  </li>\n  <li class=\"flex mb-4\">\n    <label class=\"flex-1 font-medium\">Bass Capability</label>\n    <p class=\"flex-1 prod__description\">88 dB SPL</p>\n  </li>\n  <li class=\"flex mb-4\">\n    <label class=\"flex-1 font-medium\">Amplifier</label>\n    <p class=\"flex-1 prod__description\">2 x 200 watt class D for bass 2ohm</p>\n  </li>\n</ul>",
             "width": "50%",
             "block_custom_class": "sf__custom-right",
             "animations": "inherit"
@@ -179,7 +175,6 @@
         "description": "",
         "header_alignment": "center",
         "container": "container-fluid",
-        "background_color": "",
         "gap": 30,
         "use_scroll_mobile": false,
         "gap_mobile": 16,
@@ -201,7 +196,7 @@
           "type": "tab",
           "settings": {
             "header": "Shipping & Return",
-            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.<\/p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.<\/p>",
+            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.</p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.</p>",
             "content_page": ""
           }
         }
@@ -213,7 +208,6 @@
       "disabled": true,
       "settings": {
         "container": "container",
-        "bg_color": "",
         "default_open": true,
         "animations": "inherit"
       }
@@ -224,7 +218,7 @@
         "738fcb4e-f5f8-4f2f-bd48-84198bac2a3e": {
           "type": "html",
           "settings": {
-            "code": "<ul class=\"sf__custom-list\">\n<li>\n<div class=\"img_box\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0595\/7291\/2305\/files\/icon-6.svg?v=1631810887\"><\/div>\n<div class=\"content_box rte\">\n<h3>Different Sound Experiences<\/h3>\n<p>Designed to be positioned up against<br> the wall on a shelf or side table.<\/p>\n<\/div>\n<\/li>\n<li>\n<div class=\"img_box\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0595\/7291\/2305\/files\/icon-7.svg?v=1631810887\"><\/div>\n<div class=\"content_box rte\">\n<h3>Sound Performance<\/h3>\n<p>Designed to be positioned up against<br> the wall on a shelf or side table.<\/p>\n<\/div>\n<\/li>\n<li>\n<div class=\"img_box\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0595\/7291\/2305\/files\/icon-8.svg?v=1631810887\"><\/div>\n<div class=\"content_box rte\">\n<h3>Active Room Compensation<\/h3>\n<p>Designed to be positioned up against<br> the wall on a shelf or side table.<\/p>\n<\/div>\n<\/li>\n<\/ul>",
+            "code": "<ul class=\"sf__custom-list\">\n<li>\n<div class=\"img_box\"><img src=\"https://cdn.shopify.com/s/files/1/0595/7291/2305/files/icon-6.svg?v=1631810887\"></div>\n<div class=\"content_box rte\">\n<h3>Different Sound Experiences</h3>\n<p>Designed to be positioned up against<br> the wall on a shelf or side table.</p>\n</div>\n</li>\n<li>\n<div class=\"img_box\"><img src=\"https://cdn.shopify.com/s/files/1/0595/7291/2305/files/icon-7.svg?v=1631810887\"></div>\n<div class=\"content_box rte\">\n<h3>Sound Performance</h3>\n<p>Designed to be positioned up against<br> the wall on a shelf or side table.</p>\n</div>\n</li>\n<li>\n<div class=\"img_box\"><img src=\"https://cdn.shopify.com/s/files/1/0595/7291/2305/files/icon-8.svg?v=1631810887\"></div>\n<div class=\"content_box rte\">\n<h3>Active Room Compensation</h3>\n<p>Designed to be positioned up against<br> the wall on a shelf or side table.</p>\n</div>\n</li>\n</ul>",
             "width": "33%",
             "block_custom_class": "",
             "animations": "inherit"
@@ -241,7 +235,6 @@
         "description": "",
         "header_alignment": "center",
         "container": "container",
-        "background_color": "#e7ebe1",
         "gap": 30,
         "use_scroll_mobile": false,
         "gap_mobile": 16,
@@ -266,7 +259,7 @@
         "83417c82-cbc9-4c71-b405-a14bc774e8f6": {
           "type": "html",
           "settings": {
-            "code": "<div class=\"sf__tabs-custom\">\n  <h2>More detail<\/h2>\n  <div class=\"sf__tab-item\">\n    <input type=\"checkbox\" id=\"chck1\" checked>\n    <label class=\"sf__tab-item-label\" for=\"chck1\">Package contents<\/label>\n    <ul class=\"sf__tab-item-content\">\n      <li class=\"prod__description\">Beosound Balance<\/li>\n      <li class=\"prod__description\">Fabric power cable<\/li>\n      <li class=\"prod__description\">Quick start guide<\/li>\n      <li class=\"prod__description\">User Guide<\/li>\n      <li class=\"prod__description\">Warranty<\/li>\n    <\/ul>\n  <\/div>\n  <div class=\"sf__tab-item\">\n    <input type=\"checkbox\" id=\"chck2\">\n    <label class=\"sf__tab-item-label\" for=\"chck2\">Power<\/label>\n    <ul class=\"sf__tab-item-content\">\n      <li class=\"prod__description\">Beosound Balance<\/li>\n      <li class=\"prod__description\">Fabric power cable<\/li>\n      <li class=\"prod__description\">Quick start guide<\/li>\n      <li class=\"prod__description\">User Guide<\/li>\n      <li class=\"prod__description\">Warranty<\/li>\n    <\/ul>\n  <\/div>\n  <div class=\"sf__tab-item\">\n    <input type=\"checkbox\" id=\"chck3\">\n    <label class=\"sf__tab-item-label\" for=\"chck3\">Connectivity<\/label>\n    <ul class=\"sf__tab-item-content\">\n      <li class=\"prod__description\">Beosound Balance<\/li>\n      <li class=\"prod__description\">Fabric power cable<\/li>\n      <li class=\"prod__description\">Quick start guide<\/li>\n      <li class=\"prod__description\">User Guide<\/li>\n      <li class=\"prod__description\">Warranty<\/li>\n    <\/ul>\n  <\/div>\n<\/div>",
+            "code": "<div class=\"sf__tabs-custom\">\n  <h2>More detail</h2>\n  <div class=\"sf__tab-item\">\n    <input type=\"checkbox\" id=\"chck1\" checked>\n    <label class=\"sf__tab-item-label\" for=\"chck1\">Package contents</label>\n    <ul class=\"sf__tab-item-content\">\n      <li class=\"prod__description\">Beosound Balance</li>\n      <li class=\"prod__description\">Fabric power cable</li>\n      <li class=\"prod__description\">Quick start guide</li>\n      <li class=\"prod__description\">User Guide</li>\n      <li class=\"prod__description\">Warranty</li>\n    </ul>\n  </div>\n  <div class=\"sf__tab-item\">\n    <input type=\"checkbox\" id=\"chck2\">\n    <label class=\"sf__tab-item-label\" for=\"chck2\">Power</label>\n    <ul class=\"sf__tab-item-content\">\n      <li class=\"prod__description\">Beosound Balance</li>\n      <li class=\"prod__description\">Fabric power cable</li>\n      <li class=\"prod__description\">Quick start guide</li>\n      <li class=\"prod__description\">User Guide</li>\n      <li class=\"prod__description\">Warranty</li>\n    </ul>\n  </div>\n  <div class=\"sf__tab-item\">\n    <input type=\"checkbox\" id=\"chck3\">\n    <label class=\"sf__tab-item-label\" for=\"chck3\">Connectivity</label>\n    <ul class=\"sf__tab-item-content\">\n      <li class=\"prod__description\">Beosound Balance</li>\n      <li class=\"prod__description\">Fabric power cable</li>\n      <li class=\"prod__description\">Quick start guide</li>\n      <li class=\"prod__description\">User Guide</li>\n      <li class=\"prod__description\">Warranty</li>\n    </ul>\n  </div>\n</div>",
             "width": "50%",
             "block_custom_class": "sf__custom-collapse",
             "animations": "inherit"
@@ -283,7 +276,6 @@
         "description": "",
         "header_alignment": "center",
         "container": "w-full",
-        "background_color": "",
         "gap": 30,
         "use_scroll_mobile": false,
         "gap_mobile": 16,
@@ -326,7 +318,6 @@
         "description": "Orders are typically shipped within 1-2 business days. Tracking information is<br> provided for all orders EXCEPT orders of single cards",
         "header_alignment": "center",
         "container": "container-fluid",
-        "background_color": "",
         "gap": 30,
         "use_scroll_mobile": false,
         "gap_mobile": 16,
@@ -339,9 +330,8 @@
       "type": "apps",
       "blocks": {
         "8f4356a7-e8b4-4e46-98b0-76eefbdf1a92": {
-          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
-          "settings": {
-          }
+          "type": "shopify://apps/product-reviews/blocks/reviews/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {}
         }
       },
       "block_order": [

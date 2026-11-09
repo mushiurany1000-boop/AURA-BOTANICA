@@ -266,7 +266,10 @@
           "form_field_label": "#18231f",
           "tooltip": "#18231f",
           "tooltip_label": "#fcfbf7",
-          "border": "#e5dfd3"
+          "border": "#e5dfd3",
+          "primary_accent": "#315B45",
+          "secondary_accent": "#A7B49B",
+          "highlight_accent": "#B89A62"
         }
       },
       "dark": {
@@ -288,7 +291,10 @@
           "form_field_label": "#fcfbf7",
           "tooltip": "#fcfbf7",
           "tooltip_label": "#18231f",
-          "border": "#2c3c32"
+          "border": "#2c3c32",
+          "primary_accent": "#A7B49B",
+          "secondary_accent": "#315B45",
+          "highlight_accent": "#D4AF37"
         }
       },
       "footer": {
@@ -310,7 +316,10 @@
           "form_field_label": "#fcfbf7",
           "tooltip": "#fcfbf7",
           "tooltip_label": "#18231f",
-          "border": "#2c3c32"
+          "border": "#2c3c32",
+          "primary_accent": "#315B45",
+          "secondary_accent": "#A7B49B",
+          "highlight_accent": "#B89A62"
         }
       },
       "badge-hot": {
@@ -332,7 +341,10 @@
           "form_field_label": "#18231f",
           "tooltip": "#ffffff",
           "tooltip_label": "#18231f",
-          "border": "#8c4a2f"
+          "border": "#8c4a2f",
+          "primary_accent": "#DA3F3F",
+          "secondary_accent": "#F5F5F5",
+          "highlight_accent": "#DA3F3F"
         }
       },
       "badge-new": {
@@ -354,7 +366,10 @@
           "form_field_label": "#18231f",
           "tooltip": "#ffffff",
           "tooltip_label": "#18231f",
-          "border": "#2d4b3e"
+          "border": "#2d4b3e",
+          "primary_accent": "#315B45",
+          "secondary_accent": "#F5F5F5",
+          "highlight_accent": "#315B45"
         }
       },
       "badge-sale": {
@@ -376,7 +391,10 @@
           "form_field_label": "#18231f",
           "tooltip": "#ffffff",
           "tooltip_label": "#18231f",
-          "border": "#b9784d"
+          "border": "#b9784d",
+          "primary_accent": "#B89A62",
+          "secondary_accent": "#F5F5F5",
+          "highlight_accent": "#B89A62"
         }
       },
       "scheme-cee058e4-58e3-46aa-9af9-219dadc79066": {
@@ -398,7 +416,10 @@
           "form_field_label": "#000000",
           "tooltip": "#222222",
           "tooltip_label": "#ffffff",
-          "border": "#eeeeee"
+          "border": "#eeeeee",
+          "primary_accent": "#315B45",
+          "secondary_accent": "#A7B49B",
+          "highlight_accent": "#B89A62"
         }
       },
       "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74": {
@@ -420,7 +441,10 @@
           "form_field_label": "#000000",
           "tooltip": "#222222",
           "tooltip_label": "#ffffff",
-          "border": "#eeeeee"
+          "border": "#eeeeee",
+          "primary_accent": "#315B45",
+          "secondary_accent": "#A7B49B",
+          "highlight_accent": "#B89A62"
         }
       },
       "scheme-clay-rose": {
@@ -625,7 +649,10 @@
             "form_field_label": "#18231F",
             "tooltip": "#18231F",
             "tooltip_label": "#FCFBF7",
-            "border": "#E5DFD3"
+            "border": "#E5DFD3",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
           }
         },
         "dark": {
@@ -647,7 +674,10 @@
             "form_field_label": "#FCFBF7",
             "tooltip": "#FCFBF7",
             "tooltip_label": "#18231F",
-            "border": "#2C3C32"
+            "border": "#2C3C32",
+            "primary_accent": "#A7B49B",
+            "secondary_accent": "#315B45",
+            "highlight_accent": "#D4AF37"
           }
         },
         "footer": {
@@ -669,7 +699,10 @@
             "form_field_label": "#FCFBF7",
             "tooltip": "#FCFBF7",
             "tooltip_label": "#18231F",
-            "border": "#2C3C32"
+            "border": "#2C3C32",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
           }
         },
         "badge-hot": {
@@ -691,7 +724,10 @@
             "form_field_label": "#18231F",
             "tooltip": "#FFFFFF",
             "tooltip_label": "#18231F",
-            "border": "#8C4A2F"
+            "border": "#8C4A2F",
+            "primary_accent": "#DA3F3F",
+            "secondary_accent": "#F5F5F5",
+            "highlight_accent": "#DA3F3F"
           }
         },
         "badge-new": {
@@ -713,7 +749,10 @@
             "form_field_label": "#18231F",
             "tooltip": "#FFFFFF",
             "tooltip_label": "#18231F",
-            "border": "#2D4B3E"
+            "border": "#2D4B3E",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#F5F5F5",
+            "highlight_accent": "#315B45"
           }
         },
         "badge-sale": {
@@ -735,7 +774,10 @@
             "form_field_label": "#18231F",
             "tooltip": "#FFFFFF",
             "tooltip_label": "#18231F",
-            "border": "#B9784D"
+            "border": "#B9784D",
+            "primary_accent": "#B89A62",
+            "secondary_accent": "#F5F5F5",
+            "highlight_accent": "#B89A62"
           }
         },
         "scheme-cee058e4-58e3-46aa-9af9-219dadc79066": {
@@ -757,7 +799,10 @@
             "form_field_label": "#000000",
             "tooltip": "#222222",
             "tooltip_label": "#ffffff",
-            "border": "#eeeeee"
+            "border": "#eeeeee",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
           }
         },
         "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74": {
@@ -779,7 +824,110 @@
             "form_field_label": "#000000",
             "tooltip": "#222222",
             "tooltip_label": "#ffffff",
-            "border": "#eeeeee"
+            "border": "#eeeeee",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
+          }
+        },
+        "scheme-clay-rose": {
+          "settings": {
+            "background": "#F3E3DC",
+            "background_secondary": "#F8F5EF",
+            "background_gradient": "",
+            "text": "#3A231F",
+            "subtext": "#7A5248",
+            "heading_text": "#8B3A2F",
+            "button": "#8B3A2F",
+            "button_label": "#FAF7F2",
+            "outline_button_label": "#8B3A2F",
+            "button_hover": "#6F2C23",
+            "button_text_hover": "#FAF7F2",
+            "price_sale": "#8B3A2F",
+            "price_regular": "#3A231F",
+            "form_field": "#FAF7F2",
+            "form_field_label": "#7A5248",
+            "tooltip": "#8B3A2F",
+            "tooltip_label": "#FAF7F2",
+            "border": "#E5D0C5",
+            "primary_accent": "#8B3A2F",
+            "secondary_accent": "#F3E3DC",
+            "highlight_accent": "#B9784D"
+          }
+        },
+        "scheme-terracotta-atelier": {
+          "settings": {
+            "background": "#FDF5F2",
+            "background_secondary": "#F6E8E2",
+            "background_gradient": "",
+            "text": "#3B1E18",
+            "subtext": "#7A5248",
+            "heading_text": "#3B1E18",
+            "button": "#843C2D",
+            "button_label": "#FCE8E7",
+            "outline_button_label": "#843C2D",
+            "button_hover": "#6A2A1F",
+            "button_text_hover": "#FCE8E7",
+            "price_sale": "#7E3023",
+            "price_regular": "#3B1E18",
+            "form_field": "#FDF5F2",
+            "form_field_label": "#7A5248",
+            "tooltip": "#843C2D",
+            "tooltip_label": "#FCE8E7",
+            "border": "#E9D5CC",
+            "primary_accent": "#7E3023",
+            "secondary_accent": "#93422F",
+            "highlight_accent": "#B87350"
+          }
+        },
+        "scheme-forest-gold": {
+          "settings": {
+            "background": "#FFFFFF",
+            "background_secondary": "#F5F5F5",
+            "background_gradient": "",
+            "text": "#222222",
+            "subtext": "#777777",
+            "heading_text": "#1E4123",
+            "button": "#667F6A",
+            "button_label": "#FFFFFF",
+            "outline_button_label": "#1E4123",
+            "button_hover": "#1E4123",
+            "button_text_hover": "#FFFFFF",
+            "price_sale": "#DEBC8C",
+            "price_regular": "#222222",
+            "form_field": "#FFFFFF",
+            "form_field_label": "#777777",
+            "tooltip": "#1E4123",
+            "tooltip_label": "#FFFFFF",
+            "border": "#DDDDDD",
+            "primary_accent": "#1E4123",
+            "secondary_accent": "#DEBC8C",
+            "highlight_accent": "#E2C25D"
+          }
+        },
+        "scheme-noir-velvet": {
+          "settings": {
+            "background": "#1A070B",
+            "background_secondary": "#280B12",
+            "background_gradient": "linear-gradient(180deg, #1A070B 0%, #24090F 100%)",
+            "text": "#FFF8F5",
+            "subtext": "#C5A59E",
+            "heading_text": "#FFFFFF",
+            "button": "#8B2838",
+            "button_label": "#FFFFFF",
+            "outline_button_label": "#E2B7A8",
+            "button_hover": "#6D1D2B",
+            "button_text_hover": "#FFFFFF",
+            "price_sale": "#E2B7A8",
+            "price_regular": "#FFF8F5",
+            "form_field": "#280B12",
+            "form_field_label": "#C5A59E",
+            "tooltip": "#E2B7A8",
+            "tooltip_label": "#1A070B",
+            "border": "#3E151F",
+            "primary_accent": "#E2B7A8",
+            "secondary_accent": "#C58372",
+            "highlight_accent": "#DEBC8C"
           }
         }
       },
@@ -1093,7 +1241,10 @@
             "form_field_label": "#5C6B61",
             "tooltip": "#18231F",
             "tooltip_label": "#FCFBF7",
-            "border": "#E8E1D7"
+            "border": "#E8E1D7",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
           }
         },
         "dark": {
@@ -1115,7 +1266,10 @@
             "form_field_label": "#FCFBF7",
             "tooltip": "#FCFBF7",
             "tooltip_label": "#18231F",
-            "border": "#2C3C32"
+            "border": "#2C3C32",
+            "primary_accent": "#A7B49B",
+            "secondary_accent": "#315B45",
+            "highlight_accent": "#D4AF37"
           }
         },
         "footer": {
@@ -1137,7 +1291,10 @@
             "form_field_label": "#FCFBF7",
             "tooltip": "#FCFBF7",
             "tooltip_label": "#18231F",
-            "border": "#2C3C32"
+            "border": "#2C3C32",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
           }
         },
         "badge-hot": {
@@ -1159,7 +1316,10 @@
             "form_field_label": "#18231F",
             "tooltip": "#FFFFFF",
             "tooltip_label": "#18231F",
-            "border": "#8C4A2F"
+            "border": "#8C4A2F",
+            "primary_accent": "#DA3F3F",
+            "secondary_accent": "#F5F5F5",
+            "highlight_accent": "#DA3F3F"
           }
         },
         "badge-new": {
@@ -1181,7 +1341,10 @@
             "form_field_label": "#18231F",
             "tooltip": "#FFFFFF",
             "tooltip_label": "#18231F",
-            "border": "#2D4B3E"
+            "border": "#2D4B3E",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#F5F5F5",
+            "highlight_accent": "#315B45"
           }
         },
         "badge-sale": {
@@ -1203,7 +1366,10 @@
             "form_field_label": "#18231F",
             "tooltip": "#FFFFFF",
             "tooltip_label": "#18231F",
-            "border": "#B9784D"
+            "border": "#B9784D",
+            "primary_accent": "#B89A62",
+            "secondary_accent": "#F5F5F5",
+            "highlight_accent": "#B89A62"
           }
         },
         "scheme-cee058e4-58e3-46aa-9af9-219dadc79066": {
@@ -1225,7 +1391,10 @@
             "form_field_label": "#000000",
             "tooltip": "#222222",
             "tooltip_label": "#ffffff",
-            "border": "#eeeeee"
+            "border": "#eeeeee",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
           }
         },
         "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74": {
@@ -1247,7 +1416,110 @@
             "form_field_label": "#000000",
             "tooltip": "#222222",
             "tooltip_label": "#ffffff",
-            "border": "#eeeeee"
+            "border": "#eeeeee",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
+          }
+        },
+        "scheme-clay-rose": {
+          "settings": {
+            "background": "#F3E3DC",
+            "background_secondary": "#F8F5EF",
+            "background_gradient": "",
+            "text": "#3A231F",
+            "subtext": "#7A5248",
+            "heading_text": "#8B3A2F",
+            "button": "#8B3A2F",
+            "button_label": "#FAF7F2",
+            "outline_button_label": "#8B3A2F",
+            "button_hover": "#6F2C23",
+            "button_text_hover": "#FAF7F2",
+            "price_sale": "#8B3A2F",
+            "price_regular": "#3A231F",
+            "form_field": "#FAF7F2",
+            "form_field_label": "#7A5248",
+            "tooltip": "#8B3A2F",
+            "tooltip_label": "#FAF7F2",
+            "border": "#E5D0C5",
+            "primary_accent": "#8B3A2F",
+            "secondary_accent": "#F3E3DC",
+            "highlight_accent": "#B9784D"
+          }
+        },
+        "scheme-terracotta-atelier": {
+          "settings": {
+            "background": "#FDF5F2",
+            "background_secondary": "#F6E8E2",
+            "background_gradient": "",
+            "text": "#3B1E18",
+            "subtext": "#7A5248",
+            "heading_text": "#3B1E18",
+            "button": "#843C2D",
+            "button_label": "#FCE8E7",
+            "outline_button_label": "#843C2D",
+            "button_hover": "#6A2A1F",
+            "button_text_hover": "#FCE8E7",
+            "price_sale": "#7E3023",
+            "price_regular": "#3B1E18",
+            "form_field": "#FDF5F2",
+            "form_field_label": "#7A5248",
+            "tooltip": "#843C2D",
+            "tooltip_label": "#FCE8E7",
+            "border": "#E9D5CC",
+            "primary_accent": "#7E3023",
+            "secondary_accent": "#93422F",
+            "highlight_accent": "#B87350"
+          }
+        },
+        "scheme-forest-gold": {
+          "settings": {
+            "background": "#FFFFFF",
+            "background_secondary": "#F5F5F5",
+            "background_gradient": "",
+            "text": "#222222",
+            "subtext": "#777777",
+            "heading_text": "#1E4123",
+            "button": "#667F6A",
+            "button_label": "#FFFFFF",
+            "outline_button_label": "#1E4123",
+            "button_hover": "#1E4123",
+            "button_text_hover": "#FFFFFF",
+            "price_sale": "#DEBC8C",
+            "price_regular": "#222222",
+            "form_field": "#FFFFFF",
+            "form_field_label": "#777777",
+            "tooltip": "#1E4123",
+            "tooltip_label": "#FFFFFF",
+            "border": "#DDDDDD",
+            "primary_accent": "#1E4123",
+            "secondary_accent": "#DEBC8C",
+            "highlight_accent": "#E2C25D"
+          }
+        },
+        "scheme-noir-velvet": {
+          "settings": {
+            "background": "#1A070B",
+            "background_secondary": "#280B12",
+            "background_gradient": "linear-gradient(180deg, #1A070B 0%, #24090F 100%)",
+            "text": "#FFF8F5",
+            "subtext": "#C5A59E",
+            "heading_text": "#FFFFFF",
+            "button": "#8B2838",
+            "button_label": "#FFFFFF",
+            "outline_button_label": "#E2B7A8",
+            "button_hover": "#6D1D2B",
+            "button_text_hover": "#FFFFFF",
+            "price_sale": "#E2B7A8",
+            "price_regular": "#FFF8F5",
+            "form_field": "#280B12",
+            "form_field_label": "#C5A59E",
+            "tooltip": "#E2B7A8",
+            "tooltip_label": "#1A070B",
+            "border": "#3E151F",
+            "primary_accent": "#E2B7A8",
+            "secondary_accent": "#C58372",
+            "highlight_accent": "#DEBC8C"
           }
         }
       },
@@ -1564,7 +1836,10 @@
             "form_field_label": "#9EACA3",
             "tooltip": "#FCFBF7",
             "tooltip_label": "#121A17",
-            "border": "#263630"
+            "border": "#263630",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
           }
         },
         "dark": {
@@ -1586,7 +1861,10 @@
             "form_field_label": "#FCFBF7",
             "tooltip": "#FCFBF7",
             "tooltip_label": "#18231F",
-            "border": "#2C3C32"
+            "border": "#2C3C32",
+            "primary_accent": "#A7B49B",
+            "secondary_accent": "#315B45",
+            "highlight_accent": "#D4AF37"
           }
         },
         "footer": {
@@ -1608,7 +1886,10 @@
             "form_field_label": "#FCFBF7",
             "tooltip": "#FCFBF7",
             "tooltip_label": "#18231F",
-            "border": "#2C3C32"
+            "border": "#2C3C32",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
           }
         },
         "badge-hot": {
@@ -1630,7 +1911,10 @@
             "form_field_label": "#18231F",
             "tooltip": "#FFFFFF",
             "tooltip_label": "#18231F",
-            "border": "#8C4A2F"
+            "border": "#8C4A2F",
+            "primary_accent": "#DA3F3F",
+            "secondary_accent": "#F5F5F5",
+            "highlight_accent": "#DA3F3F"
           }
         },
         "badge-new": {
@@ -1652,7 +1936,10 @@
             "form_field_label": "#18231F",
             "tooltip": "#FFFFFF",
             "tooltip_label": "#18231F",
-            "border": "#2D4B3E"
+            "border": "#2D4B3E",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#F5F5F5",
+            "highlight_accent": "#315B45"
           }
         },
         "badge-sale": {
@@ -1674,7 +1961,10 @@
             "form_field_label": "#18231F",
             "tooltip": "#FFFFFF",
             "tooltip_label": "#18231F",
-            "border": "#B9784D"
+            "border": "#B9784D",
+            "primary_accent": "#B89A62",
+            "secondary_accent": "#F5F5F5",
+            "highlight_accent": "#B89A62"
           }
         },
         "scheme-cee058e4-58e3-46aa-9af9-219dadc79066": {
@@ -1696,7 +1986,10 @@
             "form_field_label": "#000000",
             "tooltip": "#222222",
             "tooltip_label": "#ffffff",
-            "border": "#eeeeee"
+            "border": "#eeeeee",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
           }
         },
         "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74": {
@@ -1718,7 +2011,110 @@
             "form_field_label": "#000000",
             "tooltip": "#222222",
             "tooltip_label": "#ffffff",
-            "border": "#eeeeee"
+            "border": "#eeeeee",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
+          }
+        },
+        "scheme-clay-rose": {
+          "settings": {
+            "background": "#F3E3DC",
+            "background_secondary": "#F8F5EF",
+            "background_gradient": "",
+            "text": "#3A231F",
+            "subtext": "#7A5248",
+            "heading_text": "#8B3A2F",
+            "button": "#8B3A2F",
+            "button_label": "#FAF7F2",
+            "outline_button_label": "#8B3A2F",
+            "button_hover": "#6F2C23",
+            "button_text_hover": "#FAF7F2",
+            "price_sale": "#8B3A2F",
+            "price_regular": "#3A231F",
+            "form_field": "#FAF7F2",
+            "form_field_label": "#7A5248",
+            "tooltip": "#8B3A2F",
+            "tooltip_label": "#FAF7F2",
+            "border": "#E5D0C5",
+            "primary_accent": "#8B3A2F",
+            "secondary_accent": "#F3E3DC",
+            "highlight_accent": "#B9784D"
+          }
+        },
+        "scheme-terracotta-atelier": {
+          "settings": {
+            "background": "#FDF5F2",
+            "background_secondary": "#F6E8E2",
+            "background_gradient": "",
+            "text": "#3B1E18",
+            "subtext": "#7A5248",
+            "heading_text": "#3B1E18",
+            "button": "#843C2D",
+            "button_label": "#FCE8E7",
+            "outline_button_label": "#843C2D",
+            "button_hover": "#6A2A1F",
+            "button_text_hover": "#FCE8E7",
+            "price_sale": "#7E3023",
+            "price_regular": "#3B1E18",
+            "form_field": "#FDF5F2",
+            "form_field_label": "#7A5248",
+            "tooltip": "#843C2D",
+            "tooltip_label": "#FCE8E7",
+            "border": "#E9D5CC",
+            "primary_accent": "#7E3023",
+            "secondary_accent": "#93422F",
+            "highlight_accent": "#B87350"
+          }
+        },
+        "scheme-forest-gold": {
+          "settings": {
+            "background": "#FFFFFF",
+            "background_secondary": "#F5F5F5",
+            "background_gradient": "",
+            "text": "#222222",
+            "subtext": "#777777",
+            "heading_text": "#1E4123",
+            "button": "#667F6A",
+            "button_label": "#FFFFFF",
+            "outline_button_label": "#1E4123",
+            "button_hover": "#1E4123",
+            "button_text_hover": "#FFFFFF",
+            "price_sale": "#DEBC8C",
+            "price_regular": "#222222",
+            "form_field": "#FFFFFF",
+            "form_field_label": "#777777",
+            "tooltip": "#1E4123",
+            "tooltip_label": "#FFFFFF",
+            "border": "#DDDDDD",
+            "primary_accent": "#1E4123",
+            "secondary_accent": "#DEBC8C",
+            "highlight_accent": "#E2C25D"
+          }
+        },
+        "scheme-noir-velvet": {
+          "settings": {
+            "background": "#1A070B",
+            "background_secondary": "#280B12",
+            "background_gradient": "linear-gradient(180deg, #1A070B 0%, #24090F 100%)",
+            "text": "#FFF8F5",
+            "subtext": "#C5A59E",
+            "heading_text": "#FFFFFF",
+            "button": "#8B2838",
+            "button_label": "#FFFFFF",
+            "outline_button_label": "#E2B7A8",
+            "button_hover": "#6D1D2B",
+            "button_text_hover": "#FFFFFF",
+            "price_sale": "#E2B7A8",
+            "price_regular": "#FFF8F5",
+            "form_field": "#280B12",
+            "form_field_label": "#C5A59E",
+            "tooltip": "#E2B7A8",
+            "tooltip_label": "#1A070B",
+            "border": "#3E151F",
+            "primary_accent": "#E2B7A8",
+            "secondary_accent": "#C58372",
+            "highlight_accent": "#DEBC8C"
           }
         }
       },
@@ -2035,7 +2431,10 @@
             "form_field_label": "#7A635B",
             "tooltip": "#2B1D19",
             "tooltip_label": "#FFFFFF",
-            "border": "#E5D5CB"
+            "border": "#E5D5CB",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
           }
         },
         "dark": {
@@ -2057,7 +2456,10 @@
             "form_field_label": "#FCFBF7",
             "tooltip": "#FCFBF7",
             "tooltip_label": "#18231F",
-            "border": "#2C3C32"
+            "border": "#2C3C32",
+            "primary_accent": "#A7B49B",
+            "secondary_accent": "#315B45",
+            "highlight_accent": "#D4AF37"
           }
         },
         "footer": {
@@ -2079,7 +2481,10 @@
             "form_field_label": "#FCFBF7",
             "tooltip": "#FCFBF7",
             "tooltip_label": "#18231F",
-            "border": "#2C3C32"
+            "border": "#2C3C32",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
           }
         },
         "badge-hot": {
@@ -2101,7 +2506,10 @@
             "form_field_label": "#18231F",
             "tooltip": "#FFFFFF",
             "tooltip_label": "#18231F",
-            "border": "#8C4A2F"
+            "border": "#8C4A2F",
+            "primary_accent": "#DA3F3F",
+            "secondary_accent": "#F5F5F5",
+            "highlight_accent": "#DA3F3F"
           }
         },
         "badge-new": {
@@ -2123,7 +2531,10 @@
             "form_field_label": "#18231F",
             "tooltip": "#FFFFFF",
             "tooltip_label": "#18231F",
-            "border": "#2D4B3E"
+            "border": "#2D4B3E",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#F5F5F5",
+            "highlight_accent": "#315B45"
           }
         },
         "badge-sale": {
@@ -2145,7 +2556,10 @@
             "form_field_label": "#18231F",
             "tooltip": "#FFFFFF",
             "tooltip_label": "#18231F",
-            "border": "#B9784D"
+            "border": "#B9784D",
+            "primary_accent": "#B89A62",
+            "secondary_accent": "#F5F5F5",
+            "highlight_accent": "#B89A62"
           }
         },
         "scheme-cee058e4-58e3-46aa-9af9-219dadc79066": {
@@ -2167,7 +2581,10 @@
             "form_field_label": "#000000",
             "tooltip": "#222222",
             "tooltip_label": "#ffffff",
-            "border": "#eeeeee"
+            "border": "#eeeeee",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
           }
         },
         "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74": {
@@ -2189,7 +2606,110 @@
             "form_field_label": "#000000",
             "tooltip": "#222222",
             "tooltip_label": "#ffffff",
-            "border": "#eeeeee"
+            "border": "#eeeeee",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
+          }
+        },
+        "scheme-clay-rose": {
+          "settings": {
+            "background": "#F3E3DC",
+            "background_secondary": "#F8F5EF",
+            "background_gradient": "",
+            "text": "#3A231F",
+            "subtext": "#7A5248",
+            "heading_text": "#8B3A2F",
+            "button": "#8B3A2F",
+            "button_label": "#FAF7F2",
+            "outline_button_label": "#8B3A2F",
+            "button_hover": "#6F2C23",
+            "button_text_hover": "#FAF7F2",
+            "price_sale": "#8B3A2F",
+            "price_regular": "#3A231F",
+            "form_field": "#FAF7F2",
+            "form_field_label": "#7A5248",
+            "tooltip": "#8B3A2F",
+            "tooltip_label": "#FAF7F2",
+            "border": "#E5D0C5",
+            "primary_accent": "#8B3A2F",
+            "secondary_accent": "#F3E3DC",
+            "highlight_accent": "#B9784D"
+          }
+        },
+        "scheme-terracotta-atelier": {
+          "settings": {
+            "background": "#FDF5F2",
+            "background_secondary": "#F6E8E2",
+            "background_gradient": "",
+            "text": "#3B1E18",
+            "subtext": "#7A5248",
+            "heading_text": "#3B1E18",
+            "button": "#843C2D",
+            "button_label": "#FCE8E7",
+            "outline_button_label": "#843C2D",
+            "button_hover": "#6A2A1F",
+            "button_text_hover": "#FCE8E7",
+            "price_sale": "#7E3023",
+            "price_regular": "#3B1E18",
+            "form_field": "#FDF5F2",
+            "form_field_label": "#7A5248",
+            "tooltip": "#843C2D",
+            "tooltip_label": "#FCE8E7",
+            "border": "#E9D5CC",
+            "primary_accent": "#7E3023",
+            "secondary_accent": "#93422F",
+            "highlight_accent": "#B87350"
+          }
+        },
+        "scheme-forest-gold": {
+          "settings": {
+            "background": "#FFFFFF",
+            "background_secondary": "#F5F5F5",
+            "background_gradient": "",
+            "text": "#222222",
+            "subtext": "#777777",
+            "heading_text": "#1E4123",
+            "button": "#667F6A",
+            "button_label": "#FFFFFF",
+            "outline_button_label": "#1E4123",
+            "button_hover": "#1E4123",
+            "button_text_hover": "#FFFFFF",
+            "price_sale": "#DEBC8C",
+            "price_regular": "#222222",
+            "form_field": "#FFFFFF",
+            "form_field_label": "#777777",
+            "tooltip": "#1E4123",
+            "tooltip_label": "#FFFFFF",
+            "border": "#DDDDDD",
+            "primary_accent": "#1E4123",
+            "secondary_accent": "#DEBC8C",
+            "highlight_accent": "#E2C25D"
+          }
+        },
+        "scheme-noir-velvet": {
+          "settings": {
+            "background": "#1A070B",
+            "background_secondary": "#280B12",
+            "background_gradient": "linear-gradient(180deg, #1A070B 0%, #24090F 100%)",
+            "text": "#FFF8F5",
+            "subtext": "#C5A59E",
+            "heading_text": "#FFFFFF",
+            "button": "#8B2838",
+            "button_label": "#FFFFFF",
+            "outline_button_label": "#E2B7A8",
+            "button_hover": "#6D1D2B",
+            "button_text_hover": "#FFFFFF",
+            "price_sale": "#E2B7A8",
+            "price_regular": "#FFF8F5",
+            "form_field": "#280B12",
+            "form_field_label": "#C5A59E",
+            "tooltip": "#E2B7A8",
+            "tooltip_label": "#1A070B",
+            "border": "#3E151F",
+            "primary_accent": "#E2B7A8",
+            "secondary_accent": "#C58372",
+            "highlight_accent": "#DEBC8C"
           }
         }
       },
@@ -2438,7 +2958,309 @@
       "color_bg_secondary": "#280B12",
       "color_accent": "#E2B7A8",
       "color_border": "#3E151F",
-      "color_text_primary": "#FFF8F5"
+      "color_text_primary": "#FFF8F5",
+      "color_schemes": {
+        "default": {
+          "settings": {
+            "background": "#fcfbf7",
+            "background_secondary": "#f4efe6",
+            "background_gradient": "",
+            "text": "#18231f",
+            "subtext": "#5c6b61",
+            "heading_text": "#18231f",
+            "button": "#18231f",
+            "button_label": "#fcfbf7",
+            "outline_button_label": "#18231f",
+            "button_hover": "#b9784d",
+            "button_text_hover": "#ffffff",
+            "price_sale": "#b9784d",
+            "price_regular": "#18231f",
+            "form_field": "#ffffff",
+            "form_field_label": "#18231f",
+            "tooltip": "#18231f",
+            "tooltip_label": "#fcfbf7",
+            "border": "#e5dfd3",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
+          }
+        },
+        "dark": {
+          "settings": {
+            "background": "#18231f",
+            "background_secondary": "#1f2d24",
+            "background_gradient": "",
+            "text": "#fcfbf7",
+            "subtext": "#a3b2a7",
+            "heading_text": "#fcfbf7",
+            "button": "#b9784d",
+            "button_label": "#ffffff",
+            "outline_button_label": "#fcfbf7",
+            "button_hover": "#d4956c",
+            "button_text_hover": "#18231f",
+            "price_sale": "#b9784d",
+            "price_regular": "#fcfbf7",
+            "form_field": "#1f2d24",
+            "form_field_label": "#fcfbf7",
+            "tooltip": "#fcfbf7",
+            "tooltip_label": "#18231f",
+            "border": "#2c3c32",
+            "primary_accent": "#A7B49B",
+            "secondary_accent": "#315B45",
+            "highlight_accent": "#D4AF37"
+          }
+        },
+        "footer": {
+          "settings": {
+            "background": "#18231f",
+            "background_secondary": "#1f2d24",
+            "background_gradient": "",
+            "text": "#fcfbf7",
+            "subtext": "#a3b2a7",
+            "heading_text": "#fcfbf7",
+            "button": "#b9784d",
+            "button_label": "#ffffff",
+            "outline_button_label": "#fcfbf7",
+            "button_hover": "#d4956c",
+            "button_text_hover": "#18231f",
+            "price_sale": "#b9784d",
+            "price_regular": "#fcfbf7",
+            "form_field": "#1f2d24",
+            "form_field_label": "#fcfbf7",
+            "tooltip": "#fcfbf7",
+            "tooltip_label": "#18231f",
+            "border": "#2c3c32",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
+          }
+        },
+        "badge-hot": {
+          "settings": {
+            "background": "#8c4a2f",
+            "background_secondary": "#f4efe6",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "subtext": "#ffffff",
+            "heading_text": "#ffffff",
+            "button": "#ffffff",
+            "button_label": "#18231f",
+            "outline_button_label": "#ffffff",
+            "button_hover": "#ffffff",
+            "button_text_hover": "#18231f",
+            "price_sale": "#ffffff",
+            "price_regular": "#ffffff",
+            "form_field": "#ffffff",
+            "form_field_label": "#18231f",
+            "tooltip": "#ffffff",
+            "tooltip_label": "#18231f",
+            "border": "#8c4a2f",
+            "primary_accent": "#DA3F3F",
+            "secondary_accent": "#F5F5F5",
+            "highlight_accent": "#DA3F3F"
+          }
+        },
+        "badge-new": {
+          "settings": {
+            "background": "#2d4b3e",
+            "background_secondary": "#f4efe6",
+            "background_gradient": "",
+            "text": "#fcfbf7",
+            "subtext": "#fcfbf7",
+            "heading_text": "#fcfbf7",
+            "button": "#fcfbf7",
+            "button_label": "#18231f",
+            "outline_button_label": "#fcfbf7",
+            "button_hover": "#fcfbf7",
+            "button_text_hover": "#18231f",
+            "price_sale": "#fcfbf7",
+            "price_regular": "#fcfbf7",
+            "form_field": "#ffffff",
+            "form_field_label": "#18231f",
+            "tooltip": "#ffffff",
+            "tooltip_label": "#18231f",
+            "border": "#2d4b3e",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#F5F5F5",
+            "highlight_accent": "#315B45"
+          }
+        },
+        "badge-sale": {
+          "settings": {
+            "background": "#b9784d",
+            "background_secondary": "#f4efe6",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "subtext": "#ffffff",
+            "heading_text": "#ffffff",
+            "button": "#ffffff",
+            "button_label": "#18231f",
+            "outline_button_label": "#ffffff",
+            "button_hover": "#ffffff",
+            "button_text_hover": "#18231f",
+            "price_sale": "#ffffff",
+            "price_regular": "#ffffff",
+            "form_field": "#ffffff",
+            "form_field_label": "#18231f",
+            "tooltip": "#ffffff",
+            "tooltip_label": "#18231f",
+            "border": "#b9784d",
+            "primary_accent": "#B89A62",
+            "secondary_accent": "#F5F5F5",
+            "highlight_accent": "#B89A62"
+          }
+        },
+        "scheme-cee058e4-58e3-46aa-9af9-219dadc79066": {
+          "settings": {
+            "background": "#f4f4f4",
+            "background_secondary": "#f5f5f5",
+            "background_gradient": "",
+            "text": "#222222",
+            "subtext": "#666666",
+            "heading_text": "#222222",
+            "button": "#000000",
+            "button_label": "#ffffff",
+            "outline_button_label": "#000000",
+            "button_hover": "#222222",
+            "button_text_hover": "#ffffff",
+            "price_sale": "#e84e4e",
+            "price_regular": "#000000",
+            "form_field": "#f2f2f2",
+            "form_field_label": "#000000",
+            "tooltip": "#222222",
+            "tooltip_label": "#ffffff",
+            "border": "#eeeeee",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
+          }
+        },
+        "scheme-09e5b5b4-774c-4b6c-8025-416ced49cc74": {
+          "settings": {
+            "background": "#dff8ef",
+            "background_secondary": "#f5f5f5",
+            "background_gradient": "",
+            "text": "#222222",
+            "subtext": "#666666",
+            "heading_text": "#222222",
+            "button": "#000000",
+            "button_label": "#ffffff",
+            "outline_button_label": "#000000",
+            "button_hover": "#222222",
+            "button_text_hover": "#ffffff",
+            "price_sale": "#e84e4e",
+            "price_regular": "#000000",
+            "form_field": "#ffffff",
+            "form_field_label": "#000000",
+            "tooltip": "#222222",
+            "tooltip_label": "#ffffff",
+            "border": "#eeeeee",
+            "primary_accent": "#315B45",
+            "secondary_accent": "#A7B49B",
+            "highlight_accent": "#B89A62"
+          }
+        },
+        "scheme-clay-rose": {
+          "settings": {
+            "background": "#F3E3DC",
+            "background_secondary": "#F8F5EF",
+            "background_gradient": "",
+            "text": "#3A231F",
+            "subtext": "#7A5248",
+            "heading_text": "#8B3A2F",
+            "button": "#8B3A2F",
+            "button_label": "#FAF7F2",
+            "outline_button_label": "#8B3A2F",
+            "button_hover": "#6F2C23",
+            "button_text_hover": "#FAF7F2",
+            "price_sale": "#8B3A2F",
+            "price_regular": "#3A231F",
+            "form_field": "#FAF7F2",
+            "form_field_label": "#7A5248",
+            "tooltip": "#8B3A2F",
+            "tooltip_label": "#FAF7F2",
+            "border": "#E5D0C5",
+            "primary_accent": "#8B3A2F",
+            "secondary_accent": "#F3E3DC",
+            "highlight_accent": "#B9784D"
+          }
+        },
+        "scheme-terracotta-atelier": {
+          "settings": {
+            "background": "#FDF5F2",
+            "background_secondary": "#F6E8E2",
+            "background_gradient": "",
+            "text": "#3B1E18",
+            "subtext": "#7A5248",
+            "heading_text": "#3B1E18",
+            "button": "#843C2D",
+            "button_label": "#FCE8E7",
+            "outline_button_label": "#843C2D",
+            "button_hover": "#6A2A1F",
+            "button_text_hover": "#FCE8E7",
+            "price_sale": "#7E3023",
+            "price_regular": "#3B1E18",
+            "form_field": "#FDF5F2",
+            "form_field_label": "#7A5248",
+            "tooltip": "#843C2D",
+            "tooltip_label": "#FCE8E7",
+            "border": "#E9D5CC",
+            "primary_accent": "#7E3023",
+            "secondary_accent": "#93422F",
+            "highlight_accent": "#B87350"
+          }
+        },
+        "scheme-forest-gold": {
+          "settings": {
+            "background": "#FFFFFF",
+            "background_secondary": "#F5F5F5",
+            "background_gradient": "",
+            "text": "#222222",
+            "subtext": "#777777",
+            "heading_text": "#1E4123",
+            "button": "#667F6A",
+            "button_label": "#FFFFFF",
+            "outline_button_label": "#1E4123",
+            "button_hover": "#1E4123",
+            "button_text_hover": "#FFFFFF",
+            "price_sale": "#DEBC8C",
+            "price_regular": "#222222",
+            "form_field": "#FFFFFF",
+            "form_field_label": "#777777",
+            "tooltip": "#1E4123",
+            "tooltip_label": "#FFFFFF",
+            "border": "#DDDDDD",
+            "primary_accent": "#1E4123",
+            "secondary_accent": "#DEBC8C",
+            "highlight_accent": "#E2C25D"
+          }
+        },
+        "scheme-noir-velvet": {
+          "settings": {
+            "background": "#1A070B",
+            "background_secondary": "#280B12",
+            "background_gradient": "linear-gradient(180deg, #1A070B 0%, #24090F 100%)",
+            "text": "#FFF8F5",
+            "subtext": "#C5A59E",
+            "heading_text": "#FFFFFF",
+            "button": "#8B2838",
+            "button_label": "#FFFFFF",
+            "outline_button_label": "#E2B7A8",
+            "button_hover": "#6D1D2B",
+            "button_text_hover": "#FFFFFF",
+            "price_sale": "#E2B7A8",
+            "price_regular": "#FFF8F5",
+            "form_field": "#280B12",
+            "form_field_label": "#C5A59E",
+            "tooltip": "#E2B7A8",
+            "tooltip_label": "#1A070B",
+            "border": "#3E151F",
+            "primary_accent": "#E2B7A8",
+            "secondary_accent": "#C58372",
+            "highlight_accent": "#DEBC8C"
+          }
+        }
+      }
     }
   }
 }

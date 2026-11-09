@@ -445,10 +445,7 @@
       "name": "FAQ",
       "settings": {
         "subheading": "Got Questions?",
-        "heading": "Frequently Asked Questions",
-        "description": "Find clear answers about our wild-harvested botanicals, clean clinical formulations, and ethical shipping.",
-        "container": "container",
-        "bg_color": "#FCFBF7"
+        "container": "container"
       }
     },
     "blog_posts_yPULzK": {

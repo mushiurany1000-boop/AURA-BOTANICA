@@ -4,10 +4,7 @@
       "type": "collection-page-header",
       "settings": {
         "layout": "inside",
-        "header_height": "small",
         "text_alignment": "center",
-        "vertical_alignment": "center",
-        "bg_color": "#ffffff",
         "enable_parallax": false,
         "upper_title": false,
         "show_desc": false,

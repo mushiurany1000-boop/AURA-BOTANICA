@@ -138,10 +138,14 @@
       "info": "Leave blank to use icons by Payment methods"
     },
     {
-      "type": "number",
-      "id": "payment_icons_width",
-      "label": "Image width (px)",
-      "default": 300
+          "type": "range",
+          "id": "payment_icons_width",
+          "label": "Image width (px)",
+          "min": 100,
+          "max": 600,
+          "step": 10,
+          "unit": "px",
+          "default": 300
     },
     {
       "type": "header",

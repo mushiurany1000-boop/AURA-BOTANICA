@@ -28,11 +28,10 @@
         },
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "b8fdad34-11a8-4f1d-afd3-dd67baab79b6": {
-          "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
+          "type": "shopify://apps/product-reviews/blocks/star_rating/bae150af-8da8-48b2-9867-398188115e5f",
           "settings": {
             "stars_fill_color": "#000000",
             "star_size": 15,
@@ -43,13 +42,11 @@
         },
         "a7c33681-2e92-4afe-af6c-09be8f611b30": {
           "type": "short_description",
-          "settings": {
-          }
+          "settings": {}
         },
         "ecf54c3f-3da0-4922-8917-196d012654a8": {
           "type": "foxkit_countdown_timer",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -109,7 +106,7 @@
           "type": "tab",
           "settings": {
             "header": "Shipping & Return",
-            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.<\/p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.<\/p>",
+            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.</p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.</p>",
             "content_page": ""
           }
         }
@@ -121,7 +118,6 @@
       "disabled": true,
       "settings": {
         "container": "container",
-        "bg_color": "",
         "default_open": true,
         "animations": "inherit"
       }
@@ -132,7 +128,7 @@
         "d58d90b1-a098-4835-b1fe-9f7ecb7f48e6": {
           "type": "html",
           "settings": {
-            "code": "<div class=\"sf__tabs-custom\">\n  <div class=\"sf__tab-item\">\n    <input type=\"checkbox\" id=\"chck1\" checked>\n    <label class=\"sf__tab-item-label\" for=\"chck1\">Product detail<\/label>\n    <ul class=\"sf__tab-item-content\">\n      <li class=\"flex text-color-subtext medium:mb-5\">\n        <img class=\"mr-5\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0595\/7291\/2305\/files\/icon-product.svg?v=1632122102\">\n        All paper products and packaging are made with 100% PCW paper with FSC certification, promoting responsible forestry practices\n      <\/li>\n      <li class=\"flex text-color-subtext medium:mb-5\">\n        <img class=\"mr-5\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0595\/7291\/2305\/files\/icon-product.svg?v=1632122102\">\n        Our paper is created using biogas energy, which is captured from decomposing landfill waste and used for production at the paper mill\n      <\/li>\n      <li class=\"flex text-color-subtext medium:mb-5\">\n        <img class=\"mr-5\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0595\/7291\/2305\/files\/icon-product.svg?v=1632122102\">\n        Eco-inks and non-toxic digital toners are used for printing\n      <\/li>\n      <li class=\"flex text-color-subtext medium:mb-5\">\n        <img class=\"mr-5\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0595\/7291\/2305\/files\/icon-product.svg?v=1632122102\">\n        Plastic-free shipping\n      <\/li>\n    <\/ul>\n  <\/div>\n  <div class=\"sf__tab-item\">\n    <input type=\"checkbox\" id=\"chck2\">\n    <label class=\"sf__tab-item-label\" for=\"chck2\">Details &amp; specs<\/label>\n    <ul class=\"sf__tab-item-content\">\n      <li class=\"flex text-color-subtext\">Format: 5 x 7 (12,7 cm x 17,78 cm)<\/li>\n      <li class=\"flex text-color-subtext\">Blank inside<\/li>\n      <li class=\"flex text-color-subtext\">Made from recycled paper<\/li>\n      <li class=\"flex text-color-subtext\">Comes in a white envelope<\/li>\n      <li class=\"flex text-color-subtext\">Compostable packaging<\/li>\n      <li class=\"flex text-color-subtext\">Thick matte cardstock<\/li>\n    <\/ul>\n  <\/div>\n  <div class=\"sf__tab-item\">\n    <input type=\"checkbox\" id=\"chck3\">\n    <label class=\"sf__tab-item-label\" for=\"chck3\">Shipping &amp; return<\/label>\n    <ul class=\"sf__tab-item-content text-color-subtext\">\n      <p class=\"text-color-subtext\">Your chair will arrive via UPS Ground in 2 boxes. It’s designed to ship flat-pack which for you means zero back pain, FREE shipping, no scuffs to your doorway (or your security deposit), and it packs up in a jiff when you’re ready to move.<\/p>\n    <\/ul>\n  <\/div>\n<\/div>",
+            "code": "<div class=\"sf__tabs-custom\">\n  <div class=\"sf__tab-item\">\n    <input type=\"checkbox\" id=\"chck1\" checked>\n    <label class=\"sf__tab-item-label\" for=\"chck1\">Product detail</label>\n    <ul class=\"sf__tab-item-content\">\n      <li class=\"flex text-color-subtext medium:mb-5\">\n        <img class=\"mr-5\" src=\"https://cdn.shopify.com/s/files/1/0595/7291/2305/files/icon-product.svg?v=1632122102\">\n        All paper products and packaging are made with 100% PCW paper with FSC certification, promoting responsible forestry practices\n      </li>\n      <li class=\"flex text-color-subtext medium:mb-5\">\n        <img class=\"mr-5\" src=\"https://cdn.shopify.com/s/files/1/0595/7291/2305/files/icon-product.svg?v=1632122102\">\n        Our paper is created using biogas energy, which is captured from decomposing landfill waste and used for production at the paper mill\n      </li>\n      <li class=\"flex text-color-subtext medium:mb-5\">\n        <img class=\"mr-5\" src=\"https://cdn.shopify.com/s/files/1/0595/7291/2305/files/icon-product.svg?v=1632122102\">\n        Eco-inks and non-toxic digital toners are used for printing\n      </li>\n      <li class=\"flex text-color-subtext medium:mb-5\">\n        <img class=\"mr-5\" src=\"https://cdn.shopify.com/s/files/1/0595/7291/2305/files/icon-product.svg?v=1632122102\">\n        Plastic-free shipping\n      </li>\n    </ul>\n  </div>\n  <div class=\"sf__tab-item\">\n    <input type=\"checkbox\" id=\"chck2\">\n    <label class=\"sf__tab-item-label\" for=\"chck2\">Details &amp; specs</label>\n    <ul class=\"sf__tab-item-content\">\n      <li class=\"flex text-color-subtext\">Format: 5 x 7 (12,7 cm x 17,78 cm)</li>\n      <li class=\"flex text-color-subtext\">Blank inside</li>\n      <li class=\"flex text-color-subtext\">Made from recycled paper</li>\n      <li class=\"flex text-color-subtext\">Comes in a white envelope</li>\n      <li class=\"flex text-color-subtext\">Compostable packaging</li>\n      <li class=\"flex text-color-subtext\">Thick matte cardstock</li>\n    </ul>\n  </div>\n  <div class=\"sf__tab-item\">\n    <input type=\"checkbox\" id=\"chck3\">\n    <label class=\"sf__tab-item-label\" for=\"chck3\">Shipping &amp; return</label>\n    <ul class=\"sf__tab-item-content text-color-subtext\">\n      <p class=\"text-color-subtext\">Your chair will arrive via UPS Ground in 2 boxes. It’s designed to ship flat-pack which for you means zero back pain, FREE shipping, no scuffs to your doorway (or your security deposit), and it packs up in a jiff when you’re ready to move.</p>\n    </ul>\n  </div>\n</div>",
             "width": "50%",
             "block_custom_class": "sf__custom-collapse",
             "animations": "inherit"
@@ -159,7 +155,6 @@
         "description": "",
         "header_alignment": "center",
         "container": "container",
-        "background_color": "#faf8f4",
         "gap": 100,
         "use_scroll_mobile": false,
         "gap_mobile": 16,
@@ -174,7 +169,7 @@
         "a6518e34-91a9-4554-9859-3f56eafef74c": {
           "type": "html",
           "settings": {
-            "code": "<img class=\"mx-auto\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0595\/7291\/2305\/files\/icon-2.svg?v=1632067410\">",
+            "code": "<img class=\"mx-auto\" src=\"https://cdn.shopify.com/s/files/1/0595/7291/2305/files/icon-2.svg?v=1632067410\">",
             "width": "100%",
             "block_custom_class": "",
             "animations": "inherit"
@@ -190,7 +185,6 @@
         "description": "",
         "header_alignment": "center",
         "container": "container",
-        "background_color": "#faf8f4",
         "gap": 30,
         "use_scroll_mobile": false,
         "gap_mobile": 16,
@@ -207,7 +201,6 @@
         "description": "Orders are typically shipped within 1-2 business days. Tracking information is <br>provided for all orders EXCEPT orders of single cards",
         "header_alignment": "center",
         "container": "container",
-        "background_color": "#faf8f4",
         "gap": 30,
         "use_scroll_mobile": false,
         "gap_mobile": 16,
@@ -224,7 +217,7 @@
           "settings": {
             "image_by_url": "",
             "title": "Free shipping",
-            "description": "<p>Deliver a smile to yourself or someone special with one of our sustainable favorites.<\/p>",
+            "description": "<p>Deliver a smile to yourself or someone special with one of our sustainable favorites.</p>",
             "link": "",
             "button_label": "",
             "button_link": "",
@@ -237,7 +230,7 @@
           "settings": {
             "image_by_url": "",
             "title": "Plastic free",
-            "description": "<p>From sourcing recycled paper, to printing with eco-friendly inks and shipping orders in post-consumer-waste mailers.<\/p>",
+            "description": "<p>From sourcing recycled paper, to printing with eco-friendly inks and shipping orders in post-consumer-waste mailers.</p>",
             "link": "",
             "button_label": "",
             "button_link": "",
@@ -250,7 +243,7 @@
           "settings": {
             "image_by_url": "",
             "title": "100% recycable",
-            "description": "<p>Orders are secured in our sturdy, 100% PCW packaging, which is fully recyclable biodegradable, and compostable<\/p>",
+            "description": "<p>Orders are secured in our sturdy, 100% PCW packaging, which is fully recyclable biodegradable, and compostable</p>",
             "link": "",
             "button_label": "",
             "button_link": "",
@@ -263,7 +256,7 @@
           "settings": {
             "image_by_url": "",
             "title": "High-quality materials",
-            "description": "<p>Orders are secured in our sturdy, 100% PCW packaging, which is fully recyclable biodegradable, and compostable<\/p>",
+            "description": "<p>Orders are secured in our sturdy, 100% PCW packaging, which is fully recyclable biodegradable, and compostable</p>",
             "link": "",
             "button_label": "",
             "button_link": "",
@@ -284,7 +277,6 @@
         "description": "",
         "header_alignment": "center",
         "container": "container-fluid",
-        "background_color": "#faf8f4",
         "item_per_row": 4,
         "item_gap": 40,
         "item_gap_mobile": 10,
@@ -337,7 +329,6 @@
         "description": "",
         "header_alignment": "center",
         "container": "container-fluid",
-        "background_color": "#faf8f4",
         "gap": 30,
         "use_scroll_mobile": false,
         "gap_mobile": 16,
@@ -364,7 +355,6 @@
       "type": "product-reviews",
       "settings": {
         "container": "container-narrow",
-        "heading": "Reviews",
         "custom_liquid": ""
       }
     },

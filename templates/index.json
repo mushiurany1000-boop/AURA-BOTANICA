@@ -5,10 +5,7 @@
       "settings": {
         "color_scheme": "scheme-noir-velvet",
         "eyebrow": "CELLULAR BOTANICAL ATELIER — BORDEAUX & KYOTO",
-        "heading_serif": "BEAUTY",
         "heading_italic": "with",
-        "heading_accent": "INTENT",
-        "subtext": "We formulate high-concentration botanical elixirs that nourish the skin barrier, restore youthful radiance, and transform daily routines into sacred self-care rituals.",
         "button_label": "EXPLORE RITUALS",
         "button_link": "/collections/all",
         "secondary_label": "DISCOVER PHILOSOPHY",
@@ -16,7 +13,10 @@
         "stamp_monogram": "KB",
         "stamp_text": "KAYRA ATELIER",
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "heading_line_1": "BEAUTY",
+        "heading_line_2": "INTENT",
+        "text": "We formulate high-concentration botanical elixirs that nourish the skin barrier, restore youthful radiance, and transform daily routines into sacred self-care rituals."
       }
     },
     "credentials_strip": {
@@ -175,8 +175,7 @@
       "type": "what-we-do-pillars",
       "settings": {
         "color_scheme": "scheme-noir-velvet",
-        "heading_prefix": "Strategic formulation.<br>Seamless rituals.<br>",
-        "heading_accent": "Real visible impact."
+        "heading": "Strategic formulations.<br>Cellular bio-synergy.<br>Lasting radiance."
       },
       "blocks": {
         "pillar_1": {
@@ -228,9 +227,8 @@
         "linkedin_handle": "linkedin.com/company/kayra-beauty",
         "linkedin_link": "https://linkedin.com",
         "location": "Bordeaux, France & Kyoto, Japan",
-        "monogram": "KB",
-        "stamp_top": "KAYRA BEAUTY",
-        "stamp_bottom": "LUXURY BOTANICALS"
+        "stamp_monogram": "KB",
+        "stamp_text": "KAYRA BEAUTY • LUXURY BOTANICALS"
       }
     },
     "hero_split": {
@@ -380,13 +378,11 @@
       "type": "bento-row-1",
       "settings": {
         "container": "container",
-        "ritual_color_scheme": "dark",
         "ritual_eyebrow": "FEATURED RITUAL",
         "ritual_heading": "The Hydration Reset Ritual",
         "ritual_text": "A calming routine to cleanse, hydrate, and restore your natural glow.",
         "ritual_button_label": "DISCOVER RITUAL",
         "ritual_button_link": "/collections/all",
-        "ingredient_color_scheme": "scheme-clay-rose",
         "ingredient_eyebrow": "INGREDIENT SPOTLIGHT",
         "ingredient_heading": "Squalane",
         "ingredient_benefits": "<p>Deep moisture.<br>Silky, weightless feel.<br>Barrier support.</p>",
@@ -401,13 +397,11 @@
       "type": "bento-row-2",
       "settings": {
         "container": "container",
-        "quiz_color_scheme": "default",
         "quiz_eyebrow": "ROUTINE FINDER",
         "quiz_heading": "Your skin. Your ritual.",
         "quiz_text": "Answer a few quick questions and get a routine made for your barrier.",
         "quiz_button_label": "TAKE THE QUIZ",
         "quiz_button_link": "/pages/skin-quiz",
-        "journal_color_scheme": "scheme-clay-rose",
         "journal_eyebrow": "JOURNAL",
         "journal_heading": "Slow care, lasting glow",
         "journal_excerpt": "Mindful routines and ingredient insights to support your skin every day.",
@@ -421,7 +415,6 @@
     "subscribe_save": {
       "type": "subscribe-save-banner",
       "settings": {
-        "color_scheme": "scheme-clay-rose",
         "container": "container",
         "eyebrow": "NEVER RUN LOW",
         "heading": "Subscribe & stay effortlessly consistent",
@@ -526,9 +519,7 @@
         "faq_4"
       ],
       "settings": {
-        "color_scheme": "default",
         "subheading": "FREQUENTLY ASKED",
-        "heading": "Frequently Asked Questions",
         "show_view_all": true,
         "view_all_label": "View all FAQs",
         "view_all_link": "/pages/faqs",

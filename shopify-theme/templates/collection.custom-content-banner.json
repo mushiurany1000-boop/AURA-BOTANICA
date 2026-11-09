@@ -4,35 +4,35 @@
       "type": "collection-list",
       "blocks": {
         "collection_block_Hc878i": {
-          "type": "collection_block",
+          "type": "collection",
           "settings": {
             "collection": "",
             "title": "Bio-Ferment Serums"
           }
         },
         "collection_block_hinmPA": {
-          "type": "collection_block",
+          "type": "collection",
           "settings": {
             "collection": "",
             "title": "Lipid Barrier Creams"
           }
         },
         "collection_block_aptRg9": {
-          "type": "collection_block",
+          "type": "collection",
           "settings": {
             "collection": "",
             "title": "Botanical Cleansers"
           }
         },
         "collection_block_ThaeW3": {
-          "type": "collection_block",
+          "type": "collection",
           "settings": {
             "collection": "",
             "title": "Restorative Facial Oils"
           }
         },
         "collection_block_DqH8kb": {
-          "type": "collection_block",
+          "type": "collection",
           "settings": {
             "collection": "",
             "title": "Clarifying Elixirs"
@@ -48,35 +48,11 @@
       ],
       "settings": {
         "heading": "",
-        "heading_size": "h3",
         "subheading": "",
-        "description": "",
-        "header_alignment": "center",
         "color_scheme": "",
         "container": "container-fluid",
-        "layout": "grid",
-        "expanded": false,
-        "card_style": "standard",
-        "text_alignment": "center",
-        "hover_effect": "scaling-up",
-        "show_product_count": false,
-        "count_inline_title": true,
-        "image_rounded": false,
-        "items_per_row": 5,
-        "item_gap": 5,
-        "enable_slider": true,
-        "show_pagination": false,
-        "show_navigation": false,
-        "autorotate": false,
-        "autorotate_speed": 5,
-        "mobile_disable_slider": true,
-        "use_scroll_mobile": true,
-        "mobile_gap": 5,
-        "hidden_slide_control_mobile": true,
         "padding_top": 0,
-        "padding_bottom": 40,
-        "custom_class": "",
-        "animations": "inherit"
+        "padding_bottom": 40
       }
     },
     "empty_space_aG8DFL": {

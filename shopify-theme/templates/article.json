@@ -54,7 +54,6 @@
         "blog_show_date": true,
         "blog_show_tags": true,
         "blog_show_social": true,
-        "blog_show_related": true,
         "blog_show_comment": true,
         "show_related_articles": true,
         "article_align_content": "text-left",
