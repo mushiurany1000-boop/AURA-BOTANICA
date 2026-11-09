@@ -49,3 +49,4 @@ for (const [secId, secData] of Object.entries(indexData.sections)) {
 
 console.log('Total index.json errors:', errors.length);
 errors.forEach(e => console.log(' - ' + e));
+

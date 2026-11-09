@@ -48,3 +48,4 @@ templateFiles.forEach(tFile => {
 });
 
 console.log(`Cleaned up ${cleanedCount} unknown settings across all templates.`);
+

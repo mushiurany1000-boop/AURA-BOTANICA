@@ -530,10 +530,6 @@
         "id": "color_schemes",
         "definition": [
           {
-            "type": "header",
-            "content": "Background"
-          },
-          {
             "type": "color",
             "id": "background",
             "label": "Background",
@@ -550,10 +546,6 @@
             "id": "background_gradient",
             "label": "Background gradient",
             "info": "Background gradient replaces background where possible."
-          },
-          {
-            "type": "header",
-            "content": "Text"
           },
           {
             "type": "color",
@@ -574,10 +566,6 @@
             "default": "#222222"
           },
           {
-            "type": "header",
-            "content": "Button"
-          },
-          {
             "type": "color",
             "id": "button",
             "label": "Solid button background",
@@ -596,10 +584,6 @@
             "default": "#222222"
           },
           {
-            "type": "header",
-            "content": "Button hover"
-          },
-          {
             "type": "color",
             "id": "button_hover",
             "label": "Background & border",
@@ -610,10 +594,6 @@
             "id": "button_text_hover",
             "label": "Text",
             "default": "#ffffff"
-          },
-          {
-            "type": "header",
-            "content": "Price"
           },
           {
             "type": "color",
@@ -628,10 +608,6 @@
             "default": "#666666"
           },
           {
-            "type": "header",
-            "content": "Form field"
-          },
-          {
             "type": "color",
             "id": "form_field",
             "label": "Form field background",
@@ -642,10 +618,6 @@
             "id": "form_field_label",
             "label": "Form field text",
             "default": "#222222"
-          },
-          {
-            "type": "header",
-            "content": "Tooltip"
           },
           {
             "type": "color",
@@ -660,18 +632,10 @@
             "default": "#FFFFFF"
           },
           {
-            "type": "header",
-            "content": "Other"
-          },
-          {
             "type": "color",
             "id": "border",
             "label": "Border",
             "default": "#EEEEEE"
-          },
-          {
-            "type": "header",
-            "content": "Botanical Accents"
           },
           {
             "type": "color",
@@ -699,14 +663,64 @@
             "gradient": "background_gradient"
           },
           "links": "outline_button_label",
-          "icons": "text",
-          "primary_button": "button",
-          "on_primary_button": "button_label",
-          "primary_button_border": "button",
-          "secondary_button": "background",
-          "on_secondary_button": "outline_button_label",
-          "secondary_button_border": "outline_button_label"
-        }
+          "icons": "text"
+        },
+        "default": [
+          {
+            "id": "scheme-1",
+            "name": "Scheme 1",
+            "settings": {
+              "background": "#fcfbf7",
+              "background_secondary": "#f7f4ed",
+              "background_gradient": "",
+              "text": "#222222",
+              "subtext": "#666666",
+              "heading_text": "#222222",
+              "button": "#315B45",
+              "button_label": "#FFFFFF",
+              "outline_button_label": "#315B45",
+              "button_hover": "#224031",
+              "button_text_hover": "#ffffff",
+              "price_sale": "#DA3F3F",
+              "price_regular": "#666666",
+              "form_field": "#FFFFFF",
+              "form_field_label": "#222222",
+              "tooltip": "#222222",
+              "tooltip_label": "#FFFFFF",
+              "border": "#E8E8E8",
+              "primary_accent": "#315B45",
+              "secondary_accent": "#A7B49B",
+              "highlight_accent": "#B89A62"
+            }
+          },
+          {
+            "id": "scheme-2",
+            "name": "Scheme 2",
+            "settings": {
+              "background": "#1A070B",
+              "background_secondary": "#24090F",
+              "background_gradient": "",
+              "text": "#FFF8F5",
+              "subtext": "#E2B7A8",
+              "heading_text": "#FFFFFF",
+              "button": "#9E3245",
+              "button_label": "#FFFFFF",
+              "outline_button_label": "#E2B7A8",
+              "button_hover": "#7A2234",
+              "button_text_hover": "#FFFFFF",
+              "price_sale": "#E2B7A8",
+              "price_regular": "#C5A59E",
+              "form_field": "#24090F",
+              "form_field_label": "#FFF8F5",
+              "tooltip": "#FFF8F5",
+              "tooltip_label": "#1A070B",
+              "border": "#3B131E",
+              "primary_accent": "#9E3245",
+              "secondary_accent": "#D48D9B",
+              "highlight_accent": "#D4AF37"
+            }
+          }
+        ]
       },
       {
         "type": "color_scheme",

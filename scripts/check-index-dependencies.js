@@ -45,3 +45,4 @@ themeRenders.forEach(m => {
   }
 });
 console.log('Missing snippets in layout/theme.liquid:', missingSnippetsInTheme);
+

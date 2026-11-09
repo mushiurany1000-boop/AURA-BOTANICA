@@ -22,3 +22,4 @@ console.log('Checking config...');
 checkDir('config');
 console.log('Checking sections...');
 checkDir('sections');
+

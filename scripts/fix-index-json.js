@@ -64,3 +64,4 @@ if (idx.sections.faq) {
 
 fs.writeFileSync('templates/index.json', JSON.stringify(idx, null, 2), 'utf8');
 console.log('Successfully cleaned up templates/index.json');
+

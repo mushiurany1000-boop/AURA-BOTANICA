@@ -51,3 +51,4 @@ files.forEach(file => {
 
 console.log('Total invalid section settings:', allErrors.length);
 allErrors.forEach(e => console.log(e));
+

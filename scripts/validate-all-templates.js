@@ -64,3 +64,4 @@ templateFiles.forEach(tFile => {
 });
 
 console.log('Total errors across all templates:', totalErrors);
+

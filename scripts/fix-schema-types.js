@@ -72,3 +72,4 @@ reviewsLiquid = reviewsLiquid.replace(
 );
 fs.writeFileSync('sections/product-reviews.liquid', reviewsLiquid, 'utf8');
 console.log('Saved sections/product-reviews.liquid');
+

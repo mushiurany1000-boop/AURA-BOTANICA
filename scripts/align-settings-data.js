@@ -52,3 +52,4 @@ for (const [pName, pObj] of Object.entries(data.presets)) {
 
 fs.writeFileSync('config/settings_data.json', JSON.stringify(data, null, 2), 'utf8');
 console.log('Successfully aligned config/settings_data.json');
+
